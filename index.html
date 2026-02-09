@@ -14,7 +14,26 @@
 </head>
 
 <body class="bg-gray-950 text-white">
+<script>
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
 
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const inc = Math.ceil(target / speed);
+
+    if (count < target) {
+      counter.innerText = count + inc;
+      setTimeout(updateCount, 20);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  updateCount();
+});
+</script>
 <!-- HERO SECTION -->
 <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900">
 
@@ -70,6 +89,39 @@
   </div>
 </section>
 
+  <!-- ANIMATED COUNTERS -->
+<section class="bg-gradient-to-r from-blue-900 to-indigo-900 py-14">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 class="text-3xl font-bold mb-10 text-white">
+      Our Business Growth
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
+        <h3 class="text-4xl font-extrabold text-yellow-400 counter" data-target="3500">0</h3>
+        <p class="mt-2 text-gray-300">Happy Customers</p>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
+        <h3 class="text-4xl font-extrabold text-yellow-400 counter" data-target="25">0</h3>
+        <p class="mt-2 text-gray-300">Total Services</p>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
+        <h3 class="text-4xl font-extrabold text-yellow-400 counter" data-target="10">0</h3>
+        <p class="mt-2 text-gray-300">Years Experience</p>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
+        <h3 class="text-4xl font-extrabold text-yellow-400 counter" data-target="100">0</h3>
+        <p class="mt-2 text-gray-300">Daily Visits</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 <!-- QUICK SERVICES PREVIEW -->
 <section class="bg-gray-950 py-14">
   <div class="max-w-6xl mx-auto px-6">
