@@ -13,9 +13,10 @@
     position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 9999;
-  }
-
+    z-index: 9999;  }
+<meta name="description" content="Smart Print & Online Services Kangan Pur – Printing, NADRA/FBR, Online Forms, Digital Marketing, Website & AI Services.">
+<meta name="keywords" content="Print shop Kangan Pur, NADRA services, FBR filing, online forms, digital marketing, website development">
+<meta name="author" content="Smart Print & Online Services">
   .wa-btn {
     background: linear-gradient(135deg, #1e3a8a, #312e81); /* website theme */
     color: #fff;
