@@ -1,207 +1,63 @@
-<!DOCTYPE html>
+                   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Smart Print And Online Services</title>
-  <meta name="description" content="Contact Smart Print And Online Services">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <meta name="description" content="Contact Smart Print & Online Services Kangan Pur – Printing, NADRA/FBR, Online Forms, Digital Marketing, Website & AI Services.">
+  <meta name="keywords" content="Print shop Kangan Pur, NADRA services, FBR filing, online forms, digital marketing, website development">
+  <meta name="author" content="Smart Print & Online Services">
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* ...paste same .wa-* styles... */
+  </style>
 </head>
-  <!-- Floating WhatsApp + Tooltip + Popup -->
-<style>
-  .wa-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 9999;
-  }
+<body>
 
-  .wa-btn {
-    background: linear-gradient(135deg, #1e3a8a, #312e81); /* website theme */
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s;
-  }
+<!-- NAVBAR same -->
 
-  .wa-btn:hover {
-    transform: scale(1.1);
-  }
-
-  .wa-tooltip {
-    position: absolute;
-    right: 75px;
-    bottom: 15px;
-    background: #111827;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  .wa-popup {
-    display: none;
-    position: fixed;
-    bottom: 100px;
-    right: 25px;
-    background: #fff;
-    width: 280px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    z-index: 9999;
-    overflow: hidden;
-  }
-
-  .wa-popup h4 {
-    background: #1e3a8a;
-    color: #fff;
-    padding: 12px;
-    margin: 0;
-    font-size: 16px;
-  }
-
-  .wa-popup a {
-    display: block;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-    color: #111;
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  .wa-popup a:hover {
-    background: #f3f4f6;
-  }
-</style>
-
-<div class="wa-float">
-  <div class="wa-tooltip">Need Help? Chat Now</div>
-
-  <div class="wa-btn" onclick="toggleWA()">
-    <!-- WhatsApp Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 16 16">
-      <path d="M13.601 2.326A7.854 7.854 0 0 0 8.013.002C3.588.002 0 3.58 0 8.002a7.95 7.95 0 0 0 1.163 4.106L0 16l3.994-1.046a8.014 8.014 0 0 0 4.019 1.041h.003c4.423 0 7.995-3.578 7.995-7.997a7.86 7.86 0 0 0-2.41-5.672z"/>
-    </svg>
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="https://wa.me/923034480404" method="get" target="_blank">
+          <div class="mb-3">
+            <label class="form-label">Your Name</label>
+            <input type="text" name="text" class="form-control" placeholder="Type your name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Service Required</label>
+            <select class="form-select" name="text">
+              <option>Print & Document Services</option>
+              <option>NADRA / FBR</option>
+              <option>Online Forms</option>
+              <option>Digital Marketing</option>
+              <option>Website & AI Services</option>
+            </select>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-success">💬 Contact on WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="wa-popup" id="waPopup">
-  <h4>Select Service</h4>
+<!-- Floating WhatsApp same -->
+<!-- Footer same -->
 
-  <a href="https://wa.me/923034480404?text=Service:%20Print%20%26%20Document%20Services">
-    🖨 Print & Document Services
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20NADRA%20/%20FBR">
-    🆔 NADRA / FBR Services
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Online%20Forms">
-    📝 Online Forms
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Digital%20Marketing%20Ads">
-    📢 Digital Marketing
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Website%20/%20AI%20Services">
-    🤖 Website & AI Services
-  </a>
-</div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   function toggleWA() {
     const popup = document.getElementById("waPopup");
     popup.style.display = popup.style.display === "block" ? "none" : "block";
   }
 </script>
-<body>
-<section class="max-w-4xl mx-auto py-16 px-4">
-  <h2 class="text-3xl font-bold text-center mb-8">
-    Contact Smart Print & Online Services
-  </h2>
-
-  <p class="text-center mb-10 text-gray-600">
-    Please select your required service. You will be redirected to WhatsApp.
-  </p>
-
-  <div class="grid md:grid-cols-2 gap-6">
-
-    <!-- PRINT -->
-    <a href="https://wa.me/923034480404?text=Service:%20Print%20%26%20Document%20Services%0ARequired%20Service:%20________%0AUrgency:%20Normal/Urgent"
-       class="block p-6 border rounded-lg hover:bg-blue-50">
-      <h3 class="font-semibold text-lg">🖨 Print & Document Services</h3>
-      <p class="text-sm text-gray-600">Printing, Photocopy, CV, Typing</p>
-    </a>
-
-    <!-- NADRA -->
-    <a href="https://wa.me/923034480404?text=Service:%20NADRA%20/%20FBR%0ARequired%20Service:%20________%0ADetails:%20________"
-       class="block p-6 border rounded-lg hover:bg-blue-50">
-      <h3 class="font-semibold text-lg">🆔 NADRA / FBR Services</h3>
-      <p class="text-sm text-gray-600">CNIC, B-Form, FBR Filing</p>
-    </a>
-
-    <!-- FORMS -->
-    <a href="https://wa.me/923034480404?text=Service:%20Online%20Forms%0AForm%20Type:%20________%0AUrgency:%20________"
-       class="block p-6 border rounded-lg hover:bg-blue-50">
-      <h3 class="font-semibold text-lg">📝 Online Forms</h3>
-      <p class="text-sm text-gray-600">Govt, Jobs, Admissions</p>
-    </a>
-
-    <!-- ADS -->
-    <a href="https://wa.me/923034480404?text=Service:%20Digital%20Marketing%20(Ads)%0ABusiness%20Type:%20________%0AGoal:%20Leads/Sales"
-       class="block p-6 border rounded-lg hover:bg-blue-50">
-      <h3 class="font-semibold text-lg">📢 Digital Marketing</h3>
-      <p class="text-sm text-gray-600">Facebook & WhatsApp Ads</p>
-    </a>
-
-    <!-- WEBSITE / AI -->
-    <a href="https://wa.me/923034480404?text=Service:%20Website%20/%20AI%20Services%0ARequirement:%20________%0ABudget:%20Optional"
-       class="block p-6 border rounded-lg hover:bg-blue-50 md:col-span-2">
-      <h3 class="font-semibold text-lg">🤖 Website & AI Services</h3>
-      <p class="text-sm text-gray-600">Websites, AI Assistant, Automation</p>
-    </a>
-
-  </div>
-</section>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Smart Print</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<section class="py-5 text-center">
-  <div class="container">
-    <h2 class="mb-4">Contact Us</h2>
-    <p>📍 Location: Kangan Pur</p>
-    <p>💬 WhatsApp: <a href="https://wa.me/923034480404">+92 303 4480404</a></p>
-    <p>⏰ Open: 9 AM – 9 PM</p>
-    <a href="https://wa.me/923034480404" class="btn btn-success mt-3">Message on WhatsApp</a>
-  </div>
-</section>
-
-<footer class="bg-dark text-white text-center py-3">
-  © 2026 Smart Print And Online Services
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-                                                                                             </html>
+</html>
