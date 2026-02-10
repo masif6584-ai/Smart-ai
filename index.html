@@ -1,270 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Smart Print And Online Services</title>
 
-<title>Smart Print & Online Services | Kangan Pur</title>
+  <!-- SEO Tags -->
+  <meta name="description" content="Smart Print & Online Services Kangan Pur – Printing, NADRA/FBR, Online Forms, Digital Marketing, Website & AI Services.">
+  <meta name="keywords" content="Print shop Kangan Pur, NADRA services, FBR filing, online forms, digital marketing, website development">
+  <meta name="author" content="Smart Print & Online Services">
 
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
-  body { font-family: 'Inter', sans-serif; }
-</style>
+  <!-- WhatsApp Button CSS -->
+  <style>
+    .wa-float { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
+    .wa-btn { background: linear-gradient(135deg, #1e3a8a, #312e81); color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.25); transition: transform 0.3s; }
+    .wa-btn:hover { transform: scale(1.1); }
+    .wa-tooltip { position: absolute; right: 75px; bottom: 15px; background: #111827; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; }
+    .wa-popup { display: none; position: fixed; bottom: 100px; right: 25px; background: #fff; width: 280px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); z-index: 9999; overflow: hidden; }
+    .wa-popup h4 { background: #1e3a8a; color: #fff; padding: 12px; margin: 0; font-size: 16px; }
+    .wa-popup a { display: block; padding: 12px; border-bottom: 1px solid #eee; color: #111; text-decoration: none; font-size: 14px; }
+    .wa-popup a:hover { background: #f3f4f6; }
+  </style>
 </head>
-<!-- Floating WhatsApp + Tooltip + Popup -->
-<style>
-  .wa-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 9999;
-  }
+<body>
 
-  .wa-btn {
-    background: linear-gradient(135deg, #1e3a8a, #312e81); /* website theme */
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s;
-  }
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Smart Print</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  .wa-btn:hover {
-    transform: scale(1.1);
-  }
+  <!-- HERO SECTION -->
+  <section class="py-5 text-center bg-light">
+    <div class="container">
+      <h1 class="mb-3">Smart Print & Online Services</h1>
+      <p class="mb-4">Your one-stop solution for printing, online forms, NADRA/FBR services, digital marketing, website & AI services in Kangan Pur.</p>
+      <a href="https://wa.me/923034480404" class="btn btn-success btn-lg">💬 Contact on WhatsApp</a>
+    </div>
+  </section>
 
-  .wa-tooltip {
-    position: absolute;
-    right: 75px;
-    bottom: 15px;
-    background: #111827;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
+  <!-- FEATURED SERVICES -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Our Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="p-4 border rounded">🖨 Print & Document Services</div></div>
+        <div class="col-md-4"><div class="p-4 border rounded">🆔 NADRA / FBR Services</div></div>
+        <div class="col-md-4"><div class="p-4 border rounded">📝 Online Forms</div></div>
+        <div class="col-md-4"><div class="p-4 border rounded">📢 Digital Marketing</div></div>
+        <div class="col-md-4"><div class="p-4 border rounded">🤖 Website & AI Services</div></div>
+      </div>
+    </div>
+  </section>
 
-  .wa-popup {
-    display: none;
-    position: fixed;
-    bottom: 100px;
-    right: 25px;
-    background: #fff;
-    width: 280px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    z-index: 9999;
-    overflow: hidden;
-  }
-
-  .wa-popup h4 {
-    background: #1e3a8a;
-    color: #fff;
-    padding: 12px;
-    margin: 0;
-    font-size: 16px;
-  }
-
-  .wa-popup a {
-    display: block;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-    color: #111;
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  .wa-popup a:hover {
-    background: #f3f4f6;
-  }
-</style>
-
-<div class="wa-float">
-  <div class="wa-tooltip">Need Help? Chat Now</div>
-
-  <div class="wa-btn" onclick="toggleWA()">
-    <!-- WhatsApp Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 16 16">
-      <path d="M13.601 2.326A7.854 7.854 0 0 0 8.013.002C3.588.002 0 3.58 0 8.002a7.95 7.95 0 0 0 1.163 4.106L0 16l3.994-1.046a8.014 8.014 0 0 0 4.019 1.041h.003c4.423 0 7.995-3.578 7.995-7.997a7.86 7.86 0 0 0-2.41-5.672z"/>
-    </svg>
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <div class="wa-float">
+    <div class="wa-tooltip">Need Help? Chat Now</div>
+    <div class="wa-btn" onclick="toggleWA()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 8.013.002C3.588.002 0 3.58 0 8.002a7.95 7.95 0 0 0 1.163 4.106L0 16l3.994-1.046a8.014 8.014 0 0 0 4.019 1.041h.003c4.423 0 7.995-3.578 7.995-7.997a7.86 7.86 0 0 0-2.41-5.672z"/>
+      </svg>
+    </div>
   </div>
-</div>
 
-<div class="wa-popup" id="waPopup">
-  <h4>Select Service</h4>
+  <div class="wa-popup" id="waPopup">
+    <h4>Select Service</h4>
+    <a href="https://wa.me/923034480404?text=Service:%20Print%20%26%20Document%20Services">🖨 Print & Document Services</a>
+    <a href="https://wa.me/923034480404?text=Service:%20NADRA%20/%20FBR">🆔 NADRA / FBR Services</a>
+    <a href="https://wa.me/923034480404?text=Service:%20Online%20Forms">📝 Online Forms</a>
+    <a href="https://wa.me/923034480404?text=Service:%20Digital%20Marketing%20Ads">📢 Digital Marketing</a>
+    <a href="https://wa.me/923034480404?text=Service:%20Website%20/%20AI%20Services">🤖 Website & AI Services</a>
+  </div>
 
-  <a href="https://wa.me/923034480404?text=Service:%20Print%20%26%20Document%20Services">
-    🖨 Print & Document Services
-  </a>
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white text-center py-3">
+    © 2026 Smart Print And Online Services
+  </footer>
 
-  <a href="https://wa.me/923034480404?text=Service:%20NADRA%20/%20FBR">
-    🆔 NADRA / FBR Services
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Online%20Forms">
-    📝 Online Forms
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Digital%20Marketing%20Ads">
-    📢 Digital Marketing
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Website%20/%20AI%20Services">
-    🤖 Website & AI Services
-  </a>
-</div>
-
-<script>
-  function toggleWA() {
-    const popup = document.getElementById("waPopup");
-    popup.style.display = popup.style.display === "block" ? "none" : "block";
-  }
-</script>
-<body class="bg-gray-950 text-white">
-<script>
-const counters = document.querySelectorAll('.counter');
-const speed = 200;
-
-counters.forEach(counter => {
-  const updateCount = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const inc = Math.ceil(target / speed);
-
-    if (count < target) {
-      counter.innerText = count + inc;
-      setTimeout(updateCount, 20);
-    } else {
-      counter.innerText = target;
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleWA() {
+      const popup = document.getElementById("waPopup");
+      popup.style.display = popup.style.display === "block" ? "none" : "block";
     }
-  };
-  updateCount();
-});
-</script>
-<!-- HERO SECTION -->
-<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900">
-
-  <div class="text-center px-6">
-
-    <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide text-white drop-shadow-xl">
-   <a href="https://wa.me/923034480404?text=Assalamualaikum%2C%20mujhe%20Smart%20Print%20And%20Online%20Services%20ki%20services%20ke%20baray%20me%20maloomat%20chahiye"
-   target="_blank"
-   class="px-8 py-3 text-lg rounded-full bg-green-500 text-white font-bold hover:bg-green-600 transition">
-   WhatsApp for Services
-   </a>
-      SMART PRINT  
-      <span class="block text-yellow-400 text-5xl md:text-7xl mt-2">
-        & ONLINE SERVICES
-      </span>
-    </h1>
-
-    <p class="mt-6 text-lg md:text-2xl text-gray-200">
-      One Window Digital & Printing Solution – <b>Kangan Pur</b>
-    </p>
-
-    <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
-
-      <a href="services.html"
-         class="px-8 py-3 text-lg rounded-full bg-yellow-400 text-black font-bold hover:bg-yellow-300 transition">
-        View Services
-      </a>
-
-      <a href="https://wa.me/923034480404"
-         class="px-8 py-3 text-lg rounded-full border-2 border-white hover:bg-white hover:text-black transition">
-        WhatsApp Now
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- TRUST SECTION -->
-<section class="bg-gray-900 py-12">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 text-center px-6">
-
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-      <h3 class="text-xl font-bold text-yellow-400">Professional Work</h3>
-      <p class="mt-2 text-gray-300">Fast, accurate & reliable services</p>
-    </div>
-
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-      <h3 class="text-xl font-bold text-yellow-400">One Window Solution</h3>
-      <p class="mt-2 text-gray-300">All print & online services under one roof</p>
-    </div>
-
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-      <h3 class="text-xl font-bold text-yellow-400">Trusted Locally</h3>
-      <p class="mt-2 text-gray-300">Serving Kangan Pur community</p>
-    </div>
-
-  </div>
-</section>
-
-  <!-- ANIMATED COUNTERS -->
-<section class="bg-gradient-to-r from-blue-900 to-indigo-900 py-14">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-
-    <h2 class="text-3xl font-bold mb-10 text-white">
-      Our Business Growth
-    </h2>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
-        <h3 class="text-4xl font-extrabold text-yellow-400 counter" data-target="3500">0</h3>
-        <p class="mt-2 text-gray-300">Happy Customers</p>
-      </div>
-
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
-        <h3 class="text-4xl font-extrabold text-yellow-400 counter" data-target="25">0</h3>
-        <p class="mt-2 text-gray-300">Total Services</p>
-      </div>
-
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
-        <h3 class="text-4xl font-extrabold text-yellow-400 counter" data-target="10">0</h3>
-        <p class="mt-2 text-gray-300">Years Experience</p>
-      </div>
-
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
-        <h3 class="text-4xl font-extrabold text-yellow-400 counter" data-target="100">0</h3>
-        <p class="mt-2 text-gray-300">Daily Visits</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- QUICK SERVICES PREVIEW -->
-<section class="bg-gray-950 py-14">
-  <div class="max-w-6xl mx-auto px-6">
-
-    <h2 class="text-3xl font-bold text-center mb-10">
-      Our Popular Services
-    </h2>
-
-    <div class="grid md:grid-cols-4 gap-5 text-center">
-
-      <div class="bg-gray-800 p-4 rounded-lg">Photocopy & Printing</div>
-      <div class="bg-gray-800 p-4 rounded-lg">NADRA & FBR Services</div>
-      <div class="bg-gray-800 p-4 rounded-lg">CV / Resume Making</div>
-      <div class="bg-gray-800 p-4 rounded-lg">Website & AI Services</div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-black text-center p-5 text-gray-400">
-© 2026 Smart Print & Online Services | Kangan Pur
-</footer>
+  </script>
 
 </body>
-</html>
+    </html>
