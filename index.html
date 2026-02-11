@@ -6,7 +6,7 @@
 
 <title>Smart Printing & Online Services | One Window Solution</title>
 
-<meta name="description" content="Smart Printing & Online Services Kangan Pur – One Window Solution for Printing, NADRA/FBR, Digital Marketing, Website & AI Services.">
+<meta name="description" content="Smart Printing & Online Services Kangan Pur – One Window Printing and AI Digital Business Solutions.">
 <meta name="keywords" content="Printing shop Kangan Pur, NADRA services, FBR filing, Digital marketing, Website development Pakistan">
 <meta name="author" content="Smart Printing & Online Services">
 
@@ -48,11 +48,11 @@ const database = getDatabase(app);
 
 /* Visitor Counter */
 const visitorRef = ref(database, 'visitors');
-set(visitorRef, increment(1));
+set(visitorRef, increment(1)); // increase by 1 per new visit
 
 onValue(visitorRef, (snapshot) => {
   const count = snapshot.val();
-  document.querySelectorAll('.counter')[0].innerText = count;
+  document.querySelector('.counter.visitors').innerText = count;
 });
 </script>
 
@@ -180,7 +180,8 @@ border-bottom:1px solid #eee;
 <section class="hero">
 <div class="glass-hero" data-aos="zoom-in">
 <h1 class="display-3 fw-bold">Smart Printing & Online Services</h1>
-<p class="lead">All Services Under One Roof – Kangan Pur</p>
+<p class="lead">One Window Printing and Digital Business Solutions</p>
+<p class="lead">📍 Purana Paka Bazar, Kanganpur</p>
 <a href="services.html" class="btn btn-success btn-lg mt-3">Explore Services</a>
 </div>
 </section>
@@ -191,8 +192,8 @@ border-bottom:1px solid #eee;
 <div class="row">
 
 <div class="col-md-4" data-aos="fade-up">
-<div class="counter" data-target="1200">0</div>
-<p>Happy Customers</p>
+<div class="counter visitors">0</div>
+<p>Happy Customers (Live Visits)</p>
 </div>
 
 <div class="col-md-4" data-aos="fade-up">
@@ -263,6 +264,23 @@ border-bottom:1px solid #eee;
 </div>
 </div>
 
+<!-- NEW SERVICES -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-card">
+<h4>💰 JazCash, EasyPaisa, Bill Payments</h4>
+<p class="service-caption">All Mobile Payments & Bill Payments Services</p>
+<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('Payments')">Learn More</a>
+</div>
+</div>
+
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-card">
+<h4>📄 E-Stamp & Online Chalan Form</h4>
+<p class="service-caption">Digital Stamps & Online Chalan Form Submission</p>
+<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('E-Stamp/Chalan')">Learn More</a>
+</div>
+</div>
+
 </div>
 </div>
 </section>
@@ -270,7 +288,7 @@ border-bottom:1px solid #eee;
 <!-- SERVICES SCROLL BAR -->
 <section class="py-3 bg-success text-dark">
 <marquee behavior="scroll" direction="left">
-Printing | NADRA | FBR Filing | Bill Payments | JazzCash | EasyPaisa | Digital Marketing | Website Development | AI Automation | Online Forms
+Printing | NADRA | FBR Filing | Bill Payments | JazzCash | EasyPaisa | E-Stamp | Online Chalan | Digital Marketing | Website Development | AI Automation | Online Forms
 </marquee>
 </section>
 
@@ -328,6 +346,8 @@ Printing | NADRA | FBR Filing | Bill Payments | JazzCash | EasyPaisa | Digital M
 <a href="https://wa.me/923034480404?text=NADRA Inquiry" onclick="trackWhatsApp('NADRA/FBR')">NADRA / FBR</a>
 <a href="https://wa.me/923034480404?text=Digital Marketing Inquiry" onclick="trackWhatsApp('Marketing')">Digital Marketing</a>
 <a href="https://wa.me/923034480404?text=Website Inquiry" onclick="trackWhatsApp('Website/AI')">Website & AI</a>
+<a href="https://wa.me/923034480404?text=Payments Inquiry" onclick="trackWhatsApp('Payments')">JazCash / EasyPaisa / Bills</a>
+<a href="https://wa.me/923034480404?text=E-Stamp Inquiry" onclick="trackWhatsApp('E-Stamp/Chalan')">E-Stamp / Online Chalan</a>
 </div>
 
 <!-- Scripts -->
@@ -338,7 +358,7 @@ Printing | NADRA | FBR Filing | Bill Payments | JazzCash | EasyPaisa | Digital M
 AOS.init();
 
 /* Counter Animation */
-const counters=document.querySelectorAll('.counter');
+const counters=document.querySelectorAll('.counter:not(.visitors)');
 counters.forEach(counter=>{
 counter.innerText='0';
 const update=()=>{
