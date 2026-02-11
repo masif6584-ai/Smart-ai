@@ -12,10 +12,10 @@
 <style>
 body{
   font-family:'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  background: linear-gradient(135deg, #0f172a, #3b82f6);
   color:#fff;
   overflow-x:hidden;
-  padding-top:100px;
+  padding-top:120px;
 }
 /* Navbar */
 .navbar{
@@ -37,6 +37,26 @@ body{
   font-weight:400;
 }
 
+/* Page Buttons (Quick Navigation) */
+.page-buttons{
+  text-align:center;
+  margin-bottom:20px;
+}
+.page-buttons a{
+  display:inline-block;
+  margin:5px;
+  padding:10px 20px;
+  border-radius:15px;
+  background:#25D366;
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+.page-buttons a:hover{
+  background:#1fa34a;
+}
+
 /* HERO */
 .hero-contact{
   position:relative;
@@ -45,7 +65,7 @@ body{
   align-items:center;
   justify-content:center;
   text-align:center;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,113,1) 50%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, #3b82f6, #06b6d4, #22d3ee);
   color:white;
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
   border-radius: 20px;
@@ -74,7 +94,6 @@ body{
 .contact-section label{ font-weight:600; }
 .contact-section input, .contact-section textarea, .contact-section select{
   border-radius:12px;
-  border:1px solid #ccc;
   padding:12px;
   margin-bottom:15px;
   width:100%;
@@ -113,8 +132,9 @@ body{
   text-align:center;
   margin-top:10px;
   color:#fff;
-  font-weight:500;
+  font-weight:600;
   text-shadow:1px 1px 6px rgba(0,0,0,0.7);
+  font-size:1rem;
 }
 
 /* WhatsApp Floating */
@@ -137,33 +157,6 @@ body{
   font-size:24px;
   color:white;
 }
-.wa-popup{
-  display:none;
-  position:fixed;
-  bottom:95px;
-  right:25px;
-  background:#fff;
-  width:260px;
-  border-radius:12px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.5);
-  color:black;
-  overflow:hidden;
-}
-.wa-popup h5{
-  background:#00796b;
-  color:#fff;
-  padding:12px;
-  margin:0;
-  text-align:center;
-}
-.wa-popup a{
-  display:block;
-  padding:10px;
-  text-decoration:none;
-  color:#000;
-  border-bottom:1px solid #eee;
-}
-.wa-popup a:hover{background:#f1f1f1;}
 </style>
 </head>
 <body>
@@ -172,7 +165,7 @@ body{
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class="container-fluid">
   <a class="navbar-brand" href="index.html">
-    Smart Printing
+    Smart Printing and Online Services
     <span>Purana Paka Bazar, Kanganpur</span>
   </a>
   <div class="collapse navbar-collapse">
@@ -185,6 +178,14 @@ body{
   </div>
 </div>
 </nav>
+
+<!-- Page Buttons -->
+<div class="page-buttons">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
 
 <!-- HERO -->
 <section class="hero-contact" data-aos="fade-down">
@@ -227,20 +228,9 @@ body{
 
 <!-- WhatsApp Floating -->
 <div class="wa-float">
-<div class="wa-btn" onclick="toggleWA()">
+<div class="wa-btn" onclick="window.open('https://wa.me/923034480404','_blank')">
 <i class="fab fa-whatsapp"></i>
 </div>
-</div>
-
-<!-- WhatsApp Popup -->
-<div class="wa-popup" id="waPopup">
-<h5>Select Service</h5>
-<a href="https://wa.me/923034480404?text=Printing Inquiry">Printing</a>
-<a href="https://wa.me/923034480404?text=NADRA Inquiry">NADRA / FBR</a>
-<a href="https://wa.me/923034480404?text=Digital Marketing Inquiry">Digital Marketing</a>
-<a href="https://wa.me/923034480404?text=Website Inquiry">Website & AI</a>
-<a href="https://wa.me/923034480404?text=Payments Inquiry">JazCash / EasyPaisa / Bills</a>
-<a href="https://wa.me/923034480404?text=E-Stamp Inquiry">E-Stamp / Online Chalan</a>
 </div>
 
 <!-- Scripts -->
@@ -248,12 +238,6 @@ body{
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 AOS.init();
-
-/* WhatsApp Popup */
-function toggleWA(){
-let popup=document.getElementById("waPopup");
-popup.style.display=popup.style.display==="block"?"none":"block";
-}
 
 /* Contact Form Submission */
 document.getElementById('contactForm').addEventListener('submit', function(e){
@@ -269,12 +253,12 @@ if(!service){
 }
 
 // Prepare WhatsApp message
-const phone = '+92303480404'; // shop number
+const phone = '+923034480404'; 
 let waMsg = `New Inquiry:%0AName: ${name}%0AService: ${service}%0AMessage: ${message}`;
 if(email) waMsg += `%0AEmail: ${email}`;
 window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
 
-// SMS integration using SMS gateway URL (replace YOUR_SMS_GATEWAY_URL)
+// SMS integration placeholder
 let smsText = `New Inquiry: Name: ${name}, Service: ${service}, Message: ${message}`;
 if(email) smsText += `, Email: ${email}`;
 fetch(`YOUR_SMS_GATEWAY_URL?to=03034480404&msg=${encodeURIComponent(smsText)}`) 
@@ -288,4 +272,4 @@ document.getElementById('contactForm').reset();
 });
 </script>
 </body>
-  </html>
+</html>
