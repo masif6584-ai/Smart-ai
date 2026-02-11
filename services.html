@@ -369,7 +369,7 @@ const message = document.getElementById('message').value.trim();
 if(!service){ alert('Please select a service!'); return; }
 
 // WhatsApp
-const phone = '+92303480404';
+const phone = '+923034480404';
 let waMsg = `New Inquiry:%0AName: ${name}%0AService: ${service}%0AMessage: ${message}`;
 if(email) waMsg += `%0AEmail: ${email}`;
 window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
