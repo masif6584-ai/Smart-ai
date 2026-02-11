@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,178 +6,262 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Our Services | Smart Printing & Online Services</title>
-
 <meta name="description" content="Smart Printing & Online Services Kangan Pur – Complete One Window Solution.">
 
+<!-- Bootstrap & FontAwesome & AOS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
 body{
-background:#0f2027;
-color:white;
-font-family:'Segoe UI',sans-serif;
-overflow-x:hidden;
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(135deg,#0f172a,#3b82f6);
+    color:white;
+    overflow-x:hidden;
+    padding-top:120px;
 }
 
-/* HERO */
-.hero{
-height:60vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:linear-gradient(135deg,#1e3c72,#2a5298);
-position:relative;
+/* Navbar */
+.navbar{
+    backdrop-filter: blur(20px);
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    width:100%;
+    z-index:999;
+}
+.navbar-brand{
+    font-weight:bold;
+    font-size:1.8rem;
+    color:#25D366 !important;
+}
+.navbar-brand span{
+    font-size:0.9rem;
+    color:#fff;
+    display:block;
+    font-weight:400;
 }
 
-.hero h1{
-font-size:3rem;
-font-weight:700;
+/* Page Buttons */
+.page-buttons{
+    text-align:center;
+    margin-bottom:20px;
+}
+.page-buttons a{
+    display:inline-block;
+    margin:5px;
+    padding:10px 20px;
+    border-radius:15px;
+    background:#25D366;
+    color:#fff;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+.page-buttons a:hover{
+    background:#1fa34a;
 }
 
-/* Glass Box */
+/* Services Slider */
+.services-slider{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:20px 0;
+}
+.services-slider::-webkit-scrollbar{
+    display:none;
+}
+
+/* Service Box */
 .service-box{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
-border-radius:20px;
-padding:25px;
-text-align:center;
-transition:0.4s;
-border:1px solid rgba(255,255,255,0.2);
-cursor:pointer;
+    flex:0 0 250px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.2);
+    cursor:pointer;
+}
+.service-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(0,255,255,0.5);
+}
+.service-box h4{
+    font-size:1.3rem;
+    margin-bottom:10px;
+}
+.service-box p{
+    font-size:0.9rem;
+    color:#e0f7fa;
 }
 
-.service-box:hover{
-transform:translateY(-8px);
-box-shadow:0 0 25px rgba(0,255,255,0.5);
+/* Hero */
+.hero{
+    height:25vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background: linear-gradient(90deg,#3b82f6,#06b6d4,#22d3ee);
+    color:white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    margin: 20px;
+}
+.hero h1{
+    font-size:2.5rem;
+    font-weight:700;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+.hero p{
+    font-size:1.2rem;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+}
+.hero .shop-address{
+    margin-top:10px;
+    font-weight:600;
+    text-shadow:1px 1px 6px rgba(0,0,0,0.7);
 }
 
 /* Floating WhatsApp */
 .floating-wa{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-z-index:999;
-text-decoration:none;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    z-index:999;
+    text-decoration:none;
 }
 
 /* Popup */
 .popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-justify-content:center;
-align-items:center;
-z-index:1000;
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
 }
-
 .popup-content{
-background:white;
-color:black;
-padding:30px;
-border-radius:15px;
-width:90%;
-max-width:400px;
-text-align:center;
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:15px;
+    width:90%;
+    max-width:400px;
+    text-align:center;
 }
-
 .popup-content button{
-margin-top:15px;
+    margin-top:15px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container-fluid">
+  <a class="navbar-brand" href="index.html">
+    Smart Printing and Online Services
+    <span>Purana Paka Bazar, Kanganpur</span>
+  </a>
+  <div class="collapse navbar-collapse">
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+</nav>
+
+<!-- Page Buttons -->
+<div class="page-buttons">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" data-aos="fade-down">
 <div>
-<h1>Smart Printing & Online Services</h1>
+<h1>Our Services</h1>
 <p>Complete One Window Solution – Kangan Pur</p>
+<div class="shop-address">📍 Purana Paka Bazar, Kanganpur | Call/WhatsApp: 03034480404</div>
 </div>
 </section>
 
-<!-- SERVICES GRID -->
+<!-- Services Slider -->
 <div class="container py-5">
-<div class="row g-4">
+<div class="services-slider" data-aos="fade-up">
 
-<!-- Printing -->
-<div class="col-md-4" data-aos="fade-up">
 <div class="service-box" onclick="openPopup('Printing Services')">
 <h4><i class="fa fa-print"></i> Printing</h4>
 <p>Photocopy, Color Print, Flex, PVC Card, Wedding Cards</p>
 </div>
-</div>
 
-<!-- Domicile -->
-<div class="col-md-4" data-aos="fade-up">
 <div class="service-box" onclick="openPopup('Domicile Service')">
 <h4><i class="fa fa-file"></i> Domicile</h4>
 <p>New Domicile & Corrections</p>
 </div>
-</div>
 
-<!-- FBR -->
-<div class="col-md-4" data-aos="fade-up">
 <div class="service-box" onclick="openPopup('FBR Filing')">
 <h4><i class="fa fa-id-card"></i> FBR Filing</h4>
 <p>Filer Registration & Tax Return</p>
 </div>
-</div>
 
-<!-- Online Forms -->
-<div class="col-md-4" data-aos="fade-up">
 <div class="service-box" onclick="openPopup('Online Forms')">
 <h4><i class="fa fa-globe"></i> Online Forms</h4>
 <p>Admissions, Passport, Driving License</p>
 </div>
-</div>
 
-<!-- CV -->
-<div class="col-md-4" data-aos="fade-up">
 <div class="service-box" onclick="openPopup('CV Making')">
 <h4><i class="fa fa-user"></i> CV Making</h4>
 <p>Professional Resume Design</p>
 </div>
-</div>
 
-<!-- Scanning -->
-<div class="col-md-4" data-aos="fade-up">
 <div class="service-box" onclick="openPopup('Scanning Service')">
 <h4><i class="fa fa-camera"></i> Scanning</h4>
 <p>Document & Photo Scanning</p>
 </div>
-</div>
 
-<!-- Website -->
-<div class="col-md-4" data-aos="fade-up">
 <div class="service-box" onclick="openPopup('Website Development')">
 <h4><i class="fa fa-code"></i> Website Development</h4>
 <p>Business Website & E-commerce</p>
 </div>
-</div>
 
-<!-- AI Automation -->
-<div class="col-md-4" data-aos="fade-up">
 <div class="service-box" onclick="openPopup('AI Automation Service')">
 <h4><i class="fa fa-robot"></i> AI Automation</h4>
 <p>Chatbots & Business Automation</p>
 </div>
+
+<div class="service-box" onclick="openPopup('JazCash & EasyPaisa')">
+<h4><i class="fa fa-credit-card"></i> Payments</h4>
+<p>JazCash, EasyPaisa & Bill Payments</p>
+</div>
+
+<div class="service-box" onclick="openPopup('E-Stamp & Online Chalan')">
+<h4><i class="fa fa-stamp"></i> E-Stamp</h4>
+<p>E-Stamp & Online Chalan Form</p>
 </div>
 
 </div>
@@ -204,24 +289,32 @@ class="floating-wa">
 © 2026 Smart Printing & Online Services
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
 <script>
 AOS.init();
 
 function openPopup(service){
-document.getElementById("popup").style.display="flex";
-document.getElementById("serviceName").innerText=service;
-document.getElementById("waLink").href=
-"https://wa.me/923034480404?text=I want information about "+service;
+    document.getElementById("popup").style.display="flex";
+    document.getElementById("serviceName").innerText=service;
+    document.getElementById("waLink").href=
+    "https://wa.me/923034480404?text=I want information about "+service;
 }
 
 function closePopup(){
-document.getElementById("popup").style.display="none";
+    document.getElementById("popup").style.display="none";
 }
-</script>
 
+// Optional: auto-scroll slider continuously
+const slider = document.querySelector('.services-slider');
+let scrollAmount = 0;
+function autoScroll(){
+    scrollAmount += 1;
+    if(scrollAmount >= slider.scrollWidth - slider.clientWidth) scrollAmount = 0;
+    slider.scrollTo({left: scrollAmount, behavior: 'smooth'});
+    requestAnimationFrame(autoScroll);
+}
+autoScroll();
+</script>
 </body>
 </html>
