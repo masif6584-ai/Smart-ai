@@ -1,158 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About Us | Smart Print And Online Services</title>
-  <meta name="description" content="About Smart Print And Online Services in Kangan Pur">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-  <!-- Floating WhatsApp + Tooltip + Popup -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Smart Printing & Online Services</title>
+<meta name="description" content="Learn about Smart Printing & Online Services Kangan Pur – One Window Printing and AI Digital Business Solutions.">
+<meta name="keywords" content="About Smart Printing Kangan Pur, Printing services, Digital Solutions, AI Automation">
+<meta name="author" content="Smart Printing & Online Services">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<!-- Particles -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
 <style>
-  .wa-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 9999;
-  }
+body{
+font-family:'Segoe UI', sans-serif;
+background:#f5f5f5;
+color:#111;
+overflow-x:hidden;
+}
 
-  .wa-btn {
-    background: linear-gradient(135deg, #1e3a8a, #312e81); /* website theme */
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s;
-  }
+/* HERO */
+.hero-about{
+position:relative;
+height:60vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:#1e3a8a;
+color:white;
+}
 
-  .wa-btn:hover {
-    transform: scale(1.1);
-  }
+.hero-about h1{
+font-size:3rem;
+}
 
-  .wa-tooltip {
-    position: absolute;
-    right: 75px;
-    bottom: 15px;
-    background: #111827;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
+.hero-about p{
+font-size:1.2rem;
+}
 
-  .wa-popup {
-    display: none;
-    position: fixed;
-    bottom: 100px;
-    right: 25px;
-    background: #fff;
-    width: 280px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    z-index: 9999;
-    overflow: hidden;
-  }
+/* ABOUT CONTENT */
+.about-section{
+padding:60px 20px;
+max-width:1000px;
+margin:0 auto;
+text-align:left;
+}
 
-  .wa-popup h4 {
-    background: #1e3a8a;
-    color: #fff;
-    padding: 12px;
-    margin: 0;
-    font-size: 16px;
-  }
+.about-section h2{
+color:#1e3a8a;
+margin-bottom:20px;
+}
 
-  .wa-popup a {
-    display: block;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-    color: #111;
-    text-decoration: none;
-    font-size: 14px;
-  }
+.about-section p{
+font-size:1.05rem;
+line-height:1.8;
+color:#333;
+}
 
-  .wa-popup a:hover {
-    background: #f3f4f6;
-  }
+/* WhatsApp Floating */
+.wa-float{
+position:fixed;
+bottom:25px;
+right:25px;
+z-index:9999;
+}
+.wa-btn{
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+font-size:24px;
+color:white;
+}
+.wa-popup{
+display:none;
+position:fixed;
+bottom:95px;
+right:25px;
+background:#fff;
+width:260px;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+color:black;
+overflow:hidden;
+}
+.wa-popup h5{
+background:#1e3a8a;
+color:#fff;
+padding:12px;
+margin:0;
+text-align:center;
+}
+.wa-popup a{
+display:block;
+padding:10px;
+text-decoration:none;
+color:#000;
+border-bottom:1px solid #eee;
+}
+.wa-popup a:hover{background:#f1f1f1;}
 </style>
-
-<div class="wa-float">
-  <div class="wa-tooltip">Need Help? Chat Now</div>
-
-  <div class="wa-btn" onclick="toggleWA()">
-    <!-- WhatsApp Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 16 16">
-      <path d="M13.601 2.326A7.854 7.854 0 0 0 8.013.002C3.588.002 0 3.58 0 8.002a7.95 7.95 0 0 0 1.163 4.106L0 16l3.994-1.046a8.014 8.014 0 0 0 4.019 1.041h.003c4.423 0 7.995-3.578 7.995-7.997a7.86 7.86 0 0 0-2.41-5.672z"/>
-    </svg>
-  </div>
-</div>
-
-<div class="wa-popup" id="waPopup">
-  <h4>Select Service</h4>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Print%20%26%20Document%20Services">
-    🖨 Print & Document Services
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20NADRA%20/%20FBR">
-    🆔 NADRA / FBR Services
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Online%20Forms">
-    📝 Online Forms
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Digital%20Marketing%20Ads">
-    📢 Digital Marketing
-  </a>
-
-  <a href="https://wa.me/923034480404?text=Service:%20Website%20/%20AI%20Services">
-    🤖 Website & AI Services
-  </a>
-</div>
-
-<script>
-  function toggleWA() {
-    const popup = document.getElementById("waPopup");
-    popup.style.display = popup.style.display === "block" ? "none" : "block";
-  }
-</script>
+</head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Smart Print</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item active"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<section class="py-5">
-  <div class="container text-center">
-    <h2 class="mb-4">About Us</h2>
-    <p>Smart Print And Online Services is a trusted service provider in Kangan Pur. We focus on quality work, fast service, and customer satisfaction. Our goal is to provide all print and online solutions under one roof for individuals and businesses.</p>
-    <a href="https://wa.me/923034480404" class="btn btn-success mt-3">💬 WhatsApp Us</a>
-  </div>
+<!-- HERO -->
+<section class="hero-about" data-aos="fade-down">
+<div>
+<h1>About Us</h1>
+<p>One Window Printing and AI Digital Business Solutions in Kanganpur</p>
+</div>
 </section>
 
-<footer class="bg-dark text-white text-center py-3">
-  © 2026 Smart Print And Online Services
-</footer>
+<!-- ABOUT CONTENT -->
+<section class="about-section" data-aos="fade-up">
+<h2>Our Journey</h2>
+<p>
+Smart Printing & Online Services started with a vision to provide <strong>all printing, digital marketing, AI automation, and online services</strong> under one roof. Located at <strong>Purana Paka Bazar, Kanganpur</strong>, we have grown to serve hundreds of satisfied customers daily.
+</p>
 
+<h2>Our Mission</h2>
+<p>
+To simplify business solutions using technology and automation while offering personalized services. We aim to provide reliable, fast, and innovative solutions for printing, NADRA/FBR, payments, and digital services.
+</p>
+
+<h2>Our Vision</h2>
+<p>
+To become the most trusted one-window solution in Kanganpur by integrating technology, AI, and customer-focused services for businesses and individuals alike.
+</p>
+</section>
+
+<!-- WhatsApp Floating -->
+<div class="wa-float">
+<div class="wa-btn" onclick="toggleWA()">
+<i class="fab fa-whatsapp"></i>
+</div>
+</div>
+
+<!-- WhatsApp Popup -->
+<div class="wa-popup" id="waPopup">
+<h5>Select Service</h5>
+<a href="https://wa.me/923034480404?text=Printing Inquiry" onclick="trackWhatsApp('Printing')">Printing</a>
+<a href="https://wa.me/923034480404?text=NADRA Inquiry" onclick="trackWhatsApp('NADRA/FBR')">NADRA / FBR</a>
+<a href="https://wa.me/923034480404?text=Digital Marketing Inquiry" onclick="trackWhatsApp('Marketing')">Digital Marketing</a>
+<a href="https://wa.me/923034480404?text=Website Inquiry" onclick="trackWhatsApp('Website/AI')">Website & AI</a>
+<a href="https://wa.me/923034480404?text=Payments Inquiry" onclick="trackWhatsApp('Payments')">JazCash / EasyPaisa / Bills</a>
+<a href="https://wa.me/923034480404?text=E-Stamp Inquiry" onclick="trackWhatsApp('E-Stamp/Chalan')">E-Stamp / Online Chalan</a>
+</div>
+
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+
+/* WhatsApp Popup */
+function toggleWA(){
+let popup=document.getElementById("waPopup");
+popup.style.display=popup.style.display==="block"?"none":"block";
+}
+
+/* WhatsApp Conversion Tracking */
+function trackWhatsApp(service){
+  gtag('event', 'whatsapp_click', {
+    event_category: 'engagement',
+    event_label: service
+  });
+}
+</script>
+
 </body>
-  </html>
+</html>
