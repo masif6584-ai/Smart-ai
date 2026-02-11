@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Smart Printing & Online Services | One Window Solution</title>
-
 <meta name="description" content="Smart Printing & Online Services Kangan Pur – One Window Printing and AI Digital Business Solutions.">
 <meta name="keywords" content="Printing shop Kangan Pur, NADRA services, FBR filing, Digital marketing, Website development Pakistan">
 <meta name="author" content="Smart Printing & Online Services">
@@ -15,6 +14,9 @@
 
 <!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <!-- Particles -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -72,6 +74,43 @@ height:100%;
 z-index:-1;
 }
 
+/* NAVBAR */
+.navbar-custom{
+background: rgba(0,0,0,0.5);
+backdrop-filter: blur(15px);
+padding:15px 30px;
+position:fixed;
+width:100%;
+z-index:999;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.navbar-brand{
+font-weight:bold;
+font-size:1.5rem;
+color:#25D366;
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:15px;
+}
+.navbar-brand span{
+font-size:0.9rem;
+color:#fff;
+}
+.navbar-menu a{
+margin-left:20px;
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+.navbar-menu a:hover{
+color:#25D366;
+}
+
+/* Hero Section */
 .hero{
 position:relative;
 height:100vh;
@@ -81,6 +120,7 @@ justify-content:center;
 text-align:center;
 }
 
+/* Glass Box */
 .glass-hero{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(20px);
@@ -120,7 +160,7 @@ font-weight:bold;
 color:#25D366;
 }
 
-/* WhatsApp Floating */
+/* WhatsApp & SMS Popup */
 .wa-float{
 position:fixed;
 bottom:25px;
@@ -139,6 +179,20 @@ cursor:pointer;
 box-shadow:0 10px 25px rgba(0,0,0,0.5);
 font-size:28px;
 color:white;
+}
+.sms-btn{
+background:#1e90ff;
+width:50px;
+height:50px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+color:white;
+font-size:22px;
+margin-left:10px;
 }
 
 /* Popup */
@@ -169,10 +223,41 @@ color:#000;
 border-bottom:1px solid #eee;
 }
 .wa-popup a:hover{background:#f1f1f1;}
+
+/* Footer WhatsApp Need Help */
+.footer-wa{
+position:fixed;
+bottom:25px;
+left:25px;
+background:#25D366;
+color:white;
+padding:10px 15px;
+border-radius:25px;
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+z-index:999;
+}
 </style>
 </head>
 
 <body>
+
+<!-- NAVBAR -->
+<div class="navbar-custom">
+<a href="#" class="navbar-brand">Smart Printing <span>One Window Solution</span></a>
+<div class="navbar-menu">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<!-- WhatsApp & SMS Buttons -->
+<button class="wa-btn" onclick="toggleWA()"><i class="fab fa-whatsapp"></i></button>
+<a href="sms:+923034480404" class="sms-btn"><i class="fas fa-sms"></i></a>
+</div>
+</div>
 
 <div id="particles-js"></div>
 
@@ -180,7 +265,7 @@ border-bottom:1px solid #eee;
 <section class="hero">
 <div class="glass-hero" data-aos="zoom-in">
 <h1 class="display-3 fw-bold">Smart Printing & Online Services</h1>
-<p class="lead">One Window Printing and Digital Business Solutions</p>
+<p class="lead">One Window Printing and AI Digital Business Solutions</p>
 <p class="lead">📍 Purana Paka Bazar, Kanganpur</p>
 <a href="services.html" class="btn btn-success btn-lg mt-3">Explore Services</a>
 </div>
@@ -190,154 +275,21 @@ border-bottom:1px solid #eee;
 <section class="py-5 text-center">
 <div class="container">
 <div class="row">
-
 <div class="col-md-4" data-aos="fade-up">
 <div class="counter visitors">0</div>
 <p>Happy Customers (Live Visits)</p>
 </div>
-
 <div class="col-md-4" data-aos="fade-up">
 <div class="counter" data-target="35">0</div>
 <p>Services Offered</p>
 </div>
-
 <div class="col-md-4" data-aos="fade-up">
 <div class="counter" data-target="5">0</div>
 <p>Years Experience</p>
 </div>
-
 </div>
 </div>
 </section>
-
-<!-- CORE SERVICES -->
-<section class="py-5">
-<div class="container text-center">
-<h2 class="mb-4">Our Core Services</h2>
-<div class="row g-4">
-
-<div class="col-md-4" data-aos="fade-up">
-<div class="service-card">
-<h4>🖨 Printing & Documents</h4>
-<p class="service-caption">All printing & documentation services under one roof</p>
-<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('Printing')">Learn More</a>
-</div>
-</div>
-
-<div class="col-md-4" data-aos="fade-up">
-<div class="service-card">
-<h4>🆔 NADRA / FBR Services</h4>
-<p class="service-caption">ID Cards, B-Form, Filer Registration & Tax Return</p>
-<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('NADRA/FBR')">Learn More</a>
-</div>
-</div>
-
-<div class="col-md-4" data-aos="fade-up">
-<div class="service-card">
-<h4>📢 Digital Marketing</h4>
-<p class="service-caption">Lead Generation, Ads & Business Promotion</p>
-<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('Marketing')">Learn More</a>
-</div>
-</div>
-
-<div class="col-md-4" data-aos="fade-up">
-<div class="service-card">
-<h4>🌐 Website Development</h4>
-<p class="service-caption">Business Website & Online Store</p>
-<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('Website/AI')">Learn More</a>
-</div>
-</div>
-
-<div class="col-md-4" data-aos="fade-up">
-<div class="service-card">
-<h4>🤖 AI Automation</h4>
-<p class="service-caption">Chatbots & Smart Automation Solutions</p>
-<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('Website/AI')">Learn More</a>
-</div>
-</div>
-
-<div class="col-md-4" data-aos="fade-up">
-<div class="service-card">
-<h4>📝 Online Forms</h4>
-<p class="service-caption">University, Passport & Other Online Submissions</p>
-<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('Forms')">Learn More</a>
-</div>
-</div>
-
-<!-- NEW SERVICES -->
-<div class="col-md-4" data-aos="fade-up">
-<div class="service-card">
-<h4>💰 JazCash, EasyPaisa, Bill Payments</h4>
-<p class="service-caption">All Mobile Payments & Bill Payments Services</p>
-<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('Payments')">Learn More</a>
-</div>
-</div>
-
-<div class="col-md-4" data-aos="fade-up">
-<div class="service-card">
-<h4>📄 E-Stamp & Online Chalan Form</h4>
-<p class="service-caption">Digital Stamps & Online Chalan Form Submission</p>
-<a href="services.html" class="btn btn-outline-light btn-sm" onclick="trackWhatsApp('E-Stamp/Chalan')">Learn More</a>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- SERVICES SCROLL BAR -->
-<section class="py-3 bg-success text-dark">
-<marquee behavior="scroll" direction="left">
-Printing | NADRA | FBR Filing | Bill Payments | JazzCash | EasyPaisa | E-Stamp | Online Chalan | Digital Marketing | Website Development | AI Automation | Online Forms
-</marquee>
-</section>
-
-<!-- CLIENT SLIDER -->
-<section class="py-5 bg-dark text-center">
-<div class="container">
-<h2 class="mb-4">Client Feedback</h2>
-
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-<div class="carousel-inner">
-
-<div class="carousel-item active">
-<p>"Best printing & online services in Kangan Pur!"</p>
-</div>
-
-<div class="carousel-item">
-<p>"Fast NADRA & FBR processing service."</p>
-</div>
-
-<div class="carousel-item">
-<p>"Professional digital marketing results."</p>
-</div>
-
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- GOOGLE REVIEWS -->
-<section class="py-5 text-center">
-<div class="container">
-<h2>Google Reviews</h2>
-<p>⭐⭐⭐⭐⭐ 4.9 Rating based on 200+ reviews</p>
-<a href="#" class="btn btn-outline-light">View on Google</a>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer class="text-center py-3 bg-black">
-© 2026 Smart Printing & Online Services | One Window Solution
-</footer>
-
-<!-- WhatsApp Floating -->
-<div class="wa-float">
-<div class="wa-btn" onclick="toggleWA()">
-<i class="fab fa-whatsapp"></i>
-</div>
-</div>
 
 <!-- WhatsApp Popup -->
 <div class="wa-popup" id="waPopup">
@@ -348,6 +300,11 @@ Printing | NADRA | FBR Filing | Bill Payments | JazzCash | EasyPaisa | E-Stamp |
 <a href="https://wa.me/923034480404?text=Website Inquiry" onclick="trackWhatsApp('Website/AI')">Website & AI</a>
 <a href="https://wa.me/923034480404?text=Payments Inquiry" onclick="trackWhatsApp('Payments')">JazCash / EasyPaisa / Bills</a>
 <a href="https://wa.me/923034480404?text=E-Stamp Inquiry" onclick="trackWhatsApp('E-Stamp/Chalan')">E-Stamp / Online Chalan</a>
+</div>
+
+<!-- Footer WhatsApp Need Help -->
+<div class="footer-wa" onclick="toggleWA()">
+<i class="fab fa-whatsapp"></i> Need Help?
 </div>
 
 <!-- Scripts -->
@@ -395,6 +352,5 @@ function trackWhatsApp(service){
   });
 }
 </script>
-
 </body>
 </html>
