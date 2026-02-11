@@ -4,56 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Services | Smart Print & Online Services</title>
+<title>Our Services | Smart Printing & Online Services</title>
 
-<meta name="description" content="Smart Print & Online Services Kangan Pur – Complete One Window Solution. Printing, Domicile, FBR Filing, Online Forms, Digital Marketing & Website Services.">
+<meta name="description" content="Smart Printing & Online Services Kangan Pur – Complete One Window Solution.">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
 body{
-background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background:#0f2027;
 color:white;
 font-family:'Segoe UI',sans-serif;
+overflow-x:hidden;
 }
 
-.section-box{
-padding:70px 0;
-border-bottom:1px solid rgba(255,255,255,0.1);
+/* HERO */
+.hero{
+height:60vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+position:relative;
 }
 
-.service-card{
+.hero h1{
+font-size:3rem;
+font-weight:700;
+}
+
+/* Glass Box */
+.service-box{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(12px);
 border-radius:20px;
-padding:40px;
+padding:25px;
 text-align:center;
 transition:0.4s;
 border:1px solid rgba(255,255,255,0.2);
+cursor:pointer;
 }
 
-.service-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,255,255,0.5);
+.service-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(0,255,255,0.5);
 }
 
-.wa-btn{
-background:#25D366;
-color:white;
-padding:10px 22px;
-border-radius:30px;
-text-decoration:none;
-display:inline-block;
-margin-top:15px;
-}
-
-.wa-btn:hover{
-background:#1ebe5d;
-color:white;
-}
-
-/* Floating Button */
+/* Floating WhatsApp */
 .floating-wa{
 position:fixed;
 bottom:20px;
@@ -67,125 +67,161 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:28px;
-box-shadow:0 0 20px rgba(0,0,0,0.4);
 z-index:999;
 text-decoration:none;
 }
 
-.floating-wa:hover{
-background:#1ebe5d;
-color:white;
+/* Popup */
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.popup-content{
+background:white;
+color:black;
+padding:30px;
+border-radius:15px;
+width:90%;
+max-width:400px;
+text-align:center;
+}
+
+.popup-content button{
+margin-top:15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container text-center py-5">
-<h1>Smart Print & Online Services</h1>
-<h5 class="text-info">Complete One Window Solution – Kangan Pur</h5>
-</div>
-
-<!-- PRINT SERVICES -->
-<section class="section-box">
-<div class="container">
-<div class="service-card">
-<h2><i class="fa fa-print"></i> Print Services</h2>
-<p>Photocopy, Color Print, Flex, PVC Cards, Wedding Cards, Visiting Cards</p>
-<a href="https://wa.me/923034480404?text=I want Print Services information" class="wa-btn">
-<i class="fab fa-whatsapp"></i> Message Inquiry
-</a>
-</div>
+<!-- HERO -->
+<section class="hero">
+<div>
+<h1>Smart Printing & Online Services</h1>
+<p>Complete One Window Solution – Kangan Pur</p>
 </div>
 </section>
 
-<!-- DOCUMENT SERVICES -->
-<section class="section-box">
-<div class="container">
-<div class="service-card">
-<h2><i class="fa fa-file"></i> Document Services</h2>
-<p>Domicile, Character Certificate, CV, Affidavit, Scanning, Applications</p>
-<a href="https://wa.me/923034480404?text=I need Document Service information" class="wa-btn">
-<i class="fab fa-whatsapp"></i> Message Inquiry
-</a>
-</div>
-</div>
-</section>
+<!-- SERVICES GRID -->
+<div class="container py-5">
+<div class="row g-4">
 
-<!-- FBR / NADRA -->
-<section class="section-box">
-<div class="container">
-<div class="service-card">
-<h2><i class="fa fa-id-card"></i> FBR / NADRA Services</h2>
-<p>FBR Filer Registration, Tax Return, ID Card Forms, B-Form Assistance</p>
-<a href="https://wa.me/923034480404?text=I need FBR or NADRA Service information" class="wa-btn">
-<i class="fab fa-whatsapp"></i> Message Inquiry
-</a>
+<!-- Printing -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-box" onclick="openPopup('Printing Services')">
+<h4><i class="fa fa-print"></i> Printing</h4>
+<p>Photocopy, Color Print, Flex, PVC Card, Wedding Cards</p>
 </div>
 </div>
-</section>
 
-<!-- ONLINE FORMS -->
-<section class="section-box">
-<div class="container">
-<div class="service-card">
-<h2><i class="fa fa-globe"></i> Online Forms</h2>
-<p>University Admissions, Scholarships, Passport, Driving License</p>
-<a href="https://wa.me/923034480404?text=I need Online Form Service information" class="wa-btn">
-<i class="fab fa-whatsapp"></i> Message Inquiry
-</a>
+<!-- Domicile -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-box" onclick="openPopup('Domicile Service')">
+<h4><i class="fa fa-file"></i> Domicile</h4>
+<p>New Domicile & Corrections</p>
 </div>
 </div>
-</section>
 
-<!-- DIGITAL MARKETING -->
-<section class="section-box">
-<div class="container">
-<div class="service-card">
-<h2><i class="fa fa-bullhorn"></i> Digital Marketing</h2>
-<p>Facebook Ads, WhatsApp Ads, Lead Generation & Business Promotion</p>
-<a href="https://wa.me/923034480404?text=I need Digital Marketing Service information" class="wa-btn">
-<i class="fab fa-whatsapp"></i> Message Inquiry
-</a>
+<!-- FBR -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-box" onclick="openPopup('FBR Filing')">
+<h4><i class="fa fa-id-card"></i> FBR Filing</h4>
+<p>Filer Registration & Tax Return</p>
 </div>
 </div>
-</section>
 
-<!-- WEBSITE & AI -->
-<section class="section-box">
-<div class="container">
-<div class="service-card">
-<h2><i class="fa fa-robot"></i> Website & AI Services</h2>
-<p>Business Website, AI Chatbot, Automation, Online Store Development</p>
-<a href="https://wa.me/923034480404?text=I need Website or AI Service information" class="wa-btn">
-<i class="fab fa-whatsapp"></i> Message Inquiry
-</a>
+<!-- Online Forms -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-box" onclick="openPopup('Online Forms')">
+<h4><i class="fa fa-globe"></i> Online Forms</h4>
+<p>Admissions, Passport, Driving License</p>
 </div>
 </div>
-</section>
 
-<!-- FINAL SERVICE INQUIRY SECTION -->
-<section class="section-box text-center">
-<div class="container">
-<h2><i class="fas fa-headset text-success"></i> Need Any Service?</h2>
-<p>Contact us directly on WhatsApp for quick response.</p>
-<a href="https://wa.me/923034480404?text=I want to know about your services" class="wa-btn">
-<i class="fab fa-whatsapp"></i> Service Inquiry
-</a>
+<!-- CV -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-box" onclick="openPopup('CV Making')">
+<h4><i class="fa fa-user"></i> CV Making</h4>
+<p>Professional Resume Design</p>
 </div>
-</section>
+</div>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/923034480404?text=Hello Smart Print & Online Services" 
+<!-- Scanning -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-box" onclick="openPopup('Scanning Service')">
+<h4><i class="fa fa-camera"></i> Scanning</h4>
+<p>Document & Photo Scanning</p>
+</div>
+</div>
+
+<!-- Website -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-box" onclick="openPopup('Website Development')">
+<h4><i class="fa fa-code"></i> Website Development</h4>
+<p>Business Website & E-commerce</p>
+</div>
+</div>
+
+<!-- AI Automation -->
+<div class="col-md-4" data-aos="fade-up">
+<div class="service-box" onclick="openPopup('AI Automation Service')">
+<h4><i class="fa fa-robot"></i> AI Automation</h4>
+<p>Chatbots & Business Automation</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Inquiry Popup -->
+<div class="popup" id="popup">
+<div class="popup-content">
+<h4 id="serviceName"></h4>
+<p>Click below to send inquiry on WhatsApp</p>
+<a id="waLink" class="btn btn-success" target="_blank">
+<i class="fab fa-whatsapp"></i> Send Inquiry
+</a><br>
+<button class="btn btn-secondary mt-3" onclick="closePopup()">Close</button>
+</div>
+</div>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/923034480404?text=Hello Smart Printing & Online Services"
 class="floating-wa">
 <i class="fab fa-whatsapp"></i>
 </a>
 
 <footer class="text-center py-4">
-<p>© 2026 Smart Print & Online Services | One Window Solution</p>
+© 2026 Smart Printing & Online Services
 </footer>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init();
+
+function openPopup(service){
+document.getElementById("popup").style.display="flex";
+document.getElementById("serviceName").innerText=service;
+document.getElementById("waLink").href=
+"https://wa.me/923034480404?text=I want information about "+service;
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+</script>
 
 </body>
 </html>
