@@ -6,76 +6,44 @@
 
 <title>Smart Print & Online Services | One Window Solution</title>
 
-<meta name="description" content="Smart Print & Online Services Kangan Pur – One Window Solution for Printing, NADRA/FBR, Digital Marketing, Website & AI Services.">
-<meta name="keywords" content="Print shop Kangan Pur, NADRA services, FBR filing, Digital marketing, Website development Pakistan">
+<meta name="description" content="Smart Print & Online Services Kangan Pur – One Window Solution for Printing, NADRA/FBR, Online Forms, Digital Marketing, Website & AI Services.">
+<meta name="keywords" content="Print shop Kangan Pur, NADRA services, FBR filing, Digital marketing Kangan Pur, Website development Pakistan">
 <meta name="author" content="Smart Print & Online Services">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<!-- Particles -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
 
 <style>
-body{
-font-family:Segoe UI, sans-serif;
-background:#0f172a;
-color:white;
-overflow-x:hidden;
-}
-
-/* HERO */
-#particles-js{
-position:absolute;
-width:100%;
-height:100%;
-z-index:-1;
-}
+body{font-family:Segoe UI, sans-serif;}
 
 .hero{
-position:relative;
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+background:linear-gradient(135deg,#1e3a8a,#312e81);
+color:white;
+padding:100px 0;
 }
 
-/* Glass Effect */
-.glass{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
-border-radius:20px;
-padding:40px;
-box-shadow:0 0 40px rgba(0,0,0,0.5);
+.section-title{
+font-weight:700;
+margin-bottom:40px;
 }
 
-/* Counter */
-.counter{
-font-size:40px;
-font-weight:bold;
-color:#25D366;
-}
-
-/* Cards */
-.premium-card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-border-radius:15px;
-padding:30px;
-transition:0.4s;
-}
-.premium-card:hover{
+.card-hover:hover{
 transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
+transition:0.4s;
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
 }
 
-/* WhatsApp */
+.workflow-step{
+background:#f8f9fa;
+padding:25px;
+border-radius:12px;
+}
+
 .wa-float{position:fixed;bottom:25px;right:25px;z-index:9999;}
-.wa-btn{background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,0.5);}
-.wa-popup{display:none;position:fixed;bottom:100px;right:25px;background:#fff;width:260px;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,0.5);overflow:hidden;color:black;}
+.wa-btn{background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+.wa-popup{display:none;position:fixed;bottom:100px;right:25px;background:#fff;width:260px;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,0.3);overflow:hidden;}
 .wa-popup h5{background:#1e3a8a;color:#fff;padding:12px;margin:0;}
 .wa-popup a{display:block;padding:10px;text-decoration:none;color:#000;border-bottom:1px solid #eee;}
 .wa-popup a:hover{background:#f1f1f1;}
@@ -84,99 +52,109 @@ box-shadow:0 20px 40px rgba(0,0,0,0.6);
 
 <body>
 
-<div id="particles-js"></div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+<a class="navbar-brand" href="#">Smart Print</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
 
 <!-- HERO -->
-<section class="hero">
-<div class="glass" data-aos="zoom-in">
-<h1 class="display-3 fw-bold">Smart Print & Online Services</h1>
-<p class="lead">One Window Digital & Print Solution in Kangan Pur</p>
-<a href="https://wa.me/923034480404?text=New%20Inquiry%20from%20Website" class="btn btn-success btn-lg mt-3">Start Chat</a>
+<section class="hero text-center">
+<div class="container" data-aos="fade-up">
+<h1 class="display-4 fw-bold">Smart Print & Online Services</h1>
+<p class="lead">One Window Solution for Printing, NADRA, FBR, Digital Marketing & AI Services</p>
+<a href="https://wa.me/923034480404" class="btn btn-light btn-lg mt-3">Chat on WhatsApp</a>
 </div>
 </section>
 
-<!-- COUNTERS -->
-<section class="py-5 text-center">
-<div class="container">
-<div class="row">
-
-<div class="col-md-4">
-<div class="counter" data-target="1200">0</div>
-<p>Happy Customers</p>
-</div>
-
-<div class="col-md-4">
-<div class="counter" data-target="35">0</div>
-<p>Services Offered</p>
-</div>
-
-<div class="col-md-4">
-<div class="counter" data-target="5">0</div>
-<p>Years Experience</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- SERVICES -->
+<!-- SERVICES PREVIEW -->
 <section class="py-5">
 <div class="container text-center">
-<h2 class="mb-5">Premium Services</h2>
+<h2 class="section-title">Our Core Services</h2>
 <div class="row g-4">
 
-<div class="col-md-4"><div class="premium-card">🖨 Printing & Documents</div></div>
-<div class="col-md-4"><div class="premium-card">🆔 NADRA / FBR Services</div></div>
-<div class="col-md-4"><div class="premium-card">📢 Digital Marketing</div></div>
-<div class="col-md-4"><div class="premium-card">🌐 Website Development</div></div>
-<div class="col-md-4"><div class="premium-card">🤖 AI Solutions</div></div>
-<div class="col-md-4"><div class="premium-card">📝 Online Forms</div></div>
+<div class="col-md-4" data-aos="zoom-in">
+<div class="card p-4 card-hover">🖨 Printing & Documents</div>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<div class="card p-4 card-hover">🆔 NADRA / FBR Services</div>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<div class="card p-4 card-hover">📢 Digital Marketing</div>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<div class="card p-4 card-hover">📝 Online Forms</div>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<div class="card p-4 card-hover">🤖 Website & AI Solutions</div>
+</div>
 
 </div>
 </div>
 </section>
 
-<!-- CLIENT SLIDER -->
-<section class="py-5 bg-dark text-center">
-<div class="container">
-<h2 class="mb-4">Client Feedback</h2>
+<!-- WORKFLOW -->
+<section class="py-5 bg-light">
+<div class="container text-center">
+<h2 class="section-title">How We Work</h2>
+<div class="row g-4">
 
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-<div class="carousel-inner">
-
-<div class="carousel-item active">
-<p>"Best print & online services in Kangan Pur!"</p>
+<div class="col-md-4" data-aos="fade-up">
+<div class="workflow-step">1️⃣ Customer Inquiry via WhatsApp</div>
 </div>
 
-<div class="carousel-item">
-<p>"Fast NADRA & FBR processing service."</p>
+<div class="col-md-4" data-aos="fade-up">
+<div class="workflow-step">2️⃣ Service Selection & Documentation</div>
 </div>
 
-<div class="carousel-item">
-<p>"Professional digital marketing results."</p>
+<div class="col-md-4" data-aos="fade-up">
+<div class="workflow-step">3️⃣ Fast Processing & Delivery</div>
 </div>
 
 </div>
-</div>
-
 </div>
 </section>
 
-<!-- GOOGLE REVIEWS -->
+<!-- ABOUT PREVIEW -->
 <section class="py-5 text-center">
-<div class="container">
-<h2>Google Reviews</h2>
-<p>⭐⭐⭐⭐⭐ 4.9 Rating based on 200+ reviews</p>
-<a href="#" class="btn btn-outline-light">View on Google</a>
+<div class="container" data-aos="fade-right">
+<h2 class="section-title">About Smart Print</h2>
+<p>We provide reliable and professional One Window services in Kangan Pur. Our mission is fast service, transparency and customer satisfaction.</p>
+<a href="about.html" class="btn btn-primary mt-3">Learn More</a>
+</div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="py-5 bg-dark text-white text-center">
+<div class="container" data-aos="zoom-in">
+<h2>Need Any Service?</h2>
+<p>Contact us today and get instant assistance.</p>
+<a href="contact.html" class="btn btn-light btn-lg">Contact Now</a>
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="text-center py-3 bg-black">
+<footer class="bg-black text-white text-center py-3">
 © 2026 Smart Print & Online Services | One Window Solution
 </footer>
 
-<!-- WhatsApp -->
+<!-- WHATSAPP FLOAT -->
 <div class="wa-float">
 <div class="wa-btn" onclick="toggleWA()">
 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 16 16">
@@ -187,42 +165,17 @@ box-shadow:0 20px 40px rgba(0,0,0,0.6);
 
 <div class="wa-popup" id="waPopup">
 <h5>Select Service</h5>
-<a href="https://wa.me/923034480404?text=Print Inquiry">Printing</a>
-<a href="https://wa.me/923034480404?text=NADRA Inquiry">NADRA / FBR</a>
-<a href="https://wa.me/923034480404?text=Digital Marketing Inquiry">Digital Marketing</a>
-<a href="https://wa.me/923034480404?text=Website Inquiry">Website & AI</a>
+<a href="https://wa.me/923034480404?text=Print Service">Print & Documents</a>
+<a href="https://wa.me/923034480404?text=NADRA/FBR Service">NADRA / FBR</a>
+<a href="https://wa.me/923034480404?text=Digital Marketing Service">Digital Marketing</a>
+<a href="https://wa.me/923034480404?text=Website AI Service">Website & AI</a>
 </div>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
 AOS.init();
-
-/* Counter Animation */
-const counters=document.querySelectorAll('.counter');
-counters.forEach(counter=>{
-counter.innerText='0';
-const update=()=>{
-const target=+counter.getAttribute('data-target');
-const c=+counter.innerText;
-const inc=target/100;
-if(c<target){
-counter.innerText=Math.ceil(c+inc);
-setTimeout(update,20);
-}else{
-counter.innerText=target;
-}
-};
-update();
-});
-
-/* Particles */
-particlesJS("particles-js",{
-particles:{number:{value:80},size:{value:3},move:{speed:2}},
-interactivity:{events:{onhover:{enable:true,mode:"repulse"}}}
-});
 
 function toggleWA(){
 let popup=document.getElementById("waPopup");
@@ -231,4 +184,4 @@ popup.style.display=popup.style.display==="block"?"none":"block";
 </script>
 
 </body>
-  </html>
+</html>
