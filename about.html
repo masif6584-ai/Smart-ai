@@ -3,145 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | Smart Printing & Online Services</title>
-<meta name="description" content="Learn about Smart Printing & Online Services Kangan Pur – One Window Printing and AI Digital Business Solutions.">
-<meta name="keywords" content="About Smart Printing Kangan Pur, Printing services, Digital Solutions, AI Automation">
-<meta name="author" content="Smart Printing & Online Services">
+<title>Contact Us | Smart Printing & Online Services</title>
 
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<!-- Font Awesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-<!-- Particles -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
 body{
-font-family:'Segoe UI', sans-serif;
-background:#f5f5f5;
-color:#111;
-overflow-x:hidden;
+  font-family:'Segoe UI', sans-serif;
+  background:#e0f7fa;
+  color:#111;
+  overflow-x:hidden;
+  padding-top:80px;
+}
+/* Navbar */
+.navbar{
+  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.6);
+  position: fixed;
+  width:100%;
+  z-index:999;
+}
+.navbar-brand{
+  font-weight:bold;
+  font-size:1.5rem;
+  color:#25D366 !important;
 }
 
 /* HERO */
-.hero-about{
-position:relative;
-height:60vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:#1e3a8a;
-color:white;
+.hero-contact{
+  position:relative;
+  height:40vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:#00796b;
+  color:white;
 }
+.hero-contact h1{ font-size:3rem; }
+.hero-contact p{ font-size:1.2rem; }
 
-.hero-about h1{
-font-size:3rem;
+/* CONTACT FORM */
+.contact-section{
+  padding:40px 20px;
+  max-width:700px;
+  margin:0 auto;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
-
-.hero-about p{
-font-size:1.2rem;
+.contact-section h2{
+  color:#00796b;
+  margin-bottom:25px;
+  text-align:center;
 }
-
-/* ABOUT CONTENT */
-.about-section{
-padding:60px 20px;
-max-width:1000px;
-margin:0 auto;
-text-align:left;
+.contact-section label{ font-weight:600; }
+.contact-section input, .contact-section textarea, .contact-section select{
+  border-radius:10px;
+  border:1px solid #ccc;
+  padding:12px;
+  margin-bottom:15px;
+  width:100%;
 }
-
-.about-section h2{
-color:#1e3a8a;
-margin-bottom:20px;
+.contact-section button{
+  background:#00796b;
+  color:white;
+  padding:12px 25px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
 }
-
-.about-section p{
-font-size:1.05rem;
-line-height:1.8;
-color:#333;
+.contact-section button:hover{
+  background:#004d40;
+}
+.confirmation{
+  margin-top:15px;
+  font-weight:bold;
+  color:#25D366;
+  text-align:center;
 }
 
 /* WhatsApp Floating */
 .wa-float{
-position:fixed;
-bottom:25px;
-right:25px;
-z-index:9999;
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  z-index:9999;
 }
 .wa-btn{
-background:#25D366;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-box-shadow:0 10px 20px rgba(0,0,0,0.3);
-font-size:24px;
-color:white;
+  background:#25D366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+  font-size:24px;
+  color:white;
 }
 .wa-popup{
-display:none;
-position:fixed;
-bottom:95px;
-right:25px;
-background:#fff;
-width:260px;
-border-radius:12px;
-box-shadow:0 20px 40px rgba(0,0,0,0.5);
-color:black;
-overflow:hidden;
+  display:none;
+  position:fixed;
+  bottom:95px;
+  right:25px;
+  background:#fff;
+  width:260px;
+  border-radius:12px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+  color:black;
+  overflow:hidden;
 }
 .wa-popup h5{
-background:#1e3a8a;
-color:#fff;
-padding:12px;
-margin:0;
-text-align:center;
+  background:#00796b;
+  color:#fff;
+  padding:12px;
+  margin:0;
+  text-align:center;
 }
 .wa-popup a{
-display:block;
-padding:10px;
-text-decoration:none;
-color:#000;
-border-bottom:1px solid #eee;
+  display:block;
+  padding:10px;
+  text-decoration:none;
+  color:#000;
+  border-bottom:1px solid #eee;
 }
 .wa-popup a:hover{background:#f1f1f1;}
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container-fluid">
+  <a class="navbar-brand" href="index.html">Smart Printing</a>
+  <div class="collapse navbar-collapse">
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link active" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+</nav>
+
 <!-- HERO -->
-<section class="hero-about" data-aos="fade-down">
+<section class="hero-contact" data-aos="fade-down">
 <div>
-<h1>About Us</h1>
-<p>One Window Printing and AI Digital Business Solutions in Kanganpur</p>
+<h1>Contact Us</h1>
+<p>Reach out for Printing, AI, and Digital Services</p>
 </div>
 </section>
 
-<!-- ABOUT CONTENT -->
-<section class="about-section" data-aos="fade-up">
-<h2>Our Journey</h2>
-<p>
-Smart Printing & Online Services started with a vision to provide <strong>all printing, digital marketing, AI automation, and online services</strong> under one roof. Located at <strong>Purana Paka Bazar, Kanganpur</strong>, we have grown to serve hundreds of satisfied customers daily.
-</p>
+<!-- CONTACT FORM -->
+<section class="contact-section" data-aos="fade-up">
+<h2>Get in Touch</h2>
+<form id="contactForm">
+<label for="name">Full Name</label>
+<input type="text" id="name" placeholder="Your Name" required>
 
-<h2>Our Mission</h2>
-<p>
-To simplify business solutions using technology and automation while offering personalized services. We aim to provide reliable, fast, and innovative solutions for printing, NADRA/FBR, payments, and digital services.
-</p>
+<label for="email">Email Address</label>
+<input type="email" id="email" placeholder="Your Email" required>
 
-<h2>Our Vision</h2>
-<p>
-To become the most trusted one-window solution in Kanganpur by integrating technology, AI, and customer-focused services for businesses and individuals alike.
-</p>
+<label for="service">Select Service</label>
+<select id="service" required>
+  <option value="">-- Select Service --</option>
+  <option value="Printing">Printing & Documents</option>
+  <option value="NADRA/FBR">NADRA / FBR Services</option>
+  <option value="Marketing">Digital Marketing</option>
+  <option value="Website/AI">Website & AI Automation</option>
+  <option value="Forms">Online Forms</option>
+  <option value="Payments">JazCash / EasyPaisa / Bills</option>
+  <option value="E-Stamp/Chalan">E-Stamp / Online Chalan</option>
+</select>
+
+<label for="message">Message</label>
+<textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+<button type="submit">Send Message via WhatsApp</button>
+</form>
+<div class="confirmation" id="confirmation"></div>
 </section>
 
 <!-- WhatsApp Floating -->
@@ -176,12 +223,32 @@ popup.style.display=popup.style.display==="block"?"none":"block";
 
 /* WhatsApp Conversion Tracking */
 function trackWhatsApp(service){
-  gtag('event', 'whatsapp_click', {
-    event_category: 'engagement',
-    event_label: service
-  });
+  // Optional: Analytics
 }
-</script>
 
+/* Contact Form Submission */
+document.getElementById('contactForm').addEventListener('submit', function(e){
+e.preventDefault();
+const name = document.getElementById('name').value.trim();
+const email = document.getElementById('email').value.trim();
+const service = document.getElementById('service').value;
+const message = document.getElementById('message').value.trim();
+
+if(!service){
+  alert('Please select a service!');
+  return;
+}
+
+// Prepare WhatsApp message
+const phone = '+923034480404'; // shop number
+const waMsg = `New Inquiry:%0AName: ${name}%0AEmail: ${email}%0AService: ${service}%0AMessage: ${message}`;
+window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
+
+// Auto reply confirmation
+document.getElementById('confirmation').innerText = `Assalam o Alaikum ${name}, your message has been sent! We will contact you soon.`;
+
+document.getElementById('contactForm').reset();
+});
+</script>
 </body>
-</html>
+  </html>
