@@ -9,34 +9,18 @@
 <meta name="keywords" content="Printing shop Kangan Pur, NADRA services, FBR filing, Digital marketing, Website development Pakistan">
 <meta name="author" content="Smart Printing & Online Services">
 
-<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-<!-- Particles -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
-</script>
-
-<!-- Firebase SDK -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, onValue, set, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "YOUR_API_KEY", // <--- Apna API Key yahan lagayein
   authDomain: "smart-printing-62436.firebaseapp.com",
   databaseURL: "https://smart-printing-62436-default-rtdb.firebaseio.com",
   projectId: "smart-printing-62436",
@@ -47,23 +31,46 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const statsRef = ref(database, 'stats');
 
-/* Visitor Counter */
-const visitorRef = ref(database, 'visitors');
-set(visitorRef, increment(1)); // increase by 1 per new visit
+// Har baar page load/refresh par counter +1 hoga
+update(statsRef, {
+  visitorCount: increment(1)
+}).catch(err => console.log(err));
 
-onValue(visitorRef, (snapshot) => {
-  const count = snapshot.val();
-  document.querySelector('.counter.visitors').innerText = count;
+// Real-time counter update
+onValue(statsRef, (snapshot) => {
+  const data = snapshot.val();
+  if(data) {
+    document.querySelector('.counter.visitors').innerText = data.visitorCount;
+  }
 });
 </script>
 
 <style>
 body{
-font-family:Segoe UI, sans-serif;
+font-family:'Segoe UI', sans-serif;
 background:#0f172a;
 color:white;
 overflow-x:hidden;
+}
+
+/* NAVBAR IMPROVED */
+.navbar-custom {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+.navbar-brand {
+    font-weight: bold;
+    color: #25D366 !important;
+}
+.navbar-brand span {
+    font-size: 0.8rem;
+    color: #ccc;
+    display: block;
+    font-weight: normal;
 }
 
 /* HERO */
@@ -74,43 +81,6 @@ height:100%;
 z-index:-1;
 }
 
-/* NAVBAR */
-.navbar-custom{
-background: rgba(0,0,0,0.5);
-backdrop-filter: blur(15px);
-padding:15px 30px;
-position:fixed;
-width:100%;
-z-index:999;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-.navbar-brand{
-font-weight:bold;
-font-size:1.5rem;
-color:#25D366;
-text-decoration:none;
-display:flex;
-align-items:center;
-gap:15px;
-}
-.navbar-brand span{
-font-size:0.9rem;
-color:#fff;
-}
-.navbar-menu a{
-margin-left:20px;
-color:white;
-text-decoration:none;
-font-weight:500;
-transition:0.3s;
-}
-.navbar-menu a:hover{
-color:#25D366;
-}
-
-/* Hero Section */
 .hero{
 position:relative;
 height:100vh;
@@ -120,236 +90,223 @@ justify-content:center;
 text-align:center;
 }
 
-/* Glass Box */
 .glass-hero{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(20px);
 border-radius:20px;
 padding:60px 40px;
 box-shadow:0 0 50px rgba(0,0,0,0.6);
+border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Core Services */
-.service-card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-border-radius:15px;
-padding:30px;
-transition:0.4s;
-cursor:pointer;
-border:1px solid rgba(255,255,255,0.2);
+/* LIVE DOT EFFECT */
+.live-dot {
+  height: 12px;
+  width: 12px;
+  background-color: #ff4d4d;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 10px #ff4d4d;
+  animation: blink 1.2s infinite;
+  margin-right: 10px;
 }
-.service-card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(0,255,255,0.5);
-}
-.service-card h4{
-font-weight:600;
-margin-bottom:10px;
-}
-.service-caption{
-font-size:0.95rem;
-color:#25D366;
-margin-bottom:15px;
+@keyframes blink {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
-/* Counters */
 .counter{
-font-size:42px;
+font-size:48px;
 font-weight:bold;
 color:#25D366;
 }
 
-/* WhatsApp & SMS Popup */
-.wa-float{
-position:fixed;
-bottom:25px;
-right:25px;
-z-index:9999;
+/* WHATSAPP PULSE ANIMATION */
+.wa-btn {
+    background:#25D366;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    color:white;
+    font-size:28px;
+    border: none;
+    animation: pulse-green 2s infinite;
 }
-.wa-btn{
-background:#25D366;
-width:70px;
-height:70px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
-font-size:28px;
-color:white;
-}
-.sms-btn{
-background:#1e90ff;
-width:50px;
-height:50px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-box-shadow:0 8px 20px rgba(0,0,0,0.4);
-color:white;
-font-size:22px;
-margin-left:10px;
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* Popup */
 .wa-popup{
 display:none;
 position:fixed;
 bottom:110px;
 right:25px;
 background:#fff;
-width:260px;
-border-radius:12px;
+width:280px;
+border-radius:15px;
 box-shadow:0 20px 40px rgba(0,0,0,0.5);
 color:black;
 overflow:hidden;
+z-index: 10000;
 }
 .wa-popup h5{
-background:#1e3a8a;
+background:#075e54;
 color:#fff;
-padding:12px;
+padding:15px;
 margin:0;
 text-align:center;
 }
 .wa-popup a{
 display:block;
-padding:10px;
+padding:12px 20px;
 text-decoration:none;
-color:#000;
+color:#333;
 border-bottom:1px solid #eee;
+transition: 0.2s;
 }
-.wa-popup a:hover{background:#f1f1f1;}
+.wa-popup a:hover{background:#f1f1f1; padding-left: 25px;}
 
-/* Footer WhatsApp Need Help */
 .footer-wa{
 position:fixed;
 bottom:25px;
 left:25px;
 background:#25D366;
 color:white;
-padding:10px 15px;
-border-radius:25px;
+padding:12px 20px;
+border-radius:50px;
 display:flex;
 align-items:center;
 gap:10px;
 cursor:pointer;
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
 z-index:999;
+text-decoration: none;
+font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar-custom">
-<a href="#" class="navbar-brand">Smart Printing <span>One Window Solution</span></a>
-<div class="navbar-menu">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<!-- WhatsApp & SMS Buttons -->
-<button class="wa-btn" onclick="toggleWA()"><i class="fab fa-whatsapp"></i></button>
-<a href="sms:+923034480404" class="sms-btn"><i class="fas fa-sms"></i></a>
-</div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        Smart Printing 
+        <span>One Window Solution</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-3 d-flex gap-2 mt-3 mt-lg-0">
+            <button class="wa-btn" onclick="toggleWA()"><i class="fab fa-whatsapp"></i></button>
+            <a href="sms:+923034480404" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" style="width:50px; height:50px;"><i class="fas fa-sms"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <div id="particles-js"></div>
 
-<!-- HERO -->
 <section class="hero">
 <div class="glass-hero" data-aos="zoom-in">
 <h1 class="display-3 fw-bold">Smart Printing & Online Services</h1>
 <p class="lead">One Window Printing and AI Digital Business Solutions</p>
-<p class="lead">📍 Purana Paka Bazar, Kanganpur</p>
-<a href="services.html" class="btn btn-success btn-lg mt-3">Explore Services</a>
+<p class="mb-4">📍 Purana Paka Bazar, Kanganpur</p>
+<a href="services.html" class="btn btn-success btn-lg px-5 rounded-pill">Explore Services</a>
 </div>
 </section>
 
-<!-- COUNTERS -->
 <section class="py-5 text-center">
 <div class="container">
 <div class="row">
-<div class="col-md-4" data-aos="fade-up">
-<div class="counter visitors">0</div>
-<p>Happy Customers (Live Visits)</p>
+<div class="col-md-4 mb-4" data-aos="fade-up">
+    <div class="d-flex align-items-center justify-content-center">
+        <span class="live-dot"></span>
+        <div class="counter visitors">0</div>
+    </div>
+    <p class="text-uppercase fw-bold text-secondary">Total Site Visits (Live)</p>
 </div>
-<div class="col-md-4" data-aos="fade-up">
-<div class="counter" data-target="35">0</div>
-<p>Services Offered</p>
+<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+    <div class="counter" data-target="35">0</div>
+    <p class="text-uppercase fw-bold text-secondary">Services Offered</p>
 </div>
-<div class="col-md-4" data-aos="fade-up">
-<div class="counter" data-target="5">0</div>
-<p>Years Experience</p>
+<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="counter" data-target="5">0</div>
+    <p class="text-uppercase fw-bold text-secondary">Years Experience</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- WhatsApp Popup -->
 <div class="wa-popup" id="waPopup">
-<h5>Select Service</h5>
-<a href="https://wa.me/923034480404?text=Printing Inquiry" onclick="trackWhatsApp('Printing')">Printing</a>
-<a href="https://wa.me/923034480404?text=NADRA Inquiry" onclick="trackWhatsApp('NADRA/FBR')">NADRA / FBR</a>
-<a href="https://wa.me/923034480404?text=Digital Marketing Inquiry" onclick="trackWhatsApp('Marketing')">Digital Marketing</a>
-<a href="https://wa.me/923034480404?text=Website Inquiry" onclick="trackWhatsApp('Website/AI')">Website & AI</a>
-<a href="https://wa.me/923034480404?text=Payments Inquiry" onclick="trackWhatsApp('Payments')">JazCash / EasyPaisa / Bills</a>
-<a href="https://wa.me/923034480404?text=E-Stamp Inquiry" onclick="trackWhatsApp('E-Stamp/Chalan')">E-Stamp / Online Chalan</a>
+<h5>How can we help?</h5>
+<a href="https://wa.me/923034480404?text=Printing Inquiry" onclick="trackWhatsApp('Printing')"><i class="fas fa-print me-2"></i> Printing Inquiry</a>
+<a href="https://wa.me/923034480404?text=NADRA Inquiry" onclick="trackWhatsApp('NADRA/FBR')"><i class="fas fa-id-card me-2"></i> NADRA / FBR</a>
+<a href="https://wa.me/923034480404?text=Digital Marketing Inquiry" onclick="trackWhatsApp('Marketing')"><i class="fas fa-bullhorn me-2"></i> Digital Marketing</a>
+<a href="https://wa.me/923034480404?text=Website Inquiry" onclick="trackWhatsApp('Website/AI')"><i class="fas fa-code me-2"></i> Website & AI</a>
+<a href="https://wa.me/923034480404?text=Payments Inquiry" onclick="trackWhatsApp('Payments')"><i class="fas fa-wallet me-2"></i> EasyPaisa / Bills</a>
 </div>
 
-<!-- Footer WhatsApp Need Help -->
 <div class="footer-wa" onclick="toggleWA()">
-<i class="fab fa-whatsapp"></i> Need Help?
+<i class="fab fa-whatsapp"></i> Chat with us
 </div>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-AOS.init();
+AOS.init({ duration: 1000, once: true });
 
-/* Counter Animation */
-const counters=document.querySelectorAll('.counter:not(.visitors)');
-counters.forEach(counter=>{
-counter.innerText='0';
-const update=()=>{
-const target=+counter.getAttribute('data-target');
-const c=+counter.innerText;
-const inc=target/100;
-if(c<target){
-counter.innerText=Math.ceil(c+inc);
-setTimeout(update,20);
-}else{
-counter.innerText=target;
-}
-};
-update();
+/* Counter Animation for static numbers */
+const counters = document.querySelectorAll('.counter:not(.visitors)');
+counters.forEach(counter => {
+    const update = () => {
+        const target = +counter.getAttribute('data-target');
+        const c = +counter.innerText;
+        const inc = target / 50;
+        if(c < target) {
+            counter.innerText = Math.ceil(c + inc);
+            setTimeout(update, 30);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    update();
 });
 
-/* Particles */
-particlesJS("particles-js",{
-particles:{number:{value:100},size:{value:3},move:{speed:2}},
-interactivity:{events:{onhover:{enable:true,mode:"repulse"}}}
+/* Particles Config */
+particlesJS("particles-js", {
+    particles: {
+        number: { value: 80 },
+        color: { value: "#25D366" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        move: { speed: 2, direction: "none", out_mode: "out" }
+    },
+    interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" } }
+    }
 });
 
-/* WhatsApp Popup */
+/* Toggle WhatsApp Popup */
 function toggleWA(){
-let popup=document.getElementById("waPopup");
-popup.style.display=popup.style.display==="block"?"none":"block";
-}
-
-/* WhatsApp Conversion Tracking */
-function trackWhatsApp(service){
-  gtag('event', 'whatsapp_click', {
-    event_category: 'engagement',
-    event_label: service
-  });
+    let popup = document.getElementById("waPopup");
+    popup.style.display = (popup.style.display === "block") ? "none" : "block";
 }
 </script>
 </body>
