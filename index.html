@@ -3,175 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO | Smart Printing & Online Services</title>
+    <title>Smart Printing & Online Services | SPO</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
     <style>
         :root {
-            --primary-color: #25D366;
-            --accent-glow: 0 0 25px rgba(37, 211, 102, 0.7);
-            --glass: rgba(255, 255, 255, 0.05);
-            --nav-bg: rgba(2, 6, 23, 0.95);
+            --primary: #25D366;
+            --secondary: #00e5ff;
+            --bg-dark: #020617;
+            --glass: rgba(255, 255, 255, 0.03);
         }
 
         body {
             font-family: 'Rajdhani', sans-serif;
-            background: #020617;
+            background: var(--bg-dark);
             color: white;
             overflow-x: hidden;
         }
 
-        /* --- Particles Background --- */
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
 
-        /* --- Global Branding ⭐ --- */
-        .star-glow-brand {
-            position: relative;
+        /* --- 1. Header & Main Bar --- */
+        .top-brand-bar {
+            background: linear-gradient(90deg, #000, #0a192f, #000);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+        .main-title-text {
+            font-size: 2.2rem;
             font-weight: 800;
-            color: var(--primary-color) !important;
-            text-shadow: var(--accent-glow);
-            letter-spacing: 2px;
-        }
-        .star-glow-brand::after {
-            content: '⭐';
-            position: absolute;
-            top: -5px; right: -25px;
-            font-size: 14px;
-            animation: starPulse 2s infinite;
-        }
-        @keyframes starPulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.5; filter: hue-rotate(90deg); }
-        }
-
-        /* --- Advanced Navigation Box Bar --- */
-        .nav-box-container {
-            background: var(--nav-bg);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 15px;
-            margin-top: 10px;
-            padding: 5px 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .nav-link {
-            color: white !important;
-            font-weight: 700;
             text-transform: uppercase;
-            padding: 12px 20px !important;
-            margin: 0 5px;
-            border-radius: 10px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .nav-link:hover {
-            background: var(--primary-color);
-            color: #000 !important;
-            box-shadow: var(--accent-glow);
-            transform: translateY(-5px);
-        }
-        .nav-link:active { transform: scale(0.9); }
-
-        /* --- Hero & Digital Wall Clock --- */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .hero-panel {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            padding: 60px;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 50px 100px rgba(0,0,0,0.7);
-        }
-        #clock-display {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            background: rgba(0,0,0,0.5);
-            padding: 20px 50px;
-            border-radius: 100px;
-            border: 3px solid var(--primary-color);
-            box-shadow: var(--accent-glow);
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 3px 3px 0px var(--primary), -1px -1px 10px var(--secondary);
             display: inline-block;
-            margin-bottom: 30px;
         }
 
-        /* --- Gallery SlideShow Engine --- */
-        .gallery-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            border-radius: 30px;
-            overflow: hidden;
-            border: 8px solid rgba(255,255,255,0.05);
-            box-shadow: 0 50px 100px rgba(0,0,0,0.9);
+        /* --- 2. Glowing Nav Boxes --- */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
         }
-        .carousel-item img {
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
+        .nav-box {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 25px;
+            border-radius: 8px;
+            color: white !important;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.4s;
+            box-shadow: 0 0 5px rgba(255,255,255,0.05);
+        }
+        .nav-box:hover {
+            background: var(--primary);
+            color: #000 !important;
+            box-shadow: 0 0 20px var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* --- 3. Round Analog Clock --- */
+        .clock-wrapper {
+            width: 150px; height: 150px;
+            border: 5px solid var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            position: relative;
+            background: #000;
+            box-shadow: 0 0 30px var(--primary);
+        }
+        .clock-hand {
+            position: absolute; bottom: 50%; left: 50%;
+            transform-origin: bottom; background: white; border-radius: 5px;
+        }
+        .hour { width: 4px; height: 35px; background: var(--secondary); }
+        .min { width: 3px; height: 50px; }
+        .sec { width: 1px; height: 55px; background: red; }
+
+        /* --- Hero Section --- */
+        .hero-panel { padding: 80px 20px; text-align: center; }
+        .shop-name-big { font-size: 3.5rem; font-weight: 900; color: var(--primary); text-shadow: 0 0 15px var(--primary); }
+        .tagline { font-size: 1.4rem; color: #aaa; letter-spacing: 1px; }
+
+        /* --- Gallery System --- */
+        .gallery-frame {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
             background: #000;
         }
+        .carousel-item img {
+            width: 100%; height: auto;
+            max-height: 85vh;
+            object-fit: contain; /* Full original view */
+        }
 
-        /* --- Counters --- */
-        .counter-card {
-            background: rgba(255,255,255,0.02);
+        /* --- Footers --- */
+        .shop-footer { background: #050a14; padding: 60px 0; border-top: 1px solid #1a202c; }
+        .dev-footer {
+            background: #000;
             padding: 40px;
-            border-radius: 25px;
-            border-bottom: 4px solid transparent;
-            transition: 0.4s;
+            border-top: 3px solid var(--primary);
+            text-align: center;
         }
-        .counter-card:hover { border-bottom-color: var(--primary-color); background: rgba(37, 211, 102, 0.05); }
-        .counter-val { font-size: 4rem; font-weight: 800; color: var(--primary-color); text-shadow: var(--accent-glow); }
+        .footer-link { color: var(--secondary); text-decoration: none; transition: 0.3s; }
+        .footer-link:hover { color: var(--primary); }
 
-        /* --- Mega Footer (Shop + Developer) --- */
-        .shop-footer { background: #01040a; border-top: 2px solid #111; padding: 80px 0 40px; }
-        .dev-branding {
-            background: linear-gradient(to right, #000, #0a192f, #000);
-            padding: 40px;
-            border-radius: 30px;
-            margin-top: 50px;
-            border: 1px solid #1a202c;
-        }
-        .dev-name { font-size: 2rem; color: #FFD700; text-shadow: 0 0 10px rgba(255,215,0,0.5); }
-        .dev-btn {
-            background: var(--primary-color);
-            color: black !important;
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-        .dev-btn:hover { box-shadow: var(--accent-glow); transform: scale(1.05); }
-
-        /* --- Floating WhatsApp --- */
         .wa-float {
-            position: fixed;
-            bottom: 40px; right: 40px;
-            width: 75px; height: 75px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 40px; color: white;
-            z-index: 9999;
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-            animation: bounceWA 2s infinite;
-        }
-        @keyframes bounceWA {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        @media (max-width: 768px) {
-            #clock-display { font-size: 2rem; }
-            .nav-box-container { flex-direction: column; text-align: center; }
-            .hero-panel { padding: 30px 15px; }
+            position: fixed; bottom: 30px; right: 30px;
+            width: 65px; height: 65px; background: #25D366;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; color: white; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -180,85 +132,79 @@
 
 <div id="particles-js"></div>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top px-3">
-    <div class="container nav-box-container">
-        <a class="navbar-brand star-glow-brand" href="index.html">SPO SERVICES</a>
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
-            <span class="fas fa-bars-staggered" style="color: var(--primary-color); font-size: 1.8rem;"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainMenu">
-            <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#gallery-engine">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+<header>
+    <div class="top-brand-bar">
+        <div class="main-title-text">Smart Printing & Online Services</div>
     </div>
-</nav>
+    <div class="container">
+        <nav class="nav-container">
+            <a href="index.html" class="nav-box">Home</a>
+            <a href="services.html" class="nav-box">Services</a>
+            <a href="#gallery-section" class="nav-box">Portfolio</a>
+            <a href="about.html" class="nav-box">About</a>
+            <a href="contact.html" class="nav-box">Contact</a>
+        </nav>
+    </div>
+</header>
 
-<section class="hero">
-    <div class="container text-center">
-        <div class="hero-panel" data-aos="zoom-out">
-            <div id="clock-display">00:00:00</div>
-            <h1 class="display-2 fw-bold mb-3">SPO Smart Printing</h1>
-            <p class="lead text-info mb-5 fw-bold">Kanganpur's Ultimate AI Digital Hub</p>
-            <div class="d-flex justify-content-center gap-4 flex-wrap">
-                <a href="services.html" class="btn btn-outline-success btn-lg rounded-pill px-5">Our Services</a>
-                <a href="#gallery-engine" class="btn btn-success btn-lg rounded-pill px-5 shadow">View Gallery</a>
-            </div>
+<section class="hero-panel">
+    <div class="container" data-aos="zoom-in">
+        <div class="clock-wrapper">
+            <div class="clock-hand hour" id="hour"></div>
+            <div class="clock-hand min" id="min"></div>
+            <div class="clock-hand sec" id="sec"></div>
+            <div style="position:absolute; top:50%; left:50%; width:10px; height:10px; background:var(--primary); border-radius:50%; transform:translate(-50%,-50%);"></div>
+        </div>
+        <h1 class="shop-name-big">SPO Smart Printing & Online Services</h1>
+        <p class="tagline">One Window Printing, Online And Digital Business Solutions</p>
+        
+        <div class="mt-4">
+            <a href="#gallery-section" class="btn btn-success btn-lg rounded-pill px-5 shadow-lg">View Portfolio Gallery</a>
         </div>
     </div>
 </section>
 
 <section class="py-5">
-    <div class="container">
-        <div class="row g-4 text-center">
+    <div class="container text-center">
+        <div class="row g-4">
             <div class="col-md-4" data-aos="fade-up">
-                <div class="counter-card">
-                    <div class="counter-val visitors">0</div>
-                    <p class="text-secondary fw-bold">LIVE GLOBAL VISITORS</p>
-                </div>
+                <h2 class="visitors display-4 fw-bold text-success">0</h2>
+                <p class="text-secondary">Global Live Visitors</p>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="counter-card">
-                    <div class="counter-val" data-target="35">0</div>
-                    <p class="text-secondary fw-bold">PREMIUM SERVICES</p>
-                </div>
+                <h2 class="display-4 fw-bold text-success" data-target="35">0</h2>
+                <p class="text-secondary">Premium Services</p>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="counter-card">
-                    <div class="counter-val" data-target="5">0</div>
-                    <p class="text-secondary fw-bold">YEARS OF TRUST</p>
-                </div>
+                <h2 class="display-4 fw-bold text-success" data-target="5">0</h2>
+                <p class="text-secondary">Years of Trust</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="gallery-engine" class="py-5 bg-black bg-opacity-30">
+<section id="gallery-section" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-5 star-glow-brand" style="font-size: 3rem;">Portfolio Gallery</h2>
-        <div class="gallery-container" data-aos="fade-up">
-            <div id="spoCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <h2 class="text-center mb-5 fw-bold" style="color:var(--primary)">WORK PORTFOLIO GALLERY</h2>
+        <div class="gallery-frame" data-aos="fade-up">
+            <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active"><img src="IMG-20260222-WA0024.jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG-20260222-WA0028.jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG-20260222-WA0033(1).jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG-20260223-WA0055.jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG-20260224-WA0019.jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG-20260224-WA0020.jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG-20260225-WA0028.jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG-20260228-WA0039.jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG-20260301-WA0097.jpg" alt="SPO"></div>
-                    <div class="carousel-item"><img src="IMG_20260218_015819.png" alt="SPO"></div>
+                    <div class="carousel-item active"><img src="IMG-20260222-WA0024.jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG-20260222-WA0028.jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG-20260222-WA0033(1).jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG-20260223-WA0055.jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG-20260224-WA0019.jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG-20260224-WA0020.jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG-20260225-WA0028.jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG-20260228-WA0039.jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG-20260301-WA0097.jpg" alt="SPO Gallery"></div>
+                    <div class="carousel-item"><img src="IMG_20260218_015819.png" alt="SPO Gallery"></div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#spoCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" style="width: 3rem; height: 3rem; background-color: rgba(37,211,102,0.5); border-radius: 50%;"></span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#spoCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" style="width: 3rem; height: 3rem; background-color: rgba(37,211,102,0.5); border-radius: 50%;"></span>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
         </div>
@@ -266,27 +212,29 @@
 </section>
 
 <footer class="shop-footer">
-    <div class="container text-center">
-        <div class="row align-items-center mb-5">
-            <div class="col-md-6 text-md-start mb-4">
-                <h3 class="star-glow-brand">SPO Point Kanganpur</h3>
-                <p class="text-secondary fs-5">Providing High-End Online Solutions & Quality Printing Services since 2021.</p>
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-6 mb-4">
+                <h4 style="color:var(--primary)">SPO - Smart Printing</h4>
+                <p class="text-secondary">Professional Digital Hub providing high-quality solutions for all your printing and online documentation needs.</p>
             </div>
             <div class="col-md-6 text-md-end">
-                <p class="mb-1"><i class="fas fa-map-marker-alt text-danger me-2"></i> Main Bazaar, Kanganpur</p>
-                <p class="mb-1"><i class="fas fa-phone-alt text-success me-2"></i> +92 303 4480404</p>
-                <p class="mb-0"><i class="fas fa-envelope text-info me-2"></i> info@sposervices.com</p>
+                <h5>Information & Support</h5>
+                <p class="mb-1"><i class="fas fa-map-marker-alt me-2 text-danger"></i> Purana Paka Bazar Kanganpur</p>
+                <p class="mb-1"><i class="fas fa-phone-alt me-2 text-success"></i> +92 303 4480404</p>
+                <p class="mb-0"><i class="fas fa-envelope me-2 text-info"></i> <a href="mailto:asif.aimarketing@gmail.com" class="footer-link">asif.aimarketing@gmail.com</a></p>
             </div>
         </div>
+    </div>
+</footer>
 
-        <div class="dev-branding" data-aos="fade-up">
-            <p class="text-secondary mb-1">© 2026 SPO Point | All Rights Reserved</p>
-            <span class="text-uppercase small" style="letter-spacing: 3px; color: #888;">Crafted & Managed By</span>
-            <div class="dev-name mt-2">Muhammad Asif</div>
-            <a href="https://wa.me/923034480404" class="dev-btn">
-                <i class="fab fa-whatsapp me-2"></i>Message Developer
-            </a>
-        </div>
+<footer class="dev-footer">
+    <div class="container">
+        <p class="mb-2 text-secondary">© 2026 Smart Printing & Online Services | All Rights Reserved</p>
+        <h5 class="fw-bold">Project Lead & Developed By: <span style="color:var(--primary)">Muhammad Asif</span></h5>
+        <a href="https://wa.me/923034480404" class="btn btn-outline-success mt-3 rounded-pill px-4">
+            <i class="fab fa-whatsapp me-2"></i>Contact Developer
+        </a>
     </div>
 </footer>
 
@@ -324,42 +272,46 @@ onValue(statsRef, (snapshot) => {
 </script>
 
 <script>
-    AOS.init({ duration: 1200, once: true });
+    AOS.init({ duration: 1000, once: true });
 
-    // 1. Ultra Smooth Particles
+    // 1. Analog Clock Logic
+    function runClock() {
+        const now = new Date();
+        const s = now.getSeconds();
+        const m = now.getMinutes();
+        const h = now.getHours();
+        document.getElementById('sec').style.transform = `translateX(-50%) rotate(${s * 6}deg)`;
+        document.getElementById('min').style.transform = `translateX(-50%) rotate(${m * 6}deg)`;
+        document.getElementById('hour').style.transform = `translateX(-50%) rotate(${h * 30 + m/2}deg)`;
+    }
+    setInterval(runClock, 1000);
+    runClock();
+
+    // 2. Particles
     particlesJS("particles-js", {
         particles: {
-            number: { value: 120, density: { enable: true, value_area: 800 } },
+            number: { value: 80 },
             color: { value: "#25D366" },
             opacity: { value: 0.2 },
             size: { value: 2 },
             line_linked: { enable: true, color: "#25D366", opacity: 0.1 }
-        },
-        interactivity: { events: { onhover: { enable: true, mode: "grab" } } }
+        }
     });
 
-    // 2. Wall Clock Engine
-    function updateClock() {
-        const now = new Date();
-        document.getElementById('clock-display').innerHTML = now.toLocaleTimeString('en-GB');
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
     // 3. Counter Animation
-    const staticCounts = document.querySelectorAll('.counter-val:not(.visitors)');
-    staticCounts.forEach(c => {
+    const counters = document.querySelectorAll('[data-target]');
+    counters.forEach(c => {
         const target = +c.getAttribute('data-target');
         let count = 0;
-        const inc = target / 40;
-        const tick = () => {
+        const inc = target / 50;
+        const update = () => {
             if(count < target) {
                 count += inc;
                 c.innerText = Math.ceil(count);
-                setTimeout(tick, 30);
+                setTimeout(update, 30);
             } else c.innerText = target;
         };
-        tick();
+        update();
     });
 </script>
 
