@@ -281,39 +281,44 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-// Firebase Configuration
+// آپ کی فراہم کردہ اصل فائر بیس کنفیگریشن
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY", // <--- Apna API Key yahan dain
-  authDomain: "smart-printing-62436.firebaseapp.com",
-  databaseURL: "https://smart-printing-62436-default-rtdb.firebaseio.com",
-  projectId: "smart-printing-62436",
-  storageBucket: "smart-printing-62436.appspot.com",
-  messagingSenderId: "YOUR_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyC11_tDLArVyx5D4Uj9ZWgUdjnHkbcN7DU",
+  authDomain: "live-counter-cd83d.firebaseapp.com",
+  databaseURL: "https://live-counter-cd83d-default-rtdb.firebaseio.com",
+  projectId: "live-counter-cd83d",
+  storageBucket: "live-counter-cd83d.firebasestorage.app",
+  messagingSenderId: "1026920002807",
+  appId: "1:1026920002807:web:b9778389850cdcf1e88ff2",
+  measurementId: "G-NBJ3BTK6GG"
 };
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const statsRef = ref(database, 'stats');
 
-// Har baar page load hone par counter +1 hoga
+// پیج لوڈ ہونے پر کاؤنٹر کو لائیو اپڈیٹ کرنا
 update(statsRef, {
   count: increment(1)
-}).catch((error) => console.error("Counter Error:", error));
+}).catch((error) => console.error("Firebase Error:", error));
 
-// Real-time UI Update
+// لائیو UI اپڈیٹ
 onValue(statsRef, (snapshot) => {
   const data = snapshot.val();
   if (data && data.count) {
-    document.querySelector('.counter.visitors').innerText = data.count;
+    const counterElement = document.querySelector('.counter.visitors');
+    if(counterElement) {
+        counterElement.innerText = data.count;
+    }
   }
 });
 </script>
 
 <script>
+    /* Animations & Interactivity */
     AOS.init({ duration: 1000 });
 
-    /* Static Counters Animation */
+    /* Static Counters (Services & Experience) */
     const counters = document.querySelectorAll('.counter:not(.visitors)');
     counters.forEach(counter => {
         counter.innerText = '0';
@@ -348,7 +353,12 @@ onValue(statsRef, (snapshot) => {
         let popup = document.getElementById("waPopup");
         popup.style.display = (popup.style.display === "block") ? "none" : "block";
     }
+
+    function trackWhatsApp(service) {
+        console.log("Inquiry for: " + service);
+    }
 </script>
 
 </body>
-</html>
+            </html>
+                
