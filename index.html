@@ -3,276 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Printing & Online Services | One Window Solution</title>
-    <meta name="description" content="Smart Printing & Online Services Kangan Pur – One Window Printing and AI Digital Business Solutions.">
-    <meta name="keywords" content="Printing shop Kangan Pur, NADRA services, FBR filing, Digital marketing, Website development Pakistan">
-    <meta name="author" content="Smart Printing & Online Services">
-
+    <title>SPO | Smart Printing & Online Services</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
     <style>
+        :root {
+            --primary-color: #25D366;
+            --accent-glow: 0 0 20px rgba(37, 211, 102, 0.6);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+        }
+
         body {
             font-family: 'Segoe UI', sans-serif;
-            background: #0f172a;
+            background: #020617;
             color: white;
             overflow-x: hidden;
         }
 
-        /* NAVBAR CUSTOM */
-        .navbar-custom {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(15px);
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: #25D366 !important;
-        }
-        .navbar-brand span {
-            font-size: 0.8rem;
-            color: #fff;
-            display: block;
-            font-weight: normal;
-        }
-
-        /* HERO */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .hero {
+        /* --- Global Branding & Effects --- */
+        .star-glow {
             position: relative;
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .glass-hero {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 50px 30px;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* COUNTERS & LIVE DOT */
-        .counter {
-            font-size: 48px;
-            font-weight: bold;
-            color: #25D366;
-        }
-        .live-dot {
-            height: 12px;
-            width: 12px;
-            background-color: #ff4d4d;
-            border-radius: 50%;
             display: inline-block;
-            box-shadow: 0 0 10px #ff4d4d;
-            animation: blink 1.2s infinite;
+            font-weight: 800;
+            color: var(--primary-color) !important;
+            text-shadow: var(--accent-glow);
         }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
+        .star-glow::after {
+            content: '⭐';
+            position: absolute;
+            top: -10px;
+            right: -25px;
+            font-size: 14px;
+            animation: starPulse 1.5s infinite;
         }
-
-        /* WHATSAPP FLOAT & PULSE */
-        .wa-float-container {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 9999;
-        }
-        .wa-btn {
-            background: #25D366;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            font-size: 28px;
-            color: white;
-            border: none;
-            animation: pulse 2s infinite;
-        }
-        .sms-btn {
-            background: #1e90ff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            color: white;
-            font-size: 22px;
-            text-decoration: none;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        @keyframes starPulse {
+            0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 5px gold); }
+            50% { opacity: 0.5; transform: scale(1.3); }
         }
 
-        /* POPUP */
-        .wa-popup {
-            display: none;
-            position: fixed;
-            bottom: 110px;
-            right: 25px;
-            background: #fff;
-            width: 280px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            color: black;
-            overflow: hidden;
-            z-index: 10000;
+        /* --- Navbar Upgrade --- */
+        .navbar-custom {
+            background: rgba(2, 6, 23, 0.85) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 0;
         }
-        .wa-popup h5 {
-            background: #075e54;
-            color: #fff;
-            padding: 15px;
-            margin: 0;
-            text-align: center;
-            font-size: 1rem;
-        }
-        .wa-popup a {
-            display: block;
-            padding: 12px 20px;
-            text-decoration: none;
-            color: #333;
-            border-bottom: 1px solid #eee;
+        .nav-link {
+            font-weight: 600;
+            margin: 0 8px;
             transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
-        .wa-popup a:hover { background: #f1f1f1; padding-left: 25px; }
+        .nav-link:hover { color: var(--primary-color) !important; transform: translateY(-2px); }
 
-        .footer-wa-trigger {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            background: #25D366;
-            color: white;
-            padding: 12px 20px;
+        /* --- Hero Section --- */
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 80px; }
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        }
+
+        /* --- Live Clock Design --- */
+        #clock-display {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-shadow: 0 0 15px var(--primary-color);
+            background: rgba(0,0,0,0.4);
+            padding: 15px 35px;
+            border-radius: 100px;
+            border: 2px solid var(--primary-color);
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        /* --- Counter Style --- */
+        .counter-box {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 25px;
+            transition: 0.4s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .counter-box:hover { border-color: var(--primary-color); transform: translateY(-10px); background: rgba(37, 211, 102, 0.05); }
+        .counter-val { font-size: 3.2rem; font-weight: 800; color: var(--primary-color); text-shadow: var(--accent-glow); }
+
+        /* --- Gallery SlideShow Engine --- */
+        .gallery-wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 4px solid rgba(255,255,255,0.1);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+        }
+        .carousel-item img { height: 500px; object-fit: cover; filter: brightness(0.9); transition: 0.5s; }
+        .carousel-item:hover img { filter: brightness(1.1); transform: scale(1.02); }
+
+        /* --- Floating WhatsApp --- */
+        .wa-float {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            z-index: 999;
-            font-weight: bold;
+            justify-content: center;
+            font-size: 35px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulseWA 2s infinite;
+            text-decoration: none;
+        }
+        @keyframes pulseWA {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            #clock-display { font-size: 1.8rem; padding: 10px 25px; }
+            .carousel-item img { height: 300px; }
+            .counter-val { font-size: 2.5rem; }
         }
     </style>
 </head>
 
 <body>
 
+<div id="particles-js"></div>
+
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            Smart Printing 
-            <span>One Window Solution</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand star-glow" href="#">SPO SERVICES</a>
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="fas fa-bars-staggered"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <div class="navbar-nav align-items-center">
-                <a class="nav-link text-white ms-3" href="index.html">Home</a>
-                <a class="nav-link text-white ms-3" href="services.html">Services</a>
-                <a class="nav-link text-white ms-3" href="contact.html">Contact</a>
-                <button class="btn btn-success rounded-pill ms-lg-4 px-4 shadow-sm" onclick="toggleWA()">
-                    <i class="fab fa-whatsapp me-2"></i>Live Chat
-                </button>
-            </div>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#gallery-section">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                <li class="nav-item ms-lg-3">
+                    <a href="https://wa.me/923034480404" class="btn btn-success rounded-pill px-4 shadow-sm">Live Support</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
 
-<div id="particles-js"></div>
-
 <section class="hero">
-    <div class="glass-hero" data-aos="zoom-in">
-        <h1 class="display-3 fw-bold">Smart Printing & Online Services</h1>
-        <p class="lead text-info fw-bold">One Window Printing and AI Digital Business Solutions</p>
-        <p class="lead"><i class="fas fa-map-marker-alt text-danger me-2"></i> Purana Paka Bazar, Kanganpur</p>
-        <a href="services.html" class="btn btn-success btn-lg mt-3 px-5 rounded-pill shadow">Explore Services</a>
+    <div class="container text-center">
+        <div class="glass-panel" data-aos="zoom-in">
+            <div id="clock-display">00:00:00</div>
+            <h1 class="display-3 fw-bold mb-3">Smart Printing & Online</h1>
+            <p class="lead text-info fw-bold">Kanganpur's Premier AI Digital Business Hub</p>
+        </div>
     </div>
 </section>
 
-<section class="py-5 text-center bg-dark bg-opacity-25">
+<section class="py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4" data-aos="fade-up">
-                <div class="d-flex justify-content-center align-items-center gap-2">
-                    <span class="live-dot"></span>
-                    <div class="counter visitors">0</div>
+        <div class="row g-4 text-center">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="counter-box">
+                    <div class="counter-val visitors">0</div>
+                    <p class="text-secondary fw-bold">Live Global Visitors</p>
                 </div>
-                <p class="text-secondary fw-bold">Total Page Visits (Live)</p>
             </div>
-            
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="counter" data-target="35">0</div>
-                <p class="text-secondary fw-bold">Services Offered</p>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="counter-box">
+                    <div class="counter-val" data-target="35">0</div>
+                    <p class="text-secondary fw-bold">Premium Services</p>
+                </div>
             </div>
-            
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="counter" data-target="5">0</div>
-                <p class="text-secondary fw-bold">Years Experience</p>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="counter-box">
+                    <div class="counter-val" data-target="5">0</div>
+                    <p class="text-secondary fw-bold">Years Excellence</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<div class="wa-float-container">
-    <button class="wa-btn" onclick="toggleWA()"><i class="fab fa-whatsapp"></i></button>
-    <a href="sms:+923034480404" class="sms-btn shadow"><i class="fas fa-sms"></i></a>
-</div>
-
-<div class="wa-popup" id="waPopup">
-    <h5>Select Service Inquiry</h5>
-    <a href="https://wa.me/923034480404?text=Printing Inquiry" onclick="trackWhatsApp('Printing')"><i class="fas fa-print me-2 text-primary"></i> Printing</a>
-    <a href="https://wa.me/923034480404?text=NADRA Inquiry" onclick="trackWhatsApp('NADRA/FBR')"><i class="fas fa-id-card me-2 text-success"></i> NADRA / FBR</a>
-    <a href="https://wa.me/923034480404?text=Digital Marketing Inquiry" onclick="trackWhatsApp('Marketing')"><i class="fas fa-bullhorn me-2 text-warning"></i> Digital Marketing</a>
-    <a href="https://wa.me/923034480404?text=Website Inquiry" onclick="trackWhatsApp('Website/AI')"><i class="fas fa-code me-2 text-info"></i> Website & AI</a>
-    <a href="https://wa.me/923034480404?text=Payments Inquiry" onclick="trackWhatsApp('Payments')"><i class="fas fa-money-bill-wave me-2 text-success"></i> Bill Payments</a>
-</div>
-
-<div class="footer-wa-trigger" onclick="toggleWA()">
-    <i class="fab fa-whatsapp"></i> Need Help?
-</div>
-
-<footer style="background: #111; color: #FFD700; text-align: center; padding: 40px 10px; border-top: 4px solid #25D366; line-height: 1.6; margin-top: 50px;">
-    <p style="margin: 0; font-size: 1.1rem; font-weight: bold;">© 2026 SPO Point Kanganpur | All Rights Reserved</p>
-    
-    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.95rem; color: #ccc;">
-        <span style="letter-spacing: 1px; text-transform: uppercase; font-size: 0.75rem; color: #888;">Project Lead & Developer:</span><br>
-        <strong style="color: #fff; font-size: 1.2rem; display: block; margin: 5px 0;">Muhammad Asif</strong>
-        
-        <span style="color: #bbb;">Managed by:</span> 
-        <strong style="color: #FFD700;">SPO Smart Printing & Online</strong><br>
-        
-        <a href="https://wa.me/923034480404" style="display: inline-block; margin-top: 15px; background: #25D366; color: #fff; padding: 8px 25px; border-radius: 30px; text-decoration: none; font-size: 0.9rem; font-weight: bold; transition: 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <i class="fab fa-whatsapp me-1"></i> Contact Developer: 0303-4480404
-        </a>
+<section id="gallery-section" class="py-5 bg-black bg-opacity-25">
+    <div class="container">
+        <h2 class="text-center mb-5 star-glow">Our Digital Portfolio Gallery</h2>
+        <div class="gallery-wrapper" data-aos="fade-up">
+            <div id="spoSlideshow" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="IMG-20260222-WA0024.jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG-20260222-WA0028.jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG-20260222-WA0033(1).jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG-20260223-WA0055.jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG-20260224-WA0019.jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG-20260224-WA0020.jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG-20260225-WA0028.jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG-20260228-WA0039.jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG-20260301-WA0097.jpg" class="d-block w-100" alt="SPO"></div>
+                    <div class="carousel-item"><img src="IMG_20260218_015819.png" class="d-block w-100" alt="SPO"></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#spoSlideshow" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#spoSlideshow" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
     </div>
-</footer>
+</section>
+
+<a href="https://wa.me/923034480404" class="wa-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -281,7 +242,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-// آپ کا درست شدہ کنفیگریشن
 const firebaseConfig = {
   apiKey: "AIzaSyC11_tDLArVyx5D4Uj9ZWgUdjnHkbcN7DU",
   authDomain: "live-counter-cd83d.firebaseapp.com",
@@ -293,72 +253,59 @@ const firebaseConfig = {
   measurementId: "G-NBJ3BTK6GG"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const statsRef = ref(database, 'stats');
 
-// Update Visitor Count on Load
-update(statsRef, {
-  count: increment(1)
-}).catch((error) => console.error("Firebase Update Error: ", error));
-
-// Sync UI with Realtime Database
+update(statsRef, { count: increment(1) });
 onValue(statsRef, (snapshot) => {
   const data = snapshot.val();
-  if (data && data.count) {
-    const visitorCounter = document.querySelector('.counter.visitors');
-    if (visitorCounter) {
-        visitorCounter.innerText = data.count;
-    }
-  }
+  if (data) document.querySelector('.visitors').innerText = data.count;
 });
 </script>
 
 <script>
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000, once: true });
 
-    /* Static Counters Animation for Services & Experience */
-    const staticCounters = document.querySelectorAll('.counter:not(.visitors)');
-    staticCounters.forEach(counter => {
-        counter.innerText = '0';
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const c = +counter.innerText;
-            const increment = target / 100;
-            if (c < target) {
-                counter.innerText = Math.ceil(c + increment);
-                setTimeout(updateCount, 20);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        updateCount();
-    });
-
-    /* Particles JS Effect */
+    // 1. Ultra Smooth Particles
     particlesJS("particles-js", {
         particles: {
-            number: { value: 80 },
+            number: { value: 120, density: { enable: true, value_area: 800 } },
             color: { value: "#25D366" },
-            size: { value: 3 },
-            move: { speed: 2 },
-            line_linked: { enable: true, color: "#25D366", opacity: 0.2 }
+            opacity: { value: 0.2 },
+            size: { value: 2 },
+            move: { speed: 1.2 },
+            line_linked: { enable: true, color: "#25D366", opacity: 0.1 }
         },
-        interactivity: { events: { onhover: { enable: true, mode: "repulse" } } }
+        interactivity: { events: { onhover: { enable: true, mode: "grab" } } }
     });
 
-    /* WhatsApp Popup Trigger */
-    function toggleWA() {
-        let popup = document.getElementById("waPopup");
-        popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    // 2. Live Wall Clock
+    function startTime() {
+        const today = new Date();
+        document.getElementById('clock-display').innerHTML = today.toLocaleTimeString('en-GB');
+        setTimeout(startTime, 1000);
     }
+    startTime();
 
-    function trackWhatsApp(service) {
-        console.log("Customer inquiring about: " + service);
-    }
+    // 3. Counter Animation
+    const counters = document.querySelectorAll('.counter-val:not(.visitors)');
+    counters.forEach(c => {
+        const target = +c.getAttribute('data-target');
+        let count = 0;
+        const speed = 40;
+        const update = () => {
+            const inc = target / speed;
+            if(count < target) {
+                count += inc;
+                c.innerText = Math.ceil(count);
+                setTimeout(update, 30);
+            } else c.innerText = target;
+        };
+        update();
+    });
 </script>
 
 </body>
     </html>
-        
+    
