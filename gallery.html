@@ -3,29 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Work Gallery - Smart Printing & Online Services</title>
+    <title>Gallery - Smart Printing & Online Services</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .modal-active { overflow: hidden; }
+        .gallery-card:hover img { transform: scale(1.05); }
+    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50 text-gray-800">
 
-    <div class="bg-blue-700 py-12 text-center text-white">
-        <h1 class="text-4xl font-bold">Our Work Portfolio</h1>
-        <p class="mt-2 opacity-90">Providing Digital Excellence in Kanganpur</p>
-        <a href="index.html" class="mt-6 inline-block bg-white text-blue-700 px-6 py-2 rounded-full font-semibold hover:bg-gray-200">Back to Home</a>
-    </div>
+    <header class="bg-blue-600 text-white py-10 shadow-lg text-center">
+        <h1 class="text-3xl md:text-5xl font-bold">Our Service Gallery</h1>
+        <p class="mt-2 text-blue-100">Quality Work by Smart Printing & Online Services</p>
+        <div class="mt-6">
+            <a href="index.html" class="bg-white text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-50 transition-colors">Back to Home</a>
+        </div>
+    </header>
 
-    <div class="container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <section class="container mx-auto px-4 py-12">
+        <div id="mainGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            </div>
+    </section>
+
+    <div id="galleryModal" class="fixed inset-0 z-[110] hidden bg-black/95 animate__animated animate__fadeIn">
+        <button onclick="closeGallery()" class="absolute top-6 right-6 text-white text-5xl hover:text-red-500 z-[120] transition-colors">&times;</button>
+        
+        <div class="h-full flex flex-col items-center justify-center p-4">
+            <div class="relative max-w-5xl w-full">
+                <img id="mainSlide" src="" class="w-full h-[65vh] md:h-[75vh] object-contain mx-auto rounded-lg animate__animated">
+                
+                <button onclick="prevSlide()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-blue-600 p-4 rounded-full text-white text-3xl transition-all">❮</button>
+                <button onclick="nextSlide()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-blue-600 p-4 rounded-full text-white text-3xl transition-all">❯</button>
+            </div>
             
-            <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-2xl transition-all group">
-                <div class="overflow-hidden rounded-lg">
-                    <img src="IMG-20260222-WA0024.jpg" class="w-full h-64 object-cover group-hover:scale-110 transition-duration-500 cursor-pointer" onclick="openGallery()">
-                </div>
-                <p class="mt-3 text-center font-medium text-gray-700">Service Sample</p>
-            </div>
-
-            </div>
+            <div id="thumbContainer" class="mt-8 flex gap-3 overflow-x-auto w-full max-w-4xl p-2 no-scrollbar border-t border-white/10 pt-4"></div>
+            <p class="text-gray-400 mt-4 text-sm">Use Arrow Keys to Navigate | Esc to Close</p>
+        </div>
     </div>
 
-    </body>
+    <script>
+        const galleryImages = [
+            'IMG-20260222-WA0024.jpg', 'IMG-20260222-WA0028.jpg', 'IMG-20260222-WA0033(1).jpg',
+            'IMG-20260223-WA0055.jpg', 'IMG-20260224-WA0019.jpg', 'IMG-20260224-WA0020.jpg',
+            'IMG-20260225-WA0028.jpg', 'IMG-20260228-WA0039.jpg', 'IMG-20260301-WA0097.jpg',
+            'IMG_20260218_015819.png', 'file_0000000062b871faad20fb22.jpg', 'file_00000000c9e07208a96c20c.jpg'
+        ];
+
+        let currentIdx = 0;
+        let autoPlay;
+
+        // 1. Page Load par Grid banana
+        function initGrid() {
+            const grid = document.getElementById('mainGrid');
+            grid.innerHTML = galleryImages.map((img, i) => `
+                <div class="gallery-card bg-white p-3 rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openGallery(${i})">
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="${img}" class="w-full h-60 object-cover transition-transform duration-500">
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 2. Lightbox Open karna
+        function openGallery(index) {
+            currentIdx = index;
+            document.getElementById('galleryModal').classList.remove('hidden');
+            document.body.classList.add('modal-active');
+            selectImage(currentIdx);
+            startAutoPlay();
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').classList.add('hidden');
+            document.body.classList.remove('modal-active');
+            clearInterval(autoPlay);
+        }
+
+        function selectImage(index) {
+            currentIdx = index;
+            const mainImg = document.getElementById('mainSlide');
+            mainImg.src = galleryImages[currentIdx];
+            
+            mainImg.classList.remove('animate__fadeIn');
+            void mainImg.offsetWidth; 
+            mainImg.classList.add('animate__fadeIn');
+            
+            renderThumbnails();
+        }
+
+        function renderThumbnails() {
+            const container = document.getElementById('thumbContainer');
+            container.innerHTML = galleryImages.map((img, i) => `
+                <img src="${img}" onclick="selectImage(${i}); clearInterval(autoPlay);" 
+                     class="h-16 min-w-[100px] object-cover cursor-pointer rounded border-2 transition-all 
+                     ${i === currentIdx ? 'border-blue-500 scale-105' : 'border-transparent opacity-50'}">
+            `).join('');
+        }
+
+        function nextSlide() {
+            currentIdx = (currentIdx + 1) % galleryImages.length;
+            selectImage(currentIdx);
+        }
+
+        function prevSlide() {
+            currentIdx = (currentIdx - 1 + galleryImages.length) % galleryImages.length;
+            selectImage(currentIdx);
+        }
+
+        function startAutoPlay() {
+            clearInterval(autoPlay);
+            autoPlay = setInterval(nextSlide, 5000);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeGallery();
+            if (e.key === "ArrowRight") nextSlide();
+            if (e.key === "ArrowLeft") prevSlide();
+        });
+
+        // Initialize grid on load
+        window.onload = initGrid;
+    </script>
+</body>
 </html>
