@@ -1,155 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | SPO Smart Printing & Online Services</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | SPO Smart Printing & Online Services</title>
 
-    <style>
-        :root {
-            --primary: #25D366;
-            --secondary: #00e5ff;
-            --universe-bg: #010409;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-        body { font-family: 'Rajdhani', sans-serif; background: var(--universe-bg); color: white; overflow-x: hidden; }
+<style>
+:root{
+--primary:#25D366;
+--secondary:#00e5ff;
+--universe-bg:#010409;
+--glass:rgba(255,255,255,0.05);
+}
 
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
-        .nebula { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.07) 0%, transparent 80%); z-index: -2; pointer-events: none; }
+body{font-family:'Rajdhani',sans-serif;background:var(--universe-bg);color:white;overflow-x:hidden;}
 
-        /* --- Header --- */
-        .main-header { background: rgba(0, 0, 0, 0.9); border-bottom: 3px solid var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .logo-box { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: #fff; margin-right: 15px; box-shadow: 0 0 15px var(--primary); }
-        .logo-box img { width: 100%; height: 100%; object-fit: contain; }
-        .main-title { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: #fff; text-shadow: 0 0 10px var(--primary); }
+#particles-js{position:fixed;width:100%;height:100%;z-index:-1;top:0;left:0;}
+.nebula{position:fixed;width:100%;height:100%;background:radial-gradient(circle at 50% 50%,rgba(37,211,102,0.07) 0%,transparent 80%);z-index:-2;pointer-events:none;}
 
-        /* --- Category Buttons (Matching Index) --- */
-        .category-btn {
-            background: rgba(255,255,255,0.02); border: 2px solid rgba(255,255,255,0.1);
-            padding: 15px; border-radius: 12px; color: white; text-decoration: none;
-            font-weight: bold; transition: 0.4s; display: block; text-align: center;
-        }
-        .category-btn:hover { background: var(--secondary); color: #000; box-shadow: 0 0 20px var(--secondary); transform: translateY(-5px); }
+.main-header{background:rgba(0,0,0,0.9);border-bottom:3px solid var(--primary);padding:15px 0;position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);}
+.logo-box{
+width:80px;height:80px;border-radius:50%;
+border:3px solid var(--primary);
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#fff;
+box-shadow:0 0 20px var(--primary);
+}
+.logo-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+}
+.main-title{font-size:1.6rem;font-weight:800;text-transform:uppercase;color:#fff;text-shadow:0 0 10px var(--primary);}
 
-        /* --- Gallery Grid --- */
-        .gallery-item { position: relative; border-radius: 20px; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); transition: 0.4s; background: #000; cursor: pointer; }
-        .gallery-item:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 0 30px rgba(37, 211, 102, 0.3); }
-        .gallery-item img { width: 100%; height: 280px; object-fit: cover; }
-        .gallery-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 15px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: var(--primary); font-weight: bold; text-align: center; opacity: 0; transition: 0.3s; }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
+.category-btn{
+background:rgba(255,255,255,0.02);
+border:2px solid rgba(255,255,255,0.1);
+padding:15px;border-radius:12px;color:white;text-decoration:none;
+font-weight:bold;transition:0.4s;display:block;text-align:center;
+}
+.category-btn:hover{background:var(--secondary);color:#000;box-shadow:0 0 20px var(--secondary);transform:translateY(-5px);}
 
-        /* --- Service Boxes (From Your Image) --- */
-        .service-box {
-            background: #fff; color: #000; padding: 12px; border-radius: 10px;
-            font-weight: 800; text-align: center; border: 2px solid #000;
-            cursor: pointer; transition: 0.3s; font-family: 'Noto Nastaliq Urdu', serif;
-        }
-        .service-box:hover { background: var(--primary); color: #fff; transform: scale(1.05); }
+.gallery-item{
+position:relative;border-radius:20px;overflow:hidden;
+border:2px solid rgba(255,255,255,0.1);
+transition:0.4s;background:#000;cursor:pointer;
+}
+.gallery-item:hover{
+transform:translateY(-10px);
+border-color:var(--primary);
+box-shadow:0 0 30px rgba(37,211,102,0.3);
+}
+.gallery-item img{
+width:100%;
+height:auto;
+object-fit:contain; /* FULL IMAGE PREVIEW */
+background:#000;
+}
+.gallery-overlay{
+position:absolute;bottom:0;left:0;width:100%;
+padding:15px;background:linear-gradient(transparent,rgba(0,0,0,0.9));
+color:var(--primary);font-weight:bold;text-align:center;
+opacity:0;transition:0.3s;
+}
+.gallery-item:hover .gallery-overlay{opacity:1;}
 
-        /* --- Footer --- */
-        .shop-footer { background: rgba(0,0,0,0.9); padding: 50px 0; border-top: 1px solid #222; margin-top: 50px; }
-        .dev-box { background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px solid #333; max-width: 450px; margin: 0 auto; padding: 30px; }
-        
-        .wa-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4); text-decoration: none; }
-    </style>
+.shop-name{
+font-size:1.5rem;
+font-weight:700;
+color:var(--primary);
+margin-bottom:15px;
+}
+
+.shop-footer{background:rgba(0,0,0,0.9);padding:50px 0;border-top:1px solid #222;margin-top:50px;}
+.dev-box{background:rgba(255,255,255,0.02);border-radius:20px;border:1px solid #333;max-width:450px;margin:0 auto;padding:30px;}
+
+.wa-float{
+position:fixed;bottom:30px;right:30px;width:65px;height:65px;
+background:#25D366;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+font-size:32px;color:white;z-index:1000;
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+text-decoration:none;
+}
+</style>
 </head>
+
 <body>
 
 <div class="nebula"></div>
 <div id="particles-js"></div>
 
 <header class="main-header text-center">
-    <div class="container d-flex align-items-center justify-content-center">
-        <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
-        <span class="main-title">SPO Digital Gallery</span>
-    </div>
+<div class="container d-flex flex-column align-items-center justify-content-center">
+<div class="logo-box">
+<img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo">
+</div>
+<span class="main-title mt-2">SPO Digital Gallery</span>
+</div>
 </header>
 
 <div class="container mt-4">
-    <div class="row g-3 justify-content-center">
-        <div class="col-6 col-md-2"><a href="index.html" class="category-btn">Home</a></div>
-        <div class="col-6 col-md-2"><a href="services.html" class="category-btn">Services</a></div>
-        <div class="col-6 col-md-2"><a href="about.html" class="category-btn">About</a></div>
-        <div class="col-6 col-md-2"><a href="contact.html" class="category-btn">Contact</a></div>
-    </div>
+<div class="row g-3 justify-content-center">
+<div class="col-6 col-md-2"><a href="index.html" class="category-btn">Home</a></div>
+<div class="col-6 col-md-2"><a href="services.html" class="category-btn">Services</a></div>
+<div class="col-6 col-md-2"><a href="about.html" class="category-btn">About</a></div>
+<div class="col-6 col-md-2"><a href="contact.html" class="category-btn">Contact</a></div>
+</div>
 </div>
 
 <section class="py-5 container">
-    <h2 class="text-center mb-5 fw-bold" style="color:var(--primary); font-size: 2.5rem;" data-aos="fade-up">PORTFOLIO SHOWCASE</h2>
-    
-    <div class="row g-4">
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 1')"><div class="gallery-item"><img src="file_0000000062b871faad20fb22fcf394ee.png" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 2')"><div class="gallery-item"><img src="IMG-20260222-WA0028.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 3')"><div class="gallery-item"><img src="IMG-20260222-WA0033(1).jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 4')"><div class="gallery-item"><img src="IMG-20260223-WA0055.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 5')"><div class="gallery-item"><img src="IMG-20260224-WA0019.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 6')"><div class="gallery-item"><img src="IMG-20260224-WA0020.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 7')"><div class="gallery-item"><img src="IMG-20260225-WA0028.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 8')"><div class="gallery-item"><img src="IMG-20260228-WA0039.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 9')"><div class="gallery-item"><img src="IMG-20260301-WA0097.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 10')"><div class="gallery-item"><img src="IMG_20260218_015819.png" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 11')"><div class="gallery-item"><img src="IMG-20260222-WA0024.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 12')"><div class="gallery-item"><img src="IMG-20260301-WA0097.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-    </div>
-</section>
+<h2 class="text-center mb-5 fw-bold" style="color:var(--primary);font-size:2.5rem;" data-aos="fade-up">PORTFOLIO SHOWCASE</h2>
 
-<section class="py-5 container">
-    <h2 class="text-center mb-5 fw-bold" style="color:var(--secondary);" data-aos="fade-up">SPECIALIZED PRINTING SERVICES</h2>
-    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
-        <div class="col" onclick="openWA('ب فارم')"><div class="service-box">ب فارم</div></div>
-        <div class="col" onclick="openWA('شناختی کارڈ')"><div class="service-box">شناختی کارڈ</div></div>
-        <div class="col" onclick="openWA('ایف آر سی فارم')"><div class="service-box">ایف آر سی فارم</div></div>
-        <div class="col" onclick="openWA('کلر پرنٹ')"><div class="service-box">کلر پرنٹ</div></div>
-        <div class="col" onclick="openWA('پاسپورٹ سائز فوٹو')"><div class="service-box">پاسپورٹ سائز فوٹو</div></div>
-        <div class="col" onclick="openWA('سکیننگ')"><div class="service-box">سکیننگ</div></div>
-        <div class="col" onclick="openWA('لیمینیشن')"><div class="service-box">لیمینیشن</div></div>
-        <div class="col" onclick="openWA('سٹیشنری')"><div class="service-box">سٹیشنری</div></div>
-        <div class="col" onclick="openWA('واٹس ایپ پرنٹ')"><div class="service-box">واٹس ایپ پرنٹ</div></div>
-        <div class="col" onclick="openWA('ٹیکس فائلر')"><div class="service-box">ٹیکس فائلر</div></div>
-        <div class="col" onclick="openWA('کمپوزنگ پرنٹنگ')"><div class="service-box">کمپوزنگ پرنٹنگ</div></div>
-        <div class="col" onclick="openWA('سی وی')"><div class="service-box">سی وی (CV)</div></div>
-        <div class="col" onclick="openWA('ڈومیسائل')"><div class="service-box">ڈومیسائل</div></div>
-        <div class="col" onclick="openWA('فوٹوکاپی')"><div class="service-box">فوٹوکاپی</div></div>
-        <div class="col" onclick="openWA('کمپیوٹرائزڈ فرد')"><div class="service-box">کمپیوٹرائزڈ فرد</div></div>
-        <div class="col" onclick="openWA('بائنڈنگ')"><div class="service-box">بائنڈنگ</div></div>
-        <div class="col" onclick="openWA('ڈرائیونگ لائسنس')"><div class="service-box">ڈرائیونگ لائسنس</div></div>
-        <div class="col" onclick="openWA('پی وی سی کارڈ')"><div class="service-box">PVC کارڈ</div></div>
-        <div class="col" onclick="openWA('یوٹیلٹی بل ادائیگی')"><div class="service-box">بل ادائیگی</div></div>
-        <div class="col" onclick="openWA('ای کامرس')"><div class="service-box">ای کامرس</div></div>
-        <div class="col" onclick="openWA('نادرا سروسز')"><div class="service-box">نادرا سروسز</div></div>
-        <div class="col" onclick="openWA('فلیکس')"><div class="service-box">فلیکس</div></div>
-        <div class="col" onclick="openWA('شادی کارڈ')"><div class="service-box">شادی کارڈ</div></div>
-        <div class="col" onclick="openWA('وزٹنگ کارڈ')"><div class="service-box">وزٹنگ کارڈ</div></div>
-    </div>
+<div class="row g-4">
+
+<!-- ✅ FIRST IMAGE (NEW ONE - SAB SE PEHLE) -->
+<div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design Main')">
+<div class="gallery-item">
+<img src="file_0000000062b871faad20fb22fcf394ae.png" alt="Work">
+<div class="gallery-overlay">Order This Design</div>
+</div>
+</div>
+
+<!-- ✅ SECOND IMAGE -->
+<div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Logo Design')">
+<div class="gallery-item">
+<img src="file_00000000c9e07208a96c20c92990127e.png" alt="Work">
+<div class="gallery-overlay">Order This Design</div>
+</div>
+</div>
+
+<!-- REST SAME IMAGES -->
+<div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 2')"><div class="gallery-item"><img src="IMG-20260222-WA0028.jpg"><div class="gallery-overlay">Order This Design</div></div></div>
+<div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 3')"><div class="gallery-item"><img src="IMG-20260222-WA0033(1).jpg"><div class="gallery-overlay">Order This Design</div></div></div>
+
+</div>
 </section>
 
 <footer class="shop-footer text-center">
-    <div class="container">
-        <div class="dev-box" data-aos="fade-up">
-            <p class="text-secondary mb-2" style="font-family: 'Orbitron', sans-serif;">Project Lead & Developed By:</p>
-            <h3 class="fw-bold mb-3" style="color:var(--primary); text-shadow: 0 0 10px var(--primary);">Muhammad Asif</h3>
-            <a href="https://wa.me/923034480404" class="btn btn-outline-success rounded-pill px-4"><i class="fab fa-whatsapp me-2"></i>Developer WhatsApp</a>
-        </div>
-        <p class="mt-4 text-secondary">© 2026 SPO Smart Printing & Online Services | Kangan Pur</p>
-    </div>
+<div class="container">
+
+<!-- ✅ SHOP NAME ABOVE DEVELOPER -->
+<div class="shop-name">SPO Smart Printing & Online Services – Kangan Pur</div>
+
+<div class="dev-box" data-aos="fade-up">
+<p class="text-secondary mb-2" style="font-family:'Orbitron',sans-serif;">Project Lead & Developed By:</p>
+<h3 class="fw-bold mb-3" style="color:var(--primary);text-shadow:0 0 10px var(--primary);">Muhammad Asif</h3>
+<a href="https://wa.me/923034480404" class="btn btn-outline-success rounded-pill px-4">
+<i class="fab fa-whatsapp me-2"></i>Developer WhatsApp
+</a>
+</div>
+
+<p class="mt-4 text-secondary">© 2026 SPO Smart Printing & Online Services | All Rights Reserved</p>
+</div>
 </footer>
 
-<a href="https://wa.me/923034480404" class="wa-float shadow-lg"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/923034480404" class="wa-float shadow-lg">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 1000, once: true });
-    particlesJS("particles-js", { particles: { number: { value: 120, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "star" }, opacity: { value: 0.3, random: true }, size: { value: 2, random: true }, move: { speed: 0.6, direction: "none", out_mode: "out" } } });
-    
-    function openWA(service) {
-        window.open(`https://wa.me/923034480404?text=Hello SPO! I am interested in your ${service} service.`, '_blank');
-    }
+AOS.init({duration:1000,once:true});
+particlesJS("particles-js",{particles:{number:{value:120,density:{enable:true,value_area:800}},color:{value:"#ffffff"},shape:{type:"star"},opacity:{value:0.3,random:true},size:{value:2,random:true},move:{speed:0.6,direction:"none",out_mode:"out"}}});
+
+function openWA(service){
+window.open(`https://wa.me/923034480404?text=Hello SPO! I am interested in your ${service} service.`,'_blank');
+}
 </script>
+
 </body>
-</html>
+    </html>
