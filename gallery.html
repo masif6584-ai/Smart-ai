@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | SPO Smart Printing & Online Services</title>
+    <title>Work Gallery | SPO Smart Printing & Online Services</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -15,7 +15,6 @@
             --primary: #25D366;
             --secondary: #00e5ff;
             --universe-bg: #010409;
-            --glass: rgba(255, 255, 255, 0.05);
         }
 
         body { font-family: 'Rajdhani', sans-serif; background: var(--universe-bg); color: white; overflow-x: hidden; }
@@ -29,34 +28,56 @@
         .logo-box img { width: 100%; height: 100%; object-fit: contain; }
         .main-title { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: #fff; text-shadow: 0 0 10px var(--primary); }
 
-        /* --- Category Buttons (Matching Index) --- */
-        .category-btn {
-            background: rgba(255,255,255,0.02); border: 2px solid rgba(255,255,255,0.1);
-            padding: 15px; border-radius: 12px; color: white; text-decoration: none;
-            font-weight: bold; transition: 0.4s; display: block; text-align: center;
+        /* --- Category Box Navigation --- */
+        .nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 30px 0; }
+        .nav-item-box {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 25px; border-radius: 8px; color: white; text-decoration: none;
+            font-weight: bold; transition: 0.3s; flex: 1; max-width: 150px; text-align: center;
         }
-        .category-btn:hover { background: var(--secondary); color: #000; box-shadow: 0 0 20px var(--secondary); transform: translateY(-5px); }
+        .nav-item-box:hover { background: var(--secondary); color: #000; transform: translateY(-3px); box-shadow: 0 5px 15px var(--secondary); }
 
-        /* --- Gallery Grid --- */
-        .gallery-item { position: relative; border-radius: 20px; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); transition: 0.4s; background: #000; cursor: pointer; }
-        .gallery-item:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 0 30px rgba(37, 211, 102, 0.3); }
-        .gallery-item img { width: 100%; height: 280px; object-fit: cover; }
-        .gallery-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 15px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: var(--primary); font-weight: bold; text-align: center; opacity: 0; transition: 0.3s; }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        /* --- Gallery Masonry (Original Aspect Ratio) --- */
+        .gallery-grid { column-count: 3; column-gap: 20px; }
+        @media (max-width: 992px) { .gallery-grid { column-count: 2; } }
+        @media (max-width: 576px) { .gallery-grid { column-count: 1; } }
 
-        /* --- Service Boxes (From Your Image) --- */
+        .gallery-card { 
+            position: relative; margin-bottom: 20px; border-radius: 15px; 
+            overflow: hidden; border: 2px solid rgba(255,255,255,0.05); 
+            break-inside: avoid; transition: 0.4s; cursor: pointer;
+        }
+        .gallery-card img { width: 100%; height: auto; display: block; transition: 0.5s; }
+        .gallery-card:hover { border-color: var(--primary); transform: scale(1.02); }
+        
+        /* Inquiry Label for Customer */
+        .click-label {
+            position: absolute; top: 10px; right: 10px; background: var(--primary);
+            color: #000; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;
+            font-weight: bold; opacity: 0.8; display: flex; align-items: center; gap: 5px;
+        }
+        .gallery-card:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            opacity: 0; transition: 0.3s; backdrop-filter: blur(3px);
+        }
+
+        /* --- Service Boxes (From Picture) --- */
         .service-box {
-            background: #fff; color: #000; padding: 12px; border-radius: 10px;
+            background: #fff; color: #000; padding: 15px 10px; border-radius: 12px;
             font-weight: 800; text-align: center; border: 2px solid #000;
             cursor: pointer; transition: 0.3s; font-family: 'Noto Nastaliq Urdu', serif;
+            display: flex; align-items: center; justify-content: center; height: 65px; box-shadow: 4px 4px 0px #222;
         }
-        .service-box:hover { background: var(--primary); color: #fff; transform: scale(1.05); }
+        .service-box:hover { background: var(--secondary); color: #000; transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #000; }
+        .service-info-text { color: var(--secondary); font-size: 0.9rem; margin-top: -10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
 
         /* --- Footer --- */
-        .shop-footer { background: rgba(0,0,0,0.9); padding: 50px 0; border-top: 1px solid #222; margin-top: 50px; }
-        .dev-box { background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px solid #333; max-width: 450px; margin: 0 auto; padding: 30px; }
+        .shop-footer { background: rgba(0,0,0,0.95); padding: 50px 0; border-top: 2px solid var(--primary); margin-top: 80px; }
+        .dev-card { background: rgba(255,255,255,0.03); border: 1px solid #333; padding: 25px; border-radius: 20px; max-width: 400px; margin: 0 auto; }
         
-        .wa-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4); text-decoration: none; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4); text-decoration: none; }
     </style>
 </head>
 <body>
@@ -67,90 +88,153 @@
 <header class="main-header text-center">
     <div class="container d-flex align-items-center justify-content-center">
         <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
-        <span class="main-title">SPO Digital Gallery</span>
+        <span class="main-title">Smart Printing - Work Gallery</span>
     </div>
 </header>
 
-<div class="container mt-4">
-    <div class="row g-3 justify-content-center">
-        <div class="col-6 col-md-2"><a href="index.html" class="category-btn">Home</a></div>
-        <div class="col-6 col-md-2"><a href="services.html" class="category-btn">Services</a></div>
-        <div class="col-6 col-md-2"><a href="about.html" class="category-btn">About</a></div>
-        <div class="col-6 col-md-2"><a href="contact.html" class="category-btn">Contact</a></div>
+<div class="container">
+    <div class="nav-box-container">
+        <a href="index.html" class="nav-item-box">Home</a>
+        <a href="services.html" class="nav-item-box">Services</a>
+        <a href="about.html" class="nav-item-box">About</a>
+        <a href="contact.html" class="nav-item-box">Contact</a>
     </div>
+
+    <section class="py-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold" style="color:var(--primary); font-size: 2.8rem;">OUR RECENT WORK</h2>
+            <p class="text-secondary">Click any image to inquire about the design on WhatsApp</p>
+        </div>
+        
+        <div class="gallery-grid" data-aos="fade-up">
+            <div class="gallery-card" onclick="openWA('Design Image 1')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="file_0000000062b871faad20fb22fcf394ee.png" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 2')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260222-WA0028.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 3')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260222-WA0033(1).jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 4')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260223-WA0055.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 5')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260224-WA0019.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 6')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260224-WA0020.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 7')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260225-WA0028.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 8')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260228-WA0039.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 9')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260301-WA0097.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 10')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG_20260218_015819.png" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 11')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260222-WA0024.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+
+            <div class="gallery-card" onclick="openWA('Design Image 12')">
+                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
+                <img src="IMG-20260301-WA0097.jpg" alt="SPO Design">
+                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-center">
+        <h2 class="fw-bold" style="color:var(--secondary);">ADDITIONAL SERVICES</h2>
+        <p class="service-info-text">Click any service box for fast inquiry</p>
+        <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3" data-aos="fade-up">
+            <div class="col" onclick="openWA('B-Form')"><div class="service-box">ب فارم</div></div>
+            <div class="col" onclick="openWA('CNIC')"><div class="service-box">شناختی کارڈ</div></div>
+            <div class="col" onclick="openWA('FRC Form')"><div class="service-box">ایف آر سی فارم</div></div>
+            <div class="col" onclick="openWA('Color Print')"><div class="service-box">کلر پرنٹ</div></div>
+            <div class="col" onclick="openWA('Passport Photos')"><div class="service-box">پاسپورٹ فوٹو</div></div>
+            <div class="col" onclick="openWA('Scanning')"><div class="service-box">سکیننگ</div></div>
+            <div class="col" onclick="openWA('Lamination')"><div class="service-box">لیمینیشن</div></div>
+            <div class="col" onclick="openWA('Stationery')"><div class="service-box">سٹیشنری</div></div>
+            <div class="col" onclick="openWA('WhatsApp Print')"><div class="service-box">واٹس ایپ پرنٹ</div></div>
+            <div class="col" onclick="openWA('Tax Filer')"><div class="service-box">ٹیکس فائلر</div></div>
+            <div class="col" onclick="openWA('Composing')"><div class="service-box">کمپوزنگ</div></div>
+            <div class="col" onclick="openWA('CV Design')"><div class="service-box">سی وی (CV)</div></div>
+            <div class="col" onclick="openWA('Domicile')"><div class="service-box">ڈومیسائل</div></div>
+            <div class="col" onclick="openWA('Photocopy')"><div class="service-box">فوٹوکاپی</div></div>
+            <div class="col" onclick="openWA('Fard Online')"><div class="service-box">کمپیوٹرائزڈ فرد</div></div>
+            <div class="col" onclick="openWA('Binding')"><div class="service-box">بائنڈنگ</div></div>
+            <div class="col" onclick="openWA('Driving License')"><div class="service-box">لائسنس</div></div>
+            <div class="col" onclick="openWA('PVC Card')"><div class="service-box">PVC کارڈ</div></div>
+            <div class="col" onclick="openWA('Bill Payment')"><div class="service-box">بل ادائیگی</div></div>
+            <div class="col" onclick="openWA('E-Commerce')"><div class="service-box">ای کامرس</div></div>
+            <div class="col" onclick="openWA('NADRA Services')"><div class="service-box">نادرا سروسز</div></div>
+            <div class="col" onclick="openWA('Flex Printing')"><div class="service-box">فلیکس</div></div>
+            <div class="col" onclick="openWA('Shadi Card')"><div class="service-box">شادی کارڈ</div></div>
+            <div class="col" onclick="openWA('Visiting Card')"><div class="service-box">وزٹنگ کارڈ</div></div>
+        </div>
+    </section>
 </div>
-
-<section class="py-5 container">
-    <h2 class="text-center mb-5 fw-bold" style="color:var(--primary); font-size: 2.5rem;" data-aos="fade-up">PORTFOLIO SHOWCASE</h2>
-    
-    <div class="row g-4">
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 1')"><div class="gallery-item"><img src="file_0000000062b871faad20fb22fcf394ee.png" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 2')"><div class="gallery-item"><img src="IMG-20260222-WA0028.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 3')"><div class="gallery-item"><img src="IMG-20260222-WA0033(1).jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 4')"><div class="gallery-item"><img src="IMG-20260223-WA0055.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 5')"><div class="gallery-item"><img src="IMG-20260224-WA0019.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 6')"><div class="gallery-item"><img src="IMG-20260224-WA0020.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 7')"><div class="gallery-item"><img src="IMG-20260225-WA0028.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 8')"><div class="gallery-item"><img src="IMG-20260228-WA0039.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 9')"><div class="gallery-item"><img src="IMG-20260301-WA0097.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 10')"><div class="gallery-item"><img src="IMG_20260218_015819.png" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 11')"><div class="gallery-item"><img src="IMG-20260222-WA0024.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" onclick="openWA('Portfolio Design 12')"><div class="gallery-item"><img src="IMG-20260301-WA0097.jpg" alt="Work"><div class="gallery-overlay">Order This Design</div></div></div>
-    </div>
-</section>
-
-<section class="py-5 container">
-    <h2 class="text-center mb-5 fw-bold" style="color:var(--secondary);" data-aos="fade-up">SPECIALIZED PRINTING SERVICES</h2>
-    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
-        <div class="col" onclick="openWA('ب فارم')"><div class="service-box">ب فارم</div></div>
-        <div class="col" onclick="openWA('شناختی کارڈ')"><div class="service-box">شناختی کارڈ</div></div>
-        <div class="col" onclick="openWA('ایف آر سی فارم')"><div class="service-box">ایف آر سی فارم</div></div>
-        <div class="col" onclick="openWA('کلر پرنٹ')"><div class="service-box">کلر پرنٹ</div></div>
-        <div class="col" onclick="openWA('پاسپورٹ سائز فوٹو')"><div class="service-box">پاسپورٹ سائز فوٹو</div></div>
-        <div class="col" onclick="openWA('سکیننگ')"><div class="service-box">سکیننگ</div></div>
-        <div class="col" onclick="openWA('لیمینیشن')"><div class="service-box">لیمینیشن</div></div>
-        <div class="col" onclick="openWA('سٹیشنری')"><div class="service-box">سٹیشنری</div></div>
-        <div class="col" onclick="openWA('واٹس ایپ پرنٹ')"><div class="service-box">واٹس ایپ پرنٹ</div></div>
-        <div class="col" onclick="openWA('ٹیکس فائلر')"><div class="service-box">ٹیکس فائلر</div></div>
-        <div class="col" onclick="openWA('کمپوزنگ پرنٹنگ')"><div class="service-box">کمپوزنگ پرنٹنگ</div></div>
-        <div class="col" onclick="openWA('سی وی')"><div class="service-box">سی وی (CV)</div></div>
-        <div class="col" onclick="openWA('ڈومیسائل')"><div class="service-box">ڈومیسائل</div></div>
-        <div class="col" onclick="openWA('فوٹوکاپی')"><div class="service-box">فوٹوکاپی</div></div>
-        <div class="col" onclick="openWA('کمپیوٹرائزڈ فرد')"><div class="service-box">کمپیوٹرائزڈ فرد</div></div>
-        <div class="col" onclick="openWA('بائنڈنگ')"><div class="service-box">بائنڈنگ</div></div>
-        <div class="col" onclick="openWA('ڈرائیونگ لائسنس')"><div class="service-box">ڈرائیونگ لائسنس</div></div>
-        <div class="col" onclick="openWA('پی وی سی کارڈ')"><div class="service-box">PVC کارڈ</div></div>
-        <div class="col" onclick="openWA('یوٹیلٹی بل ادائیگی')"><div class="service-box">بل ادائیگی</div></div>
-        <div class="col" onclick="openWA('ای کامرس')"><div class="service-box">ای کامرس</div></div>
-        <div class="col" onclick="openWA('نادرا سروسز')"><div class="service-box">نادرا سروسز</div></div>
-        <div class="col" onclick="openWA('فلیکس')"><div class="service-box">فلیکس</div></div>
-        <div class="col" onclick="openWA('شادی کارڈ')"><div class="service-box">شادی کارڈ</div></div>
-        <div class="col" onclick="openWA('وزٹنگ کارڈ')"><div class="service-box">وزٹنگ کارڈ</div></div>
-    </div>
-</section>
 
 <footer class="shop-footer text-center">
     <div class="container">
-        <div class="dev-box" data-aos="fade-up">
-            <p class="text-secondary mb-2" style="font-family: 'Orbitron', sans-serif;">Project Lead & Developed By:</p>
-            <h3 class="fw-bold mb-3" style="color:var(--primary); text-shadow: 0 0 10px var(--primary);">Muhammad Asif</h3>
+        <div class="dev-card" data-aos="zoom-in">
+            <p class="text-secondary mb-1">Project Lead & Developed By:</p>
+            <h3 class="fw-bold mb-3" style="color:var(--primary);">Muhammad Asif</h3>
             <a href="https://wa.me/923034480404" class="btn btn-outline-success rounded-pill px-4"><i class="fab fa-whatsapp me-2"></i>Developer WhatsApp</a>
         </div>
-        <p class="mt-4 text-secondary">© 2026 SPO Smart Printing & Online Services | Kangan Pur</p>
+        <p class="mt-4 text-secondary">© 2026 Smart Printing & Online Services | Kangan Pur</p>
     </div>
 </footer>
 
-<a href="https://wa.me/923034480404" class="wa-float shadow-lg"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/923034480404" class="whatsapp-float shadow-lg"><i class="fab fa-whatsapp"></i></a>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });
-    particlesJS("particles-js", { particles: { number: { value: 120, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "star" }, opacity: { value: 0.3, random: true }, size: { value: 2, random: true }, move: { speed: 0.6, direction: "none", out_mode: "out" } } });
+    particlesJS("particles-js", { particles: { number: { value: 100, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "star" }, opacity: { value: 0.3, random: true }, size: { value: 2, random: true }, move: { speed: 0.5, direction: "none", out_mode: "out" } } });
     
-    function openWA(service) {
-        window.open(`https://wa.me/923034480404?text=Hello SPO! I am interested in your ${service} service.`, '_blank');
+    function openWA(item) {
+        const msg = `Hello SPO! I saw "${item}" in your gallery and want to know more details.`;
+        window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`, '_blank');
     }
 </script>
 </body>
-            </html>
-            
+</html>
