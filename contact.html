@@ -27,7 +27,7 @@ body{
 
 #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
 
-/* --- 1. Logo Animation --- */
+/* Logo Pulse Animation */
 .logo-box { 
     width: 65px; height: 65px; border-radius: 50%; 
     border: 2px solid var(--primary); overflow: hidden; 
@@ -44,67 +44,66 @@ body{
 
 /* Header & Nav */
 .main-header { background: rgba(0, 0, 0, 0.95); border-bottom: 3px solid var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-.nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+.nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 15px; }
 .nav-item-box {
     background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    padding: 8px 20px; border-radius: 6px; color: white; text-decoration: none;
-    font-weight: bold; transition: 0.3s; font-size: 0.9rem;
+    padding: 6px 15px; border-radius: 6px; color: white; text-decoration: none;
+    font-weight: bold; transition: 0.3s; font-size: 0.85rem;
 }
-.nav-item-box:hover, .nav-item-box.active { background: var(--secondary); color: #000; box-shadow: 0 0 15px var(--secondary); border-color: var(--secondary); }
+.nav-item-box:hover, .nav-item-box.active { background: var(--secondary); color: #000; box-shadow: 0 0 12px var(--secondary); border-color: var(--secondary); }
 
-/* --- 2. RESTORED HERO SECTION (Old Style) --- */
+/* Compact Hero */
 .hero-contact{
   position:relative;
-  height:40vh;
+  height:30vh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   background: linear-gradient(90deg, #3b82f6, #06b6d4, #22d3ee);
   color:white;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
   border-radius: 20px;
-  margin: 20px;
+  margin: 15px;
 }
-.hero-contact h1{ font-size:3rem; font-weight:700; text-shadow: 2px 2px 10px rgba(0,0,0,0.6); font-family: 'Orbitron';}
-.shop-address{ font-weight:600; font-size:1.1rem; margin-top:10px; }
+.hero-contact h1{ font-size:2.2rem; font-weight:700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); font-family: 'Orbitron';}
 
-/* --- 3. RESTORED CONTACT FORM (Old Style with Bright Effects) --- */
+/* COMPACT & SMALL CONTACT BOX */
 .contact-section{
-  padding:40px 30px;
-  max-width:750px;
-  margin:0 auto 50px auto;
+  padding:30px 25px;
+  max-width:550px; /* Chota Size */
+  margin:0 auto 40px auto;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(15px);
-  border-radius:25px;
-  box-shadow:0 0 40px rgba(37, 211, 102, 0.4); /* Bright Green Glow */
-  border:2px solid var(--primary);
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(37, 211, 102, 0.3); 
+  border:1.5px solid var(--primary);
 }
-.contact-section h2{ color:var(--primary); margin-bottom:25px; text-align:center; font-weight: 800; text-shadow: 0 0 10px var(--primary); }
-.urdu-label { font-family: 'Noto Nastaliq Urdu', serif; color: var(--secondary); font-size: 0.9rem; float: right; }
-.contact-section label{ font-weight:600; display: block; margin-bottom: 5px; clear: both;}
+.contact-section h2{ color:var(--primary); font-size: 1.5rem; margin-bottom:20px; text-align:center; font-weight: 800; text-shadow: 0 0 8px var(--primary); }
+.urdu-label { font-family: 'Noto Nastaliq Urdu', serif; color: var(--secondary); font-size: 0.8rem; float: right; }
+.contact-section label{ font-weight:600; font-size: 0.9rem; display: block; margin-bottom: 5px; clear: both;}
 
 .contact-section input, .contact-section textarea, .contact-section select{
-  border-radius:12px; padding:12px; margin-bottom:15px; width:100%;
-  background: rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.3);
+  border-radius:10px; padding:10px; margin-bottom:12px; width:100%;
+  background: rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.2);
+  font-size: 0.9rem;
 }
-.contact-section input:focus, .contact-section select:focus { border-color: var(--secondary); box-shadow: 0 0 10px var(--secondary); outline: none;}
+.contact-section input:focus, .contact-section select:focus { border-color: var(--secondary); box-shadow: 0 0 8px var(--secondary); outline: none;}
 
 .contact-section button{
-  background:var(--primary); color:#000; padding:15px 25px; border:none; border-radius:12px;
+  background:var(--primary); color:#000; padding:12px; border:none; border-radius:10px;
   cursor:pointer; font-weight:800; transition:0.3s; width: 100%; text-transform: uppercase;
 }
-.contact-section button:hover{ background:#fff; transform: scale(1.02); }
+.contact-section button:hover{ background:#fff; transform: translateY(-2px); box-shadow: 0 5px 15px var(--primary); }
 
-/* --- 4. Footer Ordering (Shop then Developer) --- */
-.shop-info-footer { background: rgba(0,0,0,0.85); padding: 50px 0; border-top: 1px solid #333; text-align: center; }
-.dev-footer { background: #000; padding: 40px 0; border-top: 2px solid var(--primary); }
+/* Footers */
+.shop-info-footer { background: rgba(0,0,0,0.8); padding: 30px 0; border-top: 1px solid #222; text-align: center; }
+.dev-footer { background: #000; padding: 30px 0; border-top: 2px solid var(--primary); }
 .dev-card {
-    background: rgba(255,255,255,0.03); border: 1px solid #444; padding: 25px;
-    border-radius: 20px; max-width: 480px; margin: 0 auto;
+    background: rgba(255,255,255,0.03); border: 1px solid #333; padding: 20px;
+    border-radius: 15px; max-width: 400px; margin: 0 auto;
 }
 
-.wa-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 9999; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+.wa-float { position: fixed; bottom: 25px; right: 25px; width: 55px; height: 55px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; z-index: 9999; box-shadow: 0 8px 15px rgba(0,0,0,0.4); }
 </style>
 </head>
 <body>
@@ -115,7 +114,7 @@ body{
     <div class="container text-center">
         <div class="d-flex align-items-center justify-content-center">
             <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
-            <span class="main-title ms-3" style="font-size: 1.6rem; font-weight: 800; color: #fff;">SPO SERVICES</span>
+            <span class="main-title ms-2" style="font-size: 1.3rem; font-weight: 800;">SPO SERVICES</span>
         </div>
         <div class="nav-box-container">
             <a href="index.html" class="nav-item-box">Home</a>
@@ -130,8 +129,7 @@ body{
 <section class="hero-contact" data-aos="fade-down">
 <div>
 <h1>Contact Us</h1>
-<p class="fs-5">Reach out for Printing, Website, and Digital Services</p>
-<div class="shop-address">📍 Purana Paka Bazar, Kanganpur | 0303-4480404</div>
+<div class="shop-address" style="font-size: 0.9rem;">📍 Purana Paka Bazar, Kanganpur | 0303-4480404</div>
 </div>
 </section>
 
@@ -141,43 +139,42 @@ body{
     <label>Full Name <span class="urdu-label">آپ کا نام</span></label>
     <input type="text" id="name" placeholder="Your Name" required>
 
-    <label>Phone Number <span class="urdu-label">فون نمبر</span></label>
-    <input type="tel" id="phone" placeholder="03034480404" required>
+    <label>Email Address (Optional) <span class="urdu-label">ای میل (اختیاری)</span></label>
+    <input type="email" id="email" placeholder="email@example.com">
 
     <label>Select Service <span class="urdu-label">سروس کا انتخاب کریں</span></label>
     <select id="service" required>
-      <option value="">-- Select Service --</option>
-      <option value="Printing">Printing & Documents</option>
-      <option value="NADRA/FBR">NADRA / FBR Services</option>
+      <option value="">-- Choose Service --</option>
+      <option value="Printing & Flex">Printing & Flex</option>
+      <option value="NADRA/FBR Services">NADRA / FBR Services</option>
       <option value="Website Development">Website Development</option>
       <option value="Graphic Design">Graphic Designing</option>
-      <option value="Online Forms">Online Job Apply</option>
+      <option value="Online Forms/Job Apply">Online Job Apply</option>
+      <option value="Payments/Bills">Bills & Payments</option>
     </select>
 
     <label>Message <span class="urdu-label">تفصیلات</span></label>
-    <textarea id="message" rows="4" placeholder="Write your message here..." required></textarea>
+    <textarea id="message" rows="3" placeholder="Write message..." required></textarea>
 
-    <button type="submit">Send Message via WhatsApp</button>
+    <button type="submit"><i class="fab fa-whatsapp me-2"></i>Send via WhatsApp</button>
 </form>
 </section>
 
 <footer class="shop-info-footer">
     <div class="container" data-aos="fade-up">
-        <h3 style="color: var(--primary); font-weight: 800;">Smart Printing & Online Services</h3>
-        <p class="mb-1 text-light">📍 Purana Paka Bazar, Kanganpur</p>
-        <p class="text-secondary small">One Window Digital Solutions Provider</p>
+        <h5 style="color: var(--primary);">Smart Printing & Online Services</h5>
+        <p class="mb-0 small">📍 Purana Paka Bazar, Kanganpur | 📞 0303-4480404</p>
     </div>
 </footer>
 
 <footer class="dev-footer text-center">
     <div class="container">
         <div class="dev-card" data-aos="zoom-in">
-            <p class="text-secondary small mb-1" style="font-family: 'Orbitron';">CHIEF DEVELOPER</p>
-            <h2 class="fw-bold" style="color: var(--secondary);">MUHAMMAD ASIF ALI</h2>
-            <p class="small text-secondary">Expert in Web Design & Digital Branding</p>
-            <a href="https://wa.me/923034480404" class="btn btn-outline-success btn-sm rounded-pill mt-2">Chat with Me</a>
+            <p class="text-secondary x-small mb-1">Developed By:</p>
+            <h4 class="fw-bold mb-0" style="color: var(--secondary);">MUHAMMAD ASIF ALI</h4>
+            <p class="small text-secondary mt-1">Web & Digital Expert</p>
         </div>
-        <p class="mt-4 text-secondary small">© 2026 SPO | Developed by Muhammad Asif</p>
+        <p class="mt-3 text-secondary small" style="font-size: 0.7rem;">© 2026 SPO Services | Kanganpur</p>
     </div>
 </footer>
 
@@ -186,11 +183,16 @@ body{
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 AOS.init({ duration: 1000, once: true });
-particlesJS("particles-js", { particles: { number: { value: 80, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "star" }, opacity: { value: 0.3 }, size: { value: 2 }, move: { speed: 0.4 } } });
+particlesJS("particles-js", { particles: { number: { value: 60, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "star" }, opacity: { value: 0.2 }, size: { value: 2 }, move: { speed: 0.3 } } });
 
 document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();
-  const waMsg = `*New Website Inquiry*%0A*Name:* ${document.getElementById('name').value}%0A*Phone:* ${document.getElementById('phone').value}%0A*Service:* ${document.getElementById('service').value}%0A*Message:* ${document.getElementById('message').value}`;
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value || 'Not provided';
+  const service = document.getElementById('service').value;
+  const msg = document.getElementById('message').value;
+
+  const waMsg = `*New Website Inquiry*%0A*Name:* ${name}%0A*Email:* ${email}%0A*Service:* ${service}%0A*Message:* ${msg}`;
   window.open(`https://wa.me/923034480404?text=${waMsg}`, '_blank');
 });
 </script>
