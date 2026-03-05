@@ -1,275 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | Smart Printing & Online Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SPO Smart Printing & Online Services</title>
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-<style>
-body{
-  font-family:'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #3b82f6);
-  color:#fff;
-  overflow-x:hidden;
-  padding-top:120px;
-}
-/* Navbar */
-.navbar{
-  backdrop-filter: blur(20px);
-  background: rgba(0,0,0,0.6);
-  position: fixed;
-  width:100%;
-  z-index:999;
-}
-.navbar-brand{
-  font-weight:bold;
-  font-size:1.8rem;
-  color:#25D366 !important;
-}
-.navbar-brand span{
-  font-size:0.9rem;
-  color:#fff;
-  display:block;
-  font-weight:400;
-}
+    <style>
+        :root {
+            --primary: #25D366;
+            --secondary: #00e5ff;
+            --universe-bg: #010409;
+        }
 
-/* Page Buttons (Quick Navigation) */
-.page-buttons{
-  text-align:center;
-  margin-bottom:20px;
-}
-.page-buttons a{
-  display:inline-block;
-  margin:5px;
-  padding:10px 20px;
-  border-radius:15px;
-  background:#25D366;
-  color:#fff;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
-}
-.page-buttons a:hover{
-  background:#1fa34a;
-}
+        body { font-family: 'Rajdhani', sans-serif; background: var(--universe-bg); color: white; overflow-x: hidden; }
 
-/* HERO */
-.hero-contact{
-  position:relative;
-  height:40vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4, #22d3ee);
-  color:white;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
-  border-radius: 20px;
-  margin: 20px;
-}
-.hero-contact h1{ font-size:3rem; font-weight:700; text-shadow: 2px 2px 10px rgba(0,0,0,0.6);}
-.hero-contact p{ font-size:1.3rem; text-shadow: 1px 1px 8px rgba(0,0,0,0.5); }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
+        .nebula { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.07) 0%, transparent 80%); z-index: -2; pointer-events: none; }
 
-/* CONTACT FORM */
-.contact-section{
-  padding:40px 30px;
-  max-width:750px;
-  margin:0 auto 50px auto;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  border-radius:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.7);
-  border:1px solid rgba(255,255,255,0.2);
-}
-.contact-section h2{
-  color:#25D366;
-  margin-bottom:25px;
-  text-align:center;
-  text-shadow: 1px 1px 10px rgba(0,0,0,0.4);
-}
-.contact-section label{ font-weight:600; }
-.contact-section input, .contact-section textarea, .contact-section select{
-  border-radius:12px;
-  padding:12px;
-  margin-bottom:15px;
-  width:100%;
-  background: rgba(255,255,255,0.1);
-  color:#fff;
-  border:1px solid rgba(255,255,255,0.3);
-}
-.contact-section input::placeholder,
-.contact-section textarea::placeholder{
-  color: rgba(255,255,255,0.7);
-}
-.contact-section button{
-  background:#25D366;
-  color:white;
-  padding:12px 25px;
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
-  font-weight:600;
-  transition:0.3s;
-  box-shadow:0 5px 15px rgba(0,0,0,0.4);
-}
-.contact-section button:hover{
-  background:#1fa34a;
-}
-.confirmation{
-  margin-top:15px;
-  font-weight:bold;
-  color:#00ffcc;
-  text-align:center;
-  text-shadow:1px 1px 5px rgba(0,0,0,0.6);
-}
+        /* --- Global Header with Box Buttons --- */
+        .main-header { background: rgba(0, 0, 0, 0.9); border-bottom: 3px solid var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo-box { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: #fff; margin-right: 15px; box-shadow: 0 0 15px var(--primary); }
+        .logo-box img { width: 100%; height: 100%; object-fit: contain; }
+        .main-title { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: #fff; text-shadow: 0 0 10px var(--primary); }
 
-/* Shop Address */
-.shop-address{
-  text-align:center;
-  margin-top:10px;
-  color:#fff;
-  font-weight:600;
-  text-shadow:1px 1px 6px rgba(0,0,0,0.7);
-  font-size:1rem;
-}
+        /* --- Navigation Box Buttons --- */
+        .nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+        .nav-item-box {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 20px; border-radius: 6px; color: white; text-decoration: none;
+            font-weight: bold; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase;
+        }
+        .nav-item-box:hover, .nav-item-box.active { background: var(--secondary); color: #000; box-shadow: 0 0 15px var(--secondary); border-color: var(--secondary); transform: translateY(-3px); }
 
-/* WhatsApp Floating */
-.wa-float{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  z-index:9999;
-}
-.wa-btn{
-  background:#25D366;
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  box-shadow:0 10px 20px rgba(0,0,0,0.3);
-  font-size:24px;
-  color:white;
-}
-</style>
+        /* --- Contact Form Section (Enhanced) --- */
+        .contact-card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px; border-radius: 25px; backdrop-filter: blur(15px);
+            max-width: 800px; margin: 50px auto; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .form-control, .form-select {
+            background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.2) !important;
+            color: white !important; padding: 12px; border-radius: 10px; margin-bottom: 20px;
+        }
+        .form-control:focus { border-color: var(--primary) !important; box-shadow: 0 0 10px var(--primary); }
+        .submit-btn {
+            background: var(--primary); color: #000; font-weight: 800; border: none;
+            padding: 15px; border-radius: 12px; width: 100%; transition: 0.3s; text-transform: uppercase;
+        }
+        .submit-btn:hover { background: var(--secondary); transform: scale(1.02); }
+
+        /* --- Footer & Developer Card --- */
+        .shop-footer { background: rgba(0,0,0,0.95); padding: 50px 0; border-top: 2px solid var(--primary); margin-top: 80px; }
+        .dev-card {
+            background: rgba(255,255,255,0.03); border: 1px solid #333; padding: 30px;
+            border-radius: 20px; max-width: 450px; margin: 0 auto; transition: 0.3s;
+        }
+        .dev-card:hover { border-color: var(--primary); background: rgba(37, 211, 102, 0.05); }
+
+        .wa-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4); text-decoration: none; }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-<div class="container-fluid">
-  <a class="navbar-brand" href="index.html">
-    Smart Printing and Online Services
-    <span>Purana Paka Bazar, Kanganpur</span>
-  </a>
-  <div class="collapse navbar-collapse">
-    <div class="navbar-nav ms-auto">
-      <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link" href="services.html">Services</a>
-      <a class="nav-link active" href="about.html">About</a>
-      <a class="nav-link" href="contact.html">Contact</a>
+<div class="nebula"></div>
+<div id="particles-js"></div>
+
+<header class="main-header">
+    <div class="container text-center">
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
+            <span class="main-title">Contact SPO Services</span>
+        </div>
+        <div class="nav-box-container">
+            <a href="index.html" class="nav-item-box">Home</a>
+            <a href="services.html" class="nav-item-box">Services</a>
+            <a href="gallery.html" class="nav-item-box">Gallery</a>
+            <a href="about.html" class="nav-item-box">About</a>
+            <a href="contact.html" class="nav-item-box active">Contact</a>
+        </div>
     </div>
-  </div>
-</div>
-</nav>
+</header>
 
-<!-- Page Buttons -->
-<div class="page-buttons">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
+<div class="container py-5">
+    <div class="text-center mb-5" data-aos="fade-up">
+        <h1 class="fw-bold" style="color: var(--primary); font-size: 3rem;">GET IN TOUCH</h1>
+        <p class="text-secondary fs-5">Purana Paka Bazar, Kanganpur | 0303-4480404</p>
+    </div>
 
-<!-- HERO -->
-<section class="hero-contact" data-aos="fade-down">
-<div>
-<h1>Contact Us</h1>
-<p>Reach out for Printing, AI, and Digital Services</p>
-<div class="shop-address">📍 Purana Paka Bazar, Kanganpur | Call/WhatsApp: 03034480404</div>
-</div>
-</section>
+    <div class="contact-card" data-aos="zoom-in">
+        <form id="contactForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="mb-2 fw-bold">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="mb-2 fw-bold">Phone Number</label>
+                    <input type="text" id="phone" class="form-control" placeholder="03xx-xxxxxxx" required>
+                </div>
+            </div>
 
-<!-- CONTACT FORM -->
-<section class="contact-section" data-aos="fade-up">
-<h2>Get in Touch</h2>
-<form id="contactForm">
-<label for="name">Full Name</label>
-<input type="text" id="name" placeholder="Your Name" required>
+            <label class="mb-2 fw-bold">Select Service</label>
+            <select id="service" class="form-select" required>
+                <option value="">-- Choose a Service --</option>
+                <option value="Printing & Flex">Printing & Flex Services</option>
+                <option value="NADRA & FBR">NADRA / FBR (Tax) Services</option>
+                <option value="Web Development">Website Development</option>
+                <option value="Graphic Design">Graphic Designing</option>
+                <option value="Online Apply">Online Job/Admission Apply</option>
+                <option value="Other">Other Inquiry</option>
+            </select>
 
-<label for="email">Email Address (Optional)</label>
-<input type="email" id="email" placeholder="Your Email (Optional)">
+            <label class="mb-2 fw-bold">Your Message</label>
+            <textarea id="message" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
 
-<label for="service">Select Service</label>
-<select id="service" required>
-  <option value="">-- Select Service --</option>
-  <option value="Printing">Printing & Documents</option>
-  <option value="NADRA/FBR">NADRA / FBR Services</option>
-  <option value="Marketing">Digital Marketing</option>
-  <option value="Website/AI">Website & AI Automation</option>
-  <option value="Forms">Online Forms</option>
-  <option value="Payments">JazCash / EasyPaisa / Bills</option>
-  <option value="E-Stamp/Chalan">E-Stamp / Online Chalan</option>
-</select>
-
-<label for="message">Message</label>
-<textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
-
-<button type="submit">Send Message via WhatsApp & SMS</button>
-</form>
-<div class="confirmation" id="confirmation"></div>
-</section>
-
-<!-- WhatsApp Floating -->
-<div class="wa-float">
-<div class="wa-btn" onclick="window.open('https://wa.me/923034480404','_blank')">
-<i class="fab fa-whatsapp"></i>
-</div>
+            <button type="submit" class="submit-btn"><i class="fab fa-whatsapp me-2"></i> Send Inquiry to WhatsApp</button>
+        </form>
+        <div id="confirmation" class="mt-3 text-center fw-bold" style="color: var(--secondary);"></div>
+    </div>
 </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<footer class="shop-footer text-center">
+    <div class="container">
+        <div class="dev-card" data-aos="fade-up">
+            <p class="text-secondary small mb-1" style="font-family: 'Orbitron';">Project Lead & Lead Developer</p>
+            <h3 class="fw-bold mb-3" style="color: var(--primary); letter-spacing: 1px;">MUHAMMAD ASIF ALI</h3>
+            <p class="small text-secondary mb-4">Expert in Web Development, Graphic Design & Digital Services</p>
+            <a href="https://wa.me/923034480404" class="btn btn-outline-success rounded-pill px-4">
+                <i class="fab fa-whatsapp me-2"></i>Chat with Developer
+            </a>
+        </div>
+        <p class="mt-5 text-secondary small">© 2026 Smart Printing & Online Services | Purana Paka Bazar, Kanganpur</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init();
+    AOS.init({ duration: 1000, once: true });
+    particlesJS("particles-js", { particles: { number: { value: 100, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "star" }, opacity: { value: 0.3 }, size: { value: 2 }, move: { speed: 0.6 } } });
 
-/* Contact Form Submission */
-document.getElementById('contactForm').addEventListener('submit', function(e){
-e.preventDefault();
-const name = document.getElementById('name').value.trim();
-const email = document.getElementById('email').value.trim();
-const service = document.getElementById('service').value;
-const message = document.getElementById('message').value.trim();
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
 
-if(!service){
-  alert('Please select a service!');
-  return;
-}
-
-// Prepare WhatsApp message
-const phone = '+923034480404'; 
-let waMsg = `New Inquiry:%0AName: ${name}%0AService: ${service}%0AMessage: ${message}`;
-if(email) waMsg += `%0AEmail: ${email}`;
-window.open(`https://wa.me/${phone}?text=${waMsg}`, '_blank');
-
-// SMS integration placeholder
-let smsText = `New Inquiry: Name: ${name}, Service: ${service}, Message: ${message}`;
-if(email) smsText += `, Email: ${email}`;
-fetch(`YOUR_SMS_GATEWAY_URL?to=03034480404&msg=${encodeURIComponent(smsText)}`) 
-  .then(res => console.log('SMS sent'))
-  .catch(err => console.log('SMS error', err));
-
-// Auto reply confirmation
-document.getElementById('confirmation').innerText = `Assalam o Alaikum ${name}, your message has been sent! We will contact you soon.`;
-
-document.getElementById('contactForm').reset();
-});
+        const waMsg = `*New Inquiry from Website*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Message:* ${message}`;
+        
+        window.open(`https://wa.me/923034480404?text=${waMsg}`, '_blank');
+        
+        document.getElementById('confirmation').innerText = "Assalam-o-Alaikum! Your message has been prepared for WhatsApp.";
+        this.reset();
+    });
 </script>
 </body>
 </html>
