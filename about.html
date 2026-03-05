@@ -1,175 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | Smart Printing & Online Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SPO Smart Printing & Online Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-<meta name="description" content="About Smart Printing & Online Services – One Window AI Digital & Print Solutions in Kanganpur.">
-<meta name="keywords" content="About Smart Printing, AI Digital Services, Printing Solutions, Kanganpur services">
-<meta name="author" content="Smart Printing & Online Services">
+    <style>
+        :root {
+            --primary: #25D366;
+            --secondary: #00e5ff;
+            --universe-bg: #010409;
+        }
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- AOS CSS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<!-- FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        body { font-family: 'Rajdhani', sans-serif; background: var(--universe-bg); color: white; overflow-x: hidden; }
 
-<!-- Particles -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
+        .nebula { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.07) 0%, transparent 80%); z-index: -2; pointer-events: none; }
 
-<style>
-body{
-  font-family:'Segoe UI',sans-serif;
-  background:#0f172a;
-  color:white;
-  overflow-x:hidden;
-}
+        /* --- Unified Header with Box Buttons --- */
+        .main-header { background: rgba(0, 0, 0, 0.9); border-bottom: 3px solid var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo-box { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: #fff; margin-right: 15px; box-shadow: 0 0 15px var(--primary); }
+        .logo-box img { width: 100%; height: 100%; object-fit: contain; }
+        .main-title { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: #fff; text-shadow: 0 0 10px var(--primary); }
 
-/* Page Top */
-#particles-bg{
-  position:fixed;
-  width:100%;
-  height:100%;
-  z-index:-1;
-}
+        .nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+        .nav-item-box {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 20px; border-radius: 6px; color: white; text-decoration: none;
+            font-weight: bold; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase;
+        }
+        .nav-item-box:hover { background: var(--secondary); color: #000; box-shadow: 0 0 15px var(--secondary); transform: translateY(-3px); }
+        .nav-item-box.active { background: var(--primary); color: #000; border-color: var(--primary); }
 
-.page-header{
-  padding:100px 20px;
-  text-align:center;
-}
+        /* --- About Content --- */
+        .content-card {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            padding: 40px; border-radius: 25px; backdrop-filter: blur(10px); margin-bottom: 30px;
+        }
+        .section-title { color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+        .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.5; direction: rtl; text-align: justify; font-size: 1.2rem; }
 
-.page-header h1{
-  font-size:3rem;
-  font-weight:700;
-  color:#25D366;
-}
-.page-header p{
-  font-size:1.2rem;
-  color:#e0e0e0;
-}
+        /* --- Website Services Highlight --- */
+        .service-highlight-box {
+            background: linear-gradient(45deg, rgba(37, 211, 102, 0.1), rgba(0, 229, 255, 0.1));
+            border: 1px solid var(--secondary); padding: 25px; border-radius: 15px; margin-top: 20px;
+        }
 
-/* About Content */
-.about-section{
-  padding:50px 20px;
-}
-.about-section h3{
-  color:#25D366;
-  margin-bottom:15px;
-}
-.about-section p{
-  line-height:1.8;
-  font-size:1rem;
-  color:#e8e8e8;
-}
-
-.values-box{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:15px;
-  border:1px solid rgba(255,255,255,0.2);
-}
-
-/* Footer */
-.footer{
-  background:#000;
-  padding:15px;
-  text-align:center;
-  font-size:0.9rem;
-  color:#bbb;
-}
-
-/* WhatsApp Floating */
-.wa-float{
- position:fixed;
- bottom:25px;
- right:25px;
- z-index:9999;
-}
-.wa-btn{
- background:#25d366;
- width:60px;
- height:60px;
- border-radius:50%;
- display:flex;
- align-items:center;
- justify-content:center;
- cursor:pointer;
- color:white;
- font-size:26px;
- box-shadow:0 10px 20px rgba(0,0,0,0.3);
-}
-</style>
+        /* --- Footer --- */
+        .shop-footer { background: rgba(0,0,0,0.95); padding: 50px 0; border-top: 2px solid var(--primary); margin-top: 50px; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4); text-decoration: none; }
+    </style>
 </head>
-
 <body>
 
-<div id="particles-bg"></div>
+<div class="nebula"></div>
+<div id="particles-js"></div>
 
-<!-- NAVIGATION -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
- <div class="container">
-   <a class="navbar-brand" href="index.html">Smart Printing</a>
-   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarNav">
-     <ul class="navbar-nav ms-auto">
-       <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-       <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-       <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-       <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-     </ul>
-   </div>
- </div>
-</nav>
+<header class="main-header">
+    <div class="container text-center">
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
+            <span class="main-title">About SPO Digital</span>
+        </div>
+        <div class="nav-box-container">
+            <a href="index.html" class="nav-item-box">Home</a>
+            <a href="services.html" class="nav-item-box">Services</a>
+            <a href="gallery.html" class="nav-item-box">Gallery</a>
+            <a href="about.html" class="nav-item-box active">About</a>
+            <a href="contact.html" class="nav-item-box">Contact</a>
+        </div>
+    </div>
+</header>
 
-<!-- HEADER -->
-<div class="page-header" data-aos="zoom-in">
- <h1>About Us</h1>
- <p>Your trusted Digital & Print Partner in Kanganpur</p>
- <div class="text-white mt-3"><i class="fas fa-map-marker-alt"></i> Purana Paka Bazar, Kanganpur</div>
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-lg-7" data-aos="fade-right">
+            <div class="content-card h-100">
+                <h2 class="section-title mb-4">Leading Digital Solutions</h2>
+                <p class="fs-5"><strong>Smart Printing & Online Services (SPO)</strong> is more than just a printing shop. We are a "One Window" digital hub based in Kanganpur, specializing in bridging the gap between physical printing and global digital presence.</p>
+                
+                <div class="service-highlight-box">
+                    <h5 style="color: var(--secondary);"><i class="fas fa-laptop-code me-2"></i> Website & Digital Services</h5>
+                    <p class="mb-0">Hamari khas مہارت modern business websites develop karne mein hai. Hum schools, hospitals aur local businesses ke liye professional sites banate hain taake wo digital dunya mein grow kar sakein.</p>
+                </div>
+
+                <p class="mt-4">Hum NADRA forms, Tax filing (FBR), aur Graphic Design mein professional tajurba rakhte hain, jo Purana Paka Bazar mein hamari shop par dastyab hain.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-5" data-aos="fade-left">
+            <div class="content-card h-100">
+                <h2 class="section-title mb-4">ہمارا مشن</h2>
+                <p class="urdu-text">
+                    SPO کا مقصد کنگن پور اور گردونواح کے عوام کو جدید ڈیجیٹل سہولیات فراہم کرنا ہے۔ ہم صرف پرنٹنگ ہی نہیں بلکہ ویب ڈویلپمنٹ، آن لائن ٹیکس سروسز اور نادرا کے تمام کاموں میں آپ کی مدد کرتے ہیں۔ 
+                    ہمارا مشن ہر چھوٹے اور بڑے کاروبار کو ڈیجیٹل پلیٹ فارم پر لانا ہے۔
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<!-- ABOUT DETAILS -->
-<section class="about-section container" data-aos="fade-up">
- <h3>Who We Are</h3>
- <p>Smart Printing & Online Services is a leading one‑window solution provider for modern businesses and individuals. We specialize in professional printing solutions, government forms assistance, advanced digital marketing, website & AI automation services all under one roof. Our mission is to make every business smarter, more efficient, and connected with customers online and offline.</p>
+<footer class="shop-footer text-center">
+    <div class="container">
+        <h3 class="fw-bold" style="color:var(--primary);">Smart Printing & Online Services</h3>
+        <p class="text-secondary">Purana Paka Bazar, Kanganpur</p>
+        <div class="mt-4">
+            <p class="mb-1">Project Lead & Developed By:</p>
+            <h4 style="color: var(--secondary);">Muhammad Asif Ali</h4>
+            <a href="https://wa.me/923034480404" class="btn btn-outline-success rounded-pill mt-2">
+                <i class="fab fa-whatsapp me-2"></i>Developer WhatsApp
+            </a>
+        </div>
+    </div>
+</footer>
 
- <div class="values-box">
-   <h5><i class="fa fa-lightbulb"></i> Our Vision</h5>
-   <p>To be the most trusted digital & print service center in Kanganpur and beyond — empowering local businesses to grow digitally.</p>
- </div>
+<a href="https://wa.me/923034480404" class="whatsapp-float shadow-lg"><i class="fab fa-whatsapp"></i></a>
 
- <div class="values-box">
-   <h5><i class="fa fa-bullseye"></i> Our Mission</h5>
-   <p>Providing fast, reliable, affordable and innovative solutions — bridging traditional services with future‑ready technology.</p>
- </div>
-
- <h3>What We Offer</h3>
- <p>From quality printing, government form facilitation (NADRA, FBR), e‑stamp, online payments, digital ads, to AI powered business tools — we help you accomplish more without switching between providers.</p>
-</section>
-
-<!-- FOOTER -->
-<div class="footer">
- &copy; 2026 Smart Printing & Online Services — All Rights Reserved
-</div>
-
-<!-- WhatsApp Floating -->
-<div class="wa-float" onclick="window.open('https://wa.me/92303480404','_blank')">
- <i class="fab fa-whatsapp"></i>
-</div>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
- AOS.init();
- particlesJS("particles-bg",{particles:{number:{value:80},size:{value:3},move:{speed:2}},
- interactivity:{events:{onhover:{enable:true,mode:"repulse"}}}});
+    AOS.init({ duration: 1000, once: true });
+    particlesJS("particles-js", { particles: { number: { value: 80, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "circle" }, opacity: { value: 0.2 }, size: { value: 2 }, move: { speed: 0.8 } } });
 </script>
 </body>
-  </html>
+</html>
