@@ -3,238 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Gallery | SPO Smart Printing & Online Services</title>
+    <title>Our Services | SPO Smart Printing & Online Services</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #25D366;
-            --secondary: #00e5ff;
-            --universe-bg: #010409;
+            --primary: #25D366; /* WhatsApp Green */
+            --secondary: #00ffcc; 
+            --dark-bg: #010409;
         }
 
-        body { font-family: 'Rajdhani', sans-serif; background: var(--universe-bg); color: white; overflow-x: hidden; }
+        body { 
+            font-family: 'Rajdhani', sans-serif; 
+            background: var(--dark-bg); 
+            color: white; 
+            overflow-x: hidden; 
+            padding-top: 20px;
+        }
 
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
-        .nebula { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.07) 0%, transparent 80%); z-index: -2; pointer-events: none; }
 
-        /* --- Header --- */
-        .main-header { background: rgba(0, 0, 0, 0.9); border-bottom: 3px solid var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .logo-box { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; display: inline-flex; align-items: center; justify-content: center; background: #fff; margin-right: 15px; box-shadow: 0 0 15px var(--primary); }
-        .logo-box img { width: 100%; height: 100%; object-fit: contain; }
-        .main-title { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: #fff; text-shadow: 0 0 10px var(--primary); }
-
-        /* --- Category Box Navigation --- */
-        .nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 30px 0; }
-        .nav-item-box {
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-            padding: 12px 25px; border-radius: 8px; color: white; text-decoration: none;
-            font-weight: bold; transition: 0.3s; flex: 1; max-width: 150px; text-align: center;
+        /* --- Header & Nav --- */
+        .main-title { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+            text-transform: uppercase;
         }
-        .nav-item-box:hover { background: var(--secondary); color: #000; transform: translateY(-3px); box-shadow: 0 5px 15px var(--secondary); }
-
-        /* --- Gallery Masonry (Original Aspect Ratio) --- */
-        .gallery-grid { column-count: 3; column-gap: 20px; }
-        @media (max-width: 992px) { .gallery-grid { column-count: 2; } }
-        @media (max-width: 576px) { .gallery-grid { column-count: 1; } }
-
-        .gallery-card { 
-            position: relative; margin-bottom: 20px; border-radius: 15px; 
-            overflow: hidden; border: 2px solid rgba(255,255,255,0.05); 
-            break-inside: avoid; transition: 0.4s; cursor: pointer;
+        .nav-box { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid var(--primary); 
+            border-radius: 15px; 
+            padding: 10px; 
+            margin-bottom: 40px;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
         }
-        .gallery-card img { width: 100%; height: auto; display: block; transition: 0.5s; }
-        .gallery-card:hover { border-color: var(--primary); transform: scale(1.02); }
-        
-        /* Inquiry Label for Customer */
-        .click-label {
-            position: absolute; top: 10px; right: 10px; background: var(--primary);
-            color: #000; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;
-            font-weight: bold; opacity: 0.8; display: flex; align-items: center; gap: 5px;
+        .nav-box .btn { margin: 5px; font-weight: bold; border-radius: 8px; transition: 0.3s; min-width: 90px; }
+        .nav-box .btn-outline-light:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); border-color: var(--primary); }
+
+        /* --- Main Service Glowing Cards --- */
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.5s;
+            cursor: pointer;
+            height: 100%;
+            backdrop-filter: blur(10px);
         }
-        .gallery-card:hover .gallery-overlay { opacity: 1; }
-        .gallery-overlay {
-            position: absolute; inset: 0; background: rgba(0,0,0,0.6);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            opacity: 0; transition: 0.3s; backdrop-filter: blur(3px);
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.4);
+            border-color: var(--primary);
+        }
+        .service-card i { font-size: 3rem; color: var(--primary); margin-bottom: 15px; filter: drop-shadow(0 0 8px var(--primary)); }
+        .service-card h4 { font-weight: 700; color: #fff; }
+
+        /* --- Additional Services (Urdu White Boxes) --- */
+        .urdu-box {
+            background: #ffffff;
+            color: #000000;
+            padding: 12px;
+            border-radius: 12px;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0px var(--primary);
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex; align-items: center; justify-content: center;
+            min-height: 70px; font-size: 1.1rem;
+        }
+        .urdu-box:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0px #000;
+            background: var(--secondary);
         }
 
-        /* --- Service Boxes (From Picture) --- */
-        .service-box {
-            background: #fff; color: #000; padding: 15px 10px; border-radius: 12px;
-            font-weight: 800; text-align: center; border: 2px solid #000;
-            cursor: pointer; transition: 0.3s; font-family: 'Noto Nastaliq Urdu', serif;
-            display: flex; align-items: center; justify-content: center; height: 65px; box-shadow: 4px 4px 0px #222;
-        }
-        .service-box:hover { background: var(--secondary); color: #000; transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #000; }
-        .service-info-text { color: var(--secondary); font-size: 0.9rem; margin-top: -10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        /* --- Review Section --- */
+        .review-section { background: rgba(255,255,255,0.02); border-radius: 25px; padding: 40px; margin-top: 60px; border: 1px solid rgba(255,255,255,0.1); }
+        .review-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; border-left: 5px solid var(--primary); margin-bottom: 15px; }
+        .review-container { max-height: 400px; overflow-y: auto; }
 
-        /* --- Footer --- */
-        .shop-footer { background: rgba(0,0,0,0.95); padding: 50px 0; border-top: 2px solid var(--primary); margin-top: 80px; }
-        .dev-card { background: rgba(255,255,255,0.03); border: 1px solid #333; padding: 25px; border-radius: 20px; max-width: 400px; margin: 0 auto; }
-        
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4); text-decoration: none; }
+        /* --- Footers --- */
+        .shop-footer { background: rgba(37, 211, 102, 0.08); padding: 40px 0; border-top: 2px solid var(--primary); margin-top: 80px; }
+        .dev-footer { background: #000; padding: 15px 0; font-size: 0.85rem; border-top: 1px solid #222; }
+
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
     </style>
 </head>
 <body>
 
-<div class="nebula"></div>
 <div id="particles-js"></div>
 
-<header class="main-header text-center">
-    <div class="container d-flex align-items-center justify-content-center">
-        <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
-        <span class="main-title">Smart Printing - Work Gallery</span>
-    </div>
-</header>
+<div class="container text-center">
+    <h1 class="main-title mt-4">Smart Printing & Online Services</h1>
+    <p class="text-secondary mb-4">Purana Paka Bazar, Kanganpur</p>
 
-<div class="container">
-    <div class="nav-box-container">
-        <a href="index.html" class="nav-item-box">Home</a>
-        <a href="services.html" class="nav-item-box">Services</a>
-        <a href="about.html" class="nav-item-box">About</a>
-        <a href="contact.html" class="nav-item-box">Contact</a>
+    <div class="nav-box d-inline-block">
+        <a href="index.html" class="btn btn-outline-light">Home</a>
+        <a href="about.html" class="btn btn-outline-light">About</a>
+        <a href="services.html" class="btn btn-success">Services</a>
+        <a href="gallery.html" class="btn btn-outline-light">Gallery</a>
+        <a href="contact.html" class="btn btn-outline-light">Contact</a>
     </div>
 
-    <section class="py-4">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="fw-bold" style="color:var(--primary); font-size: 2.8rem;">OUR RECENT WORK</h2>
-            <p class="text-secondary">Click any image to inquire about the design on WhatsApp</p>
-        </div>
+    <div class="row g-4 mb-5">
+        <div class="col-12"><h2 class="fw-bold" style="color:var(--secondary)">MAIN SERVICES</h2></div>
         
-        <div class="gallery-grid" data-aos="fade-up">
-            <div class="gallery-card" onclick="openWA('Design Image 1')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="file_0000000062b871faad20fb22fcf394ee.png" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 2')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260222-WA0028.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 3')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260222-WA0033(1).jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 4')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260223-WA0055.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 5')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260224-WA0019.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 6')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260224-WA0020.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 7')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260225-WA0028.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 8')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260228-WA0039.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 9')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260301-WA0097.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 10')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG_20260218_015819.png" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 11')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260222-WA0024.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
-            </div>
-
-            <div class="gallery-card" onclick="openWA('Design Image 12')">
-                <div class="click-label"><i class="fab fa-whatsapp"></i> Click to Inquire</div>
-                <img src="IMG-20260301-WA0097.jpg" alt="SPO Design">
-                <div class="gallery-overlay"><span class="btn btn-success rounded-pill">Inquire Now</span></div>
+        <div class="col-md-3 col-6">
+            <div class="service-card" onclick="sendWA('High Quality Printing')">
+                <i class="fa fa-print"></i>
+                <h4>Printing</h4>
+                <p class="small text-secondary">Flex, Color, PVC Card</p>
             </div>
         </div>
-    </section>
-
-    <section class="py-5 text-center">
-        <h2 class="fw-bold" style="color:var(--secondary);">ADDITIONAL SERVICES</h2>
-        <p class="service-info-text">Click any service box for fast inquiry</p>
-        <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3" data-aos="fade-up">
-            <div class="col" onclick="openWA('B-Form')"><div class="service-box">ب فارم</div></div>
-            <div class="col" onclick="openWA('CNIC')"><div class="service-box">شناختی کارڈ</div></div>
-            <div class="col" onclick="openWA('FRC Form')"><div class="service-box">ایف آر سی فارم</div></div>
-            <div class="col" onclick="openWA('Color Print')"><div class="service-box">کلر پرنٹ</div></div>
-            <div class="col" onclick="openWA('Passport Photos')"><div class="service-box">پاسپورٹ فوٹو</div></div>
-            <div class="col" onclick="openWA('Scanning')"><div class="service-box">سکیننگ</div></div>
-            <div class="col" onclick="openWA('Lamination')"><div class="service-box">لیمینیشن</div></div>
-            <div class="col" onclick="openWA('Stationery')"><div class="service-box">سٹیشنری</div></div>
-            <div class="col" onclick="openWA('WhatsApp Print')"><div class="service-box">واٹس ایپ پرنٹ</div></div>
-            <div class="col" onclick="openWA('Tax Filer')"><div class="service-box">ٹیکس فائلر</div></div>
-            <div class="col" onclick="openWA('Composing')"><div class="service-box">کمپوزنگ</div></div>
-            <div class="col" onclick="openWA('CV Design')"><div class="service-box">سی وی (CV)</div></div>
-            <div class="col" onclick="openWA('Domicile')"><div class="service-box">ڈومیسائل</div></div>
-            <div class="col" onclick="openWA('Photocopy')"><div class="service-box">فوٹوکاپی</div></div>
-            <div class="col" onclick="openWA('Fard Online')"><div class="service-box">کمپیوٹرائزڈ فرد</div></div>
-            <div class="col" onclick="openWA('Binding')"><div class="service-box">بائنڈنگ</div></div>
-            <div class="col" onclick="openWA('Driving License')"><div class="service-box">لائسنس</div></div>
-            <div class="col" onclick="openWA('PVC Card')"><div class="service-box">PVC کارڈ</div></div>
-            <div class="col" onclick="openWA('Bill Payment')"><div class="service-box">بل ادائیگی</div></div>
-            <div class="col" onclick="openWA('E-Commerce')"><div class="service-box">ای کامرس</div></div>
-            <div class="col" onclick="openWA('NADRA Services')"><div class="service-box">نادرا سروسز</div></div>
-            <div class="col" onclick="openWA('Flex Printing')"><div class="service-box">فلیکس</div></div>
-            <div class="col" onclick="openWA('Shadi Card')"><div class="service-box">شادی کارڈ</div></div>
-            <div class="col" onclick="openWA('Visiting Card')"><div class="service-box">وزٹنگ کارڈ</div></div>
+        <div class="col-md-3 col-6">
+            <div class="service-card" onclick="sendWA('NADRA & Online Forms')">
+                <i class="fa fa-id-card"></i>
+                <h4>Online Forms</h4>
+                <p class="small text-secondary">CNIC, B-Form, Passport</p>
+            </div>
         </div>
-    </section>
+        <div class="col-md-3 col-6">
+            <div class="service-card" onclick="sendWA('FBR Tax Filer Services')">
+                <i class="fa fa-file-invoice-dollar"></i>
+                <h4>Tax Filer</h4>
+                <p class="small text-secondary">FBR, NTN, Tax Returns</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="service-card" onclick="sendWA('Website & UI Design')">
+                <i class="fa fa-code"></i>
+                <h4>Web & AI</h4>
+                <p class="small text-secondary">Business Sites & Apps</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3 py-5">
+        <div class="col-12"><h2 class="fw-bold mb-4" style="color:var(--primary)">ADDITIONAL SERVICES</h2></div>
+        
+        <div class="col-md-2 col-6" onclick="sendWA('شناختی کارڈ')"><div class="urdu-box">شناختی کارڈ</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ب فارم')"><div class="urdu-box">ب فارم</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ایف آر سی فارم')"><div class="urdu-box">ایف آر سی فارم</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ڈومیسائل')"><div class="urdu-box">ڈومیسائل</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('پاسپورٹ فوٹو')"><div class="urdu-box">پاسپورٹ فوٹو</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('کلر پرنٹ')"><div class="urdu-box">کلر پرنٹ</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ٹیکس فائلر')"><div class="urdu-box">ٹیکس فائلر</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('وزٹنگ کارڈ')"><div class="urdu-box">وزٹنگ کارڈ</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('کمپیوٹرائزڈ فرد')"><div class="urdu-box">کمپیوٹرائزڈ فرد</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('بل ادائیگی')"><div class="urdu-box">بل ادائیگی</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('لیمینیشن')"><div class="urdu-box">لیمینیشن</div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('سی وی (CV)')"><div class="urdu-box">سی وی (CV)</div></div>
+    </div>
+
+    <div class="review-section mb-5">
+        <h3 class="mb-4">Customer Experience</h3>
+        <div id="displayReviews" class="review-container row text-start">
+            </div>
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-6">
+                <input type="text" id="custName" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Your Name">
+                <textarea id="custMsg" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Share your experience..."></textarea>
+                <button class="btn btn-success w-100 fw-bold" onclick="submitReview()">Post Review</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer class="shop-footer text-center">
     <div class="container">
-        <div class="dev-card" data-aos="zoom-in">
-            <p class="text-secondary mb-1">Project Lead & Developed By:</p>
-            <h3 class="fw-bold mb-3" style="color:var(--primary);">Muhammad Asif</h3>
-            <a href="https://wa.me/923034480404" class="btn btn-outline-success rounded-pill px-4"><i class="fab fa-whatsapp me-2"></i>Developer WhatsApp</a>
+        <h3 class="fw-bold">Smart Printing & Online Services</h3>
+        <p>Expert Solutions for Printing, Tax, & Digital Marketing</p>
+        <div class="fs-3 mb-3">
+            <i class="fab fa-facebook mx-2"></i>
+            <i class="fab fa-whatsapp mx-2"></i>
+            <i class="fab fa-instagram mx-2"></i>
         </div>
-        <p class="mt-4 text-secondary">© 2026 Smart Printing & Online Services | Kangan Pur</p>
+        <p class="text-secondary small">Location: Purana Paka Bazar, Kanganpur</p>
     </div>
 </footer>
 
-<a href="https://wa.me/923034480404" class="whatsapp-float shadow-lg"><i class="fab fa-whatsapp"></i></a>
+<footer class="dev-footer text-center">
+    <p class="mb-0 text-secondary">© 2026 Developed by: <strong class="text-white">Muhammad Asif Ali</strong> | 0303-4480404</p>
+</footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    AOS.init({ duration: 1000, once: true });
-    particlesJS("particles-js", { particles: { number: { value: 100, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "star" }, opacity: { value: 0.3, random: true }, size: { value: 2, random: true }, move: { speed: 0.5, direction: "none", out_mode: "out" } } });
-    
-    function openWA(item) {
-        const msg = `Hello SPO! I saw "${item}" in your gallery and want to know more details.`;
-        window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`, '_blank');
+    // Particle Background
+    particlesJS("particles-js", { "particles": { "number": { "value": 60 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.3 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
+
+    // WhatsApp Integration
+    function sendWA(service) {
+        const phone = "923034480404";
+        const msg = `Assalam-o-Alaikum SPO! I need information about: ${service}`;
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
     }
+
+    // Review Logic (Local Storage for now, ready for Google Sheets)
+    function submitReview() {
+        const name = document.getElementById('custName').value;
+        const msg = document.getElementById('custMsg').value;
+        if(!name || !msg) return alert("Please fill details");
+
+        const reviewHtml = `<div class="col-md-6"><div class="review-card"><strong>${name}</strong><p class="mb-0 small">${msg}</p></div></div>`;
+        document.getElementById('displayReviews').innerHTML += reviewHtml;
+        localStorage.setItem('spo_reviews', document.getElementById('displayReviews').innerHTML);
+        
+        document.getElementById('custName').value = '';
+        document.getElementById('custMsg').value = '';
+    }
+
+    window.onload = () => {
+        document.getElementById('displayReviews').innerHTML = localStorage.getItem('spo_reviews') || '<p class="text-center text-muted">No reviews yet. Share yours!</p>';
+    };
 </script>
 </body>
 </html>
