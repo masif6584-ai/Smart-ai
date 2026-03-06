@@ -6,89 +6,158 @@
     <title>Services | Smart Printing & Online Services</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary: #25D366; --secondary: #00ffcc; --bg: #010409; }
-        body { background: linear-gradient(135deg, #0f2027, #1c3a70); color: white; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; padding-top: 100px; }
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; }
-        .navbar { backdrop-filter: blur(20px); background: rgba(0,0,0,0.6); position: fixed; width: 100%; top: 0; z-index: 999; border-bottom: 2px solid var(--primary); }
-        .service-box { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); border-radius: 20px; padding: 25px; text-align: center; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: 0.4s; height: 100%; }
-        .service-box:hover { transform: translateY(-8px); box-shadow: 0 0 25px var(--secondary); border-color: var(--primary); }
-        .sub-text { font-size: 0.75rem; color: var(--primary); font-weight: bold; margin-top: 10px; display: block; }
-        .filter-btn { background: rgba(255,255,255,0.1); border: 1px solid var(--secondary); color: white; margin: 5px; padding: 8px 18px; border-radius: 12px; cursor: pointer; }
-        .filter-btn.active { background: var(--secondary); color: #000; }
-        .contact-section { max-width: 800px; margin: 50px auto; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; }
-        .review-card { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin: 10px; }
+        body { background: #010409; color: white; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; padding-top: 80px; }
+        
+        /* Particle Background Fix */
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
+
+        /* Glowing Header */
+        .main-title { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+            text-transform: uppercase;
+        }
+
+        /* Navigation Box Buttons */
+        .nav-box { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid var(--primary); 
+            border-radius: 15px; 
+            padding: 15px; 
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.2);
+        }
+        .nav-box .btn { margin: 5px; border-radius: 8px; font-weight: 600; min-width: 100px; transition: 0.3s; }
+        .nav-box .btn-outline-light:hover { background: var(--primary); color: black; border-color: var(--primary); box-shadow: 0 0 15px var(--primary); }
+
+        /* Service Cards with Home Page Glow */
+        .service-box { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(10px); 
+            border-radius: 20px; 
+            padding: 25px; 
+            text-align: center; 
+            border: 1px solid rgba(37, 211, 102, 0.3); 
+            transition: 0.5s ease; 
+            height: 100%; 
+        }
+        .service-box:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.4); 
+            border-color: var(--primary); 
+        }
+        .service-box i { color: var(--primary); margin-bottom: 15px; filter: drop-shadow(0 0 5px var(--primary)); }
+
+        /* Review Section Fix */
+        .review-container { max-height: 400px; overflow-y: auto; padding-right: 10px; }
+        .review-card { background: rgba(255,255,255,0.05); border-left: 4px solid var(--primary); padding: 15px; border-radius: 10px; margin-bottom: 15px; }
+
+        /* Custom Footer Setup */
+        .shop-footer { background: rgba(37, 211, 102, 0.1); border-top: 1px solid var(--primary); padding: 30px 0; margin-top: 50px; }
+        .dev-footer { background: #000; padding: 15px 0; font-size: 0.9rem; }
+
+        .floating-wa { position:fixed; bottom:30px; right:30px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; z-index:999; box-shadow: 0 0 20px #25D366; }
     </style>
 </head>
 <body>
+
 <div id="particles-js"></div>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Smart Printing & Online Services<br><span>Purana Paka Bazar, Kanganpur</span></a>
-    </div>
-</nav>
+<div class="container text-center py-4">
+    <h1 class="main-title mb-2">Smart Printing & Online Services</h1>
+    <p class="text-secondary">Purana Paka Bazar, Kanganpur</p>
 
-<div class="container py-5">
-    <h2 class="text-center mb-4" style="color: var(--secondary);">Our Professional Services</h2>
-    <div class="text-center mb-4">
-        <button class="filter-btn active" onclick="filterServices('all')">All</button>
-        <button class="filter-btn" onclick="filterServices('print')">Printing</button>
-        <button class="filter-btn" onclick="filterServices('online')">Digital/Online</button>
+    <div class="nav-box d-inline-block mx-auto">
+        <a href="index.html" class="btn btn-outline-light">Home</a>
+        <a href="about.html" class="btn btn-outline-light">About</a>
+        <a href="services.html" class="btn btn-success">Services</a>
+        <a href="gallery.html" class="btn btn-outline-light">Gallery</a>
+        <a href="contact.html" class="btn btn-outline-light">Contact</a>
     </div>
 
-    <div class="row g-4" id="serviceGrid">
+    <h2 class="mb-4" style="color: var(--secondary);">Our Professional Services</h2>
+    
+    <div class="mb-4">
+        <button class="btn btn-sm btn-outline-success active mx-1" onclick="filterServices('all')">All</button>
+        <button class="btn btn-sm btn-outline-success mx-1" onclick="filterServices('print')">Printing</button>
+        <button class="btn btn-sm btn-outline-success mx-1" onclick="filterServices('online')">Digital/Online</button>
+    </div>
+
+    <div class="row g-4 text-start" id="serviceGrid">
         <div class="col-md-3 service-item" data-category="print">
-            <div class="service-box" onclick="openPopup('Printing Services')"><i class="fa fa-print fa-2x"></i><h5>Printing</h5><p>Photocopy, Color Print, Flex, PVC Card</p><span class="sub-text">Click for Inquiry</span></div>
-        </div>
-        <div class="col-md-3 service-item" data-category="print">
-            <div class="service-box" onclick="openPopup('E-Stamp Services')"><i class="fa fa-file-invoice fa-2x"></i><h5>E-Stamp</h5><p>E-Stamp & Online Chalan Form</p><span class="sub-text">Click for Inquiry</span></div>
-        </div>
-        <div class="col-md-3 service-item" data-category="online">
-            <div class="service-box" onclick="openPopup('NADRA/FBR Services')"><i class="fa fa-id-card fa-2x"></i><h5>NADRA / FBR</h5><p>CNIC, Family Registration, Tax Filer</p><span class="sub-text">Click for Inquiry</span></div>
-        </div>
-        <div class="col-md-3 service-item" data-category="online">
-            <div class="service-box" onclick="openPopup('Online Forms')"><i class="fa fa-globe fa-2x"></i><h5>Online Forms</h5><p>Admissions, Passport, Licenses</p><span class="sub-text">Click for Inquiry</span></div>
-        </div>
-        <div class="col-md-3 service-item" data-category="online">
-            <div class="service-box" onclick="openPopup('Scanning Service')"><i class="fa fa-camera fa-2x"></i><h5>Scanning</h5><p>Document & Photo Scanning</p><span class="sub-text">Click for Inquiry</span></div>
-        </div>
-        <div class="col-md-3 service-item" data-category="online">
-            <div class="service-box" onclick="openPopup('Payments')"><i class="fa fa-money-bill fa-2x"></i><h5>Payments</h5><p>JazCash, EasyPaisa, Utility Bills</p><span class="sub-text">Click for Inquiry</span></div>
+            <div class="service-box" onclick="openPopup('Printing Services')">
+                <i class="fa fa-print fa-3x"></i>
+                <h5>Printing</h5>
+                <p class="small text-secondary">Photocopy, Color Print, Flex, PVC Card</p>
+                <span class="text-success fw-bold" style="font-size: 0.8rem;">Click for Inquiry</span>
+            </div>
         </div>
         <div class="col-md-3 service-item" data-category="print">
-            <div class="service-box" onclick="openPopup('CV Making')"><i class="fa fa-user fa-2x"></i><h5>CV Making</h5><p>Professional Resume Design</p><span class="sub-text">Click for Inquiry</span></div>
+            <div class="service-box" onclick="openPopup('E-Stamp')">
+                <i class="fa fa-file-invoice fa-3x"></i>
+                <h5>E-Stamp</h5>
+                <p class="small text-secondary">Online Chalan & E-Stamp Services</p>
+                <span class="text-success fw-bold" style="font-size: 0.8rem;">Click for Inquiry</span>
+            </div>
         </div>
         <div class="col-md-3 service-item" data-category="online">
-            <div class="service-box" onclick="openPopup('Website & AI')"><i class="fa fa-code fa-2x"></i><h5>Website & AI</h5><p>Business Websites & Chatbots</p><span class="sub-text">Click for Inquiry</span></div>
+            <div class="service-box" onclick="openPopup('NADRA Services')">
+                <i class="fa fa-id-card fa-3x"></i>
+                <h5>NADRA / FBR</h5>
+                <p class="small text-secondary">CNIC, Tax Filer, Family Reg</p>
+                <span class="text-success fw-bold" style="font-size: 0.8rem;">Click for Inquiry</span>
+            </div>
+        </div>
+        <div class="col-md-3 service-item" data-category="online">
+            <div class="service-box" onclick="openPopup('Website & AI')">
+                <i class="fa fa-code-branch fa-3x"></i>
+                <h5>Website & AI</h5>
+                <p class="small text-secondary">Business Sites & Chatbots</p>
+                <span class="text-success fw-bold" style="font-size: 0.8rem;">Click for Inquiry</span>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container contact-section">
-    <h3>Customer Reviews</h3>
-    <div id="reviewsList" class="row"></div>
-    <div class="mt-3">
-        <input type="text" id="rName" class="form-control mb-2" placeholder="Your Name">
-        <textarea id="rMsg" class="form-control mb-2" placeholder="Your Review"></textarea>
-        <select id="rStars" class="form-control mb-2"><option value="5">⭐⭐⭐⭐⭐</option><option value="4">⭐⭐⭐⭐</option></select>
-        <button class="btn btn-success" onclick="addReview()">Post Review</button>
+<div class="container my-5 p-4" style="background: rgba(255,255,255,0.02); border-radius: 20px;">
+    <h3 class="text-center mb-4">What Our Clients Say</h3>
+    <div id="reviewsList" class="review-container row"></div>
+    
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-6">
+            <input type="text" id="rName" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Your Name">
+            <textarea id="rMsg" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Your Review"></textarea>
+            <button class="btn btn-success w-100" onclick="addReview()">Post Review</button>
+        </div>
     </div>
 </div>
 
-<footer class="text-center py-5" style="background:#000;">
-    <h4>Smart Printing & Online Services</h4>
-    <p>Developed by: <strong>Muhammad Asif Ali</strong> | 0303-4480404</p>
-    <a href="https://wa.me/923034480404" class="btn btn-outline-success">Contact Developer</a>
+<footer class="shop-footer text-center">
+    <div class="container">
+        <h4>Smart Printing & Online Services</h4>
+        <p>Your Trusted Partner for Digital & Printing Solutions in Kanganpur</p>
+        <div class="fs-4">
+            <i class="fab fa-facebook mx-2"></i>
+            <i class="fab fa-instagram mx-2"></i>
+            <i class="fab fa-tiktok mx-2"></i>
+        </div>
+    </div>
 </footer>
 
-<a href="https://wa.me/923041412493" class="floating-wa" style="position:fixed; bottom:30px; right:30px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; z-index:999;"><i class="fab fa-whatsapp"></i></a>
+<footer class="dev-footer text-center">
+    <p class="mb-0">© 2026 Developed by: <strong>Muhammad Asif Ali</strong> | 0303-4480404</p>
+</footer>
+
+<a href="https://wa.me/923041412493" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    particlesJS("particles-js", { "particles": { "number": { "value": 60 }, "color": { "value": "#ffffff" }, "move": { "speed": 1 } } });
-    
+    particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
+
     function filterServices(cat) {
         document.querySelectorAll('.service-item').forEach(i => {
             i.style.display = (cat === 'all' || i.dataset.category === cat) ? 'block' : 'none';
@@ -98,14 +167,19 @@
     function addReview() {
         let n = document.getElementById('rName').value;
         let m = document.getElementById('rMsg').value;
-        let s = '⭐'.repeat(document.getElementById('rStars').value);
-        let html = `<div class="col-md-6"><div class="review-card"><strong>${n}</strong><br>${s}<p>${m}</p></div></div>`;
+        if(!n || !m) return alert("Please fill both fields");
+        let html = `<div class="col-md-6"><div class="review-card"><strong>${n}</strong><p class="mb-0">${m}</p></div></div>`;
         document.getElementById('reviewsList').innerHTML += html;
-        localStorage.setItem('rev', document.getElementById('reviewsList').innerHTML);
+        localStorage.setItem('rev_data', document.getElementById('reviewsList').innerHTML);
+        document.getElementById('rName').value = '';
+        document.getElementById('rMsg').value = '';
     }
-    window.onload = () => document.getElementById('reviewsList').innerHTML = localStorage.getItem('rev') || '';
 
-    function openPopup(s) { alert("Inquiry for: " + s + "\nRedirecting to WhatsApp..."); window.open("https://wa.me/923034480404?text=Inquiry for: "+s); }
+    window.onload = () => {
+        document.getElementById('reviewsList').innerHTML = localStorage.getItem('rev_data') || '<p class="text-center text-muted">No reviews yet. Be the first!</p>';
+    }
+
+    function openPopup(s) { window.open("https://wa.me/923034480404?text=I am interested in: "+s); }
 </script>
 </body>
 </html>
