@@ -3,99 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | SPO Smart Printing & Online Services</title>
+    <title>Services | Smart Printing & Online Services</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --primary: #25D366; /* WhatsApp Green */
-            --secondary: #00ffcc; 
-            --dark-bg: #010409;
-        }
-
-        body { 
-            font-family: 'Rajdhani', sans-serif; 
-            background: var(--dark-bg); 
-            color: white; 
-            overflow-x: hidden; 
-            padding-top: 20px;
-        }
-
+        :root { --primary: #25D366; --secondary: #00ffcc; --dark-bg: #010409; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--dark-bg); color: white; overflow-x: hidden; padding-top: 20px; }
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
+        b, strong, h1, h2, h3, h4, h5 { font-weight: 800 !important; }
 
-        /* --- Header & Nav --- */
-        .main-title { 
-            font-size: 2.5rem; 
-            font-weight: 800; 
-            color: var(--primary); 
-            text-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
-            text-transform: uppercase;
-        }
-        .nav-box { 
-            background: rgba(255, 255, 255, 0.05); 
-            border: 1px solid var(--primary); 
-            border-radius: 15px; 
-            padding: 10px; 
-            margin-bottom: 40px;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
-        }
-        .nav-box .btn { margin: 5px; font-weight: bold; border-radius: 8px; transition: 0.3s; min-width: 90px; }
-        .nav-box .btn-outline-light:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); border-color: var(--primary); }
+        /* Navigation */
+        .main-title { font-size: 2.8rem; color: var(--primary); text-shadow: 0 0 20px rgba(37, 211, 102, 0.6); text-transform: uppercase; }
+        .nav-box { background: rgba(255, 255, 255, 0.05); border: 2px solid var(--primary); border-radius: 15px; padding: 12px; margin-bottom: 40px; box-shadow: 0 0 15px rgba(37, 211, 102, 0.3); }
+        .nav-box .btn { margin: 5px; font-weight: 800; border-radius: 8px; transition: 0.3s; min-width: 100px; }
+        .nav-box .btn-outline-light:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); border-color: var(--primary); }
 
-        /* --- Main Service Glowing Cards --- */
-        .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            transition: 0.5s;
-            cursor: pointer;
-            height: 100%;
-            backdrop-filter: blur(10px);
-        }
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 0 30px rgba(37, 211, 102, 0.4);
-            border-color: var(--primary);
-        }
-        .service-card i { font-size: 3rem; color: var(--primary); margin-bottom: 15px; filter: drop-shadow(0 0 8px var(--primary)); }
-        .service-card h4 { font-weight: 700; color: #fff; }
+        /* Main Service Cards */
+        .service-card { background: rgba(255, 255, 255, 0.04); border: 2px solid rgba(37, 211, 102, 0.4); border-radius: 20px; padding: 25px; text-align: center; transition: 0.5s; cursor: pointer; height: 100%; backdrop-filter: blur(10px); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 0 30px var(--primary); border-color: var(--primary); }
+        .service-card i { font-size: 3.2rem; color: var(--primary); margin-bottom: 15px; filter: drop-shadow(0 0 10px var(--primary)); }
+        
+        /* Urdu Box Grid */
+        .urdu-box { background: #ffffff; color: #000; padding: 15px; border-radius: 12px; font-family: 'Noto Nastaliq Urdu', serif; text-align: center; border: 3px solid #000; box-shadow: 5px 5px 0px var(--primary); cursor: pointer; transition: 0.3s; min-height: 75px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .urdu-box:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0px #000; background: var(--secondary); }
 
-        /* --- Additional Services (Urdu White Boxes) --- */
-        .urdu-box {
-            background: #ffffff;
-            color: #000000;
-            padding: 12px;
-            border-radius: 12px;
-            font-family: 'Noto Nastaliq Urdu', serif;
-            font-weight: bold;
-            text-align: center;
-            border: 3px solid #000;
-            box-shadow: 5px 5px 0px var(--primary);
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex; align-items: center; justify-content: center;
-            min-height: 70px; font-size: 1.1rem;
-        }
-        .urdu-box:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 8px 8px 0px #000;
-            background: var(--secondary);
-        }
+        /* Social Media Hover Box */
+        .social-hover-box { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--primary); border-radius: 20px; padding: 30px; margin: 50px auto; max-width: 700px; box-shadow: 0 0 20px rgba(37, 211, 102, 0.1); }
+        .social-link { font-size: 2.5rem; color: white; margin: 0 20px; transition: 0.4s ease; display: inline-block; text-decoration: none; }
+        .social-link:hover { color: var(--primary); transform: scale(1.3); filter: drop-shadow(0 0 15px var(--primary)); }
 
-        /* --- Review Section --- */
-        .review-section { background: rgba(255,255,255,0.02); border-radius: 25px; padding: 40px; margin-top: 60px; border: 1px solid rgba(255,255,255,0.1); }
-        .review-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; border-left: 5px solid var(--primary); margin-bottom: 15px; }
-        .review-container { max-height: 400px; overflow-y: auto; }
+        /* Reviews */
+        .review-section { background: rgba(255,255,255,0.03); border-radius: 25px; padding: 40px; border: 2px solid rgba(255,255,255,0.1); }
+        .review-card { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px; border-left: 6px solid var(--primary); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
-        /* --- Footers --- */
-        .shop-footer { background: rgba(37, 211, 102, 0.08); padding: 40px 0; border-top: 2px solid var(--primary); margin-top: 80px; }
-        .dev-footer { background: #000; padding: 15px 0; font-size: 0.85rem; border-top: 1px solid #222; }
-
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); }
+        /* Footer Settings */
+        .shop-footer { background: rgba(37, 211, 102, 0.08); padding: 50px 0; border-top: 3px solid var(--primary); margin-top: 50px; }
+        .dev-footer { background: #000; padding: 25px 0; border-top: 1px solid #333; }
+        
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 0 25px var(--primary); text-decoration: none; }
     </style>
 </head>
 <body>
@@ -103,8 +50,8 @@
 <div id="particles-js"></div>
 
 <div class="container text-center">
-    <h1 class="main-title mt-4">Smart Printing & Online Services</h1>
-    <p class="text-secondary mb-4">Purana Paka Bazar, Kanganpur</p>
+    <h1 class="main-title mt-4"><b>Smart Printing & Online Services</b></h1>
+    <p class="text-secondary mb-4"><b>Purana Paka Bazar, Kanganpur</b></p>
 
     <div class="nav-box d-inline-block">
         <a href="index.html" class="btn btn-outline-light">Home</a>
@@ -114,65 +61,62 @@
         <a href="contact.html" class="btn btn-outline-light">Contact</a>
     </div>
 
-    <div class="row g-4 mb-5">
-        <div class="col-12"><h2 class="fw-bold" style="color:var(--secondary)">MAIN SERVICES</h2></div>
-        
-        <div class="col-md-3 col-6">
-            <div class="service-card" onclick="sendWA('High Quality Printing')">
-                <i class="fa fa-print"></i>
-                <h4>Printing</h4>
-                <p class="small text-secondary">Flex, Color, PVC Card</p>
-            </div>
-        </div>
-        <div class="col-md-3 col-6">
-            <div class="service-card" onclick="sendWA('NADRA & Online Forms')">
-                <i class="fa fa-id-card"></i>
-                <h4>Online Forms</h4>
-                <p class="small text-secondary">CNIC, B-Form, Passport</p>
-            </div>
-        </div>
-        <div class="col-md-3 col-6">
-            <div class="service-card" onclick="sendWA('FBR Tax Filer Services')">
-                <i class="fa fa-file-invoice-dollar"></i>
-                <h4>Tax Filer</h4>
-                <p class="small text-secondary">FBR, NTN, Tax Returns</p>
-            </div>
-        </div>
-        <div class="col-md-3 col-6">
-            <div class="service-card" onclick="sendWA('Website & UI Design')">
-                <i class="fa fa-code"></i>
-                <h4>Web & AI</h4>
-                <p class="small text-secondary">Business Sites & Apps</p>
-            </div>
-        </div>
+    <div class="row g-4 mb-5 text-start">
+        <div class="col-12 text-center"><h2 class="fw-bold mb-4" style="color:var(--secondary)">PROFESSIONAL DIGITAL SERVICES</h2></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Printing & Flex')"><i class="fa fa-print"></i><h5><b>Printing & Flex</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('NADRA Services')"><i class="fa fa-id-card"></i><h5><b>NADRA / CNIC</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('FBR Tax Filing')"><i class="fa fa-file-invoice-dollar"></i><h5><b>FBR Tax Filer</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Website & AI')"><i class="fa fa-code"></i><h5><b>Web & AI Design</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('E-Stamp')"><i class="fa fa-stamp"></i><h5><b>E-Stamp / Chalan</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Passport Fees')"><i class="fa fa-passport"></i><h5><b>Passport Online</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Digital Marketing')"><i class="fa fa-bullhorn"></i><h5><b>FB & WA Ads</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Bill Payments')"><i class="fa fa-money-bill-wave"></i><h5><b>Utility Bills</b></h5></div></div>
     </div>
 
     <div class="row g-3 py-5">
-        <div class="col-12"><h2 class="fw-bold mb-4" style="color:var(--primary)">ADDITIONAL SERVICES</h2></div>
-        
-        <div class="col-md-2 col-6" onclick="sendWA('شناختی کارڈ')"><div class="urdu-box">شناختی کارڈ</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ب فارم')"><div class="urdu-box">ب فارم</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ایف آر سی فارم')"><div class="urdu-box">ایف آر سی فارم</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ڈومیسائل')"><div class="urdu-box">ڈومیسائل</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('پاسپورٹ فوٹو')"><div class="urdu-box">پاسپورٹ فوٹو</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('کلر پرنٹ')"><div class="urdu-box">کلر پرنٹ</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ٹیکس فائلر')"><div class="urdu-box">ٹیکس فائلر</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('وزٹنگ کارڈ')"><div class="urdu-box">وزٹنگ کارڈ</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('کمپیوٹرائزڈ فرد')"><div class="urdu-box">کمپیوٹرائزڈ فرد</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('بل ادائیگی')"><div class="urdu-box">بل ادائیگی</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('لیمینیشن')"><div class="urdu-box">لیمینیشن</div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('سی وی (CV)')"><div class="urdu-box">سی وی (CV)</div></div>
+        <div class="col-12 text-center"><h2 class="fw-bold mb-4" style="color:var(--primary)">ALL ONLINE SERVICES</h2></div>
+        <div class="col-md-2 col-6" onclick="sendWA('شناختی کارڈ')"><div class="urdu-box"><b>شناختی کارڈ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ب فارم')"><div class="urdu-box"><b>ب فارم</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ایف آر سی فارم')"><div class="urdu-box"><b>ایف آر سی فارم</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ڈومیسائل')"><div class="urdu-box"><b>ڈومیسائل</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('پاسپورٹ فوٹو')"><div class="urdu-box"><b>پاسپورٹ فوٹو</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('کلر پرنٹ')"><div class="urdu-box"><b>کلر پرنٹ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ٹیکس فائلر')"><div class="urdu-box"><b>ٹیکس فائلر</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('وزٹنگ کارڈ')"><div class="urdu-box"><b>وزٹنگ کارڈ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('کمپیوٹرائزڈ فرد')"><div class="urdu-box"><b>کمپیوٹرائزڈ فرد</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('بل ادائیگی')"><div class="urdu-box"><b>بل ادائیگی</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('لیمینیشن')"><div class="urdu-box"><b>لیمینیشن</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('سی وی (CV)')"><div class="urdu-box"><b>سی وی (CV)</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('سکیننگ')"><div class="urdu-box"><b>سکیننگ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('سٹیشنری')"><div class="urdu-box"><b>سٹیشنری</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('کمپوزنگ')"><div class="urdu-box"><b>کمپوزنگ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('بائنڈنگ')"><div class="urdu-box"><b>بائنڈنگ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('لائسنس')"><div class="urdu-box"><b>لائسنس</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('PVC کارڈ')"><div class="urdu-box"><b>PVC کارڈ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('شادی کارڈ')"><div class="urdu-box"><b>شادی کارڈ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('فلیکس')"><div class="urdu-box"><b>فلیکس</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ای کامرس')"><div class="urdu-box"><b>ای کامرس</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('نادرا سروسز')"><div class="urdu-box"><b>نادرا سروسز</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('واٹس ایپ پرنٹ')"><div class="urdu-box"><b>واٹس ایپ پرنٹ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('آن لائن فارم')"><div class="urdu-box"><b>آن لائن فارم</b></div></div>
+    </div>
+
+    <div class="social-hover-box">
+        <h3 class="mb-4"><b>Join Us On Social Media</b></h3>
+        <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61586270013508" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/smartprinting.online" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
     </div>
 
     <div class="review-section mb-5">
-        <h3 class="mb-4">Customer Experience</h3>
-        <div id="displayReviews" class="review-container row text-start">
-            </div>
-        <div class="row mt-4 justify-content-center">
+        <h3 class="mb-4"><b>WHAT CUSTOMERS SAY</b></h3>
+        <div id="displayReviews" class="row text-start mb-4"></div>
+        <div class="row justify-content-center">
             <div class="col-md-6">
-                <input type="text" id="custName" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Your Name">
-                <textarea id="custMsg" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Share your experience..."></textarea>
-                <button class="btn btn-success w-100 fw-bold" onclick="submitReview()">Post Review</button>
+                <input type="text" id="custName" class="form-control mb-2 bg-dark text-white border-secondary fw-bold" placeholder="Your Name">
+                <textarea id="custMsg" class="form-control mb-2 bg-dark text-white border-secondary fw-bold" placeholder="Write your review..."></textarea>
+                <button class="btn btn-success w-100 fw-bold" onclick="submitReview()">POST REVIEW</button>
             </div>
         </div>
     </div>
@@ -180,51 +124,44 @@
 
 <footer class="shop-footer text-center">
     <div class="container">
-        <h3 class="fw-bold">Smart Printing & Online Services</h3>
-        <p>Expert Solutions for Printing, Tax, & Digital Marketing</p>
-        <div class="fs-3 mb-3">
-            <i class="fab fa-facebook mx-2"></i>
-            <i class="fab fa-whatsapp mx-2"></i>
-            <i class="fab fa-instagram mx-2"></i>
-        </div>
-        <p class="text-secondary small">Location: Purana Paka Bazar, Kanganpur</p>
+        <h3 class="fw-bold text-white"><b>Smart Printing & Online Services</b></h3>
+        <p><b>Expertise in Digital Services, Tax, & Professional Printing</b></p>
+        <p class="text-secondary small"><b>Address: Purana Paka Bazar, Kanganpur, District Kasur</b></p>
     </div>
 </footer>
 
 <footer class="dev-footer text-center">
-    <p class="mb-0 text-secondary">© 2026 Developed by: <strong class="text-white">Muhammad Asif Ali</strong> | 0303-4480404</p>
+    <div class="container">
+        <p class="mb-2 text-secondary"><b>© 2026 All Rights Reserved</b></p>
+        <h5 class="mb-3 text-white"><b>Developed By: Muhammad Asif Ali</b></h5>
+        <a href="https://wa.me/923034480404" class="btn btn-sm btn-outline-success px-4 fw-bold"><b><i class="fab fa-whatsapp me-2"></i>Contact Developer</b></a>
+    </div>
 </footer>
 
-<a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/923034480404" class="wa-float shadow-lg"><i class="fab fa-whatsapp"></i></a>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    // Particle Background
-    particlesJS("particles-js", { "particles": { "number": { "value": 60 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.3 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
+    particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
 
-    // WhatsApp Integration
     function sendWA(service) {
         const phone = "923034480404";
-        const msg = `Assalam-o-Alaikum SPO! I need information about: ${service}`;
+        const msg = `Assalam-o-Alaikum! I am interested in your service: ${service}`;
         window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    // Review Logic (Local Storage for now, ready for Google Sheets)
     function submitReview() {
         const name = document.getElementById('custName').value;
         const msg = document.getElementById('custMsg').value;
         if(!name || !msg) return alert("Please fill details");
-
-        const reviewHtml = `<div class="col-md-6"><div class="review-card"><strong>${name}</strong><p class="mb-0 small">${msg}</p></div></div>`;
-        document.getElementById('displayReviews').innerHTML += reviewHtml;
-        localStorage.setItem('spo_reviews', document.getElementById('displayReviews').innerHTML);
-        
-        document.getElementById('custName').value = '';
-        document.getElementById('custMsg').value = '';
+        const html = `<div class="col-md-6"><div class="review-card"><b>${name}</b><p class="mb-0 mt-2 small">"${msg}"</p></div></div>`;
+        document.getElementById('displayReviews').innerHTML += html;
+        localStorage.setItem('spo_final_reviews', document.getElementById('displayReviews').innerHTML);
+        document.getElementById('custName').value = ''; document.getElementById('custMsg').value = '';
     }
 
     window.onload = () => {
-        document.getElementById('displayReviews').innerHTML = localStorage.getItem('spo_reviews') || '<p class="text-center text-muted">No reviews yet. Share yours!</p>';
+        document.getElementById('displayReviews').innerHTML = localStorage.getItem('spo_final_reviews') || '<p class="text-center text-secondary w-100"><b>No reviews yet. Share yours!</b></p>';
     };
 </script>
 </body>
