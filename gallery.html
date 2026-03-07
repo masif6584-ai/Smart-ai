@@ -12,65 +12,79 @@
         :root { --primary: #25D366; --secondary: #00ffcc; --dark-bg: #010409; }
         body { font-family: 'Rajdhani', sans-serif; background: var(--dark-bg); color: white; overflow-x: hidden; padding-top: 20px; }
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
+        
+        /* Typography */
         b, strong, h1, h2, h3, h4, h5 { font-weight: 800 !important; }
 
         /* Navigation */
         .main-title { font-size: 2.8rem; color: var(--primary); text-shadow: 0 0 20px rgba(37, 211, 102, 0.6); text-transform: uppercase; }
-        .nav-box { background: rgba(255, 255, 255, 0.05); border: 2px solid var(--primary); border-radius: 15px; padding: 12px; margin-bottom: 40px; box-shadow: 0 0 15px rgba(37, 211, 102, 0.3); }
+        .nav-box { background: rgba(255, 255, 255, 0.05); border: 2px solid var(--primary); border-radius: 15px; padding: 12px; margin-bottom: 40px; box-shadow: 0 0 15px rgba(37, 211, 102, 0.3); text-align: center; }
         .nav-box .btn { margin: 5px; font-weight: 800; border-radius: 8px; transition: 0.3s; min-width: 100px; }
-        .nav-box .btn-outline-light:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
+        .nav-box .btn-outline-light:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); border-color: var(--primary); }
 
-        /* --- Gallery Section (Masonry) --- */
+        /* --- Work Gallery (Masonry Style) --- */
         .gallery-grid { column-count: 3; column-gap: 20px; margin-bottom: 50px; }
         @media (max-width: 992px) { .gallery-grid { column-count: 2; } }
         @media (max-width: 576px) { .gallery-grid { column-count: 1; } }
 
         .gallery-card { position: relative; margin-bottom: 20px; border-radius: 15px; overflow: hidden; border: 2px solid rgba(255,255,255,0.05); break-inside: avoid; transition: 0.4s; cursor: pointer; }
-        .gallery-card img { width: 100%; height: auto; display: block; transition: 0.5s; }
-        .gallery-card:hover { border-color: var(--primary); transform: scale(1.02); box-shadow: 0 0 20px var(--primary); }
+        .gallery-card img { width: 100%; height: auto; display: block; transition: 0.5s ease; }
+        .gallery-card:hover { border-color: var(--primary); transform: scale(1.02); box-shadow: 0 0 30px rgba(37, 211, 102, 0.5); }
+        .gallery-card img:hover { filter: brightness(1.1); }
         
-        .click-label { position: absolute; top: 10px; right: 10px; background: var(--primary); color: #000; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; opacity: 0.9; display: flex; align-items: center; gap: 5px; }
+        /* Inquiry Label on Image */
+        .click-label { position: absolute; top: 10px; right: 10px; background: var(--primary); color: #000; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; opacity: 0.9; display: flex; align-items: center; gap: 6px; z-index: 10; }
 
-        /* --- Professional Services Cards --- */
+        /* --- Professional Services (Icons) --- */
         .service-card { background: rgba(255, 255, 255, 0.04); border: 2px solid rgba(37, 211, 102, 0.4); border-radius: 20px; padding: 25px; text-align: center; transition: 0.5s; cursor: pointer; height: 100%; backdrop-filter: blur(10px); }
-        .service-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 0 30px var(--primary); }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 0 40px var(--primary); }
         .service-card i { font-size: 3.2rem; color: var(--primary); margin-bottom: 15px; filter: drop-shadow(0 0 10px var(--primary)); }
-
+        
         /* --- Urdu Box Grid --- */
         .urdu-box { background: #ffffff; color: #000; padding: 15px; border-radius: 12px; font-family: 'Noto Nastaliq Urdu', serif; text-align: center; border: 3px solid #000; box-shadow: 5px 5px 0px var(--primary); cursor: pointer; transition: 0.3s; min-height: 75px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
         .urdu-box:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0px #000; background: var(--secondary); }
 
         /* --- Social & Reviews --- */
-        .social-hover-box { background: rgba(255, 255, 255, 0.03); border: 2px solid var(--primary); border-radius: 20px; padding: 30px; margin: 50px auto; max-width: 700px; }
-        .social-link { font-size: 2.5rem; color: white; margin: 0 20px; transition: 0.4s; display: inline-block; }
+        .social-hover-box { background: rgba(255, 255, 255, 0.03); border: 2px solid var(--primary); border-radius: 20px; padding: 30px; margin: 60px auto; max-width: 700px; text-align: center; }
+        .social-link { font-size: 2.5rem; color: white; margin: 0 20px; transition: 0.4s ease; display: inline-block; text-decoration: none; }
         .social-link:hover { color: var(--primary); transform: scale(1.3); filter: drop-shadow(0 0 15px var(--primary)); }
 
-        .review-card { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px; border-left: 6px solid var(--primary); margin-bottom: 20px; }
+        /* Updated Review Section Design */
+        .review-section { background: rgba(255,255,255,0.03); border-radius: 25px; padding: 40px; margin-top: 60px; border: 2px solid rgba(255,255,255,0.1); }
+        .review-card { background: rgba(0,0,0,0.5); padding: 20px; border-radius: 15px; border-left: 6px solid var(--primary); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .review-container { max-height: 450px; overflow-y: auto; padding-right: 10px; }
 
-        /* Footer */
-        .shop-footer { background: rgba(37, 211, 102, 0.08); padding: 50px 0; border-top: 3px solid var(--primary); }
-        .dev-footer { background: #000; padding: 25px 0; border-top: 1px solid #333; }
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 0 25px var(--primary); }
+        /* Footers */
+        .shop-footer { background: rgba(37, 211, 102, 0.12); padding: 50px 0; border-top: 3px solid var(--primary); margin-top: 80px; text-align: center; }
+        .dev-footer { background: #000; padding: 25px 0; border-top: 1px solid #333; text-align: center; }
+        
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 0 25px var(--primary); text-decoration: none; }
     </style>
 </head>
 <body>
 
 <div id="particles-js"></div>
 
-<div class="container text-center">
-    <h1 class="main-title mt-4"><b>Smart Printing & Online Services</b></h1>
-    <p class="text-secondary mb-4"><b>Purana Paka Bazar, Kanganpur</b></p>
+<div class="container">
+    <div class="text-center">
+        <h1 class="main-title mt-4"><b>Smart Printing & Online Services</b></h1>
+        <p class="text-secondary mb-4"><b>Purana Paka Bazar, Kanganpur</b></p>
 
-    <div class="nav-box d-inline-block">
-        <a href="index.html" class="btn btn-outline-light">Home</a>
-        <a href="about.html" class="btn btn-outline-light">About</a>
-        <a href="services.html" class="btn btn-success">Services</a>
-        <a href="gallery.html" class="btn btn-outline-light">Gallery</a>
-        <a href="contact.html" class="btn btn-outline-light">Contact</a>
+        <div class="nav-box d-inline-block">
+            <a href="index.html" class="btn btn-outline-light">Home</a>
+            <a href="about.html" class="btn btn-outline-light">About</a>
+            <a href="services.html" class="btn btn-success">Services</a>
+            <a href="gallery.html" class="btn btn-outline-light">Gallery</a>
+            <a href="contact.html" class="btn btn-outline-light">Contact</a>
+        </div>
     </div>
 
     <section class="py-4">
-        <h2 class="fw-bold mb-4" style="color:var(--secondary)">OUR RECENT WORK</h2>
+        <div class="text-center mb-5">
+            <h2 class="fw-bold" style="color:var(--secondary)">OUR RECENT WORK</h2>
+            <p class="text-secondary"><b>Click any image to inquire about the design on WhatsApp</b></p>
+        </div>
+        
         <div class="gallery-grid">
             <div class="gallery-card" onclick="sendWA('Design 1')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="file_0000000062b871faad20fb22fcf394ee.png" alt="SPO"></div>
             <div class="gallery-card" onclick="sendWA('Design 2')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260222-WA0028.jpg" alt="SPO"></div>
@@ -78,19 +92,27 @@
             <div class="gallery-card" onclick="sendWA('Design 4')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260223-WA0055.jpg" alt="SPO"></div>
             <div class="gallery-card" onclick="sendWA('Design 5')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260224-WA0019.jpg" alt="SPO"></div>
             <div class="gallery-card" onclick="sendWA('Design 6')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260224-WA0020.jpg" alt="SPO"></div>
+            <div class="gallery-card" onclick="sendWA('Design 7')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260225-WA0028.jpg" alt="SPO"></div>
+            <div class="gallery-card" onclick="sendWA('Design 8')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260228-WA0039.jpg" alt="SPO"></div>
+            <div class="gallery-card" onclick="sendWA('Design 9')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260301-WA0097.jpg" alt="SPO"></div>
+            <div class="gallery-card" onclick="sendWA('Design 10')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG_20260218_015819.png" alt="SPO"></div>
+            <div class="gallery-card" onclick="sendWA('Design 11')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260222-WA0024.jpg" alt="SPO"></div>
+            <div class="gallery-card" onclick="sendWA('Design 12')"><div class="click-label"><i class="fab fa-whatsapp"></i> Inquiry</div><img src="IMG-20260301-WA0097.jpg" alt="SPO"></div>
         </div>
     </section>
 
     <div class="row g-4 mb-5 text-start">
-        <div class="col-12 text-center"><h2 class="fw-bold mb-4" style="color:var(--primary)">CORE SERVICES</h2></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Printing')"><i class="fa fa-print"></i><h5><b>Printing</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Tax Filer')"><i class="fa fa-file-invoice-dollar"></i><h5><b>Tax Filer</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('NADRA')"><i class="fa fa-id-card"></i><h5><b>NADRA</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Web Design')"><i class="fa fa-code"></i><h5><b>Web Design</b></h5></div></div>
+        <div class="col-12 text-center"><h2 class="fw-bold mb-4" style="color:var(--primary)">PROFESSIONAL DIGITAL SERVICES</h2></div>
+        
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Printing & Flex')"><i class="fa fa-print"></i><h5><b>Printing & Flex</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('NADRA Services')"><i class="fa fa-id-card"></i><h5><b>NADRA / CNIC</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('FBR Tax Filer')"><i class="fa fa-file-invoice-dollar"></i><h5><b>FBR Tax Filer</b></h5></div></div>
+        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Website & AI')"><i class="fa fa-code"></i><h5><b>Web & AI Design</b></h5></div></div>
     </div>
 
-    <div class="row g-3 py-5">
-        <div class="col-12 text-center"><h2 class="fw-bold mb-4" style="color:var(--secondary)">ADDITIONAL SERVICES</h2></div>
+    <div class="row g-3 py-5 text-center">
+        <div class="col-12"><h2 class="fw-bold mb-4" style="color:var(--secondary)">ALL ONLINE SERVICES</h2></div>
+        
         <div class="col-md-2 col-6" onclick="sendWA('شناختی کارڈ')"><div class="urdu-box"><b>شناختی کارڈ</b></div></div>
         <div class="col-md-2 col-6" onclick="sendWA('ب فارم')"><div class="urdu-box"><b>ب فارم</b></div></div>
         <div class="col-md-2 col-6" onclick="sendWA('ایف آر سی فارم')"><div class="urdu-box"><b>ایف آر سی فارم</b></div></div>
@@ -103,10 +125,22 @@
         <div class="col-md-2 col-6" onclick="sendWA('بل ادائیگی')"><div class="urdu-box"><b>بل ادائیگی</b></div></div>
         <div class="col-md-2 col-6" onclick="sendWA('لیمینیشن')"><div class="urdu-box"><b>لیمینیشن</b></div></div>
         <div class="col-md-2 col-6" onclick="sendWA('سی وی (CV)')"><div class="urdu-box"><b>سی وی (CV)</b></div></div>
-        </div>
+        <div class="col-md-2 col-6" onclick="sendWA('سکیننگ')"><div class="urdu-box"><b>سکیننگ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('سٹیشنری')"><div class="urdu-box"><b>سٹیشنری</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('کمپوزنگ')"><div class="urdu-box"><b>کمپوزنگ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('بائنڈنگ')"><div class="urdu-box"><b>بائنڈنگ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('لائسنس')"><div class="urdu-box"><b>لائسنس</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('PVC کارڈ')"><div class="urdu-box"><b>PVC کارڈ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('شادی کارڈ')"><div class="urdu-box"><b>شادی کارڈ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('فلیکس')"><div class="urdu-box"><b>فلیکس</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('ای کامرس')"><div class="urdu-box"><b>ای کامرس</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('نادرا سروسز')"><div class="urdu-box"><b>نادرا سروسز</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('واٹس ایپ پرنٹ')"><div class="urdu-box"><b>واٹس ایپ پرنٹ</b></div></div>
+        <div class="col-md-2 col-6" onclick="sendWA('آن لائن فارم')"><div class="urdu-box"><b>آن لائن فارم</b></div></div>
+    </div>
 
     <div class="social-hover-box">
-        <h3 class="mb-4"><b>Join Us On Social Media</b></h3>
+        <h3 class="mb-4 fw-bold">Join Us On Social Media</h3>
         <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61586270013508" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/smartprinting.online" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -114,29 +148,32 @@
     </div>
 
     <div class="review-section mb-5">
-        <h3 class="mb-4"><b>WHAT CUSTOMERS SAY</b></h3>
-        <div id="displayReviews" class="row text-start mb-4"></div>
+        <h3 class="text-center mb-4 fw-bold"><b>WHAT CUSTOMERS SAY</b></h3>
+        <div id="displayReviews" class="review-container row text-start mb-4">
+            </div>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <input type="text" id="custName" class="form-control mb-2 bg-dark text-white border-secondary fw-bold" placeholder="Your Name">
-                <textarea id="custMsg" class="form-control mb-2 bg-dark text-white border-secondary fw-bold" placeholder="Write review..."></textarea>
+                <textarea id="custMsg" class="form-control mb-2 bg-dark text-white border-secondary fw-bold" placeholder="Write your review..."></textarea>
                 <button class="btn btn-success w-100 fw-bold" onclick="submitReview()">POST REVIEW</button>
             </div>
         </div>
     </div>
 </div>
 
-<footer class="shop-footer text-center">
-    <div class="container">
+<footer class="shop-footer">
+    <div class="container text-center">
         <h3 class="fw-bold text-white"><b>Smart Printing & Online Services</b></h3>
-        <p><b>Purana Paka Bazar, Kanganpur</b></p>
+        <p class="mb-2"><b>Expertise in Digital Services, Tax, & Professional Printing</b></p>
+        <p class="text-secondary small"><b>Address: Purana Paka Bazar, Kanganpur, District Kasur</b></p>
     </div>
 </footer>
 
-<footer class="dev-footer text-center">
-    <div class="container">
-        <h5 class="text-white"><b>Developed By: Muhammad Asif Ali</b></h5>
-        <a href="https://wa.me/923034480404" target="_blank" class="btn btn-sm btn-outline-success fw-bold"><i class="fab fa-whatsapp me-2"></i>Contact Developer</a>
+<footer class="dev-footer">
+    <div class="container text-center">
+        <p class="mb-2 text-secondary"><b>© 2026 All Rights Reserved</b></p>
+        <h5 class="mb-3 text-white"><b>Developed By: Muhammad Asif Ali</b></h5>
+        <a href="https://wa.me/923034480404" target="_blank" class="btn btn-sm btn-outline-success px-4 fw-bold"><b><i class="fab fa-whatsapp me-2"></i>Contact Developer</b></a>
     </div>
 </footer>
 
@@ -144,24 +181,44 @@
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
+    // Particle Background
     particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
 
+    // WhatsApp Integration Function
     function sendWA(item) {
-        window.open(`https://wa.me/923034480404?text=Interested in: ${encodeURIComponent(item)}`, '_blank');
+        const phone = "923034480404";
+        const msg = `Assalam-o-Alaikum SPO! I saw "${item}" in your work gallery and want to know more details.`;
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
+    // Review Logic (Local Storage for now)
     function submitReview() {
         const name = document.getElementById('custName').value;
         const msg = document.getElementById('custMsg').value;
-        if(!name || !msg) return alert("Fill details!");
-        const html = `<div class="col-md-6"><div class="review-card"><b>${name}</b><p class="mb-0 mt-2 small">"${msg}"</p></div></div>`;
+        
+        if(!name || !msg) return alert("Please fill both Name and Review fields.");
+        
+        // Correct Card Structure with Name inside Card
+        const html = `<div class="col-md-6">
+                        <div class="review-card">
+                            <b class="text-white fw-bold">${name}</b>
+                            <p class="mb-0 mt-2 small text-secondary">"${msg}"</p>
+                        </div>
+                      </div>`;
+                      
         document.getElementById('displayReviews').innerHTML += html;
-        localStorage.setItem('spo_final_rev', document.getElementById('displayReviews').innerHTML);
-        document.getElementById('custName').value = ''; document.getElementById('custMsg').value = '';
+        
+        // Save to Local Storage
+        localStorage.setItem('spo_final_reviews', document.getElementById('displayReviews').innerHTML);
+        
+        // Clear Inputs
+        document.getElementById('custName').value = ''; 
+        document.getElementById('custMsg').value = '';
     }
 
+    // Load Reviews on Load
     window.onload = () => {
-        document.getElementById('displayReviews').innerHTML = localStorage.getItem('spo_final_rev') || '<p class="text-center w-100">No reviews yet.</p>';
+        document.getElementById('displayReviews').innerHTML = localStorage.getItem('spo_final_reviews') || '<p class="text-center text-secondary w-100"><b>No reviews yet. Share your experience!</b></p>';
     };
 </script>
 </body>
