@@ -95,80 +95,83 @@ body { font-family: 'Rajdhani', sans-serif; background: var(--universe-bg); colo
 .f-link { color: #ccc; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; font-size: 0.95rem; }
 .f-link:hover { color: var(--primary); padding-left: 8px; }
 .dev-credit { border-top: 1px solid #222; margin-top: 40px; padding-top: 25px; text-align: center; }
-
 </style>
 </head>
 <body>
+
+<!-- Nebula + Particles -->
 <div class="nebula"></div>
 <div id="particles-js"></div>
 
+<!-- Header -->
 <header class="main-header text-center">
-    <div class="container">
-        <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
-        <span class="main-title">Smart Printing & Online Services</span>
-        <nav class="nav-wrapper">
-            <a href="index.html" class="nav-btn">Home</a>
-            <a href="services.html" class="nav-btn">Services</a>
-            <a href="contact.html" class="nav-btn">Contact</a>
-            <a href="gallery.html" class="nav-btn">Gallery</a>
-            <a href="about.html" class="nav-btn">About</a>
-        </nav>
-    </div>
+  <div class="container">
+    <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
+    <span class="main-title">Smart Printing & Online Services</span>
+    <nav class="nav-wrapper">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="services.html" class="nav-btn">Services</a>
+      <a href="contact.html" class="nav-btn">Contact</a>
+      <a href="gallery.html" class="nav-btn">Gallery</a>
+      <a href="about.html" class="nav-btn">About</a>
+    </nav>
+  </div>
 </header>
 
+<!-- Floating Contact Buttons -->
 <div class="contact-stack">
-    <a href="tel:+923034480404" class="float-btn call-float"><i class="fas fa-phone"></i></a>
-    <span class="float-label">CALL</span>
-    <a href="sms:+923034480404?body=Asslam o Alaikum SPO!" class="float-btn sms-float"><i class="fas fa-sms"></i></a>
-    <span class="float-label">SMS</span>
-    <a href="javascript:void(0)" onclick="sendInquiry()" class="float-btn wa-float pulse-effect"><i class="fab fa-whatsapp"></i></a>
-    <span class="float-label">WHATSAPP</span>
+  <a href="tel:+923034480404" class="float-btn call-float"><i class="fas fa-phone"></i></a>
+  <span class="float-label">CALL</span>
+  <a href="sms:+923034480404?body=Asslam o Alaikum SPO!" class="float-btn sms-float"><i class="fas fa-sms"></i></a>
+  <span class="float-label">SMS</span>
+  <a href="javascript:void(0)" onclick="sendInquiry()" class="float-btn wa-float pulse-effect"><i class="fab fa-whatsapp"></i></a>
+  <span class="float-label">WHATSAPP</span>
 </div>
 
+<!-- PWA Install Button -->
 <button id="installBtn" class="btn btn-success btn-lg rounded-pill px-4">
-    <img src="file_00000000c9e07208a96c20c92990127e.png" class="install-icon" alt="App Icon">
-    Install SPO App
+  <img src="file_00000000c9e07208a96c20c92990127e.png" class="install-icon" alt="App Icon">
+  Install SPO App
 </button>
 
-<!-- Hero Section -->
+<!-- Hero Section, Clock, Social -->
 <section class="py-5 text-center">
-    <div class="container" data-aos="fade-up">
-        <div class="clock" id="analogClock">
-            <div class="hand hour" id="hour"></div>
-            <div class="hand min" id="min"></div>
-            <div class="hand sec" id="sec"></div>
-        </div>
-        <h1 class="display-4 fw-bold" style="color:var(--primary)">SPO POINT KANGANPUR</h1>
-        <p class="fs-5">📍 Purana Paka Bazar, Kanganpur</p>
-        <a href="https://maps.app.goo.gl/YourMapLink" target="_blank" class="btn btn-outline-success rounded-pill px-5 py-2">Get Directions ➔</a>
-
-        <div class="social-box">
-            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="s-link" title="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61586270013508" class="s-link" title="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/smartprinting.online" class="s-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@smartprintdigitalpk" class="s-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
-        </div>
+  <div class="container" data-aos="fade-up">
+    <div class="clock" id="analogClock">
+      <div class="hand hour" id="hour"></div>
+      <div class="hand min" id="min"></div>
+      <div class="hand sec" id="sec"></div>
     </div>
+    <h1 class="display-4 fw-bold" style="color:var(--primary)">SPO POINT KANGANPUR</h1>
+    <p class="fs-5">📍 Purana Paka Bazar, Kanganpur</p>
+    <a href="https://maps.app.goo.gl/YourMapLink" target="_blank" class="btn btn-outline-success rounded-pill px-5 py-2">Get Directions ➔</a>
+    <div class="social-box">
+      <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="s-link"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61586270013508" class="s-link"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/smartprinting.online" class="s-link"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@smartprintdigitalpk" class="s-link"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
 </section>
 
 <!-- Stats -->
 <section class="stats-bar text-center">
-<div class="container">
+  <div class="container">
     <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up">
-            <div class="stat-val visitors">0</div>
-            <p class="text-secondary text-uppercase">Total Online Visitors</p>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-val">35+</div>
-            <p class="text-secondary text-uppercase">Premium Services</p>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-val">5+</div>
-            <p class="text-secondary text-uppercase">Years of Experience</p>
-        </div>
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="stat-val visitors">0</div>
+        <p class="text-secondary text-uppercase">Total Online Visitors</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-val">35+</div>
+        <p class="text-secondary text-uppercase">Premium Services</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-val">5+</div>
+        <p class="text-secondary text-uppercase">Years of Experience</p>
+      </div>
     </div>
-</div>
+  </div>
 </section>
 
 <!-- Portfolio -->
@@ -207,16 +210,6 @@ body { font-family: 'Rajdhani', sans-serif; background: var(--universe-bg); colo
 <footer class="main-footer">
 <div class="container text-center text-md-start">
 <div class="row g-4">
-<div class="col-md-4">
-<div class="f-col">
-<h4>About SPO</h4>
-<p class="text-secondary small">Smart Printing & Online Services is Kanganpur's trusted hub for high-quality digital printing, expert tax filing, and modern web solutions. We bring technology to your doorstep.</p>
-</div>
-</div>
-<div class="col-md-4 text-md-center">
-<div class="f-col">
-<h4>Navigation</h4>
-<a href="index.html" class="f-link">Home</a>
-<a href="services.html" class="f-link">Our Services</a>
-<a href="contact.html" class="f-link">Contact Us</a>
-<a href="about.html" class="f-link">About Shop</a
+<div class="col-md-4"><div class="f-col"><h4>About SPO</h4><p class="text-secondary small">Smart Printing & Online Services is Kanganpur's trusted hub for high-quality digital printing, expert tax filing, and modern web solutions. We bring technology to your doorstep.</p></div></div>
+<div class="col-md-4 text-md-center"><div class="f-col"><h4>Navigation</h4><a href="index.html" class="f-link">Home</a><a href="services.html" class="f-link">Our Services</a><a href="contact.html" class="f-link">Contact Us</a><a href="about.html" class="f-link">About Shop</a></div></div>
+<div class="col-md-4"><div class="f-col"><h4>Contact Details</h4><a href="tel:+923034480404" class="f-link"><i class="fas fa-phone me-2"></
