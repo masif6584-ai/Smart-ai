@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smart Printing & Online Services Kanganpur</title>
+<title>Smart Printing & Online Services Kanganpur | Printing, Website, FBR, NADRA</title>
 
-<meta name="description" content="Printing, Photocopy, Website Development, NADRA & FBR Services in Kanganpur">
+<meta name="description" content="Smart Printing & Online Services Kanganpur Kasur. Printing, Photocopy, Website Development, Digital Marketing, NADRA & FBR Services. Call 03034480404">
+<meta name="keywords" content="printing Kanganpur, photocopy Kanganpur, website development Kasur, digital marketing Pakistan, NADRA services, FBR tax filing">
+
+<!-- SEO Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"LocalBusiness",
+"name":"Smart Printing & Online Services",
+"telephone":"+923034480404",
+"address":{
+"@type":"PostalAddress",
+"addressLocality":"Kanganpur",
+"addressRegion":"Kasur",
+"addressCountry":"PK"
+}
+}
+</script>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#25D366">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -15,18 +36,24 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <style>
+
+/* ROOT */
 :root{
 --primary:#25D366;
+--secondary:#00e5ff;
+--dark:#010409;
 --glass:rgba(255,255,255,0.05);
 }
 
+/* BODY */
 body{
-background:#010409;
+background:var(--dark);
 color:white;
-font-family:sans-serif;
+font-family:'Segoe UI',sans-serif;
 overflow-x:hidden;
 }
 
+/* BACKGROUND */
 #particles-js{
 position:fixed;
 width:100%;
@@ -34,11 +61,19 @@ height:100%;
 z-index:-1;
 }
 
+.nebula{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle, rgba(37,211,102,0.08), transparent);
+z-index:-2;
+}
+
 /* HEADER */
 header{
 background:rgba(0,0,0,0.9);
 padding:15px;
-border-bottom:2px solid var(--primary);
+border-bottom:3px solid var(--primary);
 text-align:center;
 }
 
@@ -48,52 +83,74 @@ border-radius:50%;
 border:2px solid var(--primary);
 }
 
+/* NAV */
+.nav a{
+margin:5px;
+padding:8px 15px;
+color:white;
+border:1px solid #333;
+border-radius:8px;
+text-decoration:none;
+transition:.3s;
+}
+.nav a:hover{
+background:var(--primary);
+color:black;
+}
+
+/* GLASS CARD */
+.card-glass{
+background:var(--glass);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+}
+
 /* CLOCK */
 .clock{
-width:220px;
-height:220px;
+width:220px;height:220px;
 border:6px solid var(--primary);
 border-radius:50%;
 margin:30px auto;
 position:relative;
 box-shadow:0 0 30px var(--primary);
 }
-
 .clock img{
 position:absolute;
 width:70px;
-top:50%;
-left:50%;
+top:50%;left:50%;
 transform:translate(-50%,-50%);
-opacity:.5;
+opacity:.7;
 }
-
 .num{
 position:absolute;
 width:100%;
 height:100%;
 text-align:center;
+color:var(--secondary);
 font-weight:bold;
-color:#00e5ff;
 }
-
 .hand{
 position:absolute;
-bottom:50%;
-left:50%;
+bottom:50%;left:50%;
 transform-origin:bottom;
 }
-
-.hour{width:6px;height:60px;background:#00e5ff;}
+.hour{width:6px;height:60px;background:var(--secondary);}
 .min{width:4px;height:90px;background:#fff;}
 .sec{width:2px;height:100px;background:red;}
 
-/* CARD */
-.card-glass{
-background:var(--glass);
-padding:30px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.1);
+/* BUTTON */
+.btn-custom{
+background:var(--primary);
+border:none;
+border-radius:30px;
+padding:10px 25px;
+transition:.3s;
+}
+.btn-custom:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px var(--primary);
 }
 
 /* SOCIAL */
@@ -101,10 +158,24 @@ border:1px solid rgba(255,255,255,0.1);
 display:flex;
 justify-content:center;
 gap:20px;
-font-size:30px;
+font-size:28px;
 }
 .social-box a{color:white;transition:.3s;}
 .social-box a:hover{color:var(--primary);transform:scale(1.2);}
+
+/* MAP */
+.map-box{
+border-radius:20px;
+overflow:hidden;
+border:2px solid var(--primary);
+}
+
+/* FOOTER */
+.footer{
+background:black;
+padding:40px;
+border-top:3px solid var(--primary);
+}
 
 /* FLOAT */
 .wa-float{
@@ -118,26 +189,35 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:30px;
-color:white;
 }
 
-/* MAP */
-.map-box{
-border-radius:20px;
-overflow:hidden;
-border:2px solid var(--primary);
-box-shadow:0 0 20px rgba(37,211,102,0.3);
+/* INSTALL */
+#installBtn{
+position:fixed;
+bottom:100px;
+right:20px;
+display:none;
 }
+
 </style>
 </head>
 
 <body>
 
+<div class="nebula"></div>
 <div id="particles-js"></div>
 
+<!-- HEADER -->
 <header>
 <img src="file_00000000c9e07208a96c20c92990127e.png" class="logo">
 <h2>Smart Printing & Online Services</h2>
+
+<div class="nav">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+</div>
 </header>
 
 <!-- CLOCK -->
@@ -150,10 +230,10 @@ box-shadow:0 0 20px rgba(37,211,102,0.3);
 
 <!-- HERO -->
 <div class="text-center" data-aos="fade-up">
-<h1>SPO Kanganpur</h1>
-<p>Purana Paka Bazar</p>
+<h1 style="color:var(--primary)">SPO Kanganpur</h1>
+<p>All Printing & Online Solutions</p>
 
-<a href="https://maps.app.goo.gl/aTNdN2VD1RdHfDrT6" class="btn btn-success">
+<a href="https://maps.app.goo.gl/aTNdN2VD1RdHfDrT6" class="btn btn-custom">
 Open Location
 </a>
 </div>
@@ -162,20 +242,28 @@ Open Location
 <section class="container mt-5 text-center" data-aos="fade-up">
 <div class="card-glass">
 <h2>Our Services</h2>
-<p>Printing | FBR | NADRA | Web Development | Design</p>
+<p>Printing | Photocopy | Websites | Digital Ads | NADRA | FBR</p>
+</div>
+</section>
+
+<!-- SEO -->
+<section class="container mt-5 text-center">
+<div class="card-glass">
+<h3>Best Printing Services in Kanganpur Kasur</h3>
+<p>We provide affordable printing, photocopy, website development and digital marketing services in Kanganpur and Kasur.</p>
 </div>
 </section>
 
 <!-- STATS -->
 <section class="container text-center mt-5">
 <h2 class="visitors">0</h2>
-<p>Live Visitors</p>
+<p>Visitors</p>
+<h3>35+ Services | 5+ Years Experience</h3>
 </section>
 
 <!-- PORTFOLIO -->
-<section class="container mt-5 text-center" data-aos="zoom-in">
+<section class="container mt-5 text-center">
 <h2>Portfolio</h2>
-
 <div id="carouselExample" class="carousel slide">
 <div class="carousel-inner">
 <div class="carousel-item active"><img src="IMG-20260222-WA0028.jpg" class="w-100"></div>
@@ -185,86 +273,88 @@ Open Location
 </section>
 
 <!-- MAP -->
-<section class="container text-center my-5" data-aos="fade-up">
-<h2>📍 Our Shop Location</h2>
-
+<section class="container text-center my-5">
+<h2>📍 Location</h2>
 <div class="map-box">
-<iframe src="https://www.google.com/maps?q=Smart+Printing+Online+Kanganpur&output=embed"
-width="100%" height="300"></iframe>
+<iframe src="https://www.google.com/maps?q=Smart+Printing+Online+Kanganpur&output=embed" width="100%" height="300"></iframe>
 </div>
-
-<a href="https://maps.app.goo.gl/aTNdN2VD1RdHfDrT6" class="btn btn-success mt-3">
-Open in Google Maps
-</a>
 </section>
 
 <!-- SOCIAL -->
 <section class="text-center my-5">
-<h3>🌐 Connect With Us</h3>
-
-<div class="social-box mt-4">
+<h3>Connect With Us</h3>
+<div class="social-box">
 <a href="https://wa.me/923034480404"><i class="fab fa-whatsapp"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61586270013508"><i class="fab fa-facebook"></i></a>
-<a href="https://www.instagram.com/smartprinting.online"><i class="fab fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@smartprintdigitalpk"><i class="fab fa-tiktok"></i></a>
-<a href="mailto:asif.aimarketing@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
 </div>
 </section>
 
 <!-- INQUIRY -->
-<section class="text-center mb-5">
+<div class="text-center">
 <select id="service">
 <option>Printing</option>
 <option>Website</option>
 <option>FBR</option>
 </select>
-
 <br><br>
+<button onclick="send()" class="btn btn-custom">WhatsApp Inquiry</button>
+</div>
 
-<button onclick="send()" class="btn btn-success">
-WhatsApp Inquiry
-</button>
-</section>
+<!-- FOOTER -->
+<div class="footer text-center">
+<p>📍 Kanganpur Kasur</p>
+<p>📞 0303-4480404</p>
+<p>© 2026 Smart Printing & Online Services</p>
+</div>
 
 <!-- FLOAT -->
 <a href="https://wa.me/923034480404" class="wa-float">
 <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<button id="installBtn" class="btn btn-success">Install App</button>
 
-<script>
-AOS.init();
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-// PARTICLES
-particlesJS("particles-js", {
-particles:{number:{value:120},size:{value:2},move:{speed:1}}
+const app = initializeApp({
+apiKey:"AIzaSy...",
+databaseURL:"https://live-counter-cd83d-default-rtdb.asia-southeast1.firebasedatabase.app"
 });
 
-// CLOCK NUMBERS
-const clock=document.getElementById("clock");
+const db=getDatabase(app);
+const stats=ref(db,'stats');
+
+update(stats,{count:increment(1)});
+
+onValue(stats,snap=>{
+document.querySelector(".visitors").innerText=snap.val().count;
+});
+</script>
+
+<script>
+// PARTICLES
+particlesJS("particles-js",{particles:{number:{value:120},move:{speed:1}}});
+
+// CLOCK
 for(let i=1;i<=12;i++){
 let d=document.createElement("div");
 d.className="num";
 d.style.transform=`rotate(${i*30}deg)`;
-d.innerHTML=`<span style="display:inline-block;transform:rotate(-${i*30}deg)">${i}</span>`;
+d.innerHTML=`<span style="transform:rotate(-${i*30}deg)">${i}</span>`;
 clock.appendChild(d);
 }
 
-// CLOCK
-function updateClock(){
-let now=new Date();
-let s=now.getSeconds();
-let m=now.getMinutes();
-let h=now.getHours();
-
-sec.style.transform=`rotate(${s*6}deg)`;
-min.style.transform=`rotate(${m*6}deg)`;
-hour.style.transform=`rotate(${h*30+m/2}deg)`;
-}
-setInterval(updateClock,1000);
+setInterval(()=>{
+let d=new Date();
+hour.style.transform=`rotate(${d.getHours()*30}deg)`;
+min.style.transform=`rotate(${d.getMinutes()*6}deg)`;
+sec.style.transform=`rotate(${d.getSeconds()*6}deg)`;
+},1000);
 
 // WHATSAPP
 function send(){
@@ -272,11 +362,13 @@ let val=document.getElementById("service").value;
 window.open(`https://wa.me/923034480404?text=I need ${val}`);
 }
 
-// VISITOR (DEMO)
-let c=localStorage.getItem("v")||0;
-c++;
-localStorage.setItem("v",c);
-document.querySelector(".visitors").innerText=c;
+// INSTALL
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+e.preventDefault();
+deferredPrompt=e;
+installBtn.style.display='block';
+});
 </script>
 
 </body>
