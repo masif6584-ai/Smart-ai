@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smart Printing & Online Services Kanganpur | Printing, Website, FBR, NADRA</title>
+<title>Smart Printing & Online Services | Stationery Point Kanganpur</title>
 
-<meta name="description" content="Smart Printing & Online Services Kanganpur Kasur. Printing, Photocopy, Website Development, Digital Marketing, NADRA & FBR Services. Call 03034480404">
-<meta name="keywords" content="printing Kanganpur, photocopy Kanganpur, website development Kasur, digital marketing Pakistan, NADRA services, FBR tax filing">
+<meta name="description" content="Best Printing, Photocopy, Digital Marketing, Website Development, NADRA & FBR Services in Kanganpur Kasur.">
+<meta name="keywords" content="printing Kanganpur, photocopy, website development, digital marketing Kasur, NADRA, FBR">
 
 <!-- SEO Schema -->
 <script type="application/ld+json">
@@ -36,8 +35,6 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <style>
-
-/* ROOT */
 :root{
 --primary:#25D366;
 --secondary:#00e5ff;
@@ -45,67 +42,63 @@
 --glass:rgba(255,255,255,0.05);
 }
 
-/* BODY */
 body{
 background:var(--dark);
 color:white;
-font-family:'Segoe UI',sans-serif;
+font-family:sans-serif;
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* PARTICLES + NEBULA */
 #particles-js{
 position:fixed;
 width:100%;
 height:100%;
 z-index:-1;
 }
-
 .nebula{
 position:fixed;
 width:100%;
 height:100%;
-background:radial-gradient(circle, rgba(37,211,102,0.08), transparent);
+background:radial-gradient(circle at center, rgba(37,211,102,0.08), transparent);
+animation:blink 6s infinite alternate;
 z-index:-2;
+}
+@keyframes blink{
+0%{opacity:0.3}
+100%{opacity:1}
 }
 
 /* HEADER */
 header{
-background:rgba(0,0,0,0.9);
-padding:15px;
-border-bottom:3px solid var(--primary);
 text-align:center;
+padding:15px;
+border-bottom:2px solid var(--primary);
+background:rgba(0,0,0,0.9);
 }
 
-.logo{
-width:70px;
-border-radius:50%;
-border:2px solid var(--primary);
-}
+.logo{width:70px;border-radius:50%;border:2px solid var(--primary);}
 
-/* NAV */
+.title{
+font-size:28px;
+font-weight:bold;
+background:linear-gradient(45deg,#25D366,#00e5ff);
+-webkit-background-clip:text;
+color:transparent;
+transition:.3s;
+}
+.title:hover{text-shadow:0 0 20px var(--primary);}
+
 .nav a{
 margin:5px;
 padding:8px 15px;
-color:white;
-border:1px solid #333;
 border-radius:8px;
+border:1px solid #333;
+color:white;
 text-decoration:none;
 transition:.3s;
 }
-.nav a:hover{
-background:var(--primary);
-color:black;
-}
-
-/* GLASS CARD */
-.card-glass{
-background:var(--glass);
-padding:30px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-}
+.nav a:hover{background:var(--primary);color:black;}
 
 /* CLOCK */
 .clock{
@@ -133,87 +126,79 @@ font-weight:bold;
 }
 .hand{
 position:absolute;
-bottom:50%;left:50%;
+bottom:50%;
+left:50%;
 transform-origin:bottom;
 }
 .hour{width:6px;height:60px;background:var(--secondary);}
 .min{width:4px;height:90px;background:#fff;}
 .sec{width:2px;height:100px;background:red;}
 
-/* BUTTON */
-.btn-custom{
-background:var(--primary);
-border:none;
-border-radius:30px;
-padding:10px 25px;
-transition:.3s;
+/* GLASS */
+.card-glass{
+background:var(--glass);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
 }
-.btn-custom:hover{
-transform:scale(1.05);
-box-shadow:0 0 15px var(--primary);
+
+/* STATS */
+.stat-box{
+background:var(--glass);
+padding:20px;
+border-radius:15px;
 }
 
 /* SOCIAL */
-.social-box{
-display:flex;
-justify-content:center;
-gap:20px;
+.social a{
 font-size:28px;
+margin:10px;
+color:white;
 }
-.social-box a{color:white;transition:.3s;}
-.social-box a:hover{color:var(--primary);transform:scale(1.2);}
-
-/* MAP */
-.map-box{
-border-radius:20px;
-overflow:hidden;
-border:2px solid var(--primary);
-}
+.social a:hover{color:var(--primary);}
 
 /* FOOTER */
 .footer{
 background:black;
-padding:40px;
-border-top:3px solid var(--primary);
+padding:30px;
+margin-top:40px;
 }
 
 /* FLOAT */
-.wa-float{
+.wa{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-width:65px;height:65px;
+padding:15px;
 border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
+color:white;
+font-size:25px;
 }
 
 /* INSTALL */
 #installBtn{
 position:fixed;
-bottom:100px;
+bottom:90px;
 right:20px;
 display:none;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="nebula"></div>
 <div id="particles-js"></div>
+<div class="nebula"></div>
 
-<!-- HEADER -->
 <header>
 <img src="file_00000000c9e07208a96c20c92990127e.png" class="logo">
-<h2>Smart Printing & Online Services</h2>
+<h2 class="title">Smart Printing & Online Services | Stationery Point</h2>
 
 <div class="nav">
 <a href="#">Home</a>
+<a href="#">About</a>
 <a href="#">Services</a>
 <a href="#">Gallery</a>
 <a href="#">Contact</a>
@@ -230,35 +215,41 @@ display:none;
 
 <!-- HERO -->
 <div class="text-center" data-aos="fade-up">
-<h1 style="color:var(--primary)">SPO Kanganpur</h1>
-<p>All Printing & Online Solutions</p>
-
-<a href="https://maps.app.goo.gl/aTNdN2VD1RdHfDrT6" class="btn btn-custom">
-Open Location
-</a>
+<h1>SPO Kanganpur</h1>
+<p>Purana Paka Bazar</p>
+<a href="https://maps.app.goo.gl/aTNdN2VD1RdHfDrT6" class="btn btn-success">Open Location</a>
 </div>
-
-<!-- SERVICES -->
-<section class="container mt-5 text-center" data-aos="fade-up">
-<div class="card-glass">
-<h2>Our Services</h2>
-<p>Printing | Photocopy | Websites | Digital Ads | NADRA | FBR</p>
-</div>
-</section>
 
 <!-- SEO -->
 <section class="container mt-5 text-center">
 <div class="card-glass">
-<h3>Best Printing Services in Kanganpur Kasur</h3>
-<p>We provide affordable printing, photocopy, website development and digital marketing services in Kanganpur and Kasur.</p>
+<h2><b>Best Printing & Online Services in Kanganpur Kasur</b></h2>
+<p><b>Printing, Photocopy, Digital Marketing, Website Development, NADRA, FBR Services</b></p>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="container mt-4 text-center">
+<div class="card-glass">
+<h3>Best Printing Services</h3>
+<p>Best Printing | Online | Photocopy | Digital Marketing | Website Development | Affordable Rates</p>
 </div>
 </section>
 
 <!-- STATS -->
-<section class="container text-center mt-5">
+<section class="container mt-5 text-center">
+<div class="row">
+<div class="col stat-box">
 <h2 class="visitors">0</h2>
-<p>Visitors</p>
-<h3>35+ Services | 5+ Years Experience</h3>
+<p>Live Global Visitors</p>
+</div>
+<div class="col stat-box">
+<h2>35+</h2><p>Services</p>
+</div>
+<div class="col stat-box">
+<h2>5+</h2><p>Experience</p>
+</div>
+</div>
 </section>
 
 <!-- PORTFOLIO -->
@@ -266,86 +257,77 @@ Open Location
 <h2>Portfolio</h2>
 <div id="carouselExample" class="carousel slide">
 <div class="carousel-inner">
+
 <div class="carousel-item active"><img src="IMG-20260222-WA0028.jpg" class="w-100"></div>
+<div class="carousel-item"><img src="IMG-20260222-WA0024.jpg" class="w-100"></div>
+<div class="carousel-item"><img src="IMG-20260222-WA0033(1).jpg" class="w-100"></div>
+<div class="carousel-item"><img src="IMG-20260223-WA0055.jpg" class="w-100"></div>
+<div class="carousel-item"><img src="IMG-20260224-WA0019.jpg" class="w-100"></div>
+<div class="carousel-item"><img src="IMG-20260224-WA0020.jpg" class="w-100"></div>
+<div class="carousel-item"><img src="IMG-20260225-WA0028.jpg" class="w-100"></div>
+<div class="carousel-item"><img src="IMG-20260228-WA0039.jpg" class="w-100"></div>
 <div class="carousel-item"><img src="IMG-20260301-WA0097.jpg" class="w-100"></div>
+<div class="carousel-item"><img src="Screenshot_2026-03-05-00-31-54-133_com.miui.gallery.jpg" class="w-100"></div>
+<div class="carousel-item"><img src="Screenshot_2026-03-05-00-41-57-675_com.miui.gallery.jpg" class="w-100"></div>
+
 </div>
 </div>
 </section>
 
 <!-- MAP -->
-<section class="container text-center my-5">
+<section class="container mt-5 text-center">
 <h2>📍 Location</h2>
-<div class="map-box">
-<iframe src="https://www.google.com/maps?q=Smart+Printing+Online+Kanganpur&output=embed" width="100%" height="300"></iframe>
-</div>
+<iframe src="https://www.google.com/maps?q=Smart+Printing+Online+Kanganpur&output=embed"
+width="100%" height="300"></iframe>
 </section>
 
 <!-- SOCIAL -->
-<section class="text-center my-5">
+<section class="text-center mt-5">
 <h3>Connect With Us</h3>
-<div class="social-box">
+<div class="social">
 <a href="https://wa.me/923034480404"><i class="fab fa-whatsapp"></i></a>
-<a href="#"><i class="fab fa-facebook"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-tiktok"></i></a>
+<a href="mailto:asif.aimarketing@gmail.com"><i class="fas fa-envelope"></i></a>
 </div>
 </section>
 
 <!-- INQUIRY -->
-<div class="text-center">
+<section class="text-center mt-5">
 <select id="service">
 <option>Printing</option>
 <option>Website</option>
 <option>FBR</option>
+<option>Digital Marketing</option>
 </select>
 <br><br>
-<button onclick="send()" class="btn btn-custom">WhatsApp Inquiry</button>
-</div>
+<button onclick="send()" class="btn btn-success">WhatsApp Inquiry</button>
+</section>
 
 <!-- FOOTER -->
 <div class="footer text-center">
 <p>📍 Kanganpur Kasur</p>
-<p>📞 0303-4480404</p>
-<p>© 2026 Smart Printing & Online Services</p>
+<p><a href="tel:+923034480404">0303-4480404</a></p>
+<p><a href="mailto:asif.aimarketing@gmail.com">Email</a></p>
+<p>Project Lead: SPO Kanganpur (Muhammad Asif)</p>
 </div>
 
-<!-- FLOAT -->
-<a href="https://wa.me/923034480404" class="wa-float">
-<i class="fab fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/923034480404" class="wa"><i class="fab fa-whatsapp"></i></a>
 
-<button id="installBtn" class="btn btn-success">Install App</button>
-
-<!-- FIREBASE -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-
-const app = initializeApp({
-apiKey:"AIzaSy...",
-databaseURL:"https://live-counter-cd83d-default-rtdb.asia-southeast1.firebasedatabase.app"
-});
-
-const db=getDatabase(app);
-const stats=ref(db,'stats');
-
-update(stats,{count:increment(1)});
-
-onValue(stats,snap=>{
-document.querySelector(".visitors").innerText=snap.val().count;
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
+AOS.init();
+
 // PARTICLES
 particlesJS("particles-js",{particles:{number:{value:120},move:{speed:1}}});
 
 // CLOCK
+const clock=document.getElementById("clock");
 for(let i=1;i<=12;i++){
 let d=document.createElement("div");
 d.className="num";
 d.style.transform=`rotate(${i*30}deg)`;
-d.innerHTML=`<span style="transform:rotate(-${i*30}deg)">${i}</span>`;
+d.innerHTML=`<span style="display:inline-block;transform:rotate(-${i*30}deg)">${i}</span>`;
 clock.appendChild(d);
 }
 
@@ -358,17 +340,15 @@ sec.style.transform=`rotate(${d.getSeconds()*6}deg)`;
 
 // WHATSAPP
 function send(){
-let val=document.getElementById("service").value;
-window.open(`https://wa.me/923034480404?text=I need ${val}`);
+let s=document.getElementById("service").value;
+window.open(`https://wa.me/923034480404?text=Assalam o Alaikum SPO, I need ${s}`);
 }
 
-// INSTALL
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt',e=>{
-e.preventDefault();
-deferredPrompt=e;
-installBtn.style.display='block';
-});
+// VISITOR
+let c=localStorage.getItem("v")||0;
+c++;
+localStorage.setItem("v",c);
+document.querySelector(".visitors").innerText=c;
 </script>
 
 </body>
