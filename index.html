@@ -1,193 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPO | Smart Printing & Online Services Kanganpur</title>
+    
+    <meta name="description" content="SPO Smart Printing & Online Services Kanganpur. Specialist in Digital Printing, FBR Tax Filing, Online Forms, and Business Branding in Purana Paka Bazar.">
+    <meta name="keywords" content="Best Printing Shop Kanganpur, Online Services Kanganpur, Smart Printing SPO, FBR Tax Filing, CV Making, NADRA Services, Business Website Development Pakistan">
+    <meta name="author" content="M Asif Ali - SPO">
+    
+    <meta property="og:title" content="SPO Smart Printing & Online Services">
+    <meta property="og:description" content="Your One-Stop Shop for Printing & Digital Solutions in Kanganpur.">
+    <meta property="og:image" content="file_00000000c9e07208a96c20c92990127e.png">
+    <meta property="og:url" content="https://smartprintingonline.site/">
 
-<title>SPO | Best Printing & Online Shop in Kanganpur</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#25D366">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<meta name="description" content="SPO Smart Printing & Online Services Kanganpur. Best shop for Digital Printing, Online Forms, and Business Solutions in Purana Paka Bazar.">
-<meta name="keywords" content="Best printing shop Kanganpur, Online services Kanganpur, Smart Printing SPO">
-<meta name="author" content="SPO Smart Printing Kanganpur">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SPO Smart Printing & Online Services",
+      "image": "file_00000000c9e07208a96c20c92990127e.png",
+      "@id": "",
+      "url": "https://smartprintingonline.site/",
+      "telephone": "+923034480404",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Purana Paka Bazar",
+        "addressLocality": "Kanganpur",
+        "addressRegion": "Punjab",
+        "postalCode": "55050",
+        "addressCountry": "PK"
+      }
+    }
+    </script>
 
-<meta property="og:title" content="Best Printing Shop in Kanganpur | SPO">
-<meta property="og:description" content="Best Digital Printing & Online Services in Kanganpur">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#25D366">
+    <style>
+        :root {
+            --primary: #25D366;
+            --secondary: #00e5ff;
+            --dark-bg: #010409;
+            --glass-white: rgba(255, 255, 255, 0.05);
+            --neon-glow: 0 0 15px rgba(37, 211, 102, 0.6);
+        }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        body { font-family: 'Rajdhani', sans-serif; background: var(--dark-bg); color: #ffffff; overflow-x: hidden; scroll-behavior: smooth; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
+        .nebula-effect { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.08) 0%, transparent 70%); z-index: -2; pointer-events: none; }
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+        .header-main { background: rgba(0, 0, 0, 0.95); border-bottom: 2px solid var(--primary); padding: 10px 0; position: sticky; top: 0; z-index: 9999; backdrop-filter: blur(15px); }
+        .shop-logo-container { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); background: white; padding: 2px; display: inline-flex; align-items: center; justify-content: center; box-shadow: var(--neon-glow); }
+        .shop-logo-container img { width: 100%; height: 100%; object-fit: contain; }
+        
+        .nav-links-wrapper { display: flex; justify-content: center; gap: 15px; margin-top: 10px; flex-wrap: wrap; }
+        .nav-link-custom { color: white; text-decoration: none; font-weight: 700; padding: 5px 15px; border-radius: 5px; transition: 0.3s; background: var(--glass-white); font-size: 14px; text-transform: uppercase; }
+        .nav-link-custom:hover { background: var(--primary); color: black; box-shadow: var(--neon-glow); transform: translateY(-2px); }
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+        /* Analog Clock Styling */
+        .analog-clock { width: 200px; height: 200px; border: 8px solid var(--primary); border-radius: 50%; margin: 40px auto; position: relative; background: #000; box-shadow: 0 0 50px rgba(37, 211, 102, 0.3); }
+        .clock-center-logo { position: absolute; width: 85px; height: 85px; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; border-radius: 50%; border: 1px solid var(--primary); box-shadow: 0 0 10px var(--primary); }
+        .clock-dot { position: absolute; width: 100%; height: 100%; text-align: center; color: var(--secondary); font-weight: 900; font-size: 16px; padding: 8px; }
+        .clock-hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; border-radius: 10px; z-index: 2; }
+        .hand-hour { width: 7px; height: 50px; background: var(--secondary); }
+        .hand-min { width: 4px; height: 70px; background: #fff; }
+        .hand-sec { width: 2px; height: 85px; background: #ff0000; }
 
-<style>
-:root{
---primary:#25D366;
---secondary:#00e5ff;
---universe-bg:#010409;
---glass:rgba(255,255,255,0.05);
-}
+        /* Stats & Visitor UI */
+        .stat-section { background: rgba(255,255,255,0.02); padding: 50px 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; margin: 40px 0; }
+        .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--primary); text-shadow: 0 0 15px var(--primary); font-family: 'Orbitron', sans-serif; }
+        .stat-label { color: #888; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
 
-body{font-family:'Rajdhani',sans-serif;background:var(--universe-bg);color:white;overflow-x:hidden}
+        .portfolio-box { border: 5px solid var(--glass-white); border-radius: 30px; overflow: hidden; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .carousel-item img { width: 100%; height: auto; max-height: 85vh; object-fit: contain; cursor: pointer; transition: 0.5s; }
+        
+        .card-inquiry { background: linear-gradient(145deg, #050a10, #0a1420); border: 2px solid var(--primary); border-radius: 25px; padding: 40px; margin-top: 50px; box-shadow: 0 0 30px rgba(37, 211, 102, 0.15); }
+        .service-dropdown { background: #000; color: #fff; border: 1px solid var(--primary); padding: 15px; border-radius: 12px; width: 100%; max-width: 500px; margin-bottom: 25px; font-weight: bold; }
 
-#particles-js{position:fixed;width:100%;height:100%;z-index:-1}
-.nebula{position:fixed;width:100%;height:100%;background:radial-gradient(circle at center,rgba(37,211,102,0.07),transparent);z-index:-2}
+        .map-wrapper { border: 3px solid var(--primary); border-radius: 25px; overflow: hidden; }
 
-.main-header{background:#000;border-bottom:3px solid var(--primary);padding:12px 0}
-.logo-box{width:65px;height:65px;border-radius:50%;overflow:hidden;border:2px solid var(--primary)}
-.logo-box img{width:100%}
-.main-title{font-size:1.8rem;font-weight:800}
-
-.nav-wrapper{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:10px}
-.nav-btn{background:var(--glass);padding:8px 20px;border-radius:8px;color:#fff;text-decoration:none}
-.nav-btn:hover{background:var(--primary);color:#000}
-
-.clock{
-width:190px;height:190px;border:6px solid var(--primary);
-border-radius:50%;margin:30px auto;position:relative;
-background:#000;box-shadow:0 0 40px var(--primary);
-}
-
-.dot{position:absolute;width:100%;text-align:center;color:var(--secondary)}
-.hand{position:absolute;bottom:50%;left:50%;transform-origin:bottom}
-.hour{width:6px;height:45px;background:var(--secondary)}
-.min{width:4px;height:65px;background:#fff}
-.sec{width:2px;height:75px;background:red}
-
-.stats-bar{padding:40px 0}
-.stat-val{font-size:2.5rem;color:var(--primary)}
-
-.gallery-container{border-radius:20px;overflow:hidden;background:#000}
-.carousel-item img{width:100%;max-height:80vh;object-fit:contain}
-
-.inquiry-card{padding:40px;border:2px solid var(--primary);border-radius:20px}
-.service-select{width:100%;max-width:400px;padding:10px}
-
-.social-icon{font-size:2rem;margin:10px}
-
-.shop-footer{padding:50px 0;background:#01040a}
-.dev-footer{padding:20px;background:#000;border-top:3px solid var(--primary)}
-
-.wa-float{
-position:fixed;bottom:30px;right:30px;width:70px;height:70px;
-background:#25D366;border-radius:50%;display:flex;
-align-items:center;justify-content:center;font-size:30px;color:white;
-}
-</style>
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 75px; height: 75px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; color: white; z-index: 10000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-decoration: none; }
+        .footer-bottom { background: #000; border-top: 5px solid var(--primary); padding: 50px 0; margin-top: 100px; }
+        .social-btn { font-size: 2.2rem; color: #fff; margin: 0 15px; transition: 0.3s; }
+        .social-btn:hover { color: var(--primary); transform: translateY(-5px); }
+    </style>
 </head>
-
 <body>
 
-<div class="nebula"></div>
-<div id="particles-js"></div>
+    <div class="nebula-effect"></div>
+    <div id="particles-js"></div>
 
-<header class="main-header text-center">
-<div class="container">
-<div class="logo-box">
-<img src="file_00000000c9e07208a96c20c92990127e.png">
-</div>
-<span class="main-title">Smart Printing & Online Services</span>
+    <header class="header-main text-center">
+        <div class="container">
+            <div class="shop-logo-container">
+                <img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo">
+            </div>
+            <h1 class="d-block mt-2" style="font-size: 1.8rem; letter-spacing: 2px; color: var(--primary); font-weight: 800;">SMART PRINTING & ONLINE SERVICES</h1>
+            <nav class="nav-links-wrapper">
+                <a href="index.html" class="nav-link-custom">Home</a>
+                <a href="about.html" class="nav-link-custom">About Us</a>
+                <a href="services.html" class="nav-link-custom">Our Services</a>
+                <a href="gallery.html" class="nav-link-custom">Portfolio</a>
+                <a href="contact.html" class="nav-link-custom">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<nav class="nav-wrapper">
-<a href="index.html" class="nav-btn">Home</a>
-<a href="about.html" class="nav-btn">About</a>
-<a href="services.html" class="nav-btn">Services</a>
-<a href="gallery.html" class="nav-btn">Gallery</a>
-<a href="contact.html" class="nav-btn">Contact</a>
-</nav>
-</div>
-</header>
+    <section class="container text-center py-5">
+        <div data-aos="zoom-in" data-aos-duration="1500">
+            <div class="analog-clock">
+                <img src="file_00000000c9e07208a96c20c92990127e.png" class="clock-center-logo">
+                <div class="clock-dot" style="transform: rotate(30deg)"><span style="transform: rotate(-30deg); display:inline-block">1</span></div>
+                <div class="clock-dot" style="transform: rotate(60deg)"><span style="transform: rotate(-60deg); display:inline-block">2</span></div>
+                <div class="clock-dot" style="transform: rotate(90deg)"><span style="transform: rotate(-90deg); display:inline-block">3</span></div>
+                <div class="clock-dot" style="transform: rotate(120deg)"><span style="transform: rotate(-120deg); display:inline-block">4</span></div>
+                <div class="clock-dot" style="transform: rotate(150deg)"><span style="transform: rotate(-150deg); display:inline-block">5</span></div>
+                <div class="clock-dot" style="transform: rotate(180deg)"><span style="transform: rotate(-180deg); display:inline-block">6</span></div>
+                <div class="clock-dot" style="transform: rotate(210deg)"><span style="transform: rotate(-210deg); display:inline-block">7</span></div>
+                <div class="clock-dot" style="transform: rotate(240deg)"><span style="transform: rotate(-240deg); display:inline-block">8</span></div>
+                <div class="clock-dot" style="transform: rotate(270deg)"><span style="transform: rotate(-270deg); display:inline-block">9</span></div>
+                <div class="clock-dot" style="transform: rotate(300deg)"><span style="transform: rotate(-300deg); display:inline-block">10</span></div>
+                <div class="clock-dot" style="transform: rotate(330deg)"><span style="transform: rotate(-330deg); display:inline-block">11</span></div>
+                <div class="clock-dot" style="transform: rotate(0deg)"><span style="transform: rotate(0deg); display:inline-block">12</span></div>
+                <div class="clock-hand hand-hour" id="hour"></div>
+                <div class="clock-hand hand-min" id="min"></div>
+                <div class="clock-hand hand-sec" id="sec"></div>
+            </div>
+            
+            <h2 class="display-5 fw-bold" style="color:var(--primary)">Digital Solutions For Modern Business</h2>
+            <p class="fs-5 text-secondary">Digital Printing, FBR Tax Returns & Professional Branding in Kanganpur.</p>
+            <button id="installBtn" class="btn btn-success btn-lg rounded-pill px-5 shadow-lg mt-3 border-2">
+                <i class="fas fa-download me-2"></i> INSTALL SPO MOBILE APP
+            </button>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section class="text-center py-5">
-<div class="container">
+    <section class="stat-section text-center">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="stat-number" id="visitorCount">00</div>
+                    <p class="stat-label">Live Global Visitors</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number">40+</div>
+                    <p class="stat-label">Verified Services</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-number">2026</div>
+                    <p class="stat-label">Service Year</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="clock">
+    <section class="py-5 container text-center">
+        <h2 class="mb-5 fw-bold" style="color:var(--primary); font-size: 2.5rem;">EXPLORE OUR WORK</h2>
+        <div class="portfolio-box" data-aos="zoom-in-up">
+            <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" onclick="sendInquiry('Full Branding Package')">
+                        <img src="file_0000000062b871faad20fb22fcf394ee.png" alt="Premium Printing Design">
+                    </div>
+                    <div class="carousel-item" onclick="sendInquiry('Digital Card Design')">
+                        <img src="IMG-20260222-WA0028.jpg" alt="Digital Card Printing">
+                    </div>
+                    <div class="carousel-item" onclick="sendInquiry('Social Media Post')">
+                        <img src="IMG-20260301-WA0097.jpg" alt="Social Media Designing">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
 
-<img src="file_00000000c9e07208a96c20c92990127e.png"
-style="position:absolute;width:80px;height:80px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);box-shadow:0 0 20px #25D366;">
+    <section class="container text-center py-5">
+        <div class="card-inquiry" data-aos="flip-up">
+            <h3 style="color:var(--primary)" class="mb-4">Get a Quick Quote</h3>
+            <p class="mb-4">Select service and contact via WhatsApp:</p>
+            <select id="userInquiry" class="service-dropdown">
+                <option value="Digital Printing">Digital Printing Service</option>
+                <option value="FBR Tax Return">FBR Tax Filing</option>
+                <option value="Website Development">Website Development</option>
+                <option value="Graphic Designing">Graphic Designing</option>
+            </select>
+            <br>
+            <button onclick="processInquiry()" class="btn btn-success btn-lg rounded-pill px-5 py-3">
+                <i class="fab fa-whatsapp me-2"></i> SEND INQUIRY TO SPO
+            </button>
+        </div>
+    </section>
 
-<div class="dot" style="transform:rotate(30deg)">1</div>
-<div class="dot" style="transform:rotate(60deg)">2</div>
-<div class="dot" style="transform:rotate(90deg)">3</div>
-<div class="dot" style="transform:rotate(120deg)">4</div>
-<div class="dot" style="transform:rotate(150deg)">5</div>
-<div class="dot" style="transform:rotate(180deg)">6</div>
-<div class="dot" style="transform:rotate(210deg)">7</div>
-<div class="dot" style="transform:rotate(240deg)">8</div>
-<div class="dot" style="transform:rotate(270deg)">9</div>
-<div class="dot" style="transform:rotate(300deg)">10</div>
-<div class="dot" style="transform:rotate(330deg)">11</div>
-<div class="dot" style="transform:rotate(0deg)">12</div>
+    <section class="container text-center py-5">
+        <h2 style="color:var(--primary)" class="mb-4">📍 OUR SHOP LOCATION</h2>
+        <div class="map-wrapper" data-aos="fade-zoom-in">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345!2d74.12345!3d31.12345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDA3JzEwLjEiTiA3NMKwMDcnMTIuNCJF!5e0!3m2!1sen!2spk!4v123456789" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
 
-<div class="hand hour" id="hour"></div>
-<div class="hand min" id="min"></div>
-<div class="hand sec" id="sec"></div>
+    <footer class="footer-bottom text-center">
+        <div class="container">
+            <h4 style="color:var(--primary); font-weight: 800;">SPO - SMART PRINTING & ONLINE SERVICES</h4>
+            <div class="social-links-footer my-4">
+                <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-btn"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61586270013508" class="social-btn"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p class="mt-4 text-muted">© 2026 All Rights Reserved | Developed by M Asif Ali (SPO)</p>
+        </div>
+    </footer>
 
-</div>
+    <a href="https://wa.me/923034480404" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<h1 style="color:var(--primary)">SPO Smart Printing</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
 
-<!-- INSTALL BUTTON -->
-<button id="installBtn" class="btn btn-success mt-3">📲 Install SPO App</button>
+    <script>
+        AOS.init({ duration: 1000, once: true });
 
-</div>
-</section>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 70 },
+                "color": { "value": "#25D366" },
+                "shape": { "type": "circle" },
+                "move": { "enable": true, "speed": 1.5 }
+            }
+        });
 
-<!-- MAP -->
-<section class="container text-center py-5">
-<h2 style="color:#25D366">📍 Visit Our Shop</h2>
+        // Clock Logic
+        function runSPOClock() {
+            const now = new Date();
+            const sec = now.getSeconds();
+            const min = now.getMinutes();
+            const hr = now.getHours();
+            document.getElementById('sec').style.transform = `translateX(-50%) rotate(${sec * 6}deg)`;
+            document.getElementById('min').style.transform = `translateX(-50%) rotate(${min * 6}deg)`;
+            document.getElementById('hour').style.transform = `translateX(-50%) rotate(${hr * 30 + min * 0.5}deg)`;
+        }
+        setInterval(runSPOClock, 1000); runSPOClock();
 
-<iframe 
-src="https://maps.google.com/maps?q=Smart%20Printing%20Kanganpur&t=&z=15&output=embed"
-width="100%" height="300" style="border-radius:15px;border:2px solid #25D366;">
-</iframe>
+        // WhatsApp Logic
+        function processInquiry() {
+            const val = document.getElementById('userInquiry').value;
+            window.open(`https://wa.me/923034480404?text=Interested in: ${val}`, '_blank');
+        }
+        function sendInquiry(service) {
+            window.open(`https://wa.me/923034480404?text=Inquiry about: ${service}`, '_blank');
+        }
 
-<br><br>
+        // PWA Install Logic
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
+        document.getElementById('installBtn').addEventListener('click', () => {
+            if (deferredPrompt) { deferredPrompt.prompt(); }
+            else { alert("Install from Browser menu."); }
+        });
 
-<a href="https://maps.app.goo.gl/ADCkK6y1HNCnxRFt7" target="_blank" class="btn btn-success">
-📍 Get Directions
-</a>
-</section>
+        // ==========================================
+        // SECTION: FIREBASE REALTIME SETTINGS (FIXED)
+        // ==========================================
+        const firebaseConfig = { 
+            databaseURL: "https://your-project-default-rtdb.firebaseio.com" 
+        };
 
-<footer class="text-center py-4">
-<p>© 2026 SPO Smart Printing</p>
-</footer>
+        firebase.initializeApp(firebaseConfig);
+        const dbRef = firebase.database().ref('visitorCount');
 
-<a href="services.html" class="wa-float">
-<i class="fas fa-th-list"></i>
-</a>
+        // Increment count
+        dbRef.transaction((currentValue) => {
+            return (currentValue || 0) + 1;
+        });
 
-<script>
-particlesJS("particles-js",{particles:{number:{value:120}}});
-
-function updateClock(){
-const now=new Date();
-const s=now.getSeconds();
-const m=now.getMinutes();
-const h=now.getHours();
-
-document.getElementById('sec').style.transform=`translateX(-50%) rotate(${s*6}deg)`;
-document.getElementById('min').style.transform=`translateX(-50%) rotate(${m*6}deg)`;
-document.getElementById('hour').style.transform=`translateX(-50%) rotate(${h*30+m/2}deg)`;
-}
-setInterval(updateClock,1000);
-updateClock();
-
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt',(e)=>{
-e.preventDefault();
-deferredPrompt=e;
-});
-
-document.getElementById('installBtn').addEventListener('click',()=>{
-if(deferredPrompt) deferredPrompt.prompt();
-});
-</script>
-
+        // Sync live count with UI
+        dbRef.on('value', (snapshot) => {
+            const count = snapshot.val();
+            const countDisplay = document.getElementById('visitorCount');
+            if(countDisplay) {
+                countDisplay.innerText = count ? count.toLocaleString() : "0";
+            }
+        });
+    </script>
 </body>
 </html>
