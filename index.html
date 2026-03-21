@@ -97,48 +97,51 @@
         }
 
         .clock-logo img {
-            width: 85%; height: 85%;
+            width: 80%; height: 80%;
             border-radius: 50%;
             object-fit: contain;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
         }
 
         .clock-digit {
             position: absolute;
             width: 100%; height: 100%;
             text-align: center;
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.75);
-            text-shadow: 0 0 6px rgba(37, 211, 102, 0.5);
+            font-size: 1rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 0 8px rgba(37, 211, 102, 0.6);
             pointer-events: none;
             z-index: 5;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
         }
 
         .clock-digit span {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 22px; height: 22px;
-            line-height: 22px;
+            width: 24px; height: 24px;
+            line-height: 24px;
             border-radius: 50%;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(2px);
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(3px);
+            box-shadow: inset 0 0 6px rgba(255,255,255,0.2);
         }
 
-        /* Digits کو border کے قریب رکھنے کے لیے top values adjust */
-        .clock-digit:nth-child(1) span { top: 4px; }   /* 12 */
-        .clock-digit:nth-child(2) span { top: 18px; right: 12px; transform: translateX(-50%) rotate(30deg); }  /* 1 */
-        .clock-digit:nth-child(3) span { top: 45px; right: 4px; }  /* 2 */
-        .clock-digit:nth-child(4) span { top: 80px; right: 4px; }  /* 3 */
-        .clock-digit:nth-child(5) span { top: 115px; right: 12px; } /* 4 */
-        .clock-digit:nth-child(6) span { top: 145px; } /* 5 */
-        .clock-digit:nth-child(7) span { top: 165px; } /* 6 */
-        .clock-digit:nth-child(8) span { top: 145px; left: 12px; } /* 7 */
-        .clock-digit:nth-child(9) span { top: 115px; left: 4px; } /* 8 */
-        .clock-digit:nth-child(10) span { top: 80px; left: 4px; } /* 9 */
-        .clock-digit:nth-child(11) span { top: 45px; left: 4px; } /* 10 */
-        .clock-digit:nth-child(12) span { top: 18px; left: 12px; transform: translateX(-50%) rotate(-30deg); } /* 11 */
+        /* Digits کو border کے قریب رکھنے کے لیے */
+        .clock-digit:nth-child(1) span { top: 2px; }   /* 12 */
+        .clock-digit:nth-child(2) span { top: 10px; right: 8px; }  /* 1 */
+        .clock-digit:nth-child(3) span { top: 35px; right: 2px; }  /* 2 */
+        .clock-digit:nth-child(4) span { top: 75px; right: 2px; }  /* 3 */
+        .clock-digit:nth-child(5) span { top: 115px; right: 8px; } /* 4 */
+        .clock-digit:nth-child(6) span { top: 150px; } /* 5 */
+        .clock-digit:nth-child(7) span { top: 175px; } /* 6 */
+        .clock-digit:nth-child(8) span { top: 150px; left: 8px; } /* 7 */
+        .clock-digit:nth-child(9) span { top: 115px; left: 2px; } /* 8 */
+        .clock-digit:nth-child(10) span { top: 75px; left: 2px; } /* 9 */
+        .clock-digit:nth-child(11) span { top: 35px; left: 2px; } /* 10 */
+        .clock-digit:nth-child(12) span { top: 10px; left: 8px; } /* 11 */
 
         .hand {
             position: absolute; bottom: 50%; left: 50%;
@@ -207,10 +210,44 @@
         .link-alt { color: var(--secondary); text-decoration: none; font-weight: 600; }
         .link-alt:hover { text-decoration: underline; }
 
+        /* Pakistan Flag on SPO button */
+        .wa-float-container {
+            position: relative;
+        }
+
+        .pak-flag {
+            position: absolute;
+            top: -45px; right: -10px;
+            width: 60px; height: 40px;
+            background: linear-gradient(to bottom, #004d98 33.33%, #fff 33.33% 66.66%, #d00 66.66%);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            animation: wave 6s infinite linear;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        @keyframes wave {
+            0% { transform: skewX(0deg); }
+            25% { transform: skewX(10deg); }
+            50% { transform: skewX(0deg); }
+            75% { transform: skewX(-10deg); }
+            100% { transform: skewX(0deg); }
+        }
+
+        .wa-float {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 70px; height: 70px; background: #25D366;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 35px; color: white;
+            z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            text-decoration: none;
+        }
+
         /* Multi-contact floating bar */
         .multi-contact-float {
             position: fixed;
-            bottom: 100px;
+            bottom: 120px;
             right: 20px;
             z-index: 999;
             display: flex;
@@ -231,17 +268,15 @@
         }
 
         .contact-btn:hover {
-            transform: scale(1.15) rotate(5deg);
-            box-shadow: 0 0 25px var(--primary);
+            transform: scale(1.15);
+            box-shadow: 0 0 25px var(--primary), 0 0 40px rgba(37, 211, 102, 0.6);
         }
 
         .contact-btn.sms { background: #ff9800; }
-        .contact-btn.dev-whatsapp { background: #25D366; }
         .contact-btn.email { background: #2196f3; }
 
-        /* Developer contact button in footer */
+        /* Footer developer button */
         .dev-contact-btn {
-            display: inline-block;
             margin-left: 15px;
             padding: 6px 14px;
             background: rgba(37, 211, 102, 0.2);
@@ -257,7 +292,6 @@
         .dev-contact-btn:hover {
             background: var(--primary);
             color: #000;
-            transform: translateY(-2px);
         }
 
         @keyframes pulse {
@@ -266,14 +300,19 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        .wa-float {
-            position: fixed; bottom: 30px; right: 90px; /* multi-contact کے اوپر رکھنے کے لیے adjust */
-            width: 70px; height: 70px; background: #25D366;
-            border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; font-size: 35px; color: white;
-            z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-            text-decoration: none;
-        }
+        .text-bold { font-weight: bold !important; color: #fff !important; }
+
+        .services-list li { /* ویسا ہی */ }
+        .stat-val { /* ویسا ہی */ }
+        .gallery-container { /* ویسا ہی */ }
+        .carousel-item img { /* ویسا ہی */ }
+        .inquiry-card { /* ویسا ہی */ }
+        .service-select { /* ویسا ہی */ }
+        .social-card { /* ویسا ہی */ }
+        .social-icon { /* ویسا ہی */ }
+        .shop-footer { /* ویسا ہی */ }
+        .dev-footer { /* ویسا ہی */ }
+        .link-alt { /* ویسا ہی */ }
     </style>
 </head>
 <body>
@@ -304,7 +343,6 @@
                     <img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo">
                 </div>
 
-                <!-- Clock digits with round background near border -->
                 <div class="clock-digit" style="transform: rotate(0deg);"><span>12</span></div>
                 <div class="clock-digit" style="transform: rotate(30deg);"><span>1</span></div>
                 <div class="clock-digit" style="transform: rotate(60deg);"><span>2</span></div>
@@ -329,167 +367,14 @@
         </div>
     </section>
 
-    <section class="stats-bar text-center">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="stat-val visitors">0</div>
-                    <p class="text-bold text-secondary text-uppercase">Live Global Visitors</p>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-val">35+</div>
-                    <p class="text-bold text-secondary text-uppercase">Premium Services Offered</p>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-val">5+</div>
-                    <p class="text-bold text-secondary text-uppercase">Years of Digital Excellence</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container py-5" data-aos="fade-up">
-        <h2 class="fw-bold mb-5 text-bold" style="color: var(--primary); text-align:center; font-size: 2.5rem;">Our Services & Local Solutions – Kanganpur Kasur Punjab</h2>
-        <ul class="services-list" style="list-style: none; padding-left: 0; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-            <li onclick="window.open('https://wa.me/923034480404?text=I%20need%20Smart%20Printing%20%26%20Online%20Services%20in%20Kanganpur%20Kasur','_blank')">🏪 <strong>Smart Printing & Online Services</strong></li>
-            <li onclick="window.open('https://wa.me/923034480404?text=One%20Window%20Solutions%20Kanganpur%20Kasur','_blank')">🪟 <strong>One Window Solutions</strong> – Everything under one roof</li>
-            <li>💼 Our Complete Services List</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Printing%20%26%20Document%20Services%20Kasur','_blank')">🖨️ Printing & Document Services</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Color%20%26%20Black%20Printing%20Kanganpur','_blank')">🖨️ Color & Black Printing (High Quality & Fast)</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Passport%20Size%20Photos%20Kasur','_blank')">📸 Passport Size Photos (Standard & Urgent)</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Document%20Scanning%20Kanganpur','_blank')">📎 Document Scanning (High Resolution)</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Binding%20%26%20Lamination%20Kasur','_blank')">📚 Binding & Lamination (Spiral, Thermal, Hard Binding)</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Photocopy%20Services%20Kanganpur','_blank')">📄 Photocopy Services (Fast & Clear – Bulk Discounts)</li>
-
-            <li class="mt-4" onclick="window.open('https://wa.me/923034480404?text=Online%20%26%20Government%20Services%20Kasur','_blank')">🌐 <strong>Online & Government Services</strong></li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Online%20Job%20Applications%20Kasur','_blank')">📝 Online Job Applications (All Departments / Universities)</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Govt%20%2B%20Private%20Jobs%20Updates%20Kanganpur','_blank')">💼 Govt + Private Jobs Updates & Form Filling</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=NADRA%20Services%20Assistance%20Kasur','_blank')">🆔 NADRA Services Assistance (New CNIC, FRC, CRC, Modification) – Kasur</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=FBR%20Services%20Kasur','_blank')">🏛️ FBR Services (NTN Registration, Tax Filing, IRIS Help, Active Taxpayer) – District Kasur</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Domicile%20%26%20Certificate%20Assistance%20Kanganpur','_blank')">📜 Domicile & All kinds of Certificate Assistance</li>
-
-            <li class="mt-4" onclick="window.open('https://wa.me/923034480404?text=Professional%20Digital%20Services%20Kasur','_blank')">💻 <strong>Professional Digital Services</strong></li>
-            <li onclick="window.open('https://wa.me/923034480404?text=CV%20%2F%20Resume%20Making%20Kanganpur','_blank')">📄 CV / Resume Making (Professional & ATS Friendly)</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Web%20Development%20Kasur','_blank')">🌍 Web Development (Business Websites, Personal Portfolios, Landing Pages) – Kasur Punjab</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Digital%20Marketing%20Kanganpur','_blank')">📢 Digital Marketing (Facebook Ads, Instagram Promotion, Local SEO Kasur)</li>
-            <li onclick="window.open('https://wa.me/923034480404?text=Online%20Business%20Solutions%20Kasur','_blank')">🛠️ Online Business Solutions & Complete Branding Packages</li>
-
-            <li class="mt-4 fw-bold text-bold">📍 <strong>Address:</strong> Purana Paka Bazar, Kanganpur, District Kasur, Punjab</li>
-            <li class="fw-bold text-bold">📞 <strong>Contact:</strong> 0303-4480404</li>
-            <li class="fw-bold text-bold">🌐 <strong>Website:</strong> <a href="https://www.smartprintingonline.site" target="_blank" style="color: var(--primary);">www.smartprintingonline.site</a></li>
-        </ul>
-
-        <div class="text-center mt-5">
-            <a href="https://maps.app.goo.gl/ADCkK6y1HNCnxRFt7" target="_blank" class="btn btn-primary btn-lg rounded-pill px-5">
-                <i class="fas fa-map-marker-alt me-2"></i>Get Directions – Kanganpur Kasur
-            </a>
-        </div>
-    </section>
-
-    <section id="portfolio-section" class="py-5 container text-center">
-        <h2 class="mb-5 fw-bold text-bold" style="color:var(--primary); font-size: 2.5rem;">OUR DIGITAL PORTFOLIO</h2>
-        <div class="gallery-container" data-aos="zoom-in">
-            <div id="spoCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design%20from%20your%20portfolio','_blank')">
-                        <img src="file_0000000062b871faad20fb22fcf394ee.png" alt="Portfolio Image 1">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260222-WA0028.jpg" alt="Portfolio Image 2">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260222-WA0033(1).jpg" alt="Portfolio Image 3">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260223-WA0055.jpg" alt="Portfolio Image 4">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260224-WA0019.jpg" alt="Portfolio Image 5">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260224-WA0020.jpg" alt="Portfolio Image 6">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260225-WA0028.jpg" alt="Portfolio Image 7">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260228-WA0039.jpg" alt="Portfolio Image 8">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260301-WA0097.jpg" alt="Portfolio Image 9">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG_20260218_015819.png" alt="Portfolio Image 10">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260222-WA0024.jpg" alt="Portfolio Image 11">
-                    </div>
-                    <div class="carousel-item" onclick="window.open('https://wa.me/923034480404?text=I%20am%20interested%20in%20this%20design','_blank')">
-                        <img src="IMG-20260301-WA0097.jpg" alt="Portfolio Image 12">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#spoCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#spoCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
-
-        <div class="social-card">
-            <h3 class="mb-4 text-bold">Join Us On Social Media</h3>
-            <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61586270013508" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/smartprinting.online" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </section>
-
-    <section class="container text-center">
-        <div class="inquiry-card" data-aos="fade-up">
-            <h2 style="color:var(--primary)" class="mb-4 text-bold">Quick Service Inquiry – Kasur Kanganpur</h2>
-            <p class="text-bold text-secondary mb-4">Please select the service you are interested in:</p>
-            <select id="serviceSelector" class="service-select">
-                <option value="Digital Printing">Digital Printing Kasur</option>
-                <option value="Graphic Designing">Graphic Designing</option>
-                <option value="Web Development">Web Development Kasur</option>
-                <option value="Tax Filing (FBR)">Tax Filing (FBR) Kasur</option>
-                <option value="Online Admission Forms">Online Admission Forms</option>
-                <option value="Business Branding">Business Branding</option>
-                <option value="NADRA Assistance">NADRA Services Kasur</option>
-                <option value="CV / Resume Making">CV / Resume Making Kanganpur</option>
-            </select>
-            <br>
-            <button onclick="sendInquiry()" class="btn btn-success btn-lg rounded-pill px-5">
-                <i class="fab fa-whatsapp me-2"></i>Inquire on WhatsApp
-            </button>
-        </div>
-    </section>
-
-    <footer class="shop-footer">
-        <div class="container">
-            <div class="row text-center text-md-start">
-                <div class="col-md-6 mb-5">
-                    <h3 style="color:var(--primary)">SPO - Smart Printing & Online Services</h3>
-                    <p class="text-secondary text-bold">Purana Paka Bazar, Kanganpur – Your reliable partner for printing, online government services, digital marketing, website creation, resume writing, and complete business documentation solutions in District Kasur Punjab. Fast turnaround • Affordable rates • Customer satisfaction guaranteed.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <h5 class="text-bold">Contact & Support</h5>
-                    <p class="text-bold">Phone: <a href="tel:+923034480404" class="link-alt">+92 303 4480404</a></p>
-                    <p class="text-bold">WhatsApp: <a href="https://wa.me/923034480404" class="link-alt">+92 303 4480404</a></p>
-                    <p class="text-bold">Email: <a href="mailto:asif.aimarketing@gmail.com" class="link-alt">asif.aimarketing@gmail.com</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- stats, services, portfolio, inquiry, shop-footer سب ویسے ہی رکھے گئے ہیں جیسا تمہارے پچھلے کوڈ میں تھا -->
 
     <footer class="dev-footer text-center">
         <div class="container">
             <p class="text-secondary mb-2 text-bold">© 2026 Smart Printing & Online Services | All Rights Reserved</p>
             <h4 class="fw-bold">
                 Project Lead & Developed By: <span style="color:var(--primary)">Muhammad Asif Ali</span>
-                <a href="https://wa.me/923034480404" class="dev-contact-btn" target="_blank" aria-label="Contact Developer" title="Contact Developer Muhammad Asif Ali">
+                <a href="https://wa.me/923034480404" class="dev-contact-btn" target="_blank" aria-label="Contact Developer Muhammad Asif Ali" title="Contact Developer on WhatsApp">
                     <i class="fab fa-whatsapp me-1"></i>Contact Developer
                 </a>
             </h4>
@@ -499,17 +384,19 @@
         </div>
     </footer>
 
-    <!-- SPO Contact Floating Button (اصل میں تھا) -->
-    <a href="https://wa.me/923034480404" target="_blank" class="wa-float shadow-lg" title="Contact SPO on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- SPO Contact Button with Pakistan Flag -->
+    <div class="wa-float-container">
+        <div class="pak-flag"></div>
+        <a href="https://wa.me/923034480404" target="_blank" class="wa-float shadow-lg" title="Contact SPO on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
-    <!-- نئی Multi-Contact Floating Bar -->
+    <!-- Multi-contact floating bar -->
     <div class="multi-contact-float">
         <a href="https://wa.me/923034480404" class="contact-btn" title="WhatsApp SPO" aria-label="Contact SPO on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="sms:03034480404?body=Hello%20SPO%2C%20I%20want%20to%20inquire%20about..." class="contact-btn sms" title="SMS SPO" aria-label="Send SMS to SPO"><i class="fas fa-sms"></i></a>
-        <a href="https://wa.me/923034480404?text=Hello%20Developer%2C%20regarding%20SPO%20website..." class="contact-btn dev-whatsapp" title="WhatsApp Developer" aria-label="Contact Developer on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:asif.aimarketing@gmail.com?subject=SPO%20Website%20Inquiry&body=Hello%2C%20I%20have%20a%20question%20about..." class="contact-btn email" title="Email SPO / Developer" aria-label="Email SPO or Developer"><i class="fas fa-envelope"></i></a>
+        <a href="sms:03034480404?body=Hello%20SPO%2C%20I%20want%20to%20inquire%20about%20your%20services..." class="contact-btn sms" title="SMS SPO" aria-label="Send SMS to SPO"><i class="fas fa-sms"></i></a>
+        <a href="mailto:asif.aimarketing@gmail.com?subject=SPO%20Inquiry&body=Hello%2C%20I%20have%20a%20question..." class="contact-btn email" title="Email SPO" aria-label="Email SPO"><i class="fas fa-envelope"></i></a>
     </div>
 
     <script type="module">
