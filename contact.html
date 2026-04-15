@@ -1,110 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | Smart Printing & Online Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SPO Smart Printing & Online Services</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-<style>
-:root {
-  --primary: #25D366;
-  --secondary: #00e5ff;
-  --universe-bg: #010409;
-}
+    <style>
+        :root {
+            --primary: #25D366;
+            --secondary: #00e5ff;
+            --universe-bg: #010409;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
 
-body{
-  font-family:'Rajdhani', sans-serif;
-  background: var(--universe-bg);
-  color:#fff;
-  overflow-x:hidden;
-}
+        body { font-family: 'Rajdhani', sans-serif; background: var(--universe-bg); color: #fff; overflow-x: hidden; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
 
-#particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
+        /* --- Modern Header & Rounded Logo --- */
+        .main-header { background: rgba(0, 0, 0, 0.9); border-bottom: 3px solid var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        
+        .logo-container {
+            width: 70px; height: 70px; border-radius: 50%; overflow: hidden;
+            display: inline-flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 20px var(--primary); transition: 0.5s; background: transparent;
+        }
+        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Logo Pulse Animation */
-.logo-box { 
-    width: 65px; height: 65px; border-radius: 50%; 
-    border: 2px solid var(--primary); overflow: hidden; 
-    display: inline-flex; background: #fff; 
-    box-shadow: 0 0 15px var(--primary);
-    animation: pulse-logo 2s infinite ease-in-out;
-}
-.logo-box img { width: 100%; height: 100%; object-fit: cover; }
-@keyframes pulse-logo {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); box-shadow: 0 0 25px var(--primary); }
-    100% { transform: scale(1); }
-}
+        .shop-name {
+            font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.6rem;
+            color: #fff; text-shadow: 0 0 10px var(--primary), 0 0 20px rgba(37, 211, 102, 0.5);
+            letter-spacing: 1px;
+        }
 
-/* Header & Nav */
-.main-header { background: rgba(0, 0, 0, 0.95); border-bottom: 3px solid var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-.nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 15px; }
-.nav-item-box {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    padding: 6px 15px; border-radius: 6px; color: white; text-decoration: none;
-    font-weight: bold; transition: 0.3s; font-size: 0.85rem;
-}
-.nav-item-box:hover, .nav-item-box.active { background: var(--secondary); color: #000; box-shadow: 0 0 12px var(--secondary); border-color: var(--secondary); }
+        /* --- Premium Navigation Buttons --- */
+        .nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px; }
+        .nav-item-box {
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 20px; border-radius: 12px; color: white; text-decoration: none;
+            font-weight: bold; transition: 0.4s; font-size: 0.9rem; text-transform: uppercase;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.02);
+        }
+        .nav-item-box:hover, .nav-item-box.active { 
+            background: linear-gradient(45deg, var(--primary), var(--secondary)); 
+            color: #000; box-shadow: 0 0 20px var(--primary); transform: translateY(-3px); border-color: transparent;
+        }
 
-/* Compact Hero */
-.hero-contact{
-  position:relative;
-  height:30vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4, #22d3ee);
-  color:white;
-  border-radius: 20px;
-  margin: 15px;
-}
-.hero-contact h1{ font-size:2.2rem; font-weight:700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); font-family: 'Orbitron';}
+        /* --- Hero Section --- */
+        .hero-contact {
+            height: 250px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80');
+            background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center;
+            text-align: center; border-radius: 20px; margin: 20px; border: 1px solid var(--glass-border);
+        }
 
-/* COMPACT & SMALL CONTACT BOX */
-.contact-section{
-  padding:30px 25px;
-  max-width:550px; /* Chota Size */
-  margin:0 auto 40px auto;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  border-radius:20px;
-  box-shadow:0 0 30px rgba(37, 211, 102, 0.3); 
-  border:1.5px solid var(--primary);
-}
-.contact-section h2{ color:var(--primary); font-size: 1.5rem; margin-bottom:20px; text-align:center; font-weight: 800; text-shadow: 0 0 8px var(--primary); }
-.urdu-label { font-family: 'Noto Nastaliq Urdu', serif; color: var(--secondary); font-size: 0.8rem; float: right; }
-.contact-section label{ font-weight:600; font-size: 0.9rem; display: block; margin-bottom: 5px; clear: both;}
+        /* --- Compact Form Design --- */
+        .contact-section {
+            padding: 40px; max-width: 650px; margin: -50px auto 50px auto;
+            background: rgba(10, 10, 15, 0.9); backdrop-filter: blur(20px);
+            border-radius: 25px; border: 2px solid var(--primary); box-shadow: 0 0 40px rgba(37, 211, 102, 0.2);
+        }
+        .contact-section h2 { color: var(--primary); font-family: 'Orbitron'; font-weight: 700; text-align: center; margin-bottom: 30px; }
+        .urdu-label { font-family: 'Noto Nastaliq Urdu', serif; color: var(--secondary); font-size: 0.85rem; float: right; }
+        
+        .form-control, .form-select {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            color: white; border-radius: 12px; padding: 12px; margin-bottom: 15px;
+        }
+        .form-control:focus, .form-select:focus { background: rgba(255,255,255,0.1); border-color: var(--secondary); color: white; box-shadow: 0 0 15px var(--secondary); }
+        .form-select option { background: #010409; color: white; }
 
-.contact-section input, .contact-section textarea, .contact-section select{
-  border-radius:10px; padding:10px; margin-bottom:12px; width:100%;
-  background: rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.2);
-  font-size: 0.9rem;
-}
-.contact-section input:focus, .contact-section select:focus { border-color: var(--secondary); box-shadow: 0 0 8px var(--secondary); outline: none;}
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary), #1db954); color: #000;
+            font-weight: 800; border: none; padding: 15px; border-radius: 12px;
+            width: 100%; text-transform: uppercase; transition: 0.4s;
+        }
+        .submit-btn:hover { transform: scale(1.02); box-shadow: 0 0 25px var(--primary); }
 
-.contact-section button{
-  background:var(--primary); color:#000; padding:12px; border:none; border-radius:10px;
-  cursor:pointer; font-weight:800; transition:0.3s; width: 100%; text-transform: uppercase;
-}
-.contact-section button:hover{ background:#fff; transform: translateY(-2px); box-shadow: 0 5px 15px var(--primary); }
+        /* --- Social & Services Footer --- */
+        .social-btn {
+            width: 45px; height: 45px; border-radius: 10px; display: inline-flex;
+            align-items: center; justify-content: center; color: white; font-size: 1.5rem;
+            margin: 5px; transition: 0.3s; text-decoration: none;
+        }
+        .social-btn.fb { background: #1877F2; }
+        .social-btn.wa { background: #25D366; }
+        .social-btn.ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+        .social-btn.tk { background: #000000; border: 1px solid #fff; }
+        .social-btn.web { background: var(--secondary); color: #000; }
+        .social-btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
 
-/* Footers */
-.shop-info-footer { background: rgba(0,0,0,0.8); padding: 30px 0; border-top: 1px solid #222; text-align: center; }
-.dev-footer { background: #000; padding: 30px 0; border-top: 2px solid var(--primary); }
-.dev-card {
-    background: rgba(255,255,255,0.03); border: 1px solid #333; padding: 20px;
-    border-radius: 15px; max-width: 400px; margin: 0 auto;
-}
+        .footer-services-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .footer-services-list li { background: rgba(255,255,255,0.05); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(37, 211, 102, 0.3); }
 
-.wa-float { position: fixed; bottom: 25px; right: 25px; width: 55px; height: 55px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; z-index: 9999; box-shadow: 0 8px 15px rgba(0,0,0,0.4); }
-</style>
+        .dev-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            border: 1px solid var(--primary); padding: 25px; border-radius: 20px;
+            max-width: 500px; margin: 20px auto;
+        }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; z-index: 1000; box-shadow: 0 0 20px var(--primary); }
+    </style>
 </head>
 <body>
 
@@ -113,8 +112,13 @@ body{
 <header class="main-header">
     <div class="container text-center">
         <div class="d-flex align-items-center justify-content-center">
-            <div class="logo-box"><img src="file_00000000c9e07208a96c20c92990127e.png" alt="SPO Logo"></div>
-            <span class="main-title ms-2" style="font-size: 1.3rem; font-weight: 800;">SPO SERVICES</span>
+            <div class="logo-container">
+                <img src="1775828025648.png" alt="SPO Logo">
+            </div>
+            <div class="ms-3 text-start">
+                <div class="shop-name">Smart Printing & Online Services</div>
+                <div class="small text-secondary">Stationery Point ✨</div>
+            </div>
         </div>
         <div class="nav-box-container">
             <a href="index.html" class="nav-item-box">Home</a>
@@ -126,55 +130,93 @@ body{
     </div>
 </header>
 
-<section class="hero-contact" data-aos="fade-down">
-<div>
-<h1>Contact Us</h1>
-<div class="shop-address" style="font-size: 0.9rem;">📍 Purana Paka Bazar, Kanganpur | 0303-4480404</div>
-</div>
-</section>
-
-<section class="contact-section" data-aos="zoom-in">
-<h2>Get in Touch <span class="urdu-label">رابطہ کریں</span></h2>
-<form id="contactForm">
-    <label>Full Name <span class="urdu-label">آپ کا نام</span></label>
-    <input type="text" id="name" placeholder="Your Name" required>
-
-    <label>Email Address (Optional) <span class="urdu-label">ای میل (اختیاری)</span></label>
-    <input type="email" id="email" placeholder="email@example.com">
-
-    <label>Select Service <span class="urdu-label">سروس کا انتخاب کریں</span></label>
-    <select id="service" required>
-      <option value="">-- Choose Service --</option>
-      <option value="Printing & Flex">Printing & Flex</option>
-      <option value="NADRA/FBR Services">NADRA / FBR Services</option>
-      <option value="Website Development">Website Development</option>
-      <option value="Graphic Design">Graphic Designing</option>
-      <option value="Online Forms/Job Apply">Online Job Apply</option>
-      <option value="Payments/Bills">Bills & Payments</option>
-    </select>
-
-    <label>Message <span class="urdu-label">تفصیلات</span></label>
-    <textarea id="message" rows="3" placeholder="Write message..." required></textarea>
-
-    <button type="submit"><i class="fab fa-whatsapp me-2"></i>Send via WhatsApp</button>
-</form>
-</section>
-
-<footer class="shop-info-footer">
-    <div class="container" data-aos="fade-up">
-        <h5 style="color: var(--primary);">Smart Printing & Online Services</h5>
-        <p class="mb-0 small">📍 Purana Paka Bazar, Kanganpur | 📞 0303-4480404</p>
-    </div>
-</footer>
-
-<footer class="dev-footer text-center">
+<section class="hero-contact" data-aos="fade-in">
     <div class="container">
-        <div class="dev-card" data-aos="zoom-in">
-            <p class="text-secondary x-small mb-1">Developed By:</p>
-            <h4 class="fw-bold mb-0" style="color: var(--secondary);">MUHAMMAD ASIF ALI</h4>
-            <p class="small text-secondary mt-1">Web & Digital Expert</p>
+        <h1 class="display-4 fw-bold">Let's Connect</h1>
+        <p class="lead">Fast & Reliable Digital Solutions for You</p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="contact-section" data-aos="zoom-in">
+        <h2>Send a Message <span class="urdu-label">رابطہ فارم</span></h2>
+        <form id="contactForm">
+            <label>Your Name <span class="urdu-label">آپ کا نام</span></label>
+            <input type="text" id="name" class="form-control" placeholder="Enter Full Name" required>
+
+            <label>Select Service <span class="urdu-label">سروس منتخب کریں</span></label>
+            <select id="service" class="form-select" required>
+                <option value="">-- Click to Select Service --</option>
+                <optgroup label="Printing & Documents">
+                    <option value="Color/Black Printing">Color & Black Printing</option>
+                    <option value="Passport Photos">Passport Size Photos</option>
+                    <option value="Scanning/Lamination">Scanning & Lamination</option>
+                    <option value="Photocopy">High Quality Photocopy</option>
+                </optgroup>
+                <optgroup label="Government & Online">
+                    <option value="Job Apply">Online Job Apply</option>
+                    <option value="NADRA Services">NADRA Assistance</option>
+                    <option value="FBR/Tax Services">FBR Tax Filing (NTN/IRIS)</option>
+                    <option value="Domicile/Certificates">Domicile & Certificates</option>
+                </optgroup>
+                <optgroup label="Digital & Technical">
+                    <option value="Web Development">Website Development</option>
+                    <option value="CV Design">Professional CV / Resume</option>
+                    <option value="Digital Marketing">Social Media Marketing & SEO</option>
+                    <option value="Graphic Design">Graphic Designing</option>
+                </optgroup>
+            </select>
+
+            <label>Message Details <span class="urdu-label">مزید تفصیلات</span></label>
+            <textarea id="message" class="form-control" rows="4" placeholder="How can we help you?" required></textarea>
+
+            <button type="submit" class="submit-btn">
+                <i class="fab fa-whatsapp me-2"></i> Send Inquiry on WhatsApp
+            </button>
+        </form>
+    </div>
+</section>
+
+<footer class="shop-info-footer py-5 text-center" style="background: rgba(0,0,0,0.8);">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-12" data-aos="fade-up">
+                <h4 class="text-primary fw-bold">One-Window Solutions <span class="urdu-label">ون ونڈو سلوشنز</span></h4>
+                <p class="text-secondary small">آپ کی ہر ضرورت کا ایک ہی جگہ حل!</p>
+                <ul class="footer-services-list mt-3">
+                    <li>🖨️ پاسپورٹ فوٹوز</li>
+                    <li>📄 ٹیکس فائلنگ (FBR)</li>
+                    <li>🌐 ویب ڈویلپمنٹ</li>
+                    <li>🆔 نادرا سروسز</li>
+                    <li>📝 جاب اپلائی</li>
+                    <li>🎨 گرافک ڈیزائننگ</li>
+                    <li>💳 بلوں کی ادائیگی</li>
+                    <li>🚀 ڈیجیٹل مارکیٹنگ</li>
+                </ul>
+            </div>
+
+            <div class="col-md-12 mt-5">
+                <h5 class="text-light">Connect With Us</h5>
+                <div class="d-flex justify-content-center flex-wrap mt-3">
+                    <a href="https://www.SmartPrintingOnline.site" class="social-btn web" title="Website"><i class="fas fa-globe"></i></a>
+                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-btn fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-btn wa" title="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/smartprinting.online" class="social-btn ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-btn tk" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:asif.aimarketing@gmail.com" class="social-btn tk" style="background: #D44638;" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="col-md-12 mt-4">
+                <div class="dev-card" data-aos="zoom-in">
+                    <p class="text-secondary small mb-1">Project Lead & Developed By:</p>
+                    <h3 class="fw-bold" style="color: var(--secondary);">MUHAMMAD ASIF ALI</h3>
+                    <p class="text-primary mb-2">Web & Digital Marketing Expert</p>
+                    <p class="small text-secondary">📍 Purana Paka Bazar, Kanganpur | 📞 0303-4480404</p>
+                </div>
+                <p class="text-muted" style="font-size: 0.75rem;">© 2026 SPO Smart Digital Verse | All Rights Reserved</p>
+            </div>
         </div>
-        <p class="mt-3 text-secondary small" style="font-size: 0.7rem;">© 2026 SPO Services | Kanganpur</p>
     </div>
 </footer>
 
@@ -182,19 +224,29 @@ body{
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init({ duration: 1000, once: true });
-particlesJS("particles-js", { particles: { number: { value: 60, density: { enable: true, value_area: 800 } }, color: { value: "#ffffff" }, shape: { type: "star" }, opacity: { value: 0.2 }, size: { value: 2 }, move: { speed: 0.3 } } });
+    AOS.init({ duration: 1000, once: true });
+    
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: "#25D366" },
+            shape: { type: "circle" },
+            opacity: { value: 0.2, random: true },
+            size: { value: 2, random: true },
+            line_linked: { enable: true, distance: 150, color: "#25D366", opacity: 0.1, width: 1 },
+            move: { speed: 1 }
+        }
+    });
 
-document.getElementById('contactForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value || 'Not provided';
-  const service = document.getElementById('service').value;
-  const msg = document.getElementById('message').value;
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const service = document.getElementById('service').value;
+        const msg = document.getElementById('message').value;
 
-  const waMsg = `*New Website Inquiry*%0A*Name:* ${name}%0A*Email:* ${email}%0A*Service:* ${service}%0A*Message:* ${msg}`;
-  window.open(`https://wa.me/923034480404?text=${waMsg}`, '_blank');
-});
+        const waUrl = `https://wa.me/923034480404?text=*Website Inquiry*%0A%0A*Customer Name:* ${name}%0A*Interested Service:* ${service}%0A*Message:* ${msg}`;
+        window.open(waUrl, '_blank');
+    });
 </script>
 </body>
 </html>
