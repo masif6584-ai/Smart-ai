@@ -14,9 +14,13 @@
         :root {
             --primary: #25D366;
             --secondary: #00e5ff;
-            --universe-bg: #020617; /* Darker, richer space blue */
+            --universe-bg: #020617;
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
+            --fb-color: #1877F2;
+            --wa-color: #25D366;
+            --ig-color: #E4405F;
+            --tt-color: #000000;
         }
 
         body { 
@@ -27,156 +31,134 @@
         }
 
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
-        .nebula { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.1) 0%, transparent 80%); z-index: -2; pointer-events: none; }
+        .nebula { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.05) 0%, transparent 80%); z-index: -2; pointer-events: none; }
 
-        /* --- Updated Header & Logo --- */
+        /* --- Modern Header --- */
         .main-header { 
-            background: rgba(1, 4, 9, 0.85); 
+            background: rgba(1, 4, 9, 0.9); 
             border-bottom: 2px solid var(--primary); 
-            padding: 12px 0; 
+            padding: 15px 0; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            backdrop-filter: blur(15px); 
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
         
         .logo-container {
-            width: 70px;
-            height: 70px;
+            width: 75px; height: 75px;
             border-radius: 50%;
             overflow: hidden;
             display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            /* White border removed, replaced with Primary Glow */
-            box-shadow: 0 0 20px var(--primary); 
+            box-shadow: 0 0 25px var(--primary); 
             transition: 0.5s;
-            background: transparent;
+            background: #000;
             margin-right: 15px;
         }
-        .logo-container:hover { transform: scale(1.05) rotate(5deg); box-shadow: 0 0 30px var(--secondary); }
+        .logo-container:hover { transform: scale(1.1) rotate(360deg); box-shadow: 0 0 40px var(--secondary); }
         .logo-container img { width: 100%; height: 100%; object-fit: cover; }
 
         .main-title { 
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem; 
+            font-size: 2rem; 
             font-weight: 800; 
-            text-transform: uppercase; 
-            background: linear-gradient(to right, #fff, var(--primary));
+            background: linear-gradient(45deg, #fff, var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 5px rgba(37, 211, 102, 0.5));
         }
 
-        /* --- Navigation Boxes --- */
-        .nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px; }
+        /* --- Navigation --- */
+        .nav-box-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 15px; }
         .nav-item-box {
             background: var(--glass); 
             border: 1px solid var(--glass-border);
-            padding: 10px 22px; 
-            border-radius: 8px; 
+            padding: 8px 25px; 
+            border-radius: 50px; 
             color: #fff; 
             text-decoration: none;
             font-weight: 700; 
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            font-size: 0.95rem; 
+            transition: 0.4s; 
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
-        .nav-item-box:hover { 
-            background: var(--secondary); 
-            color: #000; 
-            box-shadow: 0 0 20px var(--secondary); 
-            transform: translateY(-5px); 
-            border-color: transparent;
-        }
-        .nav-item-box.active { 
+        .nav-item-box:hover, .nav-item-box.active { 
             background: var(--primary); 
             color: #000; 
-            border-color: var(--primary);
-            box-shadow: 0 0 15px var(--primary);
+            box-shadow: 0 0 20px var(--primary); 
+            transform: translateY(-3px);
         }
 
-        /* --- Enhanced Content Cards --- */
-        .content-card {
-            background: rgba(15, 23, 42, 0.6); 
+        /* --- Stats Counter Section --- */
+        .stat-card {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
             border: 1px solid var(--glass-border);
-            padding: 45px; 
-            border-radius: 30px; 
-            backdrop-filter: blur(12px); 
-            height: 100%;
             transition: 0.3s;
         }
-        .content-card:hover { border-color: var(--primary); box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
-        
-        .section-title { 
-            color: var(--primary); 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            border-left: 5px solid var(--primary);
-            padding-left: 15px;
-        }
-        
-        .urdu-text { 
-            font-family: 'Noto Nastaliq Urdu', serif; 
-            line-height: 2.8; 
-            direction: rtl; 
-            text-align: justify; 
-            font-size: 1.3rem; 
-            color: #f8fafc;
-        }
+        .stat-card:hover { border-color: var(--secondary); transform: scale(1.05); }
+        .counter-num { font-size: 2.5rem; font-weight: 800; color: var(--primary); font-family: 'Orbitron'; }
 
-        .service-highlight-box {
-            background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(0, 229, 255, 0.15));
-            border: 1px solid var(--secondary); 
-            padding: 30px; 
-            border-radius: 20px; 
-            margin-top: 25px;
+        /* --- Content Styling --- */
+        .content-card {
+            background: rgba(15, 23, 42, 0.7); 
+            border: 1px solid var(--glass-border);
+            padding: 40px; 
+            border-radius: 25px; 
+            backdrop-filter: blur(15px); 
+            height: 100%;
             position: relative;
             overflow: hidden;
         }
-        .service-highlight-box::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: 0.5s;
-        }
-        .service-highlight-box:hover::before { left: 100%; }
-
-        /* --- Footer & UI Elements --- */
-        .shop-footer { 
-            background: #010409; 
-            padding: 60px 0; 
-            border-top: 2px solid var(--primary); 
-            margin-top: 80px; 
+        .content-card::before {
+            content: ''; position: absolute; top: 0; right: 0; width: 5px; height: 100%; background: var(--primary);
         }
         
-        .whatsapp-float { 
-            position: fixed; 
-            bottom: 30px; 
-            right: 30px; 
-            width: 65px; 
-            height: 65px; 
-            background: #25D366; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 32px; 
-            color: white; 
-            z-index: 1000; 
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); 
-            text-decoration: none; 
-            transition: 0.3s;
+        .section-title { color: var(--primary); font-weight: 800; text-transform: uppercase; border-bottom: 2px solid var(--glass-border); display: inline-block; margin-bottom: 20px; }
+        
+        .urdu-text { 
+            font-family: 'Noto Nastaliq Urdu', serif; 
+            line-height: 2.5; 
+            direction: rtl; 
+            text-align: right; 
+            font-size: 1.2rem; 
         }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(15deg); }
 
-        /* Responsive Fixes */
+        /* --- Social Media Pop-up Footer --- */
+        .social-link {
+            width: 55px; height: 55px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+            margin: 10px;
+            text-decoration: none;
+            transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+        .social-link:hover { transform: translateY(-10px) scale(1.2); color: #fff; }
+        .social-link .tooltip-text {
+            position: absolute; top: -45px; font-size: 12px; background: #fff; color: #000;
+            padding: 5px 10px; border-radius: 5px; opacity: 0; transition: 0.3s; pointer-events: none;
+            font-weight: 700; text-transform: uppercase;
+        }
+        .social-link:hover .tooltip-text { opacity: 1; top: -55px; }
+
+        .fb:hover { background: var(--fb-color); box-shadow: 0 0 20px var(--fb-color); }
+        .wa:hover { background: var(--wa-color); box-shadow: 0 0 20px var(--wa-color); }
+        .ig:hover { background: var(--ig-color); box-shadow: 0 0 20px var(--ig-color); }
+        .tt:hover { background: var(--tt-color); box-shadow: 0 0 20px var(--tt-color); }
+        .web:hover { background: var(--secondary); box-shadow: 0 0 20px var(--secondary); }
+
+        .shop-footer { background: #010409; padding: 60px 0; border-top: 3px solid var(--primary); margin-top: 50px; }
+
         @media (max-width: 768px) {
-            .main-title { font-size: 1.3rem; }
-            .content-card { padding: 25px; }
-            .urdu-text { font-size: 1.1rem; }
+            .main-title { font-size: 1.4rem; }
+            .nav-item-box { padding: 6px 15px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -189,9 +171,9 @@
     <div class="container text-center">
         <div class="d-flex align-items-center justify-content-center">
             <div class="logo-container">
-                <img src="1775828025648.png" alt="SPO Smart Digital Verse Logo">
+                <img src="1775828025648.png" alt="SPO Logo">
             </div>
-            <span class="main-title">About SPO Digital</span>
+            <span class="main-title">SPO Digital Verse</span>
         </div>
         <div class="nav-box-container">
             <a href="index.html" class="nav-item-box">Home</a>
@@ -204,32 +186,42 @@
 </header>
 
 <div class="container py-5">
-    <div class="row g-5">
-        <div class="col-lg-7" data-aos="fade-up">
-            <div class="content-card">
-                <h2 class="section-title mb-4">Leading Digital Solutions</h2>
-                <p class="fs-5" style="color: #cbd5e1;"><strong>Smart Printing & Online Services (SPO)</strong> is a premium digital hub based in <strong>Purana Paka Bazar, Kanganpur</strong>. We specialize in transforming traditional business models into modern digital powerhouses.</p>
-                
-                <div class="service-highlight-box">
-                    <h5 style="color: var(--secondary); font-weight: 700;">
-                        <i class="fas fa-rocket me-2"></i> Website & Digital Ecosystems
-                    </h5>
-                    <p class="mb-0">Hamari maherat modern business websites develop karne mein hai. Hum schools, hospitals aur local businesses ke liye high-performance sites banate hain taake wo digital dunya mein apni pehchan bana sakein.</p>
-                </div>
+    <div class="row g-4 mb-5 text-center" data-aos="zoom-in">
+        <div class="col-md-3 col-6"><div class="stat-card"><div class="counter-num">500+</div><p>Happy Clients</p></div></div>
+        <div class="col-md-3 col-6"><div class="stat-card"><div class="counter-num">1k+</div><p>Projects Done</p></div></div>
+        <div class="col-md-3 col-6"><div class="stat-card"><div class="counter-num">100%</div><p>Reliability</p></div></div>
+        <div class="col-md-3 col-6"><div class="stat-card"><div class="counter-num">24/7</div><p>Support</p></div></div>
+    </div>
 
-                <div class="mt-4 p-3 border-start border-primary border-3 bg-opacity-10 bg-success">
-                    <p class="mb-0">Hum NADRA services, Tax filing (FBR), aur professional Graphic Design mein barson ka tajurba rakhte hain.</p>
+    <div class="row g-5">
+        <div class="col-lg-7" data-aos="fade-right">
+            <div class="content-card">
+                <h2 class="section-title">Who We Are?</h2>
+                <p class="fs-5"><strong>SPO Smart Printing & Online Services | Stationery Point</strong> آپ کی تمام ڈیجیٹل اور پرنٹنگ ضروریات کا واحد حل ہے۔</p>
+                <p style="color: #cbd5e1;">ہم کنگن پور کے قلب (پرانا پکا بازار) میں واقع ایک جدید ڈیجیٹل مرکز ہیں۔ ہمارا مقصد آپ کے کاروبار کو جدید ترین ٹیکنالوجی، ویب ڈویلپمنٹ، اور بہترین گرافک ڈیزائن کے ذریعے بلندیوں تک پہنچانا ہے۔</p>
+                
+                <div class="mt-4">
+                    <h5 class="text-info fw-bold"><i class="fas fa-check-circle me-2"></i> Our Core Expertise:</h5>
+                    <ul class="list-unstyled row g-2 mt-3">
+                        <li class="col-md-6"><i class="fas fa-star text-primary me-2"></i> High-End Web Design</li>
+                        <li class="col-md-6"><i class="fas fa-star text-primary me-2"></i> Advanced Local SEO</li>
+                        <li class="col-md-6"><i class="fas fa-star text-primary me-2"></i> FBR & NADRA Services</li>
+                        <li class="col-md-6"><i class="fas fa-star text-primary me-2"></i> Premium Stationery</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-5" data-aos="fade-left">
             <div class="content-card">
-                <h2 class="section-title mb-4">ہمارا مشن</h2>
+                <h2 class="section-title">ہمارا عزم</h2>
                 <p class="urdu-text">
-                    SPO کا مقصد کنگن پور اور گردونواح کے عوام کو جدید ترین ڈیجیٹل سہولیات فراہم کرنا ہے۔ ہم صرف ایک پرنٹنگ شاپ نہیں بلکہ آپ کے کاروبار کے ڈیجیٹل پارٹنر ہیں۔ 
-                    ہمارا مشن ٹیکنالوجی کے ذریعے مقامی سطح پر ہر کاروبار کو عالمی معیار کے مطابق اپ گریڈ کرنا ہے۔
+                    SPO اسمارٹ ڈیجیٹل ورس کا عزم ہے کہ ہم اپنے کسٹمرز کو وہ معیار فراہم کریں جو بڑے شہروں کی بڑی ایجنسیوں کا طرہ امتیاز ہے۔ ہم ہر پروجیکٹ کو اپنا سمجھ کر مکمل کرتے ہیں۔ 
+                    معیاری کام اور بہترین کسٹمر سروس فراہم کرنے کے لیے ہم ہمہ وقت کوشاں ہیں۔
                 </p>
+                <div class="mt-3 p-3 bg-dark rounded border border-info text-center">
+                    <p class="mb-0 small">"آپ کی ترقی، ہماری پہچان"</p>
+                </div>
             </div>
         </div>
     </div>
@@ -237,43 +229,57 @@
 
 <footer class="shop-footer text-center">
     <div class="container">
-        <h3 class="fw-bold" style="color:var(--primary); letter-spacing: 1px;">SPO SMART DIGITAL VERSE</h3>
-        <p class="text-secondary">Purana Paka Bazar, Kanganpur, District Kasur</p>
-        <div class="mt-5">
-            <p class="mb-2 text-uppercase small tracking-widest" style="color: #64748b;">Project Lead & Technical Head:</p>
-            <h4 class="fw-bold" style="color: var(--secondary);">Muhammad Asif Ali</h4>
-            <div class="mt-3">
-                <a href="https://wa.me/923034480404" class="btn btn-outline-success rounded-pill px-4 py-2">
-                    <i class="fab fa-whatsapp me-2"></i>Connect on WhatsApp
-                </a>
-            </div>
+        <h2 class="fw-bold mb-4" style="color:var(--primary); font-family: 'Orbitron';">SPO SMART DIGITAL VERSE</h2>
+        <p class="px-md-5 mb-5" style="color: #94a3b8;">آپ کی تمام پرنٹنگ، اسٹیشنری اور آن لائن سروسز کا قابلِ اعتماد مرکز۔ ہماری خدمات اور نئی اپڈیٹس کے لیے نیچے دیے گئے لنکس پر کلک کریں:</p>
+        
+        <div class="d-flex justify-content-center flex-wrap">
+            <a href="https://www.SmartPrintingOnline.site" class="social-link web" target="_blank">
+                <span class="tooltip-text">Website</span>
+                <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-link fb" target="_blank">
+                <span class="tooltip-text">Facebook</span>
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-link wa" target="_blank">
+                <span class="tooltip-text">Channel</span>
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" class="social-link ig" target="_blank">
+                <span class="tooltip-text">Instagram</span>
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-link tt" target="_blank">
+                <span class="tooltip-text">TikTok</span>
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="mailto:asif.aimarketing@gmail.com" class="social-link ig" style="background: #D44638;">
+                <span class="tooltip-text">Gmail</span>
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
+
+        <hr class="my-5 opacity-25">
+        <p class="text-secondary small">Purana Paka Bazar, Kanganpur, District Kasur | Contact: 0303-4480404</p>
+        <p class="mt-2" style="color: var(--secondary); font-weight: 700;">Managed by: Muhammad Asif Ali</p>
     </div>
 </footer>
 
-<a href="https://wa.me/923034480404" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-    AOS.init({ 
-        duration: 1000, 
-        once: true,
-        easing: 'ease-out-back'
-    });
+    AOS.init({ duration: 1200, once: true });
     
     particlesJS("particles-js", { 
         particles: { 
-            number: { value: 100, density: { enable: true, value_area: 800 } }, 
-            color: { value: "#25D366" }, 
+            number: { value: 120, density: { enable: true, value_area: 800 } }, 
+            color: { value: "#00e5ff" }, 
             shape: { type: "circle" }, 
-            opacity: { value: 0.3, random: true }, 
-            size: { value: 2, random: true }, 
-            move: { speed: 1, direction: "none", out_mode: "out" },
+            opacity: { value: 0.4, random: true }, 
+            size: { value: 3, random: true }, 
+            move: { speed: 1.5, direction: "none", out_mode: "out" },
             line_linked: { enable: true, distance: 150, color: "#25D366", opacity: 0.1, width: 1 }
         },
-        interactivity: {
-            events: { onhover: { enable: true, mode: "grab" } }
-        }
+        interactivity: { events: { onhover: { enable: true, mode: "repulse" } } }
     });
 </script>
 </body>
