@@ -3,217 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | SPO SMART PRINTING ONLINE SERVICES</title>
+    <title>Services & Portfolio | SPO SMART DIGITAL VERSE 2026</title>
+    
+    <meta name="description" content="SPO Smart Printing & Online Services Kanganpur. Printing, SEO, Web, and All Online Solutions.">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        :root { --primary: #25D366; --secondary: #00ffcc; --dark-bg: #010409; }
-        body { font-family: 'Rajdhani', sans-serif; background: var(--dark-bg); color: white; overflow-x: hidden; padding-top: 20px; }
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
-        b, strong, h1, h2, h3, h4, h5 { font-weight: 800 !important; }
-
-        /* Header & Navigation */
-        .main-title { font-size: 2.8rem; color: var(--primary); text-shadow: 0 0 20px rgba(37, 211, 102, 0.6); text-transform: uppercase; }
-        
-        .nav-box { 
-            background: rgba(255, 255, 255, 0.05); 
-            backdrop-filter: blur(10px); 
-            border: 2px solid var(--primary); 
-            border-radius: 15px; 
-            padding: 12px; 
-            margin-bottom: 40px; 
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.3); 
-            display: inline-flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 5px;
+        /* --- 1. CORE DESIGN SYSTEM (Universe Theme) --- */
+        :root { 
+            --primary: #25D366; 
+            --secondary: #00ffcc; 
+            --accent: #ff007f;
+            --dark-bg: #010409; 
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glow: rgba(37, 211, 102, 0.25);
+            --fb: #1877F2; --wa: #25D366; --ig: #E4405F; --tt: #000000; --web: #0088ff; --mail: #ea4335;
         }
-        .nav-box .btn { 
-            font-weight: 800; 
-            border-radius: 8px; 
-            transition: 0.3s; 
-            min-width: 100px; 
-            border: 1px solid transparent;
-        }
-        .nav-box .btn-outline-light:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); border-color: var(--primary); }
-        .nav-box .btn-success { background: var(--primary); border-color: var(--primary); color: #000; }
 
-        /* Service Cards */
-        .service-card { background: rgba(255, 255, 255, 0.04); border: 2px solid rgba(37, 211, 102, 0.4); border-radius: 20px; padding: 25px; text-align: center; transition: 0.5s; cursor: pointer; height: 100%; backdrop-filter: blur(10px); }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 0 30px var(--primary); border-color: var(--primary); }
-        .service-card i { font-size: 3.2rem; color: var(--primary); margin-bottom: 15px; filter: drop-shadow(0 0 10px var(--primary)); }
+        * { cursor: none !important; box-sizing: border-box; scroll-behavior: smooth; }
         
-        /* Urdu Box Grid */
-        .urdu-box { background: #ffffff; color: #000; padding: 15px; border-radius: 12px; font-family: 'Noto Nastaliq Urdu', serif; text-align: center; border: 3px solid #000; box-shadow: 5px 5px 0px var(--primary); cursor: pointer; transition: 0.3s; min-height: 75px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        body { 
+            font-family: 'Rajdhani', sans-serif; 
+            background: var(--dark-bg); 
+            color: #ffffff; 
+            overflow-x: hidden; 
+            margin: 0;
+            padding: 0;
+        }
+
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%); }
+
+        /* --- 2. ADVANCED CUSTOM CURSOR --- */
+        .cursor-dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; box-shadow: 0 0 15px var(--primary); transition: transform 0.1s linear; }
+        .cursor-circle { width: 40px; height: 40px; border: 2px solid var(--secondary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease-out; opacity: 0.5; }
+
+        /* --- 3. UNIVERSE NAVIGATION --- */
+        .navbar-custom { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(25px); border-bottom: 2px solid var(--primary); padding: 12px 0; position: sticky; top: 0; z-index: 2000; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); }
+        .h-flex { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 0 25px; }
+        .logo-box { width: 65px; height: 65px; border-radius: 50%; border: 3px solid var(--primary); overflow: hidden; box-shadow: 0 0 20px var(--primary); transition: 0.5s; }
+        .logo-box:hover { transform: rotate(360deg) scale(1.1); }
+        .logo-box img { width: 100%; height: 100%; object-fit: cover; }
+        .brand-text h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.4rem; margin: 0; background: linear-gradient(90deg, #fff, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .brand-text p { font-size: 0.7rem; letter-spacing: 3px; color: var(--primary); margin: 0; text-transform: uppercase; }
+
+        .nav-menu { display: flex; gap: 10px; }
+        .nav-link-btn { background: var(--glass); border: 1px solid var(--border-glow); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 12px; font-weight: 700; transition: 0.4s; font-size: 0.85rem; }
+        .nav-link-btn:hover, .nav-link-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 25px var(--primary); border-color: #fff; }
+
+        /* --- 4. SECTION HEADERS --- */
+        .section-header { text-align: center; margin: 80px 0 50px; }
+        .section-header h2 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 2.5rem; text-transform: uppercase; color: #fff; text-shadow: 0 0 20px var(--border-glow); }
+        .urdu-subtitle { font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5rem; color: var(--primary); margin-top: 10px; }
+
+        /* --- 5. PROFESSIONAL SERVICE CARDS --- */
+        .service-card-icon { 
+            background: rgba(255, 255, 255, 0.04); border: 2px solid rgba(37, 211, 102, 0.3); 
+            border-radius: 20px; padding: 30px; text-align: center; transition: 0.5s; 
+            cursor: pointer; height: 100%; backdrop-filter: blur(10px); 
+        }
+        .service-card-icon:hover { transform: translateY(-10px); box-shadow: 0 0 30px var(--primary); border-color: var(--primary); }
+        .service-card-icon i { font-size: 3.2rem; color: var(--primary); margin-bottom: 15px; filter: drop-shadow(0 0 10px var(--primary)); }
+        .service-card-icon h5 { font-weight: 800; font-size: 1.2rem; }
+
+        /* --- 6. URDU BOX GRID --- */
+        .urdu-box { 
+            background: #ffffff; color: #000; padding: 15px; border-radius: 12px; 
+            font-family: 'Noto Nastaliq Urdu', serif; text-align: center; border: 3px solid #000; 
+            box-shadow: 6px 6px 0px var(--primary); cursor: pointer; transition: 0.3s; 
+            min-height: 75px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; 
+        }
         .urdu-box:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0px #000; background: var(--secondary); }
 
-        /* Social Media Hover Box */
-        .social-hover-box { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--primary); border-radius: 20px; padding: 30px; margin: 50px auto; max-width: 700px; box-shadow: 0 0 20px rgba(37, 211, 102, 0.1); }
-        .social-link { font-size: 2.5rem; color: white; margin: 0 20px; transition: 0.4s ease; display: inline-block; text-decoration: none; }
-        .social-link:hover { color: var(--primary); transform: scale(1.3); filter: drop-shadow(0 0 15px var(--primary)); }
+        /* --- 7. MASONRY GALLERY --- */
+        .masonry-grid { column-count: 4; column-gap: 20px; padding: 0 20px; }
+        @media (max-width: 1100px) { .masonry-grid { column-count: 3; } }
+        @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
+        
+        .gallery-item { position: relative; margin-bottom: 20px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-glow); background: #000; transition: 0.6s; }
+        .gallery-item img { width: 100%; display: block; transition: 0.8s; }
+        .gallery-item:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.3); }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.4); }
+        .gallery-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; transition: 0.4s; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .view-btn { background: var(--primary); color: #000; padding: 10px 20px; border-radius: 50px; font-weight: 800; border: none; text-transform: uppercase; font-size: 0.7rem; }
 
-        /* Reviews */
-        .review-section { background: rgba(255,255,255,0.03); border-radius: 25px; padding: 40px; border: 2px solid rgba(255,255,255,0.1); }
+        /* --- 8. LIGHTBOX MODAL --- */
+        .lightbox-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); display: none; z-index: 9999; justify-content: center; align-items: center; flex-direction: column; }
+        .lightbox-img { max-width: 90%; max-height: 70vh; border-radius: 15px; border: 4px solid var(--primary); box-shadow: 0 0 50px var(--primary); }
+        .close-lb { position: absolute; top: 30px; right: 30px; font-size: 40px; color: #fff; cursor: pointer; }
+        .btn-order-wa { background: var(--wa); color: #fff; padding: 15px 30px; border-radius: 50px; font-weight: 900; text-decoration: none; margin-top: 20px; display: flex; align-items: center; gap: 10px; }
+
+        /* --- 9. REVIEW SECTION --- */
+        .review-section { background: rgba(255,255,255,0.03); border-radius: 25px; padding: 50px; border: 2px solid rgba(255,255,255,0.1); margin: 60px 20px; }
         .review-card { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px; border-left: 6px solid var(--primary); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
-        /* Footer Styles */
-        .shop-footer { background: rgba(37, 211, 102, 0.08); padding: 50px 0; border-top: 3px solid var(--primary); margin-top: 50px; }
-        .dev-footer { background: #000; padding: 25px 0; border-top: 1px solid #333; }
-        
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 0 25px var(--primary); text-decoration: none; }
+        /* --- 10. MEGA FOOTER --- */
+        .footer-mega { background: #000; border-top: 5px solid var(--primary); padding: 100px 0 40px; margin-top: 100px; }
+        .f-urdu-about { font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.2rem; line-height: 2.2; color: #bbb; text-align: justify; }
+        .social-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 40px 0; }
+        .social-glass-btn { padding: 18px; border-radius: 15px; text-decoration: none; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 15px; background: var(--glass); border: 1px solid rgba(255,255,255,0.1); color: #fff; transition: 0.4s; }
+        .social-glass-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 30px var(--primary); }
+
+        .wa-float-master { position: fixed; bottom: 40px; right: 40px; background: var(--wa); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; color: #fff; z-index: 5000; box-shadow: 0 0 30px rgba(37,211,102,0.5); text-decoration: none; animation: pulse-wa 2s infinite; }
+        @keyframes pulse-wa { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        @media (max-width: 600px) { .nav-menu { display: none; } .section-header h2 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
 
+<div class="cursor-dot"></div>
+<div class="cursor-circle"></div>
 <div id="particles-js"></div>
 
-<div class="container text-center">
-    <h1 class="main-title mt-4"><b>SPO SMART PRINTING ONLINE SERVICES</b></h1>
-    <p class="text-secondary mb-4"><b>Purana Paka Bazar, Kanganpur, District Kasur</b></p>
-
-    <div class="nav-box d-inline-block">
-        <a href="index.html" class="btn btn-outline-light">Home</a>
-        <a href="about.html" class="btn btn-outline-light">About</a>
-        <a href="services.html" class="btn btn-success">Services</a>
-        <a href="gallery.html" class="btn btn-outline-light">Gallery</a>
-        <a href="contact.html" class="btn btn-outline-light">Contact</a>
+<header class="navbar-custom">
+    <div class="h-flex">
+        <a href="index.html" class="h-left d-flex align-items-center text-decoration-none">
+            <div class="logo-box"><img src="print.png" alt="SPO Logo"></div>
+            <div class="brand-text ms-3">
+                <h1>SPO SMART DIGITAL</h1>
+                <p>VERSE | INNOVATION | PRINTING</p>
+            </div>
+        </a>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link-btn">HOME</a>
+            <a href="#services" class="nav-link-btn active">SERVICES</a>
+            <a href="#gallery" class="nav-link-btn">GALLERY</a>
+            <a href="#reviews" class="nav-link-btn">REVIEWS</a>
+            <a href="#contact" class="nav-link-btn">CONTACT</a>
+        </nav>
     </div>
+</header>
 
-    <div class="row g-4 mb-5 text-start">
-        <div class="col-12 text-center"><h2 class="fw-bold mb-4" style="color:var(--secondary)">PROFESSIONAL DIGITAL SERVICES</h2></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Printing & Flex')"><i class="fa fa-print"></i><h5><b>Printing & Flex</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('NADRA Services')"><i class="fa fa-id-card"></i><h5><b>NADRA / CNIC</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('FBR Tax Filing')"><i class="fa fa-file-invoice-dollar"></i><h5><b>FBR Tax Filer</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Website & AI')"><i class="fa fa-code"></i><h5><b>Web & AI Design</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('E-Stamp')"><i class="fa fa-stamp"></i><h5><b>E-Stamp / Chalan</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Passport Fees')"><i class="fa fa-passport"></i><h5><b>Passport Online</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Digital Marketing')"><i class="fa fa-bullhorn"></i><h5><b>FB & WA Ads</b></h5></div></div>
-        <div class="col-md-3 col-6"><div class="service-card" onclick="sendWA('Bill Payments')"><i class="fa fa-money-bill-wave"></i><h5><b>Utility Bills</b></h5></div></div>
-    </div>
+<main class="container-fluid p-0">
 
-    <div class="row g-3 py-5">
-        <div class="col-12 text-center"><h2 class="fw-bold mb-4" style="color:var(--primary)">ALL ONLINE SERVICES</h2></div>
-        <div class="col-md-2 col-6" onclick="sendWA('شناختی کارڈ')"><div class="urdu-box"><b>شناختی کارڈ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ب فارم')"><div class="urdu-box"><b>ب فارم</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ایف آر سی فارم')"><div class="urdu-box"><b>ایف آر سی فارم</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ڈومیسائل')"><div class="urdu-box"><b>ڈومیسائل</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('پاسپورٹ فوٹو')"><div class="urdu-box"><b>پاسپورٹ فوٹو</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('کلر پرنٹ')"><div class="urdu-box"><b>کلر پرنٹ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ٹیکس فائلر')"><div class="urdu-box"><b>ٹیکس فائلر</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('وزٹنگ کارڈ')"><div class="urdu-box"><b>وزٹنگ کارڈ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('کمپیوٹرائزڈ فرد')"><div class="urdu-box"><b>کمپیوٹرائزڈ فرد</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('بل ادائیگی')"><div class="urdu-box"><b>بل ادائیگی</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('لیمینیشن')"><div class="urdu-box"><b>لیمینیشن</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('سی وی (CV)')"><div class="urdu-box"><b>سی وی (CV)</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('سکیننگ')"><div class="urdu-box"><b>سکیننگ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('سٹیشنری')"><div class="urdu-box"><b>سٹیشنری</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('کمپوزنگ')"><div class="urdu-box"><b>کمپوزنگ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('بائنڈنگ')"><div class="urdu-box"><b>بائنڈنگ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('لائسنس')"><div class="urdu-box"><b>لائسنس</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('PVC کارڈ')"><div class="urdu-box"><b>PVC کارڈ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('شادی کارڈ')"><div class="urdu-box"><b>شادی کارڈ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('فلیکس')"><div class="urdu-box"><b>فلیکس</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('ای کامرس')"><div class="urdu-box"><b>ای کامرس</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('نادرا سروسز')"><div class="urdu-box"><b>نادرا سروسز</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('واٹس ایپ پرنٹ')"><div class="urdu-box"><b>واٹس ایپ پرنٹ</b></div></div>
-        <div class="col-md-2 col-6" onclick="sendWA('آن لائن فارم')"><div class="urdu-box"><b>آن لائن فارم</b></div></div>
-    </div>
+    <section id="services" class="container py-5">
+        <div class="section-header">
+            <h2>DIGITAL SERVICES</h2>
+            <div class="urdu-subtitle">پروفیشنل ڈیجیٹل سروسز</div>
+        </div>
+        <div class="row g-4 text-start">
+            <div class="col-md-3 col-6"><div class="service-card-icon" onclick="sendWA('Printing & Flex')"><i class="fa fa-print"></i><h5>Printing & Flex</h5></div></div>
+            <div class="col-md-3 col-6"><div class="service-card-icon" onclick="sendWA('NADRA Services')"><i class="fa fa-id-card"></i><h5>NADRA / CNIC</h5></div></div>
+            <div class="col-md-3 col-6"><div class="service-card-icon" onclick="sendWA('FBR Tax Filing')"><i class="fa fa-file-invoice-dollar"></i><h5>FBR Tax Filer</h5></div></div>
+            <div class="col-md-3 col-6"><div class="service-card-icon" onclick="sendWA('Website & AI')"><i class="fa fa-code"></i><h5>Web & AI Design</h5></div></div>
+            <div class="col-md-3 col-6"><div class="service-card-icon" onclick="sendWA('E-Stamp')"><i class="fa fa-stamp"></i><h5>E-Stamp / Chalan</h5></div></div>
+            <div class="col-md-3 col-6"><div class="service-card-icon" onclick="sendWA('Passport Online')"><i class="fa fa-passport"></i><h5>Passport Online</h5></div></div>
+            <div class="col-md-3 col-6"><div class="service-card-icon" onclick="sendWA('Digital Marketing')"><i class="fa fa-bullhorn"></i><h5>FB & WA Ads</h5></div></div>
+            <div class="col-md-3 col-6"><div class="service-card-icon" onclick="sendWA('Bill Payments')"><i class="fa fa-money-bill-wave"></i><h5>Utility Bills</h5></div></div>
+        </div>
+    </section>
 
-    <div class="social-hover-box">
-        <h3 class="mb-4"><b>Join Us On Social Media</b></h3>
-        <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61586270013508" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/smartprinting.online" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
-    </div>
+    <section class="container py-5">
+        <div class="section-header">
+            <h2>ONLINE HUB</h2>
+            <div class="urdu-subtitle">تمام آن لائن سہولیات</div>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('شناختی کارڈ')">شناختی کارڈ</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('ب فارم')">ب فارم</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('ایف آر سی')">ایف آر سی</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('ڈومیسائل')">ڈومیسائل</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('پاسپورٹ فوٹو')">پاسپورٹ فوٹو</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('کلر پرنٹ')">کلر پرنٹ</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('ٹیکس فائلر')">ٹیکس فائلر</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('کمپیوٹرائزڈ فرد')">کمپیوٹرائزڈ فرد</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('بل ادائیگی')">بل ادائیگی</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('سی وی')">سی وی (CV)</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('نادرا سروسز')">نادرا سروسز</div></div>
+            <div class="col-md-2 col-6"><div class="urdu-box" onclick="sendWA('لائسنس')">لائسنس اپلائی</div></div>
+        </div>
+    </section>
 
-    <div class="review-section mb-5">
-        <h3 class="mb-4"><b>WHAT CUSTOMERS SAY</b></h3>
-        <div id="displayReviews" class="row text-start mb-4"></div>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <input type="text" id="custName" class="form-control mb-2 bg-dark text-white border-secondary fw-bold" placeholder="Your Name">
-                <textarea id="custMsg" class="form-control mb-2 bg-dark text-white border-secondary fw-bold" placeholder="Write your review..."></textarea>
-                <button class="btn btn-success w-100 fw-bold" onclick="submitReview()">POST REVIEW</button>
+    <section id="gallery" class="py-5">
+        <div class="section-header">
+            <h2>MASTER PORTFOLIO</h2>
+            <div class="urdu-subtitle">ہمارا بہترین کام</div>
+        </div>
+        <div class="masonry-grid">
+            <div class="gallery-item" onclick="openLightbox('1.jpeg')"><img src="1.jpeg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('2.jpeg')"><img src="2.jpeg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('3.jpeg')"><img src="3.jpeg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('4.jpeg')"><img src="4.jpeg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('5.jpeg')"><img src="5.jpeg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('6.jpeg')"><img src="6.jpeg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('IMG-20260222-WA0028.jpg')"><img src="IMG-20260222-WA0028.jpg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('IMG-20260224-WA0019.jpg')"><img src="IMG-20260224-WA0019.jpg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('IMG-20260301-WA0097.jpg')"><img src="IMG-20260301-WA0097.jpg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+            <div class="gallery-item" onclick="openLightbox('IMG-20260225-WA0028.jpg')"><img src="IMG-20260225-WA0028.jpg"><div class="gallery-overlay"><button class="view-btn">View</button></div></div>
+        </div>
+    </section>
+
+    <section id="reviews" class="container">
+        <div class="review-section text-center">
+            <h2 class="fw-bold mb-4">WHAT CUSTOMERS SAY</h2>
+            <div id="displayReviews" class="row text-start g-3 mb-4"></div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <input type="text" id="custName" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Your Name">
+                    <textarea id="custMsg" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Write Review..."></textarea>
+                    <button class="btn btn-success w-100 fw-bold" onclick="submitReview()">POST REVIEW</button>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+</main>
+
+<div id="lightboxModal" class="lightbox-modal">
+    <span class="close-lb" onclick="closeLightbox()">&times;</span>
+    <img id="lbImg" class="lightbox-img" src="">
+    <a href="#" id="waOrderLink" target="_blank" class="btn-order-wa"><i class="fab fa-whatsapp"></i> ORDER ON WHATSAPP</a>
 </div>
 
-<footer class="shop-footer text-center">
+<footer id="contact" class="footer-mega">
     <div class="container">
-        <h2 class="fw-bold text-white mb-3" style="font-family: 'Orbitron', sans-serif; letter-spacing: 2px;">
-            SPO <span style="color: var(--primary);">SMART PRINTING</span> ONLINE SERVICES
-        </h2>
-        <p class="mb-4 text-light" style="max-width: 700px; margin: 0 auto; opacity: 0.8;">
-            <b>Kanganpur's leading Digital Hub for High-Performance Web Solutions, Advanced SEO, Professional Printing, and all Online Government Services.</b>
-        </p>
-
-        <div class="row g-4 justify-content-center mb-4">
-            <div class="col-md-3 col-6">
-                <h6 class="text-primary fw-bold text-uppercase">Online Support</h6>
-                <ul class="list-unstyled text-secondary small">
-                    <li><i class="fab fa-whatsapp me-1"></i> 0303 4480404</li>
-                    <li><i class="fa fa-envelope me-1"></i> asif.aimarketing@gmail.com</li>
-                </ul>
+        <div class="row g-5 text-start">
+            <div class="col-lg-7">
+                <h3 class="fw-bold border-start border-4 border-success ps-3 mb-4">SPO SMART DIGITAL VERSE</h3>
+                <p class="f-urdu-about">
+                    SPO Smart Printing & Online Services آپ کی تمام پرنٹنگ، اسٹیشنری اور آن لائن سروسز کا قابلِ اعتماد مرکز ہے۔ ہم معیاری کام اور بہترین کسٹمر سروس فراہم کرنے کے لیے ہمہ وقت کوشاں ہیں۔
+                </p>
+                <div class="social-container">
+                    <a href="https://www.SmartPrintingOnline.site" target="_blank" class="social-glass-btn"><i class="fa fa-globe"></i> Website</a>
+                    <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="social-glass-btn"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="social-glass-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
             </div>
-            <div class="col-md-3 col-6">
-                <h6 class="text-primary fw-bold text-uppercase">Location</h6>
-                <p class="text-secondary small">Purana Paka Bazar, Kanganpur, District Kasur, Punjab.</p>
+            <div class="col-lg-5">
+                <h3 class="fw-bold border-start border-4 border-success ps-3 mb-4">GET IN TOUCH</h3>
+                <p><i class="fa fa-map-marker-alt text-success me-2"></i> پرانا پکا بازار، کنگن پور، ضلع قصور</p>
+                <p><i class="fa fa-phone-alt text-success me-2"></i> 0303-4480404</p>
+                <p><i class="fa fa-envelope text-success me-2"></i> asif.aimarketing@gmail.com</p>
+                <div class="mt-4 p-3 bg-white bg-opacity-10 rounded">
+                    <h5 class="mb-0 fw-bold">Muhammad Asif Ali</h5>
+                    <p class="text-success small mb-0">Project Lead & Developer</p>
+                </div>
             </div>
         </div>
-
-        <hr style="border-color: rgba(255,255,255,0.1);">
-        
-        <div class="py-2">
-            <a href="https://facebook.com/profile.php?id=61586270013508" target="_blank" class="text-white mx-2 fs-5"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/923034480404" target="_blank" class="text-white mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/smartprinting.online" target="_blank" class="text-white mx-2 fs-5"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="text-white mx-2 fs-5"><i class="fab fa-tiktok"></i></a>
+        <div class="text-center mt-5 pt-4 border-top border-secondary">
+            <p class="mb-0">© 2026 SPO SMART DIGITAL VERSE. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
 
-<footer class="dev-footer text-center">
-    <div class="container">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <p class="mb-0 text-secondary small"><b>© 2026 SPO SMART DIGITAL VERSE. All Rights Reserved.</b></p>
-            <div class="mt-2 mt-md-0">
-                <span class="text-secondary small">Project Lead & Developed By: </span>
-                <a href="https://wa.me/923034480404" target="_blank" class="text-decoration-none" style="color: var(--primary);">
-                    <b>Muhammad Asif Ali</b>
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<a href="https://wa.me/923034480404" class="wa-float shadow-lg"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/923034480404" class="wa-float-master" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
+    // 1. Particles
+    particlesJS("particles-js", { "particles": { "number": { "value": 100 }, "color": { "value": "#25D366" }, "opacity": { "value": 0.3 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
 
+    // 2. Custom Cursor
+    const dot = document.querySelector('.cursor-dot');
+    const circle = document.querySelector('.cursor-circle');
+    document.addEventListener('mousemove', (e) => {
+        dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+        circle.style.left = (e.clientX - 20) + 'px'; circle.style.top = (e.clientY - 20) + 'px';
+    });
+
+    // 3. Lightbox Logic
+    function openLightbox(src) {
+        document.getElementById('lbImg').src = src;
+        document.getElementById('waOrderLink').href = `https://wa.me/923034480404?text=Interested in: ${src}`;
+        document.getElementById('lightboxModal').style.display = 'flex';
+    }
+    function closeLightbox() { document.getElementById('lightboxModal').style.display = 'none'; }
+
+    // 4. WhatsApp Inquiry
     function sendWA(service) {
-        const phone = "923034480404";
-        const msg = `Assalam-o-Alaikum! I am interested in your service: ${service}`;
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+        window.open(`https://wa.me/923034480404?text=Assalam-o-Alaikum! I need details for: ${service}`, '_blank');
     }
 
+    // 5. Review System
     function submitReview() {
         const name = document.getElementById('custName').value;
         const msg = document.getElementById('custMsg').value;
         if(!name || !msg) return alert("Please fill details");
         const html = `<div class="col-md-6"><div class="review-card"><b>${name}</b><p class="mb-0 mt-2 small">"${msg}"</p></div></div>`;
         document.getElementById('displayReviews').innerHTML += html;
-        localStorage.setItem('spo_final_reviews', document.getElementById('displayReviews').innerHTML);
+        localStorage.setItem('spo_final_master_reviews', document.getElementById('displayReviews').innerHTML);
         document.getElementById('custName').value = ''; document.getElementById('custMsg').value = '';
     }
 
     window.onload = () => {
-        document.getElementById('displayReviews').innerHTML = localStorage.getItem('spo_final_reviews') || '<p class="text-center text-secondary w-100"><b>No reviews yet. Share yours!</b></p>';
+        document.getElementById('displayReviews').innerHTML = localStorage.getItem('spo_final_master_reviews') || '<p class="text-center w-100 opacity-50">No reviews yet.</p>';
     };
 </script>
 </body>
