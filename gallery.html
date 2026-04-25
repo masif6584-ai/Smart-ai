@@ -7,14 +7,14 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root { 
             --primary: #25D366; 
             --secondary: #00ffcc; 
             --dark-bg: #010409; 
-            --glass: rgba(255, 255, 255, 0.05);
+            --glass: rgba(255, 255, 255, 0.07);
         }
 
         body { 
@@ -26,230 +26,252 @@
 
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
 
-        /* --- Professional Header & Logo --- */
-        .header-wrap {
-            padding: 50px 0;
-            background: radial-gradient(circle at top, rgba(37, 211, 102, 0.15), transparent);
+        /* --- Master Header with Right Logo --- */
+        .header-main {
+            padding: 40px 0;
+            position: relative;
+            background: linear-gradient(180deg, rgba(37, 211, 102, 0.1) 0%, transparent 100%);
         }
-        .logo-box {
-            width: 130px; height: 130px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
-            background: transparent;
-        }
-        .logo-box img { width: 100%; height: 100%; object-fit: cover; }
         
-        .brand-title {
+        .logo-right {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 20px var(--primary);
+            overflow: hidden;
+            z-index: 100;
+        }
+        .logo-right img { width: 100%; height: 100%; object-fit: cover; }
+
+        .glass-brand {
             font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            background: linear-gradient(to bottom, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            font-size: clamp(1.5rem, 4vw, 3.2rem);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 20px;
+            display: inline-block;
+            color: white;
+            transition: 0.5s;
             text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .glass-brand:hover {
+            background: rgba(37, 211, 102, 0.2);
+            color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--primary);
         }
 
-        /* --- Pill Navigation --- */
-        .nav-container { margin: 30px 0; }
+        /* --- Professional Pill Buttons --- */
+        .nav-pills-custom { margin: 40px 0; }
         .nav-btn {
-            padding: 10px 22px;
-            margin: 5px;
+            padding: 12px 25px;
+            margin: 8px;
             border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #ccc;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
             text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s;
-            display: inline-block;
+            font-weight: 800;
             background: var(--glass);
+            transition: 0.4s;
+            display: inline-block;
+            text-transform: uppercase;
         }
         .nav-btn:hover, .nav-btn.active {
             background: var(--primary);
             color: #000;
-            box-shadow: 0 0 20px var(--primary);
             border-color: var(--primary);
-            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--primary);
+            transform: translateY(-5px);
         }
 
-        /* --- Premium Service Cards (Digital Verse) --- */
-        .premium-card {
+        /* --- Premium Digital Service Cards --- */
+        .special-service-card {
             background: var(--glass);
-            border: 1px solid rgba(37, 211, 102, 0.2);
-            border-radius: 20px;
-            padding: 30px;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 25px;
+            padding: 35px;
             transition: 0.5s;
-            cursor: pointer;
             text-decoration: none;
             color: white;
             display: block;
             height: 100%;
             backdrop-filter: blur(10px);
+            text-align: center;
         }
-        .premium-card:hover {
-            transform: translateY(-10px) perspective(1000px) rotateX(5deg);
+        .special-service-card:hover {
+            transform: translateY(-15px);
+            background: rgba(37, 211, 102, 0.1);
             border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.2);
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3);
         }
-        .premium-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; text-shadow: 0 0 10px var(--primary); }
+        .special-service-card i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; }
 
-        /* --- Masonry Gallery --- */
-        .gallery-grid { column-count: 4; column-gap: 15px; }
-        @media (max-width: 1200px) { .gallery-grid { column-count: 3; } }
-        @media (max-width: 768px) { .gallery-grid { column-count: 2; } }
+        /* --- Masonry Gallery (All 24 Images) --- */
+        .gallery-container { column-count: 4; column-gap: 20px; }
+        @media (max-width: 1200px) { .gallery-container { column-count: 3; } }
+        @media (max-width: 768px) { .gallery-container { column-count: 2; } }
         
-        .gallery-item {
+        .work-item {
             position: relative;
-            margin-bottom: 15px;
-            border-radius: 15px;
+            margin-bottom: 20px;
+            border-radius: 20px;
             overflow: hidden;
             break-inside: avoid;
             border: 2px solid rgba(255,255,255,0.05);
-            transition: 0.4s;
+            transition: 0.5s;
         }
-        .gallery-item img { width: 100%; display: block; transition: 0.6s; }
-        .gallery-item:hover { border-color: var(--primary); transform: scale(1.02); }
-        .gallery-item:hover img { filter: brightness(0.4); transform: scale(1.1); }
-        .inquiry-btn {
+        .work-item img { width: 100%; transition: 0.7s; display: block; }
+        .work-item:hover img { transform: scale(1.15); filter: brightness(0.3); }
+        .work-overlay {
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            opacity: 0; transition: 0.3s;
-            background: var(--primary);
-            color: #000; font-weight: 800;
-            padding: 8px 18px; border-radius: 30px; border: none;
+            opacity: 0; transition: 0.4s;
+            text-align: center; width: 100%;
         }
-        .gallery-item:hover .inquiry-btn { opacity: 1; }
+        .work-item:hover .work-overlay { opacity: 1; }
 
-        /* --- Urdu Cards (International Standard) --- */
-        .urdu-card {
-            background: linear-gradient(135deg, #ffffff, #f0f0f0);
-            color: #111;
+        /* --- International Urdu Boxes (Full 24) --- */
+        .u-box {
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            color: #000;
             padding: 20px;
-            border-radius: 18px;
+            border-radius: 15px;
             font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 1.4rem;
-            min-height: 100px;
+            font-size: 1.3rem;
+            min-height: 85px;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 8px 8px 0px var(--primary);
+            box-shadow: 6px 6px 0px var(--primary);
             transition: 0.3s;
-            line-height: 2.2;
             cursor: pointer;
             border: none;
+            font-weight: bold;
         }
-        .urdu-card:hover {
+        .u-box:hover {
             transform: translate(-5px, -5px);
-            box-shadow: 12px 12px 0px #fff;
+            box-shadow: 10px 10px 0px #fff;
             background: var(--secondary);
         }
 
-        /* --- Auto-Sliding Reviews --- */
-        .review-slider {
+        /* --- International Live Review Slider --- */
+        .review-wrapper {
             background: rgba(255,255,255,0.02);
-            padding: 50px 0;
-            border-radius: 30px;
+            padding: 60px 0;
+            border-radius: 40px;
             overflow: hidden;
             position: relative;
-        }
-        .review-track { display: flex; width: calc(350px * 10); animation: slide 30s linear infinite; }
-        .review-card {
-            width: 320px;
-            background: #000;
-            padding: 25px;
-            margin: 0 15px;
-            border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.1);
-            border-top: 4px solid var(--primary);
         }
-        @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-350px * 5)); } }
-
-        /* --- Social Media Tilt Buttons --- */
-        .social-link {
-            width: 65px; height: 65px;
-            display: inline-flex; align-items: center; justify-content: center;
-            font-size: 2rem; border-radius: 18px;
-            margin: 10px; color: white; text-decoration: none;
-            transition: 0.5s; background: var(--glass);
-        }
-        .social-link:hover { transform: scale(1.2) rotate(10deg); color: white; }
-        .wa:hover { background: #25D366; box-shadow: 0 0 25px #25D366; }
-        .fb:hover { background: #1877F2; box-shadow: 0 0 25px #1877F2; }
-        .ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 0 25px #dc2743; }
-        .tk:hover { background: #000; border: 1px solid #ff0050; box-shadow: 0 0 25px #00f2ea; }
-
-        /* --- Global Footer --- */
-        .footer-main {
+        .review-inner { display: flex; animation: slideReviews 40s linear infinite; width: max-content; }
+        .review-card-global {
+            width: 350px;
             background: #000;
-            padding: 80px 0 30px;
-            border-top: 2px solid var(--primary);
-            margin-top: 100px;
+            padding: 30px;
+            margin: 0 20px;
+            border-radius: 20px;
+            border-top: 5px solid var(--primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
-        .dev-tag {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: #000; padding: 6px 20px;
-            border-radius: 50px; font-weight: 800;
-            display: inline-block; text-decoration: none; margin-top: 15px;
-        }
+        @keyframes slideReviews { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 0 30px var(--primary); }
+        /* --- Social Buttons (Tilt & Move) --- */
+        .s-link {
+            width: 70px; height: 70px;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; border-radius: 20px;
+            margin: 15px; color: white; text-decoration: none;
+            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: var(--glass);
+        }
+        .s-link:hover { transform: scale(1.2) translateY(-15px) rotate(8deg); }
+        .wa:hover { background: #25D366; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5); }
+        .fb:hover { background: #1877F2; box-shadow: 0 15px 30px rgba(24, 119, 242, 0.5); }
+        .ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 15px 30px rgba(220, 39, 67, 0.5); }
+        .tk:hover { background: #000; border: 1px solid #fe2c55; box-shadow: 0 15px 30px rgba(255, 0, 80, 0.5); }
+
+        /* --- Professional Footer --- */
+        .footer-elite {
+            background: #000;
+            padding: 100px 0 40px;
+            border-top: 3px solid var(--primary);
+            margin-top: 120px;
+        }
+        .footer-card { padding: 20px; }
+        .dev-badge-premium {
+            background: linear-gradient(90deg, #25D366, #00ffcc);
+            color: #000; padding: 10px 30px;
+            border-radius: 50px; font-weight: 900;
+            display: inline-block; text-decoration: none;
+            margin-top: 20px; transition: 0.3s;
+        }
+        .dev-badge-premium:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--primary); }
+
+        .wa-float { position: fixed; bottom: 40px; right: 40px; background: #25D366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; z-index: 1000; box-shadow: 0 0 35px var(--primary); text-decoration: none; }
     </style>
 </head>
 <body>
 
 <div id="particles-js"></div>
 
-<header class="header-wrap text-center">
+<header class="header-main text-center">
+    <div class="logo-right">
+        <img src="print.png" alt="SPO Logo">
+    </div>
+
     <div class="container">
-        <div class="logo-box">
-            <img src="print.png" alt="SPO Logo">
-        </div>
-        <h1 class="brand-title">SPO DIGITAL VERSE</h1>
-        <p class="text-secondary fw-bold">Smart Printing & Online Services | Stationery Point ✨</p>
+        <div class="glass-brand mb-3">SPO SMART PRINTING ONLINE SERVICES</div>
+        <p class="text-secondary fw-bold mt-2">Stationery Point & Digital Hub | Kanganpur ✨</p>
         
-        <div class="nav-container">
+        <nav class="nav-pills-custom">
             <a href="index.html" class="nav-btn">Home</a>
             <a href="about.html" class="nav-btn">About</a>
             <a href="services.html" class="nav-btn active">Services</a>
             <a href="gallery.html" class="nav-btn">Gallery</a>
             <a href="contact.html" class="nav-btn">Contact</a>
-        </div>
+        </nav>
     </div>
 </header>
 
 <div class="container">
     
-    <section class="mb-5 text-center">
-        <h2 class="fw-bold mb-4" style="color:var(--secondary)">🌟 SPO SMART DIGITAL VERSE</h2>
-        <p class="mb-5 text-secondary">کنگن پور کا سب سے قابلِ اعتماد ڈیجیٹل مرکز!</p>
+    <section class="mb-5 py-4 text-center">
+        <h2 class="fw-bold mb-5" style="color:var(--secondary)">🌟 SPO SMART DIGITAL VERSE 🌟</h2>
         <div class="row g-4">
             <div class="col-md-3 col-6">
-                <a href="https://www.spodigitalverse.online" target="_blank" class="premium-card">
-                    <i class="fa fa-code"></i>
+                <a href="https://www.spodigitalverse.online" target="_blank" class="special-service-card">
+                    <i class="fa fa-laptop-code"></i>
                     <h4><b>Web Development</b></h4>
-                    <p class="small text-secondary">Custom Websites & Stores</p>
+                    <p class="small text-secondary">E-Commerce & Business Sites</p>
                 </a>
             </div>
             <div class="col-md-3 col-6">
-                <a href="https://wa.me/923034480404" class="premium-card">
-                    <i class="fa fa-chart-line"></i>
-                    <h4><b>SEO & Ranking</b></h4>
-                    <p class="small text-secondary">Google First Page Ranking</p>
+                <a href="https://wa.me/923034480404" class="special-service-card">
+                    <i class="fa fa-search-dollar"></i>
+                    <h4><b>SEO & Google</b></h4>
+                    <p class="small text-secondary">Business Ranking Specialist</p>
                 </a>
             </div>
             <div class="col-md-3 col-6">
-                <a href="https://wa.me/923034480404" class="premium-card">
-                    <i class="fa fa-bullhorn"></i>
-                    <h4><b>Digital Marketing</b></h4>
-                    <p class="small text-secondary">FB, IG & TikTok Ads Specialist</p>
+                <a href="https://wa.me/923034480404" class="special-service-card">
+                    <i class="fa fa-ad"></i>
+                    <h4><b>Digital Ads</b></h4>
+                    <p class="small text-secondary">FB, IG & TikTok Marketing</p>
                 </a>
             </div>
             <div class="col-md-3 col-6">
-                <a href="https://wa.me/923034480404" class="premium-card">
-                    <i class="fa fa-palette"></i>
-                    <h4><b>Branding</b></h4>
-                    <p class="small text-secondary">Logos, Flyers & Video Ads</p>
+                <a href="https://wa.me/923034480404" class="special-service-card">
+                    <i class="fa fa-pen-nib"></i>
+                    <h4><b>Graphics</b></h4>
+                    <p class="small text-secondary">Logos & Professional Branding</p>
                 </a>
             </div>
         </div>
@@ -257,100 +279,118 @@
 
     <section class="py-5">
         <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color:var(--primary)">OUR WORK GALLERY</h2>
-            <p class="text-secondary">Click any image for instant WhatsApp Inquiry</p>
+            <h2 class="fw-bold" style="color:var(--primary)">PROFESSIONAL WORK GALLERY</h2>
+            <p class="text-secondary">Click any design to inquire on WhatsApp</p>
         </div>
         
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="sendWA('Design 1')"><img src="1.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 2')"><img src="2.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 3')"><img src="3.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 4')"><img src="4.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 5')"><img src="5.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 6')"><img src="6.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 7')"><img src="7.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 8')"><img src="8.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 9')"><img src="9.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 10')"><img src="10.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 11')"><img src="11.jpg"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design 12')"><img src="12.jpg"><button class="inquiry-btn">Inquiry</button></div>
+        <div class="gallery-container">
+            <div class="work-item" onclick="sendWA('Gallery Item 1')"><img src="1.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 2')"><img src="2.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 3')"><img src="3.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 4')"><img src="4.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 5')"><img src="5.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 6')"><img src="6.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 7')"><img src="7.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 8')"><img src="8.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 9')"><img src="9.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 10')"><img src="10.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 11')"><img src="11.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
+            <div class="work-item" onclick="sendWA('Gallery Item 12')"><img src="12.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
             
-            <div class="gallery-item" onclick="sendWA('Design A')"><img src="file_0000000062b871faad20fb22fcf394ee.png"><button class="inquiry-btn">Inquiry</button></div>
-            <div class="gallery-item" onclick="sendWA('Design B')"><img src="IMG-20260222-WA0028.jpg"></div>
-            <div class="gallery-item" onclick="sendWA('Design C')"><img src="IMG-20260222-WA0033(1).jpg"></div>
-            <div class="gallery-item" onclick="sendWA('Design D')"><img src="IMG-20260223-WA0055.jpg"></div>
-            <div class="gallery-item" onclick="sendWA('Design E')"><img src="IMG-20260224-WA0019.jpg"></div>
-            <div class="gallery-item" onclick="sendWA('Design F')"><img src="IMG-20260224-WA0020.jpg"></div>
-            <div class="gallery-item" onclick="sendWA('Design G')"><img src="IMG-20260225-WA0028.jpg"></div>
-            <div class="gallery-item" onclick="sendWA('Design H')"><img src="IMG-20260228-WA0039.jpg"></div>
-            <div class="gallery-item" onclick="sendWA('Design I')"><img src="IMG-20260301-WA0097.jpg"></div>
-            <div class="gallery-item" onclick="sendWA('Design J')"><img src="IMG_20260218_015819.png"></div>
-            <div class="gallery-item" onclick="sendWA('Design K')"><img src="IMG-20260222-WA0024.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design A')"><img src="file_0000000062b871faad20fb22fcf394ee.png"></div>
+            <div class="work-item" onclick="sendWA('Design B')"><img src="IMG-20260222-WA0028.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design C')"><img src="IMG-20260222-WA0033(1).jpg"></div>
+            <div class="work-item" onclick="sendWA('Design D')"><img src="IMG-20260223-WA0055.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design E')"><img src="IMG-20260224-WA0019.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design F')"><img src="IMG-20260224-WA0020.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design G')"><img src="IMG-20260225-WA0028.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design H')"><img src="IMG-20260228-WA0039.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design I')"><img src="IMG-20260301-WA0097.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design J')"><img src="IMG_20260218_015819.png"></div>
+            <div class="work-item" onclick="sendWA('Design K')"><img src="IMG-20260222-WA0024.jpg"></div>
+            <div class="work-item" onclick="sendWA('Design L')"><img src="IMG-20260301-WA0097.jpg"></div>
         </div>
     </section>
 
     <section class="py-5 text-center">
-        <h2 class="fw-bold mb-5" style="color:var(--secondary)">تمام آن لائن سہولیات</h2>
+        <h2 class="fw-bold mb-5" style="color:var(--secondary)">ہماری مکمل آن لائن سروسز</h2>
         <div class="row g-4">
-            <div class="col-md-3 col-6" onclick="sendWA('شناختی کارڈ')"><div class="urdu-card">شناختی کارڈ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('ب فارم')"><div class="urdu-card">ب فارم</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('ڈومیسائل')"><div class="urdu-card">ڈومیسائل</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('ٹیکس فائلر')"><div class="urdu-card">ٹیکس فائلر</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('پاسپورٹ فوٹو')"><div class="urdu-card">پاسپورٹ فوٹو</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('سی وی')"><div class="urdu-card">پروفیشنل CV</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('بائنڈنگ')"><div class="urdu-card">بائنڈنگ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('آن لائن فارم')"><div class="urdu-card">آن لائن فارم</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('شناختی کارڈ')"><div class="u-box">شناختی کارڈ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('ب فارم')"><div class="u-box">ب فارم</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('ایف آر سی')"><div class="u-box">ایف آر سی فارم</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('ڈومیسائل')"><div class="u-box">ڈومیسائل</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('پاسپورٹ فوٹو')"><div class="u-box">پاسپورٹ فوٹو</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('کلر پرنٹ')"><div class="u-box">کلر پرنٹ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('ٹیکس فائلر')"><div class="u-box">ٹیکس فائلر</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('وزٹنگ کارڈ')"><div class="u-box">وزٹنگ کارڈ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('کمپیوٹرائزڈ فرد')"><div class="u-box">کمپیوٹرائزڈ فرد</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('بل ادائیگی')"><div class="u-box">بل ادائیگی</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('لیمینیشن')"><div class="u-box">لیمینیشن</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('سی وی (CV)')"><div class="u-box">سی وی (CV)</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('سکیننگ')"><div class="u-box">سکیننگ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('سٹیشنری')"><div class="u-box">سٹیشنری</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('کمپوزنگ')"><div class="u-box">کمپوزنگ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('بائنڈنگ')"><div class="u-box">بائنڈنگ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('لائسنس')"><div class="u-box">لائسنس</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('PVC کارڈ')"><div class="u-box">PVC کارڈ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('شادی کارڈ')"><div class="u-box">شادی کارڈ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('فلیکس')"><div class="u-box">فلیکس</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('ای کامرس')"><div class="u-box">ای کامرس</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('نادرا سروسز')"><div class="u-box">نادرا سروسز</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('واٹس ایپ پرنٹ')"><div class="u-box">واٹس ایپ پرنٹ</div></div>
+            <div class="col-md-3 col-6" onclick="sendWA('آن لائن فارم')"><div class="u-box">آن لائن فارم</div></div>
         </div>
     </section>
 
     <section class="py-5">
-        <h3 class="text-center mb-5 fw-bold">WHAT OUR GLOBAL CLIENTS SAY</h3>
-        <div class="review-slider">
-            <div class="review-track" id="displayReviews">
+        <h3 class="text-center mb-5 fw-bold">GLOBAL CUSTOMER FEEDBACK</h3>
+        <div class="review-wrapper">
+            <div class="review-inner" id="reviewContainer">
                 </div>
         </div>
         
         <div class="row justify-content-center mt-5">
-            <div class="col-md-6 p-4 rounded-4" style="background: var(--glass); border: 1px solid var(--primary);">
-                <h5 class="text-center mb-4">Add Your Live Review</h5>
-                <input type="text" id="custName" class="form-control mb-3 bg-dark text-white border-secondary" placeholder="Your Name">
-                <textarea id="custMsg" class="form-control mb-3 bg-dark text-white border-secondary" placeholder="Experience details..."></textarea>
-                <button class="btn btn-success w-100 fw-bold" onclick="submitReview()">SUBMIT REVIEW</button>
+            <div class="col-md-6 bg-dark p-4 rounded-4 border border-success">
+                <h5 class="text-center mb-4">Post a Global Review</h5>
+                <input type="text" id="rName" class="form-control mb-3 bg-black text-white border-secondary" placeholder="Client Name">
+                <textarea id="rMsg" class="form-control mb-3 bg-black text-white border-secondary" placeholder="Share your experience..."></textarea>
+                <button class="btn btn-success w-100 fw-bold" onclick="addGlobalReview()">SUBMIT TO LIVE FEED</button>
             </div>
         </div>
     </section>
 
 </div>
 
-<footer class="footer-main">
+<footer class="footer-elite">
     <div class="container">
-        <div class="row text-start">
-            <div class="col-md-4 mb-5">
+        <div class="row g-5">
+            <div class="col-md-4 footer-card">
                 <h3 class="text-white fw-bold mb-4">SPO DIGITAL VERSE</h3>
-                <p class="text-secondary small">آپ کی تمام پرنٹنگ، اسٹیشنری اور آن لائن سروسز کا قابلِ اعتماد مرکز۔ ہم معیاری کام اور بہترین کسٹمر سروس فراہم کرنے کے لیے ہمہ وقت کوشاں ہیں۔</p>
-                <p class="text-secondary small mt-3"><i class="fa fa-map-marker-alt me-2"></i> پرانا پکا بازار، کنگن پور، ضلع قصور</p>
-                <p class="text-secondary small"><i class="fa fa-envelope me-2"></i> asif.aimarketing@gmail.com</p>
+                <p class="text-secondary small">SPO SMART PRINTING & ONLINE SERVICES آپ کی تمام پرنٹنگ، اسٹیشنری اور آن لائن سروسز کا قابلِ اعتماد مرکز ہے۔ ہم معیاری کام اور بہترین کسٹمر سروس فراہم کرنے کے لیے ہمہ وقت کوشاں ہیں۔</p>
+                <p class="text-secondary mt-4 small"><i class="fa fa-map-marker-alt me-2 text-success"></i> پرانا پکا بازار، کنگن پور، ضلع قصور</p>
+                <p class="text-secondary small"><i class="fa fa-envelope me-2 text-success"></i> asif.aimarketing@gmail.com</p>
+                <p class="text-secondary small"><i class="fa fa-phone me-2 text-success"></i> 0303-4480404</p>
             </div>
-            <div class="col-md-4 mb-5 text-md-center">
-                <h4 class="text-white mb-4">Quick Navigation</h4>
-                <div class="d-flex flex-column gap-2">
-                    <a href="https://www.spodigitalverse.online" class="text-secondary text-decoration-none">Official Website</a>
-                    <a href="https://www.smartprintingonline.site" class="text-secondary text-decoration-none">SPO Shop Site</a>
-                    <a href="https://wa.me/923034480404" class="text-secondary text-decoration-none">Direct WhatsApp</a>
+            <div class="col-md-4 footer-card text-md-center">
+                <h4 class="text-white mb-4">Official Links</h4>
+                <div class="d-grid gap-2">
+                    <a href="https://www.spodigitalverse.online" class="text-secondary text-decoration-none hover-link">spodigitalverse.online</a>
+                    <a href="https://www.smartprintingonline.site" class="text-secondary text-decoration-none hover-link">smartprintingonline.site</a>
+                    <a href="https://wa.me/923034480404" class="text-secondary text-decoration-none hover-link">Direct Support</a>
                 </div>
             </div>
-            <div class="col-md-4 mb-5 text-md-end">
-                <h4 class="text-white mb-4">Join Our Community</h4>
-                <div class="social-box">
-                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-link wa"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-link fb"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/smartprinting.online" class="social-link ig"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-link tk"><i class="fab fa-tiktok"></i></a>
+            <div class="col-md-4 footer-card text-md-end">
+                <h4 class="text-white mb-4">Stay Connected</h4>
+                <div class="d-flex justify-content-md-end flex-wrap">
+                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="s-link wa"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="s-link fb"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/smartprinting.online" class="s-link ig"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@smartprintdigitalpk" class="s-link tk"><i class="fab fa-tiktok"></i></a>
                 </div>
-                <a href="https://wa.me/923034480404" class="dev-tag">Developed By: Muhammad Asif Ali</a>
+                <a href="https://wa.me/923034480404" target="_blank" class="dev-badge-premium">Developed By: Muhammad Asif Ali</a>
             </div>
         </div>
-        <hr class="border-secondary">
+        <hr class="mt-5 border-secondary">
         <p class="text-center text-secondary small mb-0">© 2026 SPO Smart Printing & Online Services | All Rights Reserved.</p>
     </div>
 </footer>
@@ -359,43 +399,38 @@
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    // Particles Configuration
-    particlesJS("particles-js", { "particles": { "number": { "value": 70 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1 } } });
+    particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
 
-    // WhatsApp Function
     function sendWA(item) {
-        const phone = "923034480404";
-        const msg = `Assalam-o-Alaikum SPO! I am interested in "${item}" from your digital showcase. Please share more details.`;
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+        const msg = `Assalam-o-Alaikum SPO! I saw "${item}" in your showcase and want more details about it.`;
+        window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    // Review System
-    function submitReview() {
-        const name = document.getElementById('custName').value;
-        const msg = document.getElementById('custMsg').value;
-        if(!name || !msg) return alert("Please enter both name and review.");
+    function addGlobalReview() {
+        const name = document.getElementById('rName').value;
+        const msg = document.getElementById('rMsg').value;
+        if(!name || !msg) return alert("Please enter name and message.");
         
-        const html = `
-            <div class="review-card">
+        const reviewHTML = `
+            <div class="review-card-global">
                 <div class="text-warning mb-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                 <b class="text-white">${name}</b>
                 <p class="text-secondary small mt-2">"${msg}"</p>
             </div>`;
         
-        document.getElementById('displayReviews').innerHTML += html;
-        localStorage.setItem('spo_master_reviews', document.getElementById('displayReviews').innerHTML);
-        document.getElementById('custName').value = ''; 
-        document.getElementById('custMsg').value = '';
+        document.getElementById('reviewContainer').innerHTML += reviewHTML;
+        localStorage.setItem('spo_global_feed', document.getElementById('reviewContainer').innerHTML);
+        document.getElementById('rName').value = ''; document.getElementById('rMsg').value = '';
     }
 
     window.onload = () => {
-        const saved = localStorage.getItem('spo_master_reviews');
-        const defaultReviews = `
-            <div class="review-card"><div class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><b>Asad Ali</b><p class="text-secondary small">Excellent quality printing and very professional web services.</p></div>
-            <div class="review-card"><div class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><b>M. Tayyab</b><p class="text-secondary small">Kanganpur's best digital center for FBR and NADRA tasks.</p></div>
-            <div class="review-card"><div class="text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><b>Irfan Khan</b><p class="text-secondary small">Highly recommended for digital marketing and ads.</p></div>
+        const saved = localStorage.getItem('spo_global_feed');
+        const defaultR = `
+            <div class="review-card-global"><b>Ali Ahmad</b><p class="small text-secondary">Outstanding web services!</p></div>
+            <div class="review-card-global"><b>Zubair Khan</b><p class="small text-secondary">Best digital shop in Kasur.</p></div>
+            <div class="review-card-global"><b>M. Usman</b><p class="small text-secondary">Fast printing and honest work.</p></div>
         `;
-        document.getElementById('displayReviews').innerHTML = saved || (defaultReviews + defaultReviews); // Double it for infinite effect
+        document.getElementById('reviewContainer').innerHTML = saved || (defaultR + defaultR);
     };
 </script>
 </body>
