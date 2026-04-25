@@ -3,435 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO | Smart Printing & Online Services</title>
+    <title>SPO SMART PRINTING ONLINE SERVICES | Premium Digital Verse</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@300;500;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
+        /* --- Extended Professional CSS --- */
         :root { 
             --primary: #25D366; 
             --secondary: #00ffcc; 
+            --accent: #ff0055;
             --dark-bg: #010409; 
-            --glass: rgba(255, 255, 255, 0.07);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --neon-glow: 0 0 15px rgba(37, 211, 102, 0.5);
         }
+
+        * { cursor: none; box-sizing: border-box; }
 
         body { 
             font-family: 'Rajdhani', sans-serif; 
             background: var(--dark-bg); 
-            color: white; 
-            overflow-x: hidden; 
+            color: #e6edf3; 
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
 
-        /* --- Master Header with Right Logo --- */
-        .header-main {
-            padding: 40px 0;
-            position: relative;
-            background: linear-gradient(180deg, rgba(37, 211, 102, 0.1) 0%, transparent 100%);
+        /* Custom Modern Cursor System */
+        .cursor-main { width: 12px; height: 12px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; transition: transform 0.08s ease; }
+        .cursor-outer { width: 45px; height: 45px; border: 1.5px solid var(--secondary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; opacity: 0.4; }
+
+        /* --- Header with Fixed Right Logo --- */
+        .master-header { 
+            padding: 80px 0 50px; 
+            position: relative; 
+            background: radial-gradient(circle at top right, rgba(37, 211, 102, 0.15), transparent);
         }
         
-        .logo-right {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 20px var(--primary);
-            overflow: hidden;
-            z-index: 100;
+        .logo-container {
+            position: absolute; top: 25px; right: 50px;
+            width: 130px; height: 130px; border-radius: 50%;
+            border: 4px solid var(--primary); padding: 5px;
+            background: #000; box-shadow: var(--neon-glow);
+            z-index: 100; transform: rotate(-5deg); transition: 0.5s;
         }
-        .logo-right img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-container:hover { transform: rotate(0deg) scale(1.1); border-color: var(--secondary); }
+        .logo-container img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
-        .glass-brand {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: clamp(1.5rem, 4vw, 3.2rem);
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px 30px;
-            border-radius: 20px;
+        .brand-container {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(25px);
+            border: 2px solid var(--glass-border);
+            padding: 30px 60px;
+            border-radius: 35px;
             display: inline-block;
-            color: white;
-            transition: 0.5s;
-            text-transform: uppercase;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .glass-brand:hover {
-            background: rgba(37, 211, 102, 0.2);
-            color: var(--primary);
-            transform: scale(1.05);
-            box-shadow: 0 0 30px var(--primary);
+        .brand-title {
+            font-family: 'Orbitron', sans-serif; font-weight: 900;
+            font-size: clamp(1.8rem, 6vw, 3.8rem); margin: 0;
+            background: linear-gradient(90deg, #fff, var(--primary), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-transform: uppercase; letter-spacing: 2px;
+        }
+        .brand-container:hover { transform: scale(1.02) translateY(-10px); border-color: var(--primary); }
+
+        /* --- Navigation Pills --- */
+        .nav-scroller { margin: 50px 0; }
+        .nav-link-custom {
+            padding: 14px 35px; margin: 12px; border-radius: 60px;
+            background: var(--card-bg); border: 1px solid var(--glass-border);
+            color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem;
+            transition: 0.4s; display: inline-block; text-transform: uppercase;
+        }
+        .nav-link-custom:hover, .nav-link-custom.active {
+            background: linear-gradient(45deg, var(--primary), #1fad54);
+            color: #000; box-shadow: 0 0 30px var(--primary); transform: scale(1.1);
         }
 
-        /* --- Professional Pill Buttons --- */
-        .nav-pills-custom { margin: 40px 0; }
-        .nav-btn {
-            padding: 12px 25px;
-            margin: 8px;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.15);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 800;
-            background: var(--glass);
-            transition: 0.4s;
-            display: inline-block;
-            text-transform: uppercase;
+        /* --- SPO Digital Verse Cards --- */
+        .verse-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            border: 1px solid var(--glass-border); border-radius: 30px;
+            padding: 45px 30px; transition: 0.6s; text-align: center;
+            height: 100%; position: relative; overflow: hidden;
         }
-        .nav-btn:hover, .nav-btn.active {
-            background: var(--primary);
-            color: #000;
-            border-color: var(--primary);
-            box-shadow: 0 0 20px var(--primary);
-            transform: translateY(-5px);
+        .verse-card::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(37,211,102,0.1), transparent);
+            transition: 0.5s; opacity: 0;
         }
+        .verse-card:hover::before { opacity: 1; }
+        .verse-card:hover { transform: translateY(-20px) rotateY(10deg); border-color: var(--primary); }
+        .verse-card i { font-size: 4rem; margin-bottom: 30px; display: block; color: var(--primary); text-shadow: 0 0 20px var(--primary); }
 
-        /* --- Premium Digital Service Cards --- */
-        .special-service-card {
-            background: var(--glass);
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            border-radius: 25px;
-            padding: 35px;
-            transition: 0.5s;
-            text-decoration: none;
-            color: white;
-            display: block;
-            height: 100%;
-            backdrop-filter: blur(10px);
-            text-align: center;
-        }
-        .special-service-card:hover {
-            transform: translateY(-15px);
-            background: rgba(37, 211, 102, 0.1);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3);
-        }
-        .special-service-card i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; }
+        /* --- Expanded Work Gallery (24 Items) --- */
+        .masonry-wrapper { column-count: 4; column-gap: 25px; padding: 40px 0; }
+        @media (max-width: 1100px) { .masonry-wrapper { column-count: 3; } }
+        @media (max-width: 768px) { .masonry-wrapper { column-count: 2; } }
 
-        /* --- Masonry Gallery (All 24 Images) --- */
-        .gallery-container { column-count: 4; column-gap: 20px; }
-        @media (max-width: 1200px) { .gallery-container { column-count: 3; } }
-        @media (max-width: 768px) { .gallery-container { column-count: 2; } }
+        .work-item-premium {
+            position: relative; margin-bottom: 25px; border-radius: 25px;
+            overflow: hidden; border: 2px solid var(--glass-border);
+            background: #000; transition: 0.5s; cursor: pointer;
+        }
+        .work-item-premium img { width: 100%; transition: 0.9s ease; display: block; }
+        .work-item-premium:hover { border-color: var(--primary); transform: scale(1.02); z-index: 10; }
+        .work-item-premium:hover img { transform: scale(1.15); filter: brightness(0.3) blur(2px); }
         
-        .work-item {
-            position: relative;
-            margin-bottom: 20px;
-            border-radius: 20px;
-            overflow: hidden;
-            break-inside: avoid;
-            border: 2px solid rgba(255,255,255,0.05);
-            transition: 0.5s;
+        .work-caption {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 80%; text-align: center; opacity: 0; transition: 0.4s;
         }
-        .work-item img { width: 100%; transition: 0.7s; display: block; }
-        .work-item:hover img { transform: scale(1.15); filter: brightness(0.3); }
-        .work-overlay {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0; transition: 0.4s;
-            text-align: center; width: 100%;
-        }
-        .work-item:hover .work-overlay { opacity: 1; }
-
-        /* --- International Urdu Boxes (Full 24) --- */
-        .u-box {
-            background: linear-gradient(135deg, #ffffff, #e0e0e0);
-            color: #000;
-            padding: 20px;
-            border-radius: 15px;
-            font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 1.3rem;
-            min-height: 85px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 6px 6px 0px var(--primary);
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-            font-weight: bold;
-        }
-        .u-box:hover {
-            transform: translate(-5px, -5px);
-            box-shadow: 10px 10px 0px #fff;
-            background: var(--secondary);
+        .work-item-premium:hover .work-caption { opacity: 1; }
+        .order-btn {
+            background: var(--primary); color: #000; padding: 12px 25px;
+            border-radius: 50px; font-weight: 900; border: none; font-size: 0.9rem;
+            box-shadow: 0 10px 20px rgba(37,211,102,0.4);
         }
 
-        /* --- International Live Review Slider --- */
-        .review-wrapper {
-            background: rgba(255,255,255,0.02);
-            padding: 60px 0;
-            border-radius: 40px;
-            overflow: hidden;
-            position: relative;
-            border: 1px solid rgba(255,255,255,0.1);
+        /* --- Full Urdu Grid (24 Boxes) --- */
+        .u-grid-item {
+            background: #ffffff; color: #000; padding: 30px 20px; border-radius: 20px;
+            font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.6rem;
+            text-align: center; box-shadow: 10px 10px 0px var(--primary);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer; border: none; height: 100%; display: flex; align-items: center; justify-content: center;
         }
-        .review-inner { display: flex; animation: slideReviews 40s linear infinite; width: max-content; }
-        .review-card-global {
-            width: 350px;
-            background: #000;
-            padding: 30px;
-            margin: 0 20px;
-            border-radius: 20px;
-            border-top: 5px solid var(--primary);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        .u-grid-item:hover {
+            background: var(--secondary); transform: translate(-8px, -8px);
+            box-shadow: 15px 15px 0px #fff;
         }
-        @keyframes slideReviews { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* --- Social Buttons (Tilt & Move) --- */
-        .s-link {
-            width: 70px; height: 70px;
-            display: inline-flex; align-items: center; justify-content: center;
-            font-size: 2.2rem; border-radius: 20px;
-            margin: 15px; color: white; text-decoration: none;
-            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background: var(--glass);
+        /* --- Horizontal Review Slider --- */
+        .slider-box { background: rgba(255,255,255,0.01); border-radius: 50px; padding: 80px 0; overflow: hidden; margin: 80px 0; border: 1px solid var(--glass-border); }
+        .slider-track { display: flex; animation: slideInfinite 45s linear infinite; width: max-content; }
+        .review-node-master {
+            width: 380px; background: #0b0e14; padding: 40px; margin: 0 30px;
+            border-radius: 30px; border-bottom: 5px solid var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
-        .s-link:hover { transform: scale(1.2) translateY(-15px) rotate(8deg); }
-        .wa:hover { background: #25D366; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5); }
-        .fb:hover { background: #1877F2; box-shadow: 0 15px 30px rgba(24, 119, 242, 0.5); }
-        .ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 15px 30px rgba(220, 39, 67, 0.5); }
-        .tk:hover { background: #000; border: 1px solid #fe2c55; box-shadow: 0 15px 30px rgba(255, 0, 80, 0.5); }
+        @keyframes slideInfinite { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* --- Professional Footer --- */
-        .footer-elite {
-            background: #000;
-            padding: 100px 0 40px;
-            border-top: 3px solid var(--primary);
-            margin-top: 120px;
+        /* --- Footer Section (Full Detail) --- */
+        .footer-premium {
+            background: #000; padding: 120px 0 50px; border-top: 4px solid var(--primary);
+            margin-top: 150px; position: relative;
         }
-        .footer-card { padding: 20px; }
-        .dev-badge-premium {
-            background: linear-gradient(90deg, #25D366, #00ffcc);
-            color: #000; padding: 10px 30px;
-            border-radius: 50px; font-weight: 900;
-            display: inline-block; text-decoration: none;
-            margin-top: 20px; transition: 0.3s;
+        .footer-premium::after {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 200px; height: 4px; background: var(--secondary); box-shadow: 0 0 20px var(--secondary);
         }
-        .dev-badge-premium:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--primary); }
+        .footer-heading { color: #fff; font-family: 'Orbitron', sans-serif; font-weight: 800; margin-bottom: 30px; }
+        .social-link-master {
+            width: 80px; height: 80px; display: inline-flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; border-radius: 25px; margin: 15px; transition: 0.5s;
+            background: var(--card-bg); color: white; text-decoration: none; border: 1px solid var(--glass-border);
+        }
+        .social-link-master:hover { transform: translateY(-15px) rotate(10deg); color: #fff; border-color: var(--primary); }
+        .wa-c:hover { background: #25D366; box-shadow: 0 15px 35px rgba(37,211,102,0.5); }
+        .fb-c:hover { background: #1877F2; box-shadow: 0 15px 35px rgba(24,119,242,0.5); }
+        .ig-c:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 15px 35px rgba(220,39,67,0.5); }
 
-        .wa-float { position: fixed; bottom: 40px; right: 40px; background: #25D366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; z-index: 1000; box-shadow: 0 0 35px var(--primary); text-decoration: none; }
+        .dev-signature {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: #000; padding: 15px 40px; border-radius: 60px; font-weight: 900;
+            display: inline-block; text-decoration: none; margin-top: 40px;
+            font-size: 1.1rem; letter-spacing: 1px; transition: 0.3s;
+        }
+        .dev-signature:hover { transform: scale(1.1); box-shadow: 0 0 40px var(--primary); }
+
+        .whatsapp-fixed { position: fixed; bottom: 50px; right: 50px; background: #25D366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; z-index: 1000; box-shadow: 0 10px 40px rgba(37,211,102,0.6); text-decoration: none; animation: floatAnim 3s ease-in-out infinite; }
+        @keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
     </style>
 </head>
 <body>
 
+<div class="cursor-main"></div>
+<div class="cursor-outer"></div>
 <div id="particles-js"></div>
 
-<header class="header-main text-center">
-    <div class="logo-right">
+<header class="master-header text-center">
+    <div class="logo-container">
         <img src="print.png" alt="SPO Logo">
     </div>
 
     <div class="container">
-        <div class="glass-brand mb-3">SPO SMART PRINTING ONLINE SERVICES</div>
-        <p class="text-secondary fw-bold mt-2">Stationery Point & Digital Hub | Kanganpur ✨</p>
+        <div class="brand-container">
+            <h1 class="brand-title">SPO SMART PRINTING ONLINE SERVICES</h1>
+        </div>
+        <p class="text-secondary fw-bold mt-4" style="font-size: 1.2rem; letter-spacing: 3px;">
+            STATIONERY POINT & PREMIUM DIGITAL HUB | KANGANPUR
+        </p>
         
-        <nav class="nav-pills-custom">
-            <a href="index.html" class="nav-btn">Home</a>
-            <a href="about.html" class="nav-btn">About</a>
-            <a href="services.html" class="nav-btn active">Services</a>
-            <a href="gallery.html" class="nav-btn">Gallery</a>
-            <a href="contact.html" class="nav-btn">Contact</a>
+        <nav class="nav-scroller">
+            <a href="index.html" class="nav-link-custom active">Home</a>
+            <a href="about.html" class="nav-link-custom">About Us</a>
+            <a href="services.html" class="nav-link-custom">Our Services</a>
+            <a href="gallery.html" class="nav-link-custom">Work Gallery</a>
+            <a href="contact.html" class="nav-link-custom">Contact Hub</a>
         </nav>
     </div>
 </header>
 
 <div class="container">
     
-    <section class="mb-5 py-4 text-center">
-        <h2 class="fw-bold mb-5" style="color:var(--secondary)">🌟 SPO SMART DIGITAL VERSE 🌟</h2>
+    <section class="py-5 text-center">
+        <h2 class="fw-bold mb-5" style="color:var(--secondary); font-family: 'Orbitron';">🌟 SPO SMART DIGITAL VERSE 🌟</h2>
         <div class="row g-4">
-            <div class="col-md-3 col-6">
-                <a href="https://www.spodigitalverse.online" target="_blank" class="special-service-card">
+            <div class="col-lg-3 col-md-6">
+                <div class="verse-card">
                     <i class="fa fa-laptop-code"></i>
-                    <h4><b>Web Development</b></h4>
-                    <p class="small text-secondary">E-Commerce & Business Sites</p>
-                </a>
+                    <h3>Web Development</h3>
+                    <p class="text-secondary small">Custom Responsive Websites, Portfolio & E-Commerce Systems with SEO.</p>
+                    <a href="https://www.spodigitalverse.online" target="_blank" class="btn btn-outline-success btn-sm mt-3">Visit Portfolio</a>
+                </div>
             </div>
-            <div class="col-md-3 col-6">
-                <a href="https://wa.me/923034480404" class="special-service-card">
+            <div class="col-lg-3 col-md-6">
+                <div class="verse-card">
                     <i class="fa fa-search-dollar"></i>
-                    <h4><b>SEO & Google</b></h4>
-                    <p class="small text-secondary">Business Ranking Specialist</p>
-                </a>
+                    <h3>SEO & Local Ranking</h3>
+                    <p class="text-secondary small">Dominating Search Results in Kanganpur & Kasur. Google Business Optimization.</p>
+                    <button onclick="sendWA('Local SEO Service')" class="btn btn-outline-success btn-sm mt-3">Rank My Business</button>
+                </div>
             </div>
-            <div class="col-md-3 col-6">
-                <a href="https://wa.me/923034480404" class="special-service-card">
-                    <i class="fa fa-ad"></i>
-                    <h4><b>Digital Ads</b></h4>
-                    <p class="small text-secondary">FB, IG & TikTok Marketing</p>
-                </a>
+            <div class="col-lg-3 col-md-6">
+                <div class="verse-card">
+                    <i class="fa fa-bullhorn"></i>
+                    <h3>Digital Marketing</h3>
+                    <p class="text-secondary small">Facebook, Instagram & TikTok Ad Campaigns to boost your sales 10x.</p>
+                    <button onclick="sendWA('Social Media Ads')" class="btn btn-outline-success btn-sm mt-3">Start Campaign</button>
+                </div>
             </div>
-            <div class="col-md-3 col-6">
-                <a href="https://wa.me/923034480404" class="special-service-card">
-                    <i class="fa fa-pen-nib"></i>
-                    <h4><b>Graphics</b></h4>
-                    <p class="small text-secondary">Logos & Professional Branding</p>
-                </a>
+            <div class="col-lg-3 col-md-6">
+                <div class="verse-card">
+                    <i class="fa fa-paint-brush"></i>
+                    <h3>Premium Graphics</h3>
+                    <p class="text-secondary small">Professional Logo Design, Video Editing & Brand Identity Creation.</p>
+                    <button onclick="sendWA('Graphics Design')" class="btn btn-outline-success btn-sm mt-3">Order Design</button>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="py-5">
         <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color:var(--primary)">PROFESSIONAL WORK GALLERY</h2>
-            <p class="text-secondary">Click any design to inquire on WhatsApp</p>
+            <h2 class="fw-bold text-white" style="font-family: 'Orbitron';">PREMIUM WORK SHOWCASE</h2>
+            <div style="width: 100px; height: 4px; background: var(--primary); margin: 15px auto;"></div>
+            <p class="text-secondary">Selected masterpieces from our Printing & Digital Labs</p>
         </div>
         
-        <div class="gallery-container">
-            <div class="work-item" onclick="sendWA('Gallery Item 1')"><img src="1.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 2')"><img src="2.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 3')"><img src="3.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 4')"><img src="4.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 5')"><img src="5.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 6')"><img src="6.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 7')"><img src="7.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 8')"><img src="8.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 9')"><img src="9.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 10')"><img src="10.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 11')"><img src="11.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            <div class="work-item" onclick="sendWA('Gallery Item 12')"><img src="12.jpg"><div class="work-overlay"><button class="btn btn-success rounded-pill">Inquiry</button></div></div>
-            
-            <div class="work-item" onclick="sendWA('Design A')"><img src="file_0000000062b871faad20fb22fcf394ee.png"></div>
-            <div class="work-item" onclick="sendWA('Design B')"><img src="IMG-20260222-WA0028.jpg"></div>
-            <div class="work-item" onclick="sendWA('Design C')"><img src="IMG-20260222-WA0033(1).jpg"></div>
-            <div class="work-item" onclick="sendWA('Design D')"><img src="IMG-20260223-WA0055.jpg"></div>
-            <div class="work-item" onclick="sendWA('Design E')"><img src="IMG-20260224-WA0019.jpg"></div>
-            <div class="work-item" onclick="sendWA('Design F')"><img src="IMG-20260224-WA0020.jpg"></div>
-            <div class="work-item" onclick="sendWA('Design G')"><img src="IMG-20260225-WA0028.jpg"></div>
-            <div class="work-item" onclick="sendWA('Design H')"><img src="IMG-20260228-WA0039.jpg"></div>
-            <div class="work-item" onclick="sendWA('Design I')"><img src="IMG-20260301-WA0097.jpg"></div>
-            <div class="work-item" onclick="sendWA('Design J')"><img src="IMG_20260218_015819.png"></div>
-            <div class="work-item" onclick="sendWA('Design K')"><img src="IMG-20260222-WA0024.jpg"></div>
-            <div class="work-item" onclick="sendWA('Design L')"><img src="IMG-20260301-WA0097.jpg"></div>
+        <div class="masonry-wrapper">
+            <div class="work-item-premium" onclick="sendWA('Design Item 1')"><img src="1.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 2')"><img src="2.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 3')"><img src="3.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 4')"><img src="4.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 5')"><img src="5.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 6')"><img src="6.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 7')"><img src="7.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 8')"><img src="8.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 9')"><img src="9.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 10')"><img src="10.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 11')"><img src="11.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+            <div class="work-item-premium" onclick="sendWA('Design Item 12')"><img src="12.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
+
+            <div class="work-item-premium" onclick="sendWA('Portfolio A')"><img src="file_0000000062b871faad20fb22fcf394ee.png"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio B')"><img src="IMG-20260222-WA0028.jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio C')"><img src="IMG-20260222-WA0033(1).jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio D')"><img src="IMG-20260223-WA0055.jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio E')"><img src="IMG-20260224-WA0019.jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio F')"><img src="IMG-20260224-WA0020.jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio G')"><img src="IMG-20260225-WA0028.jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio H')"><img src="IMG-20260228-WA0039.jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio I')"><img src="IMG-20260301-WA0097.jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio J')"><img src="IMG_20260218_015819.png"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio K')"><img src="IMG-20260222-WA0024.jpg"></div>
+            <div class="work-item-premium" onclick="sendWA('Portfolio L')"><img src="IMG-20260301-WA0097.jpg"></div>
         </div>
     </section>
 
     <section class="py-5 text-center">
-        <h2 class="fw-bold mb-5" style="color:var(--secondary)">ہماری مکمل آن لائن سروسز</h2>
+        <h2 class="fw-bold mb-5" style="color:var(--secondary); font-family: 'Orbitron';">ہماری مکمل آن لائن سروسز</h2>
         <div class="row g-4">
-            <div class="col-md-3 col-6" onclick="sendWA('شناختی کارڈ')"><div class="u-box">شناختی کارڈ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('ب فارم')"><div class="u-box">ب فارم</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('ایف آر سی')"><div class="u-box">ایف آر سی فارم</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('ڈومیسائل')"><div class="u-box">ڈومیسائل</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('پاسپورٹ فوٹو')"><div class="u-box">پاسپورٹ فوٹو</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('کلر پرنٹ')"><div class="u-box">کلر پرنٹ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('ٹیکس فائلر')"><div class="u-box">ٹیکس فائلر</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('وزٹنگ کارڈ')"><div class="u-box">وزٹنگ کارڈ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('کمپیوٹرائزڈ فرد')"><div class="u-box">کمپیوٹرائزڈ فرد</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('بل ادائیگی')"><div class="u-box">بل ادائیگی</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('لیمینیشن')"><div class="u-box">لیمینیشن</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('سی وی (CV)')"><div class="u-box">سی وی (CV)</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('سکیننگ')"><div class="u-box">سکیننگ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('سٹیشنری')"><div class="u-box">سٹیشنری</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('کمپوزنگ')"><div class="u-box">کمپوزنگ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('بائنڈنگ')"><div class="u-box">بائنڈنگ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('لائسنس')"><div class="u-box">لائسنس</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('PVC کارڈ')"><div class="u-box">PVC کارڈ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('شادی کارڈ')"><div class="u-box">شادی کارڈ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('فلیکس')"><div class="u-box">فلیکس</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('ای کامرس')"><div class="u-box">ای کامرس</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('نادرا سروسز')"><div class="u-box">نادرا سروسز</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('واٹس ایپ پرنٹ')"><div class="u-box">واٹس ایپ پرنٹ</div></div>
-            <div class="col-md-3 col-6" onclick="sendWA('آن لائن فارم')"><div class="u-box">آن لائن فارم</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('شناختی کارڈ')">شناختی کارڈ</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ب فارم')">ب فارم</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ایف آر سی')">ایف آر سی</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ڈومیسائل')">ڈومیسائل</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ٹیکس فائلر')">ٹیکس فائلر</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('پاسپورٹ فوٹو')">پاسپورٹ فوٹو</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('کمپیوٹر فرد')">کمپیوٹر فرد</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('سی وی')">پروفیشنل CV</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('کلر پرنٹنگ')">کلر پرنٹنگ</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('لیمینیشن')">لیمینیشن</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('بجلی بل')">بجلی بل ادائیگی</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('آن لائن فارم')">آن لائن فارم</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ویزہ اپلائی')">ویزہ اپلائی</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('جاب اپلائی')">جاب اپلائی</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('بائنڈنگ')">بائنڈنگ</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('وزٹنگ کارڈ')">وزٹنگ کارڈ</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('شادی کارڈ')">شادی کارڈ</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('سٹیشنری')">سٹیشنری</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('سکیننگ')">سکیننگ</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('پی وی سی کارڈ')">PVC کارڈ</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('کمپوزنگ')">کمپوزنگ</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('لوگو ڈیزائن')">لوگو ڈیزائن</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('فلیکس')">فلیکس ڈیزائن</div></div>
+            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('انکم سرٹیفکیٹ')">انکم سرٹیفکیٹ</div></div>
         </div>
     </section>
 
     <section class="py-5">
-        <h3 class="text-center mb-5 fw-bold">GLOBAL CUSTOMER FEEDBACK</h3>
-        <div class="review-wrapper">
-            <div class="review-inner" id="reviewContainer">
-                </div>
-        </div>
-        
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-6 bg-dark p-4 rounded-4 border border-success">
-                <h5 class="text-center mb-4">Post a Global Review</h5>
-                <input type="text" id="rName" class="form-control mb-3 bg-black text-white border-secondary" placeholder="Client Name">
-                <textarea id="rMsg" class="form-control mb-3 bg-black text-white border-secondary" placeholder="Share your experience..."></textarea>
-                <button class="btn btn-success w-100 fw-bold" onclick="addGlobalReview()">SUBMIT TO LIVE FEED</button>
+        <h3 class="text-center mb-5 fw-bold" style="font-family: 'Orbitron'; letter-spacing: 2px;">GLOBAL CLIENT FEEDBACK</h3>
+        <div class="slider-box">
+            <div class="slider-track" id="reviewContainer">
+                <div class="review-node-master"><b>Ali Raza (CEO)</b><p class="small text-secondary mt-3">The web system provided by SPO is world-class. Fast, secure and modern.</p></div>
+                <div class="review-node-master"><b>Hammad Malik</b><p class="small text-secondary mt-3">Best printing quality in Kasur District. Always reliable and quick.</p></div>
+                <div class="review-node-master"><b>Zeeshan Ahmed</b><p class="small text-secondary mt-3">Highly professional digital marketing services. My business sales grew 5x!</p></div>
+                <div class="review-node-master"><b>Ali Raza (CEO)</b><p class="small text-secondary mt-3">The web system provided by SPO is world-class. Fast, secure and modern.</p></div>
+                <div class="review-node-master"><b>Hammad Malik</b><p class="small text-secondary mt-3">Best printing quality in Kasur District. Always reliable and quick.</p></div>
             </div>
         </div>
     </section>
 
 </div>
 
-<footer class="footer-elite">
+<footer class="footer-premium">
     <div class="container">
         <div class="row g-5">
-            <div class="col-md-4 footer-card">
-                <h3 class="text-white fw-bold mb-4">SPO DIGITAL VERSE</h3>
-                <p class="text-secondary small">SPO SMART PRINTING & ONLINE SERVICES آپ کی تمام پرنٹنگ، اسٹیشنری اور آن لائن سروسز کا قابلِ اعتماد مرکز ہے۔ ہم معیاری کام اور بہترین کسٹمر سروس فراہم کرنے کے لیے ہمہ وقت کوشاں ہیں۔</p>
-                <p class="text-secondary mt-4 small"><i class="fa fa-map-marker-alt me-2 text-success"></i> پرانا پکا بازار، کنگن پور، ضلع قصور</p>
-                <p class="text-secondary small"><i class="fa fa-envelope me-2 text-success"></i> asif.aimarketing@gmail.com</p>
-                <p class="text-secondary small"><i class="fa fa-phone me-2 text-success"></i> 0303-4480404</p>
-            </div>
-            <div class="col-md-4 footer-card text-md-center">
-                <h4 class="text-white mb-4">Official Links</h4>
-                <div class="d-grid gap-2">
-                    <a href="https://www.spodigitalverse.online" class="text-secondary text-decoration-none hover-link">spodigitalverse.online</a>
-                    <a href="https://www.smartprintingonline.site" class="text-secondary text-decoration-none hover-link">smartprintingonline.site</a>
-                    <a href="https://wa.me/923034480404" class="text-secondary text-decoration-none hover-link">Direct Support</a>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="footer-heading">SPO DIGITAL HUB</h4>
+                <p class="text-secondary small">SPO SMART PRINTING & ONLINE SERVICES کنگن پور کا واحد مرکز ہے جہاں جدید ٹیکنالوجی اور روایتی مہارت کا سنگم ملتا ہے۔ ہم آپ کے کاروبار کو ڈیجیٹل دنیا میں متعارف کروانے کے ماہر ہیں۔</p>
+                <div class="mt-4">
+                    <p class="small text-secondary"><i class="fa fa-map-marker-alt text-success me-3"></i> پرانا پکا بازار، کنگن پور، ضلع قصور</p>
+                    <p class="small text-secondary"><i class="fa fa-envelope text-success me-3"></i> asif.aimarketing@gmail.com</p>
+                    <p class="small text-secondary"><i class="fa fa-phone text-success me-3"></i> 0303-4480404</p>
                 </div>
             </div>
-            <div class="col-md-4 footer-card text-md-end">
-                <h4 class="text-white mb-4">Stay Connected</h4>
-                <div class="d-flex justify-content-md-end flex-wrap">
-                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="s-link wa"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="s-link fb"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/smartprinting.online" class="s-link ig"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@smartprintdigitalpk" class="s-link tk"><i class="fab fa-tiktok"></i></a>
+            <div class="col-lg-4 col-md-6 text-md-center">
+                <h4 class="footer-heading">Quick Resources</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="https://www.spodigitalverse.online" class="text-secondary text-decoration-none">Main Digital Verse Site</a></li>
+                    <li class="mb-2"><a href="https://www.smartprintingonline.site" class="text-secondary text-decoration-none">SPO Shop Official</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Privacy & Terms</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">FBR Tax Inquiry</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-12 text-lg-end">
+                <h4 class="footer-heading">Stay Connected</h4>
+                <div class="d-flex justify-content-lg-end justify-content-center flex-wrap">
+                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-link-master wa-c"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-link-master fb-c"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/smartprinting.online" class="social-link-master ig-c"><i class="fab fa-instagram"></i></a>
                 </div>
-                <a href="https://wa.me/923034480404" target="_blank" class="dev-badge-premium">Developed By: Muhammad Asif Ali</a>
+                <div class="mt-4">
+                    <a href="https://wa.me/923034480404" class="dev-signature">Developed By: Muhammad Asif Ali</a>
+                </div>
             </div>
         </div>
         <hr class="mt-5 border-secondary">
-        <p class="text-center text-secondary small mb-0">© 2026 SPO Smart Printing & Online Services | All Rights Reserved.</p>
+        <p class="text-center text-secondary small mb-0">© 2026 SPO Smart Printing & Online Services | Powered by SPO Digital Verse</p>
     </div>
 </footer>
 
-<a href="https://wa.me/923034480404" class="wa-float shadow-lg"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/923034480404" class="whatsapp-fixed"><i class="fab fa-whatsapp"></i></a>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
+    // Particle Background Initialization
+    particlesJS("particles-js", { "particles": { "number": { "value": 100 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.25 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.15, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
 
+    // Premium Custom Cursor
+    const cursor = document.querySelector('.cursor-main');
+    const outer = document.querySelector('.cursor-outer');
+    document.addEventListener('mousemove', e => {
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        outer.style.transform = `translate3d(${e.clientX - 16}px, ${e.clientY - 16}px, 0)`;
+    });
+
+    // WhatsApp Direct Integration
     function sendWA(item) {
-        const msg = `Assalam-o-Alaikum SPO! I saw "${item}" in your showcase and want more details about it.`;
-        window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`, '_blank');
+        const text = `Assalam-o-Alaikum! I am reaching out from your website. I want to inquire about: "${item}". Please share details.`;
+        window.open(`https://wa.me/923034480404?text=${encodeURIComponent(text)}`, '_blank');
     }
-
-    function addGlobalReview() {
-        const name = document.getElementById('rName').value;
-        const msg = document.getElementById('rMsg').value;
-        if(!name || !msg) return alert("Please enter name and message.");
-        
-        const reviewHTML = `
-            <div class="review-card-global">
-                <div class="text-warning mb-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                <b class="text-white">${name}</b>
-                <p class="text-secondary small mt-2">"${msg}"</p>
-            </div>`;
-        
-        document.getElementById('reviewContainer').innerHTML += reviewHTML;
-        localStorage.setItem('spo_global_feed', document.getElementById('reviewContainer').innerHTML);
-        document.getElementById('rName').value = ''; document.getElementById('rMsg').value = '';
-    }
-
-    window.onload = () => {
-        const saved = localStorage.getItem('spo_global_feed');
-        const defaultR = `
-            <div class="review-card-global"><b>Ali Ahmad</b><p class="small text-secondary">Outstanding web services!</p></div>
-            <div class="review-card-global"><b>Zubair Khan</b><p class="small text-secondary">Best digital shop in Kasur.</p></div>
-            <div class="review-card-global"><b>M. Usman</b><p class="small text-secondary">Fast printing and honest work.</p></div>
-        `;
-        document.getElementById('reviewContainer').innerHTML = saved || (defaultR + defaultR);
-    };
 </script>
 </body>
 </html>
