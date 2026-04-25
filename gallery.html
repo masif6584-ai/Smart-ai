@@ -3,392 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO SMART PRINTING ONLINE SERVICES | Premium Digital Verse</title>
+    <title>SPO SMART PRINTING & ONLINE SERVICES | Master Edition 2026</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@300;500;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Extended Professional CSS --- */
+        /* --- Root Variables for Branding --- */
         :root { 
             --primary: #25D366; 
             --secondary: #00ffcc; 
-            --accent: #ff0055;
+            --accent: #0088ff;
             --dark-bg: #010409; 
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --neon-glow: 0 0 15px rgba(37, 211, 102, 0.5);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --border-glow: rgba(37, 211, 102, 0.3);
         }
 
-        * { cursor: none; box-sizing: border-box; }
-
+        /* --- Global Reset & Cursor --- */
+        * { cursor: none !important; box-sizing: border-box; }
         body { 
             font-family: 'Rajdhani', sans-serif; 
             background: var(--dark-bg); 
-            color: #e6edf3; 
-            overflow-x: hidden;
-            line-height: 1.6;
+            color: #ffffff; 
+            overflow-x: hidden; 
+            background-attachment: fixed;
         }
 
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
 
-        /* Custom Modern Cursor System */
-        .cursor-main { width: 12px; height: 12px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; transition: transform 0.08s ease; }
-        .cursor-outer { width: 45px; height: 45px; border: 1.5px solid var(--secondary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; opacity: 0.4; }
+        /* Custom Animated Cursor */
+        .cursor-dot { width: 10px; height: 10px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; transition: transform 0.1s ease; box-shadow: 0 0 10px var(--primary); }
+        .cursor-circle { width: 40px; height: 40px; border: 2px solid var(--secondary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; opacity: 0.6; }
 
-        /* --- Header with Fixed Right Logo --- */
-        .master-header { 
-            padding: 80px 0 50px; 
-            position: relative; 
-            background: radial-gradient(circle at top right, rgba(37, 211, 102, 0.15), transparent);
+        /* --- Horizontal Master Header --- */
+        .navbar-custom {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--primary);
+            padding: 15px 0;
+            position: sticky; top: 0; z-index: 2000;
         }
+        .header-container { display: flex; align-items: center; justify-content: space-between; max-width: 1300px; margin: 0 auto; padding: 0 20px; }
         
-        .logo-container {
-            position: absolute; top: 25px; right: 50px;
-            width: 130px; height: 130px; border-radius: 50%;
-            border: 4px solid var(--primary); padding: 5px;
-            background: #000; box-shadow: var(--neon-glow);
-            z-index: 100; transform: rotate(-5deg); transition: 0.5s;
+        .header-left { display: flex; align-items: center; }
+        .logo-main {
+            width: 80px; height: 80px; border-radius: 50%;
+            border: 3px solid var(--primary); overflow: hidden;
+            box-shadow: 0 0 20px var(--primary); transition: 0.5s;
         }
-        .logo-container:hover { transform: rotate(0deg) scale(1.1); border-color: var(--secondary); }
-        .logo-container img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
-
-        .brand-container {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(25px);
-            border: 2px solid var(--glass-border);
-            padding: 30px 60px;
-            border-radius: 35px;
-            display: inline-block;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-            transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .brand-title {
-            font-family: 'Orbitron', sans-serif; font-weight: 900;
-            font-size: clamp(1.8rem, 6vw, 3.8rem); margin: 0;
+        .logo-main:hover { transform: rotate(360deg) scale(1.1); }
+        .logo-main img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .shop-name {
+            font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.6rem;
+            margin-left: 20px; text-transform: uppercase;
             background: linear-gradient(90deg, #fff, var(--primary), var(--secondary));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            text-transform: uppercase; letter-spacing: 2px;
-        }
-        .brand-container:hover { transform: scale(1.02) translateY(-10px); border-color: var(--primary); }
-
-        /* --- Navigation Pills --- */
-        .nav-scroller { margin: 50px 0; }
-        .nav-link-custom {
-            padding: 14px 35px; margin: 12px; border-radius: 60px;
-            background: var(--card-bg); border: 1px solid var(--glass-border);
-            color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem;
-            transition: 0.4s; display: inline-block; text-transform: uppercase;
-        }
-        .nav-link-custom:hover, .nav-link-custom.active {
-            background: linear-gradient(45deg, var(--primary), #1fad54);
-            color: #000; box-shadow: 0 0 30px var(--primary); transform: scale(1.1);
         }
 
-        /* --- SPO Digital Verse Cards --- */
-        .verse-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-            border: 1px solid var(--glass-border); border-radius: 30px;
-            padding: 45px 30px; transition: 0.6s; text-align: center;
-            height: 100%; position: relative; overflow: hidden;
+        .header-right .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-btn {
+            background: var(--glass-bg); border: 1px solid var(--border-glow);
+            color: #fff; text-decoration: none; padding: 10px 25px;
+            margin-left: 12px; border-radius: 8px; font-weight: 700;
+            font-size: 0.9rem; transition: 0.4s; text-transform: uppercase;
         }
-        .verse-card::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(37,211,102,0.1), transparent);
-            transition: 0.5s; opacity: 0;
-        }
-        .verse-card:hover::before { opacity: 1; }
-        .verse-card:hover { transform: translateY(-20px) rotateY(10deg); border-color: var(--primary); }
-        .verse-card i { font-size: 4rem; margin-bottom: 30px; display: block; color: var(--primary); text-shadow: 0 0 20px var(--primary); }
-
-        /* --- Expanded Work Gallery (24 Items) --- */
-        .masonry-wrapper { column-count: 4; column-gap: 25px; padding: 40px 0; }
-        @media (max-width: 1100px) { .masonry-wrapper { column-count: 3; } }
-        @media (max-width: 768px) { .masonry-wrapper { column-count: 2; } }
-
-        .work-item-premium {
-            position: relative; margin-bottom: 25px; border-radius: 25px;
-            overflow: hidden; border: 2px solid var(--glass-border);
-            background: #000; transition: 0.5s; cursor: pointer;
-        }
-        .work-item-premium img { width: 100%; transition: 0.9s ease; display: block; }
-        .work-item-premium:hover { border-color: var(--primary); transform: scale(1.02); z-index: 10; }
-        .work-item-premium:hover img { transform: scale(1.15); filter: brightness(0.3) blur(2px); }
-        
-        .work-caption {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 80%; text-align: center; opacity: 0; transition: 0.4s;
-        }
-        .work-item-premium:hover .work-caption { opacity: 1; }
-        .order-btn {
-            background: var(--primary); color: #000; padding: 12px 25px;
-            border-radius: 50px; font-weight: 900; border: none; font-size: 0.9rem;
-            box-shadow: 0 10px 20px rgba(37,211,102,0.4);
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); transform: translateY(-3px);
         }
 
-        /* --- Full Urdu Grid (24 Boxes) --- */
-        .u-grid-item {
-            background: #ffffff; color: #000; padding: 30px 20px; border-radius: 20px;
-            font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.6rem;
-            text-align: center; box-shadow: 10px 10px 0px var(--primary);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer; border: none; height: 100%; display: flex; align-items: center; justify-content: center;
-        }
-        .u-grid-item:hover {
-            background: var(--secondary); transform: translate(-8px, -8px);
-            box-shadow: 15px 15px 0px #fff;
-        }
+        /* --- Section Titles --- */
+        .section-title { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 2.5rem; text-align: center; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 3px; }
+        .title-glow { color: var(--secondary); text-shadow: 0 0 15px var(--secondary); }
 
-        /* --- Horizontal Review Slider --- */
-        .slider-box { background: rgba(255,255,255,0.01); border-radius: 50px; padding: 80px 0; overflow: hidden; margin: 80px 0; border: 1px solid var(--glass-border); }
-        .slider-track { display: flex; animation: slideInfinite 45s linear infinite; width: max-content; }
-        .review-node-master {
-            width: 380px; background: #0b0e14; padding: 40px; margin: 0 30px;
-            border-radius: 30px; border-bottom: 5px solid var(--primary);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        /* --- Digital Verse Cards --- */
+        .v-card {
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border-glow);
+            border-radius: 25px; padding: 45px 25px; transition: 0.6s; text-align: center; height: 100%;
         }
-        @keyframes slideInfinite { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .v-card:hover { border-color: var(--primary); background: rgba(37,211,102,0.05); transform: translateY(-15px); }
+        .v-card i { font-size: 4rem; color: var(--primary); margin-bottom: 25px; filter: drop-shadow(0 0 10px var(--primary)); }
 
-        /* --- Footer Section (Full Detail) --- */
-        .footer-premium {
-            background: #000; padding: 120px 0 50px; border-top: 4px solid var(--primary);
+        /* --- Two-Step Inquiry Gallery --- */
+        .gallery-box { column-count: 4; column-gap: 25px; padding: 30px 0; }
+        @media (max-width: 1024px) { .gallery-box { column-count: 3; } }
+        @media (max-width: 768px) { .gallery-box { column-count: 2; } }
+
+        .image-card {
+            position: relative; margin-bottom: 25px; border-radius: 20px;
+            overflow: hidden; border: 2px solid var(--border-glow); transition: 0.5s;
+        }
+        .image-card img { width: 100%; transition: 0.7s; }
+        .image-card:hover img { transform: scale(1.1); filter: brightness(0.6); }
+        .image-card::after {
+            content: 'VIEW & ORDER'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: var(--primary); color: #000; padding: 8px 18px; border-radius: 50px;
+            font-weight: 900; opacity: 0; transition: 0.4s;
+        }
+        .image-card:hover::after { opacity: 1; }
+
+        /* Lightbox (Full Image View) */
+        #lightbox-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.98); display: none; z-index: 5000;
+            justify-content: center; align-items: center; flex-direction: column;
+        }
+        #lightbox-overlay img { max-width: 90%; max-height: 80%; border: 4px solid var(--primary); border-radius: 15px; box-shadow: 0 0 50px var(--primary); }
+        .lb-close { position: absolute; top: 30px; right: 40px; font-size: 50px; color: #fff; cursor: pointer; }
+        .lb-btn { background: #25D366; color: #000; padding: 15px 40px; border-radius: 50px; margin-top: 30px; font-weight: 900; font-size: 1.2rem; border: none; animation: pulse-bt 1.5s infinite; }
+        @keyframes pulse-bt { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* --- Online Service Urdu Boxes (The 30+ List) --- */
+        .u-box {
+            background: #fff; color: #000; padding: 35px 15px; border-radius: 15px;
+            font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.5rem; text-align: center;
+            box-shadow: 10px 10px 0px var(--primary); transition: 0.4s; cursor: pointer;
+            border: none; height: 100%; display: flex; align-items: center; justify-content: center;
+            font-weight: 700;
+        }
+        .u-box:hover { transform: translate(-10px, -10px); box-shadow: 15px 15px 0px var(--secondary); background: #e0fff0; }
+
+        /* --- Heavy Duty Footer --- */
+        .footer-master {
+            background: #000; padding: 120px 0 60px; border-top: 5px solid var(--primary);
             margin-top: 150px; position: relative;
         }
-        .footer-premium::after {
-            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 200px; height: 4px; background: var(--secondary); box-shadow: 0 0 20px var(--secondary);
+        .f-title { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; color: #fff; margin-bottom: 35px; }
+        .f-text { font-size: 1.3rem; line-height: 1.9; color: #bbb; margin-bottom: 30px; }
+        
+        /* Footer Button Style */
+        .f-link-btn {
+            display: inline-block; padding: 15px 35px; margin: 10px;
+            background: var(--glass-bg); border: 2px solid var(--primary);
+            color: var(--primary); text-decoration: none; font-weight: 900;
+            border-radius: 12px; font-size: 1.1rem; transition: 0.4s;
+            text-align: center;
         }
-        .footer-heading { color: #fff; font-family: 'Orbitron', sans-serif; font-weight: 800; margin-bottom: 30px; }
-        .social-link-master {
-            width: 80px; height: 80px; display: inline-flex; align-items: center; justify-content: center;
-            font-size: 2.5rem; border-radius: 25px; margin: 15px; transition: 0.5s;
-            background: var(--card-bg); color: white; text-decoration: none; border: 1px solid var(--glass-border);
-        }
-        .social-link-master:hover { transform: translateY(-15px) rotate(10deg); color: #fff; border-color: var(--primary); }
-        .wa-c:hover { background: #25D366; box-shadow: 0 15px 35px rgba(37,211,102,0.5); }
-        .fb-c:hover { background: #1877F2; box-shadow: 0 15px 35px rgba(24,119,242,0.5); }
-        .ig-c:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 15px 35px rgba(220,39,67,0.5); }
+        .f-link-btn:hover { background: var(--primary); color: #000; transform: scale(1.1) rotate(2deg); box-shadow: 0 0 30px var(--primary); }
 
-        .dev-signature {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: #000; padding: 15px 40px; border-radius: 60px; font-weight: 900;
-            display: inline-block; text-decoration: none; margin-top: 40px;
-            font-size: 1.1rem; letter-spacing: 1px; transition: 0.3s;
-        }
-        .dev-signature:hover { transform: scale(1.1); box-shadow: 0 0 40px var(--primary); }
+        .f-contact-box { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 20px; border-left: 6px solid var(--secondary); margin-bottom: 20px; }
+        .f-contact-box h4 { font-size: 1.4rem; margin-bottom: 15px; color: var(--secondary); }
+        .f-contact-box p { font-size: 1.2rem; margin: 0; color: #fff; }
 
-        .whatsapp-fixed { position: fixed; bottom: 50px; right: 50px; background: #25D366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; z-index: 1000; box-shadow: 0 10px 40px rgba(37,211,102,0.6); text-decoration: none; animation: floatAnim 3s ease-in-out infinite; }
-        @keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .whatsapp-float { position: fixed; bottom: 45px; right: 45px; background: #25D366; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; color: #fff; z-index: 9999; box-shadow: 0 0 40px rgba(37,211,102,0.6); text-decoration: none; animation: bounce 3s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
     </style>
 </head>
 <body>
 
-<div class="cursor-main"></div>
-<div class="cursor-outer"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-circle"></div>
 <div id="particles-js"></div>
 
-<header class="master-header text-center">
-    <div class="logo-container">
-        <img src="print.png" alt="SPO Logo">
-    </div>
-
-    <div class="container">
-        <div class="brand-container">
-            <h1 class="brand-title">SPO SMART PRINTING ONLINE SERVICES</h1>
+<nav class="navbar-custom">
+    <div class="header-container">
+        <div class="header-left">
+            <div class="logo-main"><img src="print.png"></div>
+            <div class="shop-name">SPO Smart Printing</div>
         </div>
-        <p class="text-secondary fw-bold mt-4" style="font-size: 1.2rem; letter-spacing: 3px;">
-            STATIONERY POINT & PREMIUM DIGITAL HUB | KANGANPUR
-        </p>
-        
-        <nav class="nav-scroller">
-            <a href="index.html" class="nav-link-custom active">Home</a>
-            <a href="about.html" class="nav-link-custom">About Us</a>
-            <a href="services.html" class="nav-link-custom">Our Services</a>
-            <a href="gallery.html" class="nav-link-custom">Work Gallery</a>
-            <a href="contact.html" class="nav-link-custom">Contact Hub</a>
-        </nav>
+        <div class="header-right">
+            <div class="nav-menu">
+                <a href="index.html" class="nav-btn active">Home</a>
+                <a href="services.html" class="nav-btn">Services</a>
+                <a href="gallery.html" class="nav-btn">Gallery</a>
+                <a href="about.html" class="nav-btn">About</a>
+                <a href="contact.html" class="nav-btn">Contact</a>
+            </div>
+        </div>
     </div>
-</header>
+</nav>
 
-<div class="container">
+<div class="container mt-5 pt-4">
     
-    <section class="py-5 text-center">
-        <h2 class="fw-bold mb-5" style="color:var(--secondary); font-family: 'Orbitron';">🌟 SPO SMART DIGITAL VERSE 🌟</h2>
-        <div class="row g-4">
+    <section class="py-5">
+        <h2 class="section-title">🌟 <span class="title-glow">SPO SMART DIGITAL VERSE</span> 🌟</h2>
+        <div class="row g-4 text-center">
             <div class="col-lg-3 col-md-6">
-                <div class="verse-card">
-                    <i class="fa fa-laptop-code"></i>
-                    <h3>Web Development</h3>
-                    <p class="text-secondary small">Custom Responsive Websites, Portfolio & E-Commerce Systems with SEO.</p>
-                    <a href="https://www.spodigitalverse.online" target="_blank" class="btn btn-outline-success btn-sm mt-3">Visit Portfolio</a>
+                <div class="v-card">
+                    <i class="fa fa-code"></i>
+                    <h3>Web Systems</h3>
+                    <p class="text-secondary">Professional Portfolios, Stores & Custom Web Software.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="verse-card">
-                    <i class="fa fa-search-dollar"></i>
-                    <h3>SEO & Local Ranking</h3>
-                    <p class="text-secondary small">Dominating Search Results in Kanganpur & Kasur. Google Business Optimization.</p>
-                    <button onclick="sendWA('Local SEO Service')" class="btn btn-outline-success btn-sm mt-3">Rank My Business</button>
+                <div class="v-card">
+                    <i class="fa fa-rocket"></i>
+                    <h3>Growth SEO</h3>
+                    <p class="text-secondary">First Page Ranking in Kanganpur & Kasur District.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="verse-card">
-                    <i class="fa fa-bullhorn"></i>
-                    <h3>Digital Marketing</h3>
-                    <p class="text-secondary small">Facebook, Instagram & TikTok Ad Campaigns to boost your sales 10x.</p>
-                    <button onclick="sendWA('Social Media Ads')" class="btn btn-outline-success btn-sm mt-3">Start Campaign</button>
+                <div class="v-card">
+                    <i class="fa fa-chart-pie"></i>
+                    <h3>Ad Marketing</h3>
+                    <p class="text-secondary">Facebook, TikTok & Instagram Expert Ad Campaigns.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="verse-card">
-                    <i class="fa fa-paint-brush"></i>
-                    <h3>Premium Graphics</h3>
-                    <p class="text-secondary small">Professional Logo Design, Video Editing & Brand Identity Creation.</p>
-                    <button onclick="sendWA('Graphics Design')" class="btn btn-outline-success btn-sm mt-3">Order Design</button>
+                <div class="v-card">
+                    <i class="fa fa-id-card"></i>
+                    <h3>Online NADRA</h3>
+                    <p class="text-secondary">Digital FBR, NADRA & Online Job Applications.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-5">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-white" style="font-family: 'Orbitron';">PREMIUM WORK SHOWCASE</h2>
-            <div style="width: 100px; height: 4px; background: var(--primary); margin: 15px auto;"></div>
-            <p class="text-secondary">Selected masterpieces from our Printing & Digital Labs</p>
-        </div>
-        
-        <div class="masonry-wrapper">
-            <div class="work-item-premium" onclick="sendWA('Design Item 1')"><img src="1.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 2')"><img src="2.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 3')"><img src="3.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 4')"><img src="4.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 5')"><img src="5.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 6')"><img src="6.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 7')"><img src="7.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 8')"><img src="8.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 9')"><img src="9.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 10')"><img src="10.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 11')"><img src="11.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-            <div class="work-item-premium" onclick="sendWA('Design Item 12')"><img src="12.jpeg"><div class="work-caption"><button class="order-btn">ORDER THIS</button></div></div>
-
-            <div class="work-item-premium" onclick="sendWA('Portfolio A')"><img src="file_0000000062b871faad20fb22fcf394ee.png"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio B')"><img src="IMG-20260222-WA0028.jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio C')"><img src="IMG-20260222-WA0033(1).jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio D')"><img src="IMG-20260223-WA0055.jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio E')"><img src="IMG-20260224-WA0019.jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio F')"><img src="IMG-20260224-WA0020.jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio G')"><img src="IMG-20260225-WA0028.jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio H')"><img src="IMG-20260228-WA0039.jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio I')"><img src="IMG-20260301-WA0097.jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio J')"><img src="IMG_20260218_015819.png"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio K')"><img src="IMG-20260222-WA0024.jpg"></div>
-            <div class="work-item-premium" onclick="sendWA('Portfolio L')"><img src="IMG-20260301-WA0097.jpg"></div>
-        </div>
-    </section>
-
-    <section class="py-5 text-center">
-        <h2 class="fw-bold mb-5" style="color:var(--secondary); font-family: 'Orbitron';">ہماری مکمل آن لائن سروسز</h2>
-        <div class="row g-4">
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('شناختی کارڈ')">شناختی کارڈ</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ب فارم')">ب فارم</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ایف آر سی')">ایف آر سی</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ڈومیسائل')">ڈومیسائل</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ٹیکس فائلر')">ٹیکس فائلر</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('پاسپورٹ فوٹو')">پاسپورٹ فوٹو</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('کمپیوٹر فرد')">کمپیوٹر فرد</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('سی وی')">پروفیشنل CV</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('کلر پرنٹنگ')">کلر پرنٹنگ</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('لیمینیشن')">لیمینیشن</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('بجلی بل')">بجلی بل ادائیگی</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('آن لائن فارم')">آن لائن فارم</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('ویزہ اپلائی')">ویزہ اپلائی</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('جاب اپلائی')">جاب اپلائی</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('بائنڈنگ')">بائنڈنگ</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('وزٹنگ کارڈ')">وزٹنگ کارڈ</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('شادی کارڈ')">شادی کارڈ</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('سٹیشنری')">سٹیشنری</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('سکیننگ')">سکیننگ</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('پی وی سی کارڈ')">PVC کارڈ</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('کمپوزنگ')">کمپوزنگ</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('لوگو ڈیزائن')">لوگو ڈیزائن</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('فلیکس')">فلیکس ڈیزائن</div></div>
-            <div class="col-md-3 col-6"><div class="u-grid-item" onclick="sendWA('انکم سرٹیفکیٹ')">انکم سرٹیفکیٹ</div></div>
+        <h2 class="section-title">PROJECT PORTFOLIO</h2>
+        <div class="gallery-box">
+            <div class="image-card" onclick="openLB('1.jpeg')"><img src="1.jpeg"></div>
+            <div class="image-card" onclick="openLB('2.jpeg')"><img src="2.jpeg"></div>
+            <div class="image-card" onclick="openLB('3.jpeg')"><img src="3.jpeg"></div>
+            <div class="image-card" onclick="openLB('4.jpeg')"><img src="4.jpeg"></div>
+            <div class="image-card" onclick="openLB('5.jpeg')"><img src="5.jpeg"></div>
+            <div class="image-card" onclick="openLB('6.jpeg')"><img src="6.jpeg"></div>
+            <div class="image-card" onclick="openLB('7.jpeg')"><img src="7.jpeg"></div>
+            <div class="image-card" onclick="openLB('8.jpeg')"><img src="8.jpeg"></div>
+            <div class="image-card" onclick="openLB('9.jpeg')"><img src="9.jpeg"></div>
+            <div class="image-card" onclick="openLB('10.jpeg')"><img src="10.jpeg"></div>
+            <div class="image-card" onclick="openLB('11.jpeg')"><img src="11.jpeg"></div>
+            <div class="image-card" onclick="openLB('12.jpeg')"><img src="12.jpeg"></div>
+            <div class="image-card" onclick="openLB('file_0000000062b871faad20fb22fcf394ee.png')"><img src="file_0000000062b871faad20fb22fcf394ee.png"></div>
+            <div class="image-card" onclick="openLB('IMG-20260222-WA0028.jpg')"><img src="IMG-20260222-WA0028.jpg"></div>
+            <div class="image-card" onclick="openLB('IMG-20260222-WA0033(1).jpg')"><img src="IMG-20260222-WA0033(1).jpg"></div>
+            <div class="image-card" onclick="openLB('IMG-20260223-WA0055.jpg')"><img src="IMG-20260223-WA0055.jpg"></div>
+            <div class="image-card" onclick="openLB('IMG-20260224-WA0019.jpg')"><img src="IMG-20260224-WA0019.jpg"></div>
+            <div class="image-card" onclick="openLB('IMG-20260224-WA0020.jpg')"><img src="IMG-20260224-WA0020.jpg"></div>
+            <div class="image-card" onclick="openLB('IMG-20260225-WA0028.jpg')"><img src="IMG-20260225-WA0028.jpg"></div>
+            <div class="image-card" onclick="openLB('IMG-20260228-WA0039.jpg')"><img src="IMG-20260228-WA0039.jpg"></div>
+            <div class="image-card" onclick="openLB('IMG-20260301-WA0097.jpg')"><img src="IMG-20260301-WA0097.jpg"></div>
+            <div class="image-card" onclick="openLB('IMG_20260218_015819.png')"><img src="IMG_20260218_015819.png"></div>
+            <div class="image-card" onclick="openLB('IMG-20260222-WA0024.jpg')"><img src="IMG-20260222-WA0024.jpg"></div>
+            <div class="image-card" onclick="openLB('IMG-20260301-WA0097.jpg')"><img src="IMG-20260301-WA0097.jpg"></div>
         </div>
     </section>
 
     <section class="py-5">
-        <h3 class="text-center mb-5 fw-bold" style="font-family: 'Orbitron'; letter-spacing: 2px;">GLOBAL CLIENT FEEDBACK</h3>
-        <div class="slider-box">
-            <div class="slider-track" id="reviewContainer">
-                <div class="review-node-master"><b>Ali Raza (CEO)</b><p class="small text-secondary mt-3">The web system provided by SPO is world-class. Fast, secure and modern.</p></div>
-                <div class="review-node-master"><b>Hammad Malik</b><p class="small text-secondary mt-3">Best printing quality in Kasur District. Always reliable and quick.</p></div>
-                <div class="review-node-master"><b>Zeeshan Ahmed</b><p class="small text-secondary mt-3">Highly professional digital marketing services. My business sales grew 5x!</p></div>
-                <div class="review-node-master"><b>Ali Raza (CEO)</b><p class="small text-secondary mt-3">The web system provided by SPO is world-class. Fast, secure and modern.</p></div>
-                <div class="review-node-master"><b>Hammad Malik</b><p class="small text-secondary mt-3">Best printing quality in Kasur District. Always reliable and quick.</p></div>
-            </div>
+        <h2 class="section-title title-glow">ہماری مکمل آن لائن سروسز</h2>
+        <div class="row g-4">
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('شناختی کارڈ')">شناختی کارڈ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('ب فارم')">ب فارم</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('ایف آر سی فارم')">ایف آر سی فارم</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('ڈومیسائل')">ڈومیسائل</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('پاسپورٹ فوٹو')">پاسپورٹ فوٹو</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('ٹیکس فائلر')">ٹیکس فائلر</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('کمپیوٹرائزڈ فرد')">کمپیوٹرائزڈ فرد</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('سی وی CV')">سی وی (CV)</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('کلر پرنٹنگ')">کلر پرنٹنگ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('لیمینیشن')">لیمینیشن</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('بجلی بل ادائیگی')">بل ادائیگی</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('آن لائن فارم')">آن لائن فارم</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('جاب اپلائی')">جاب اپلائی</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('ویزہ اپلائی')">ویزہ اپلائی</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('بائنڈنگ')">بائنڈنگ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('وزٹنگ کارڈ')">وزٹنگ کارڈ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('شادی کارڈ')">شادی کارڈ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('سٹیشنری')">سٹیشنری</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('سکیننگ')">سکیننگ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('PVC کارڈ')">PVC کارڈ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('کمپوزنگ')">کمپوزنگ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('لوگو ڈیزائن')">لوگو ڈیزائن</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('فلیکس')">فلیکس ڈیزائن</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('انکم سرٹیفکیٹ')">انکم سرٹیفکیٹ</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('ای کامرس')">ای کامرس</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('لائسنس')">لائسنس</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('نادرا سروسز')">نادرا سروسز</div></div>
+            <div class="col-lg-3 col-6"><div class="u-box" onclick="waInquiry('واٹس ایپ پرنٹ')">واٹس ایپ پرنٹ</div></div>
         </div>
     </section>
 
 </div>
 
-<footer class="footer-premium">
+<div id="lightbox-overlay">
+    <span class="lb-close" onclick="closeLB()">&times;</span>
+    <img id="lb-img" src="">
+    <button class="lb-btn" onclick="galleryOrder()">ORDER THIS VIA WHATSAPP</button>
+</div>
+
+<footer class="footer-master">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="footer-heading">SPO DIGITAL HUB</h4>
-                <p class="text-secondary small">SPO SMART PRINTING & ONLINE SERVICES کنگن پور کا واحد مرکز ہے جہاں جدید ٹیکنالوجی اور روایتی مہارت کا سنگم ملتا ہے۔ ہم آپ کے کاروبار کو ڈیجیٹل دنیا میں متعارف کروانے کے ماہر ہیں۔</p>
-                <div class="mt-4">
-                    <p class="small text-secondary"><i class="fa fa-map-marker-alt text-success me-3"></i> پرانا پکا بازار، کنگن پور، ضلع قصور</p>
-                    <p class="small text-secondary"><i class="fa fa-envelope text-success me-3"></i> asif.aimarketing@gmail.com</p>
-                    <p class="small text-secondary"><i class="fa fa-phone text-success me-3"></i> 0303-4480404</p>
+            <div class="col-lg-6">
+                <h2 class="f-title">SPO SMART DIGITAL HUB</h2>
+                <p class="f-text">
+                    SPO Smart Printing & Online Services کنگن پور کا وہ واحد مرکز ہے جو ایک ہی چھت تلے تمام ڈیجیٹل اور پرنٹنگ سہولیات فراہم کرتا ہے۔ ہم جدید ویب سسٹمز، ایس ای او (SEO) اور ایف بی آر / نادرا سروسز میں مہارت رکھتے ہیں۔ معیار ہماری پہچان ہے۔
+                </p>
+                <div class="mt-5">
+                    <a href="https://www.spodigitalverse.online" class="f-link-btn">Digital Portfolio</a>
+                    <a href="https://www.smartprintingonline.site" class="f-link-btn">Online Shop</a>
+                    <a href="https://wa.me/923034480404" class="f-link-btn">Direct Chat</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 text-md-center">
-                <h4 class="footer-heading">Quick Resources</h4>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="https://www.spodigitalverse.online" class="text-secondary text-decoration-none">Main Digital Verse Site</a></li>
-                    <li class="mb-2"><a href="https://www.smartprintingonline.site" class="text-secondary text-decoration-none">SPO Shop Official</a></li>
-                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Privacy & Terms</a></li>
-                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">FBR Tax Inquiry</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-12 text-lg-end">
-                <h4 class="footer-heading">Stay Connected</h4>
-                <div class="d-flex justify-content-lg-end justify-content-center flex-wrap">
-                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-link-master wa-c"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-link-master fb-c"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/smartprinting.online" class="social-link-master ig-c"><i class="fab fa-instagram"></i></a>
+            <div class="col-lg-6">
+                <h2 class="f-title text-lg-end">Contact Hub</h2>
+                <div class="f-contact-box">
+                    <h4>📍 Shop Location:</h4>
+                    <p>Purana Paka Bazar, Kanganpur, District Kasur, Punjab.</p>
                 </div>
-                <div class="mt-4">
-                    <a href="https://wa.me/923034480404" class="dev-signature">Developed By: Muhammad Asif Ali</a>
+                <div class="f-contact-box">
+                    <h4>📧 Professional Email:</h4>
+                    <p>asif.aimarketing@gmail.com</p>
+                </div>
+                <div class="f-contact-box">
+                    <h4>📞 Contact / WhatsApp:</h4>
+                    <p>0303-4480404</p>
+                </div>
+                <div class="text-lg-end mt-5">
+                    <p class="text-secondary small">Project Lead & Developer:</p>
+                    <h3 class="fw-bold text-white">Muhammad Asif Ali</h3>
+                    <p class="text-primary fw-bold">Full-Stack Web Expert | SEO Specialist</p>
                 </div>
             </div>
         </div>
         <hr class="mt-5 border-secondary">
-        <p class="text-center text-secondary small mb-0">© 2026 SPO Smart Printing & Online Services | Powered by SPO Digital Verse</p>
+        <p class="text-center text-secondary small">© 2026 SPO Smart Digital Verse | All Rights Reserved.</p>
     </div>
 </footer>
 
-<a href="https://wa.me/923034480404" class="whatsapp-fixed"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/923034480404" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    // Particle Background Initialization
-    particlesJS("particles-js", { "particles": { "number": { "value": 100 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.25 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.15, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
+    // BG Particles
+    particlesJS("particles-js", { "particles": { "number": { "value": 100 }, "color": { "value": "#25D366" }, "shape": { "type": "circle" }, "opacity": { "value": 0.3 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#25D366", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } } });
 
-    // Premium Custom Cursor
-    const cursor = document.querySelector('.cursor-main');
-    const outer = document.querySelector('.cursor-outer');
-    document.addEventListener('mousemove', e => {
-        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-        outer.style.transform = `translate3d(${e.clientX - 16}px, ${e.clientY - 16}px, 0)`;
+    // Custom Cursor Logic
+    const dot = document.querySelector('.cursor-dot');
+    const circle = document.querySelector('.cursor-circle');
+    document.addEventListener('mousemove', (e) => {
+        dot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        circle.style.transform = `translate3d(${e.clientX - 15}px, ${e.clientY - 15}px, 0)`;
     });
 
-    // WhatsApp Direct Integration
-    function sendWA(item) {
-        const text = `Assalam-o-Alaikum! I am reaching out from your website. I want to inquire about: "${item}". Please share details.`;
-        window.open(`https://wa.me/923034480404?text=${encodeURIComponent(text)}`, '_blank');
+    // Gallery System
+    let activeImg = "";
+    function openLB(src) {
+        activeImg = src;
+        document.getElementById('lb-img').src = src;
+        document.getElementById('lightbox-overlay').style.display = 'flex';
+    }
+    function closeLB() { document.getElementById('lightbox-overlay').style.display = 'none'; }
+    function galleryOrder() {
+        const msg = `Assalam-o-Alaikum SPO! I want to order this design from your gallery: (${activeImg}).`;
+        window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Service Inquiry
+    function waInquiry(service) {
+        const msg = `Assalam-o-Alaikum! I need details about your service: "${service}". Please guide me about charges and time.`;
+        window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`, '_blank');
     }
 </script>
 </body>
