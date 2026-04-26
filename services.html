@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Services Directory | SPO SMART DIGITAL VERSE</title>
+    <title>Services Directory | SPO SMART DIGITAL VERSE</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -26,119 +26,98 @@
             color: #e0e0e0;
             font-family: 'Rajdhani', sans-serif;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        /* --- Custom Navigation --- */
+        /* --- LOGO & NAV --- */
         .navbar-brand img {
             width: 65px; height: 65px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--neon-green);
         }
+
         .custom-nav {
-            background: rgba(0,0,0,0.92) !important;
+            background: rgba(0,0,0,0.9) !important;
             backdrop-filter: blur(15px);
-            border-bottom: 2px solid var(--neon-green);
+            border-bottom: 1px solid var(--neon-green);
         }
+
         .nav-link {
             color: #fff !important;
             font-weight: 600;
-            margin: 0 12px;
-            text-transform: uppercase;
+            margin: 0 10px;
             transition: 0.3s;
         }
-        .nav-link:hover, .nav-link.active { color: var(--neon-green) !important; text-shadow: 0 0 10px var(--neon-green); }
+        .nav-link:hover { color: var(--neon-green) !important; text-shadow: 0 0 10px var(--neon-green); }
 
-        /* --- Hero Section --- */
-        .hero-v3 {
-            padding: 100px 0 50px;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(37, 211, 102, 0.08) 0%, transparent 70%);
-        }
-        .urdu-title { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.5; color: var(--gold); }
-
-        /* --- Directory Boxes (Double Shade) --- */
+        /* --- DIRECTORY BOXES (Double Shade & Hover) --- */
         .directory-card {
             background: var(--double-shade);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 35px 25px;
+            border-radius: 15px;
+            padding: 25px;
             text-align: center;
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.5s all ease;
             cursor: pointer;
-            height: 100%;
-        }
-        .directory-card:hover {
-            transform: scale(1.05) translateY(-12px);
-            border-color: var(--neon-green);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.2);
-        }
-        .directory-card i { font-size: 50px; color: var(--neon-green); margin-bottom: 20px; }
-        .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.3; font-size: 0.95rem; }
-
-        /* --- Portfolio Gallery --- */
-        .gallery-item {
             position: relative;
+            overflow: hidden;
+        }
+
+        .directory-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(37, 211, 102, 0.1));
+            transition: 0.5s;
+        }
+
+        .directory-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            border-color: var(--neon-green);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+        }
+
+        .directory-card i {
+            font-size: 45px;
+            color: var(--neon-green);
+            margin-bottom: 15px;
+        }
+
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            line-height: 2.2;
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        /* --- PORTFOLIO GALLERY --- */
+        .gallery-item {
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--glass);
             cursor: pointer;
-            height: 240px;
+            height: 220px;
         }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.4); }
-        .item-overlay {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            opacity: 0; transition: 0.3s; color: white;
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: 0.5s;
         }
-        .gallery-item:hover .item-overlay { opacity: 1; }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.6); }
 
-        /* --- Live Feedback System --- */
-        #feedback-section { background: #000; padding: 80px 0; border-top: 1px solid var(--glass); }
-        .live-badge { background: red; color: white; padding: 3px 12px; border-radius: 20px; font-size: 11px; animation: blink 1.2s infinite; }
-        @keyframes blink { 50% { opacity: 0; } }
-        
-        #firebase-comments {
-            background: rgba(255,255,255,0.02);
-            border-radius: 15px;
-            padding: 20px;
-            height: 350px;
-            overflow-y: auto;
+        /* --- FOOTER --- */
+        .footer-elite {
+            background: #010204;
+            padding: 80px 0 30px;
+            border-top: 3px solid var(--neon-green);
         }
-        .comment-node {
-            border-left: 4px solid var(--neon-green);
-            background: rgba(255,255,255,0.03);
-            margin-bottom: 15px;
-            padding: 15px;
-            border-radius: 0 10px 10px 0;
-        }
-
-        /* --- Elite Footer --- */
-        .footer-elite { background: #010204; padding: 90px 0 30px; border-top: 3px solid var(--neon-green); }
-        .social-btn {
-            width: 50px; height: 50px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: var(--glass);
-            color: white;
-            margin-right: 12px;
-            transition: 0.3s;
-            font-size: 1.2rem;
-        }
-        .social-btn:hover { background: var(--neon-green); color: black; transform: translateY(-5px); }
 
         .wa-float {
-            position: fixed; bottom: 35px; right: 35px;
-            background: var(--neon-green); color: white;
-            width: 65px; height: 65px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 32px; z-index: 9999; box-shadow: 0 0 25px rgba(37,211, 102, 0.4);
-            transition: 0.3s;
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--neon-green); color: #fff;
+            width: 60px; height: 60px; border-radius: 50%;
+            text-align: center; line-height: 60px; font-size: 30px;
+            z-index: 1000; box-shadow: 0 0 20px rgba(37,211, 102, 0.5);
         }
-        .wa-float:hover { transform: scale(1.1); color: white; }
     </style>
 </head>
 <body>
@@ -146,77 +125,75 @@
 <nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="print.png" alt="SPO LOGO">
+            <img src="print.png" alt="SPO Logo">
             <div class="ms-3">
-                <div class="fw-bold fs-4" style="font-family: 'Orbitron';">SPO SMART DIGITAL</div>
-                <div class="small text-success fw-bold">ONLINE SERVICES & STATIONERY POINT</div>
+                <div class="fw-bold fs-4" style="font-family: 'Orbitron'; letter-spacing: 1px;">SPO SMART PRINTING</div>
+                <div class="small text-success">ONLINE SERVICES & STATIONERY POINT</div>
             </div>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto text-center">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<section class="hero-v3">
-    <div class="container">
-        <h1 class="display-3 fw-bold" style="font-family: 'Orbitron'; letter-spacing: 2px;">DIGITAL DIRECTORY</h1>
-        <h2 class="urdu-title">کنگن پور کی نمبر 1 ڈیجیٹل ایجنسی اور اسٹیشنری پوائنٹ ✨</h2>
-        <p class="text-secondary fs-5">SPO Smart Digital Verse - Your Mega Vision Partner</p>
-    </div>
+<section class="py-5 text-center mt-5">
+    <h1 class="display-4 fw-bold" style="font-family: 'Orbitron'; color: var(--neon-green);">ONLINE SERVICES DIRECTORY</h1>
+    <p class="urdu-text fs-4 mt-2">آپ کی تمام ڈیجیٹل اور پرنٹنگ ضروریات کا واحد حل</p>
 </section>
 
 <section class="container py-5">
     <div class="row g-4">
-        <div class="col-lg-4 col-md-6" onclick="window.open('https://wa.me/923034480404?text=I want to apply for a Job')">
+        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20want%20to%20apply%20for%20a%20Job'">
             <div class="directory-card">
                 <i class="fa fa-briefcase"></i>
                 <h4 class="fw-bold">Online Job Apply</h4>
-                <div class="urdu-text mt-3 text-secondary">سرکاری و پرائیویٹ ملازمتوں کے لیے مکمل رہنمائی اور آن لائن اپلائی۔</div>
+                <div class="urdu-text mt-3">تمام سرکاری اور پرائیویٹ ملازمتوں کے لیے آن لائن فارم بھرنے کی سہولت۔</div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6" onclick="window.open('https://wa.me/923034480404?text=I need NADRA and Tax Services')">
+
+        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20need%20NADRA%20Services'">
             <div class="directory-card">
                 <i class="fa fa-id-card"></i>
-                <h4 class="fw-bold">NADRA & FBR</h4>
-                <div class="urdu-text mt-3 text-secondary">ایف بی آر ٹیکس فائلنگ، این ٹی این اور نادرا فارمز کی پروفیشنل سروس۔</div>
+                <h4 class="fw-bold">NADRA Services</h4>
+                <div class="urdu-text mt-3">شناختی کارڈ کی تجدید، فیملی رجسٹریشن سرٹیفکیٹ اور دیگر نادرا فارمز۔</div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6" onclick="window.open('https://wa.me/923034480404?text=I want a Professional Website')">
+
+        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20need%20FBR%20Tax%20Filing%20Help'">
+            <div class="directory-card">
+                <i class="fa fa-file-invoice-dollar"></i>
+                <h4 class="fw-bold">FBR & Tax Filing</h4>
+                <div class="urdu-text mt-3">این ٹی این (NTN) بنوائیں اور اپنا انکم ٹیکس گوشوارہ فائل کروائیں۔</div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20want%20to%20build%20a%20Website'">
             <div class="directory-card">
                 <i class="fa fa-laptop-code"></i>
                 <h4 class="fw-bold">Web Development</h4>
-                <div class="urdu-text mt-3 text-secondary">جدید ٹیکنالوجی (HTML, CSS, JS) سے لیس بزنس ویب سائٹس کی تیاری۔</div>
+                <div class="urdu-text mt-3">اپنے بزنس کے لیے جدید اور پروفیشنل ویب سائٹ بنوائیں۔</div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6" onclick="window.open('https://wa.me/923034480404?text=I need Digital Marketing')">
+
+        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20need%20Graphic%20Designing'">
             <div class="directory-card">
-                <i class="fa fa-bullhorn"></i>
-                <h4 class="fw-bold">Digital Marketing</h4>
-                <div class="urdu-text mt-3 text-secondary">فیس بک اور ٹک ٹاک ایڈز کے ذریعے اپنے کسٹمرز میں اضافہ کریں۔</div>
+                <i class="fa fa-palette"></i>
+                <h4 class="fw-bold">Graphics & Branding</h4>
+                <div class="urdu-text mt-3">لوگو، فلائرز، اور سوشل میڈیا پوسٹس کے لیے بہترین ڈیزائننگ۔</div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6" onclick="window.open('https://wa.me/923034480404?text=I need Printing Services')">
+
+        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20need%20High%20Quality%20Printing'">
             <div class="directory-card">
                 <i class="fa fa-print"></i>
                 <h4 class="fw-bold">Premium Printing</h4>
-                <div class="urdu-text mt-3 text-secondary">کلر پرنٹنگ، وزٹنگ کارڈز اور فلیکس ڈیزائننگ کی بہترین کوالٹی۔</div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6" onclick="window.open('https://wa.me/923034480404?text=I need Stationery items')">
-            <div class="directory-card">
-                <i class="fa fa-pen-fancy"></i>
-                <h4 class="fw-bold">Stationery Point</h4>
-                <div class="urdu-text mt-3 text-secondary">اسکول، کالج اور آفس اسٹیشنری کی وسیع رینج دستیاب ہے۔</div>
+                <div class="urdu-text mt-3">کلر پرنٹنگ، وزٹنگ کارڈز اور فلیکس کی فوری تیاری۔</div>
             </div>
         </div>
     </div>
@@ -225,36 +202,22 @@
 <section class="container py-5">
     <div class="mb-5 border-start border-success border-5 ps-4">
         <h2 class="fw-bold" style="font-family: 'Orbitron';">SPO WORK PORTFOLIO</h2>
-        <p class="text-secondary">24+ Successful Digital Projects & Designs</p>
+        <p class="text-secondary">Explore our 24+ professional projects and work samples</p>
     </div>
-    <div class="row g-3" id="portfolio-master-grid"></div>
+    <div class="row g-3" id="github-gallery">
+        </div>
 </section>
 
-<section id="feedback-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="text-center mb-5">
-                    <span class="live-badge">LIVE REVIEWS</span>
-                    <h2 class="fw-bold mt-3">CUSTOMER TESTIMONIALS</h2>
-                </div>
-                
-                <div id="firebase-comments" class="mb-4"></div>
-
-                <div class="feedback-form p-4 border border-secondary rounded-4">
-                    <div class="row g-3">
-                        <div class="col-md-6"><input type="text" id="fb-name" class="form-control bg-transparent text-white border-secondary" placeholder="Your Name"></div>
-                        <div class="col-md-6">
-                            <select id="fb-rating" class="form-select bg-transparent text-white border-secondary">
-                                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-                                <option value="4">⭐⭐⭐⭐ Good</option>
-                            </select>
-                        </div>
-                        <div class="col-12"><textarea id="fb-msg" class="form-control bg-transparent text-white border-secondary" rows="3" placeholder="Write your review..."></textarea></div>
-                        <div class="col-12"><button onclick="pushFeedback()" class="btn btn-success w-100 fw-bold py-3">SUBMIT REVIEW</button></div>
-                    </div>
-                </div>
-            </div>
+<section id="feedback-section" class="py-5 bg-black">
+    <div class="container text-center">
+        <span class="live-badge">LIVE REVIEWS</span>
+        <h2 class="fw-bold text-white mt-3">Customer Satisfaction</h2>
+        <div id="firebase-comments" class="mt-4 text-start mx-auto" style="max-width: 800px; height: 300px; overflow-y: auto;"></div>
+        
+        <div class="mt-5 p-4 border border-secondary rounded-4 mx-auto" style="max-width: 600px;">
+            <input type="text" id="fb-name" class="form-control mb-3 bg-dark text-white border-0" placeholder="آپ کا نام">
+            <textarea id="fb-msg" class="form-control mb-3 bg-dark text-white border-0" placeholder="اپنا پیغام لکھیں..."></textarea>
+            <button onclick="pushFeedback()" class="btn btn-success w-100 fw-bold">POST FEEDBACK</button>
         </div>
     </div>
 </section>
@@ -263,35 +226,34 @@
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-6">
-                <h4 class="fw-bold text-white mb-4">SPO SMART PRINTING & ONLINE SERVICES</h4>
-                <p class="urdu-text text-secondary">ہم آپ کے کاروبار کو ڈیجیٹل دنیا میں نئی پہچان دیتے ہیں۔ کنگن پور میں بہترین سروسز کے لیے آج ہی رابطہ کریں۔</p>
+                <h4 class="fw-bold text-white">SPO SMART PRINTING & ONLINE SERVICES</h4>
+                <p class="urdu-text mt-3">ایس پی او اسمارٹ پرنٹنگ کنگن پور کا وہ واحد مرکز ہے جہاں جدید ٹیکنالوجی اور بہترین کسٹمر سروس کے ساتھ آپ کے تمام ڈیجیٹل مسائل حل کیے جاتے ہیں۔</p>
                 <div class="mt-4">
-                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-btn"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-btn me-3 text-white fs-3"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-btn me-3 text-white fs-3"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-btn me-3 text-white fs-3"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="col-lg-6 text-lg-end">
-                <h5 class="fw-bold mb-3 text-success">GET IN TOUCH</h5>
-                <p class="text-secondary small mb-1">📍 Purana Paka Bazar, Kanganpur, District Kasur</p>
-                <p class="text-secondary small mb-1">📞 0303 4480404</p>
-                <p class="text-secondary small">📧 asif.aimarketing@gmail.com</p>
-                <hr class="border-secondary ms-auto" style="width: 200px;">
+                <h5 class="fw-bold">CONTACT US</h5>
+                <p class="text-secondary mb-1">📍 Purana Paka Bazar, Kanganpur, District Kasur</p>
+                <p class="text-secondary mb-1">📞 0303 4480404</p>
+                <p class="text-secondary">📧 asif.aimarketing@gmail.com</p>
+                <hr class="border-secondary">
                 <p class="small">Project Lead: <b>Muhammad Asif Ali</b> | Digital Strategist</p>
             </div>
-        </div>
-        <div class="text-center mt-5 small text-secondary border-top border-secondary pt-3">
-            &copy; 2026 SPO Smart Digital Verse | All Rights Reserved.
         </div>
     </div>
 </footer>
 
-<div class="modal fade" id="masterModal" tabindex="-1">
+<div class="modal fade" id="imgModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content bg-transparent border-0 text-center">
-            <img src="" id="modalLarge" class="img-fluid rounded shadow-lg border border-success">
-            <div class="mt-3">
-                <a href="https://wa.me/923034480404" class="btn btn-success fw-bold px-5 py-2">ORDER ON WHATSAPP</a>
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body p-0">
+                <img src="" id="modalLargeImg" class="img-fluid rounded shadow-lg">
+                <div class="text-center mt-3">
+                    <a href="https://wa.me/923034480404" class="btn btn-success btn-lg px-5 shadow">ORDER THIS SERVICE ON WHATSAPP</a>
+                </div>
             </div>
         </div>
     </div>
@@ -300,26 +262,25 @@
 <a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-    // --- Optimized Portfolio Loader ---
-    const grid = document.getElementById('portfolio-master-grid');
+    // --- Portfolio Loader (Handles 1.jpeg, 2.jpeg etc) ---
+    const gallery = document.getElementById('github-gallery');
     for(let i=1; i<=24; i++) {
-        // Correcting Extension: 1-12 .jpeg | 13-24 .jpg as per your screenshot
-        const ext = (i <= 12) ? 'jpeg' : 'jpg';
-        grid.innerHTML += `
+        const fileExt = (i <= 12) ? 'jpeg' : 'jpg'; // اسکرین شاٹ کے مطابق ایکسٹینشن سیٹ کی گئی ہے
+        gallery.innerHTML += `
             <div class="col-lg-3 col-md-4 col-6">
-                <div class="gallery-item" onclick="openMasterModal('${i}.${ext}')">
-                    <img src="${i}.${ext}" onerror="this.src='https://via.placeholder.com/400x300?text=SPO+Service+${i}'">
-                    <div class="item-overlay"><i class="fa fa-expand fa-2x"></i></div>
+                <div class="gallery-item" onclick="showFullImage('${i}.${fileExt}')">
+                    <img src="${i}.${fileExt}" onerror="this.src='https://via.placeholder.com/400x300?text=SPO+Work+${i}'">
                 </div>
-            </div>`;
+            </div>
+        `;
     }
 
-    function openMasterModal(src) {
-        document.getElementById('modalLarge').src = src;
-        new bootstrap.Modal(document.getElementById('masterModal')).show();
+    function showFullImage(src) {
+        document.getElementById('modalLargeImg').src = src;
+        new bootstrap.Modal(document.getElementById('imgModal')).show();
     }
 
-    // --- Firebase Full Integration ---
+    // --- Firebase Logic ---
     const firebaseConfig = {
         apiKey: "AIzaSyBQpE7st4YKrajddO6oe2xT3y3bwU8NcVA",
         authDomain: "spo-digital-verse.firebaseapp.com",
@@ -335,15 +296,12 @@
     function pushFeedback() {
         const name = document.getElementById('fb-name').value;
         const msg = document.getElementById('fb-msg').value;
-        const rating = document.getElementById('fb-rating').value;
         if(name && msg) {
-            db.ref('feedbacks').push({ name, msg, rating, time: Date.now() })
-            .then(() => {
-                document.getElementById('fb-name').value = '';
-                document.getElementById('fb-msg').value = '';
-                alert("شکریہ! آپ کا ریویو لائیو ہو چکا ہے۔");
-            });
-        } else { alert("براہ کرم اپنا نام اور پیغام درج کریں۔"); }
+            db.ref('feedbacks').push({ name, msg, time: Date.now() });
+            document.getElementById('fb-name').value = '';
+            document.getElementById('fb-msg').value = '';
+            alert("شکریہ! آپ کی رائے موصول ہو گئی۔");
+        }
     }
 
     db.ref('feedbacks').on('value', snapshot => {
@@ -352,13 +310,11 @@
         snapshot.forEach(child => {
             const data = child.val();
             list.innerHTML += `
-                <div class="comment-node">
-                    <div class="d-flex justify-content-between">
-                        <span class="fw-bold text-success">${data.name}</span>
-                        <span>${"⭐".repeat(data.rating)}</span>
-                    </div>
-                    <p class="urdu-text small mt-2 mb-0 text-secondary">${data.msg}</p>
-                </div>`;
+                <div class="p-3 mb-3 rounded-3" style="background: rgba(37,211,102,0.05); border: 1px solid var(--glass);">
+                    <div class="text-success fw-bold">${data.name}</div>
+                    <div class="small text-secondary urdu-text">${data.msg}</div>
+                </div>
+            `;
         });
         list.scrollTop = list.scrollHeight;
     });
