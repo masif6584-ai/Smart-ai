@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services Directory | SPO SMART DIGITAL VERSE</title>
+    <title>Services | SPO SMART PRINTING & ONLINE SERVICES</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -18,7 +18,6 @@
             --deep-space: #050a12;
             --glass: rgba(255, 255, 255, 0.05);
             --gold: #ffcc00;
-            --double-shade: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
 
         body {
@@ -28,12 +27,11 @@
             overflow-x: hidden;
         }
 
-        /* --- LOGO & NAV --- */
+        /* --- LOGO & HEADER --- */
         .navbar-brand img {
-            width: 65px; height: 65px;
+            width: 60px; height: 60px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--neon-green);
         }
 
         .custom-nav {
@@ -46,71 +44,118 @@
             color: #fff !important;
             font-weight: 600;
             margin: 0 10px;
+            position: relative;
             transition: 0.3s;
         }
-        .nav-link:hover { color: var(--neon-green) !important; text-shadow: 0 0 10px var(--neon-green); }
 
-        /* --- DIRECTORY BOXES (Double Shade & Hover) --- */
-        .directory-card {
-            background: var(--double-shade);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: 0.5s all ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
+        .nav-link:hover { color: var(--neon-green) !important; }
 
-        .directory-card::before {
+        .nav-link::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(37, 211, 102, 0.1));
-            transition: 0.5s;
+            width: 0; height: 2px;
+            background: var(--neon-green);
+            bottom: 0; left: 0;
+            transition: 0.3s;
         }
 
-        .directory-card:hover {
-            transform: scale(1.05) translateY(-10px);
-            border-color: var(--neon-green);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+        .nav-link:hover::after { width: 100%; }
+
+        /* --- HERO SECTION --- */
+        .services-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(37, 211, 102, 0.1) 0%, transparent 70%);
         }
 
-        .directory-card i {
-            font-size: 45px;
-            color: var(--neon-green);
-            margin-bottom: 15px;
-        }
-
-        .urdu-text {
+        .urdu-title {
             font-family: 'Noto Nastaliq Urdu', serif;
-            line-height: 2.2;
-            font-size: 0.95rem;
-            color: #ccc;
+            line-height: 2.5;
+            color: var(--gold);
         }
 
-        /* --- PORTFOLIO GALLERY --- */
+        /* --- 24 IMAGE PORTFOLIO GALLERY --- */
+        .gallery-container { padding: 60px 0; }
         .gallery-item {
-            border-radius: 12px;
+            position: relative;
             overflow: hidden;
-            border: 1px solid var(--glass);
+            border-radius: 10px;
             cursor: pointer;
-            height: 220px;
+            border: 1px solid var(--glass);
         }
         .gallery-item img {
-            width: 100%; height: 100%; object-fit: cover;
+            width: 100%; height: 250px;
+            object-fit: cover;
             transition: 0.5s;
         }
-        .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.6); }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.5); }
+        
+        .overlay-view {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: 0.3s;
+            color: #fff;
+            text-align: center;
+        }
+        .gallery-item:hover .overlay-view { opacity: 1; }
+
+        /* --- SERVICE CARDS --- */
+        .service-card-v3 {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            height: 100%;
+            transition: 0.4s;
+            position: relative;
+        }
+        .service-card-v3:hover {
+            border-color: var(--neon-green);
+            transform: translateY(-10px);
+            background: rgba(37, 211, 102, 0.05);
+        }
+        .service-card-v3 i { font-size: 40px; color: var(--neon-green); margin-bottom: 20px; }
+        .urdu-desc { font-family: 'Noto Nastaliq Urdu'; font-size: 0.9rem; line-height: 2; margin-top: 15px; }
+
+        /* --- FIREBASE FEEDBACK --- */
+        #feedback-section {
+            background: #000;
+            padding: 80px 0;
+            border-top: 1px solid var(--glass);
+        }
+        .live-badge {
+            background: red;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
 
         /* --- FOOTER --- */
         .footer-elite {
-            background: #010204;
-            padding: 80px 0 30px;
-            border-top: 3px solid var(--neon-green);
+            background: #020408;
+            padding: 100px 0 20px;
+            border-top: 2px solid var(--neon-green);
         }
-
+        .social-btn {
+            width: 45px; height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            background: var(--glass);
+        }
+        .social-btn:hover { transform: translateY(-5px); color: #000; background: var(--neon-green); }
+        
+        .modal-content { background: #000; border: 1px solid var(--neon-green); }
+        
         .wa-float {
             position: fixed; bottom: 30px; right: 30px;
             background: var(--neon-green); color: #fff;
@@ -125,99 +170,119 @@
 <nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="print.png" alt="SPO Logo">
+            <img src="logo.png" alt="SPO Logo">
             <div class="ms-3">
-                <div class="fw-bold fs-4" style="font-family: 'Orbitron'; letter-spacing: 1px;">SPO SMART PRINTING</div>
-                <div class="small text-success">ONLINE SERVICES & STATIONERY POINT</div>
+                <div class="fw-bold fs-5">SPO SMART PRINTING</div>
+                <div class="small text-success">ONLINE SERVICES</div>
             </div>
         </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<section class="py-5 text-center mt-5">
-    <h1 class="display-4 fw-bold" style="font-family: 'Orbitron'; color: var(--neon-green);">ONLINE SERVICES DIRECTORY</h1>
-    <p class="urdu-text fs-4 mt-2">آپ کی تمام ڈیجیٹل اور پرنٹنگ ضروریات کا واحد حل</p>
+<section class="services-hero">
+    <div class="container">
+        <h1 class="display-3 fw-bold" style="font-family: 'Orbitron';">OUR SOLUTIONS</h1>
+        <h2 class="urdu-title">آپ کی ہر ضرورت کا حل، اب ایک ہی جگہ! ✨</h2>
+        <p class="text-secondary">SPO SMART DIGITAL VERSE - Leading Digital Hub in Kanganpur</p>
+    </div>
+</section>
+
+<section class="container gallery-container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h3 class="fw-bold border-start border-success border-4 ps-3">PORTFOLIO & WORK SAMPLES</h3>
+        </div>
+    </div>
+    <div class="row g-3" id="portfolio-grid"></div>
 </section>
 
 <section class="container py-5">
     <div class="row g-4">
-        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20want%20to%20apply%20for%20a%20Job'">
-            <div class="directory-card">
-                <i class="fa fa-briefcase"></i>
-                <h4 class="fw-bold">Online Job Apply</h4>
-                <div class="urdu-text mt-3">تمام سرکاری اور پرائیویٹ ملازمتوں کے لیے آن لائن فارم بھرنے کی سہولت۔</div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-card-v3">
+                <i class="fa fa-code"></i>
+                <h4>Web Development</h4>
+                <p class="text-secondary small">Custom business websites, portfolio sites, and e-commerce stores.</p>
+                <div class="urdu-desc text-end">پروفیشنل بزنس ویب سائٹس اور آن لائن اسٹورز کی تیاری۔</div>
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20need%20NADRA%20Services'">
-            <div class="directory-card">
-                <i class="fa fa-id-card"></i>
-                <h4 class="fw-bold">NADRA Services</h4>
-                <div class="urdu-text mt-3">شناختی کارڈ کی تجدید، فیملی رجسٹریشن سرٹیفکیٹ اور دیگر نادرا فارمز۔</div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-card-v3">
+                <i class="fa fa-chart-line"></i>
+                <h4>SEO & Google Ranking</h4>
+                <p class="text-secondary small">Rank your business on the first page of Google.</p>
+                <div class="urdu-desc text-end">اپنے بزنس کو گوگل کے پہلے صفحے پر لائیں اور کسٹمرز بڑھائیں۔</div>
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20need%20FBR%20Tax%20Filing%20Help'">
-            <div class="directory-card">
-                <i class="fa fa-file-invoice-dollar"></i>
-                <h4 class="fw-bold">FBR & Tax Filing</h4>
-                <div class="urdu-text mt-3">این ٹی این (NTN) بنوائیں اور اپنا انکم ٹیکس گوشوارہ فائل کروائیں۔</div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-card-v3">
+                <i class="fa fa-bullhorn"></i>
+                <h4>Digital Marketing</h4>
+                <p class="text-secondary small">Social media ads (FB, Insta, TikTok) to boost sales.</p>
+                <div class="urdu-desc text-end">فیس بک، انسٹاگرام اور ٹک ٹاک ایڈز کے ذریعے سیلز میں اضافہ۔</div>
             </div>
         </div>
-
-        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20want%20to%20build%20a%20Website'">
-            <div class="directory-card">
-                <i class="fa fa-laptop-code"></i>
-                <h4 class="fw-bold">Web Development</h4>
-                <div class="urdu-text mt-3">اپنے بزنس کے لیے جدید اور پروفیشنل ویب سائٹ بنوائیں۔</div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20need%20Graphic%20Designing'">
-            <div class="directory-card">
-                <i class="fa fa-palette"></i>
-                <h4 class="fw-bold">Graphics & Branding</h4>
-                <div class="urdu-text mt-3">لوگو، فلائرز، اور سوشل میڈیا پوسٹس کے لیے بہترین ڈیزائننگ۔</div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" onclick="location.href='https://wa.me/923034480404?text=I%20need%20High%20Quality%20Printing'">
-            <div class="directory-card">
-                <i class="fa fa-print"></i>
-                <h4 class="fw-bold">Premium Printing</h4>
-                <div class="urdu-text mt-3">کلر پرنٹنگ، وزٹنگ کارڈز اور فلیکس کی فوری تیاری۔</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="container py-5">
-    <div class="mb-5 border-start border-success border-5 ps-4">
-        <h2 class="fw-bold" style="font-family: 'Orbitron';">SPO WORK PORTFOLIO</h2>
-        <p class="text-secondary">Explore our 24+ professional projects and work samples</p>
-    </div>
-    <div class="row g-3" id="github-gallery">
-        </div>
-</section>
-
-<section id="feedback-section" class="py-5 bg-black">
-    <div class="container text-center">
-        <span class="live-badge">LIVE REVIEWS</span>
-        <h2 class="fw-bold text-white mt-3">Customer Satisfaction</h2>
-        <div id="firebase-comments" class="mt-4 text-start mx-auto" style="max-width: 800px; height: 300px; overflow-y: auto;"></div>
         
-        <div class="mt-5 p-4 border border-secondary rounded-4 mx-auto" style="max-width: 600px;">
-            <input type="text" id="fb-name" class="form-control mb-3 bg-dark text-white border-0" placeholder="آپ کا نام">
-            <textarea id="fb-msg" class="form-control mb-3 bg-dark text-white border-0" placeholder="اپنا پیغام لکھیں..."></textarea>
-            <button onclick="pushFeedback()" class="btn btn-success w-100 fw-bold">POST FEEDBACK</button>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-card-v3">
+                <i class="fa fa-university"></i>
+                <h4>Govt & Tax Services</h4>
+                <p class="text-secondary small">FBR NTN Registration, Tax Filing, NADRA forms.</p>
+                <div class="urdu-desc text-end">نادرا، ایف بی آر ٹیکس فائلنگ، اور تمام سرکاری آن لائن سروسز۔</div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="service-card-v3">
+                <i class="fa fa-print"></i>
+                <h4>Premium Printing</h4>
+                <p class="text-secondary small">Color printing, Flex designing, Visiting cards.</p>
+                <div class="urdu-desc text-end">معیاری کلر پرنٹنگ، فلیکس ڈیزائننگ اور وزٹنگ کارڈز۔</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="feedback-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <span class="live-badge">LIVE</span>
+                    <h2 class="fw-bold mt-2">CUSTOMER FEEDBACK</h2>
+                    <p class="text-secondary">What our clients say about SPO Smart Digital Verse</p>
+                </div>
+                
+                <div id="firebase-comments" class="mb-4" style="height: 300px; overflow-y: auto; background: rgba(255,255,255,0.02); padding: 20px; border-radius: 15px;"></div>
+
+                <div class="feedback-form p-4 border border-secondary rounded">
+                    <div class="row g-3">
+                        <div class="col-md-6"><input type="text" id="fb-name" class="form-control bg-transparent text-white" placeholder="Your Name"></div>
+                        <div class="col-md-6">
+                            <select id="fb-rating" class="form-select bg-transparent text-white">
+                                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                                <option value="4">⭐⭐⭐⭐ Good</option>
+                            </select>
+                        </div>
+                        <div class="col-12"><textarea id="fb-msg" class="form-control bg-transparent text-white" rows="3" placeholder="Write your review..."></textarea></div>
+                        <div class="col-12"><button onclick="pushFeedback()" class="btn btn-success w-100 fw-bold">POST REVIEW</button></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -225,34 +290,42 @@
 <footer class="footer-elite">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-6">
-                <h4 class="fw-bold text-white">SPO SMART PRINTING & ONLINE SERVICES</h4>
-                <p class="urdu-text mt-3">ایس پی او اسمارٹ پرنٹنگ کنگن پور کا وہ واحد مرکز ہے جہاں جدید ٹیکنالوجی اور بہترین کسٹمر سروس کے ساتھ آپ کے تمام ڈیجیٹل مسائل حل کیے جاتے ہیں۔</p>
+            <div class="col-lg-4">
+                <h5 class="fw-bold mb-4">SPO SMART PRINTING & ONLINE SERVICES | Stationery Point ✨</h5>
+                <p class="small text-secondary urdu-desc">آپ کی تمام پرنٹنگ، اسٹیشنری اور آن لائن سروسز کا قابلِ اعتماد مرکز۔</p>
                 <div class="mt-4">
-                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-btn me-3 text-white fs-3"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-btn me-3 text-white fs-3"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-btn me-3 text-white fs-3"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/smartprinting.online" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-btn"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-btn"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="col-lg-6 text-lg-end">
-                <h5 class="fw-bold">CONTACT US</h5>
-                <p class="text-secondary mb-1">📍 Purana Paka Bazar, Kanganpur, District Kasur</p>
-                <p class="text-secondary mb-1">📞 0303 4480404</p>
-                <p class="text-secondary">📧 asif.aimarketing@gmail.com</p>
-                <hr class="border-secondary">
-                <p class="small">Project Lead: <b>Muhammad Asif Ali</b> | Digital Strategist</p>
+            <div class="col-lg-4 px-lg-5">
+                <h6 class="fw-bold mb-4">OUR DIGITAL UNIVERSE</h6>
+                <ul class="list-unstyled small text-secondary">
+                    <li>asif.aimarketing@gmail.com</li>
+                    <li>0303 4480404</li>
+                </ul>
             </div>
+            <div class="col-lg-4">
+                <h6 class="fw-bold mb-4">LOCATION</h6>
+                <p class="small text-secondary">📍 پرانا پکا بازار، کنگن پور، ضلع قصور۔</p>
+            </div>
+        </div>
+        <hr class="mt-5 border-secondary">
+        <div class="text-center small text-secondary">
+            Project Lead & Developed By: <b>Muhammad Asif Ali</b> | &copy; 2026 SPO Smart Digital Verse
         </div>
     </div>
 </footer>
 
-<div class="modal fade" id="imgModal" tabindex="-1">
+<div class="modal fade" id="imageModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content bg-transparent border-0">
-            <div class="modal-body p-0">
-                <img src="" id="modalLargeImg" class="img-fluid rounded shadow-lg">
-                <div class="text-center mt-3">
-                    <a href="https://wa.me/923034480404" class="btn btn-success btn-lg px-5 shadow">ORDER THIS SERVICE ON WHATSAPP</a>
+        <div class="modal-content">
+            <div class="modal-body p-0 text-center">
+                <img src="" id="modalImg" class="img-fluid">
+                <div class="p-3">
+                    <a href="https://wa.me/923034480404" class="btn btn-success fw-bold">Order on WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -262,25 +335,24 @@
 <a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-    // --- Portfolio Loader (Handles 1.jpeg, 2.jpeg etc) ---
-    const gallery = document.getElementById('github-gallery');
+    // --- Portfolio Logic ---
+    const grid = document.getElementById('portfolio-grid');
     for(let i=1; i<=24; i++) {
-        const fileExt = (i <= 12) ? 'jpeg' : 'jpg'; // اسکرین شاٹ کے مطابق ایکسٹینشن سیٹ کی گئی ہے
-        gallery.innerHTML += `
+        grid.innerHTML += `
             <div class="col-lg-3 col-md-4 col-6">
-                <div class="gallery-item" onclick="showFullImage('${i}.${fileExt}')">
-                    <img src="${i}.${fileExt}" onerror="this.src='https://via.placeholder.com/400x300?text=SPO+Work+${i}'">
+                <div class="gallery-item" onclick="openModal('img/work${i}.jpg')">
+                    <img src="img/work${i}.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=SPO+Service+${i}'">
+                    <div class="overlay-view"><i class="fa fa-search-plus fa-2x"></i></div>
                 </div>
-            </div>
-        `;
+            </div>`;
     }
 
-    function showFullImage(src) {
-        document.getElementById('modalLargeImg').src = src;
-        new bootstrap.Modal(document.getElementById('imgModal')).show();
+    function openModal(src) {
+        document.getElementById('modalImg').src = src;
+        new bootstrap.Modal(document.getElementById('imageModal')).show();
     }
 
-    // --- Firebase Logic ---
+    // --- Firebase Integration ---
     const firebaseConfig = {
         apiKey: "AIzaSyBQpE7st4YKrajddO6oe2xT3y3bwU8NcVA",
         authDomain: "spo-digital-verse.firebaseapp.com",
@@ -296,12 +368,15 @@
     function pushFeedback() {
         const name = document.getElementById('fb-name').value;
         const msg = document.getElementById('fb-msg').value;
+        const rating = document.getElementById('fb-rating').value;
         if(name && msg) {
-            db.ref('feedbacks').push({ name, msg, time: Date.now() });
-            document.getElementById('fb-name').value = '';
-            document.getElementById('fb-msg').value = '';
-            alert("شکریہ! آپ کی رائے موصول ہو گئی۔");
-        }
+            db.ref('feedbacks').push({ name, msg, rating, time: Date.now() })
+            .then(() => {
+                document.getElementById('fb-name').value = '';
+                document.getElementById('fb-msg').value = '';
+                alert("شکریہ! آپ کا ریویو لائیو ہو چکا ہے۔");
+            });
+        } else { alert("براہ کرم تمام معلومات پُر کریں۔"); }
     }
 
     db.ref('feedbacks').on('value', snapshot => {
@@ -310,11 +385,13 @@
         snapshot.forEach(child => {
             const data = child.val();
             list.innerHTML += `
-                <div class="p-3 mb-3 rounded-3" style="background: rgba(37,211,102,0.05); border: 1px solid var(--glass);">
-                    <div class="text-success fw-bold">${data.name}</div>
-                    <div class="small text-secondary urdu-text">${data.msg}</div>
-                </div>
-            `;
+                <div class="mb-3 p-3 bg-dark rounded border-start border-success border-3">
+                    <div class="d-flex justify-content-between">
+                        <span class="fw-bold text-success">${data.name}</span>
+                        <span class="small">${"⭐".repeat(data.rating)}</span>
+                    </div>
+                    <p class="small text-secondary mb-0 mt-1">${data.msg}</p>
+                </div>`;
         });
         list.scrollTop = list.scrollHeight;
     });
