@@ -3,289 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO SMART PRINTING ONLINE SERVICES | STATIONERY POINT</title>
+    <title>SPO SMART PRINTING & ONLINE SERVICES | STATIONERY POINT</title>
 
-    <meta name="description" content="SPO Smart Printing & Online Services | Stationery Point Kanganpur. Best for Digital Printing, NADRA Assistance, FBR Tax Filing, and Web Development in District Kasur.">
-    <meta name="keywords" content="printing shop Kanganpur, SPO Smart Digital Verse, stationery point Kanganpur, online services Kasur, Muhammad Asif Ali">
+    <meta name="description" content="SPO Smart Printing & Online Services | Stationery Point Kanganpur. Best for Digital Printing, NADRA, FBR Tax Filing, and Web Development in District Kasur.">
+    <meta name="keywords" content="printing shop Kanganpur, SPO Smart Digital Verse, stationery point Kanganpur, Muhammad Asif Ali, best copy shop Kasur, web developer Kanganpur">
+    <meta name="author" content="Muhammad Asif Ali">
     <link rel="icon" href="print.png" type="image/png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Noto+Nastaliq+Urdu&family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
 
     <style>
+        /* --- CORE SYSTEM & VARIABLES --- */
         :root {
             --primary: #25D366;
             --secondary: #00e5ff;
+            --accent: #ffcc00;
             --universe-bg: #010409;
-            --glass: rgba(255, 255, 255, 0.05);
-            --rainbow-speed: 10s;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --neon-shadow: 0 0 20px var(--primary);
+            --transition-speed: 0.5s;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: var(--universe-bg);
-            color: white;
+            color: #ffffff;
             overflow-x: hidden;
             scroll-behavior: smooth;
-        }
-
-        /* Rainbow Theme Engine */
-        .rainbow-active { animation: rainbow-cycle var(--rainbow-speed) infinite linear; }
-        @keyframes rainbow-cycle {
-            0%, 100% { --primary: #25D366; }
-            20% { --primary: #ff0000; }
-            40% { --primary: #ffcc00; }
-            60% { --primary: #00e5ff; }
-            80% { --primary: #ff00ff; }
+            line-height: 1.6;
         }
 
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
 
-        /* 3D Header & Tilting Title */
+        /* --- ADVANCED 3D HEADER ENGINE --- */
         .main-header {
-            background: rgba(0, 0, 0, 0.95);
-            border-bottom: 3px solid var(--primary);
-            padding: 15px 0;
-            position: sticky; top: 0; z-index: 1000;
-            backdrop-filter: blur(15px);
-            perspective: 1000px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--primary);
+            padding: 12px 0;
+            position: sticky; top: 0; z-index: 2000;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
         }
 
-        .logo-box {
-            width: 80px; height: 80px; border-radius: 50%;
-            border: 2px solid var(--primary); background: #fff;
-            padding: 5px; box-shadow: 0 0 25px var(--primary);
-            transition: 0.6s; display: inline-block;
+        .header-container {
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 1400px; margin: 0 auto; padding: 0 30px;
         }
-        .logo-box:hover { transform: rotateY(360deg); }
 
-        .mega-title {
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        
+        .main-logo-circle {
+            width: 75px; height: 75px; border-radius: 50%;
+            background: #fff; overflow: hidden;
+            box-shadow: var(--neon-shadow);
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+        }
+        .main-logo-circle:hover { transform: rotateY(180deg) scale(1.1); }
+        .main-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+        .brand-text h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: clamp(1rem, 2.5vw, 2.2rem);
-            font-weight: 800; color: #fff;
-            text-shadow: 0 0 15px var(--primary);
-            display: inline-block; cursor: pointer;
-            transition: 0.5s;
-            animation: title-tilt 4s infinite ease-in-out;
-        }
-        @keyframes title-tilt {
-            0%, 100% { transform: rotateY(-10deg); }
-            50% { transform: rotateY(10deg); }
+            font-size: 1.4rem; font-weight: 900; margin: 0;
+            background: linear-gradient(90deg, #fff, var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* 3D Navigation Buttons */
-        .nav-btn-3d {
-            background: var(--glass); border: 1px solid var(--primary);
-            padding: 8px 20px; border-radius: 10px;
-            color: white !important; text-decoration: none;
-            font-weight: bold; margin: 5px; transition: 0.4s;
-            display: inline-block; position: relative;
+        /* --- 3D TILT NAVIGATION CARDS --- */
+        .nav-wrapper { display: flex; gap: 12px; }
+        .nav-3d-card {
+            background: var(--card-bg); border: 1px solid var(--glass-border);
+            padding: 10px 22px; border-radius: 12px;
+            color: #fff !important; text-decoration: none;
+            font-family: 'Orbitron', sans-serif; font-size: 0.85rem;
+            letter-spacing: 1px; transition: var(--transition-speed);
+            position: relative; overflow: hidden;
             transform-style: preserve-3d;
         }
-        .nav-btn-3d:hover {
+        .nav-3d-card::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .nav-3d-card:hover {
             transform: translateZ(20px) rotateX(10deg);
             background: var(--primary); color: #000 !important;
-            box-shadow: 0 0 20px var(--primary);
+            box-shadow: 0 10px 25px var(--primary);
+        }
+        .nav-3d-card:hover::before { left: 100%; }
+
+        /* --- RAINBOW MANUAL THEME SWITCHER --- */
+        .theme-panel {
+            position: fixed; right: 25px; top: 50%; transform: translateY(-50%);
+            z-index: 3000; background: rgba(0,0,0,0.7);
+            padding: 15px; border-radius: 50px; border: 1px solid var(--glass-border);
+            display: flex; flex-direction: column; gap: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .theme-dot {
+            width: 35px; height: 35px; border-radius: 50%;
+            cursor: pointer; border: 2px solid #fff;
+            transition: 0.3s; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .theme-dot:hover { transform: scale(1.3); filter: brightness(1.2); }
+
+        /* --- MEGA MASTER CLOCK (ULTIMATE DESIGN) --- */
+        .clock-container {
+            position: relative; width: 320px; height: 320px;
+            margin: 60px auto; perspective: 1000px;
+        }
+        .master-clock {
+            width: 100%; height: 100%; border-radius: 50%;
+            border: 10px solid var(--primary); background: #000;
+            box-shadow: 0 0 60px var(--primary), inset 0 0 30px var(--primary);
+            position: relative; z-index: 5; overflow: hidden;
+            background-image: url('print.png'); background-size: 100% 100%;
+            background-position: center; filter: contrast(1.1);
+        }
+        .clock-center-logo {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 100%; height: 100%; opacity: 0.3; pointer-events: none;
+        }
+        
+        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; border-radius: 20px; z-index: 10; }
+        .hour-hand { width: 8px; height: 70px; background: var(--secondary); box-shadow: 0 0 10px var(--secondary); }
+        .min-hand { width: 5px; height: 100px; background: #fff; box-shadow: 0 0 10px #fff; }
+        .sec-hand { width: 2px; height: 120px; background: #ff0000; box-shadow: 0 0 15px #ff0000; }
+
+        /* CLOCK EMBEDDED BUTTONS */
+        .clock-link {
+            position: absolute; width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; color: #fff; z-index: 50; transition: 0.4s;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8); text-decoration: none;
+        }
+        .link-12 { top: 15px; left: 50%; transform: translateX(-50%); background: #1877F2; }
+        .link-3 { right: 15px; top: 50%; transform: translateY(-50%); background: #000; border: 1px solid #fff; }
+        .link-6 { bottom: 15px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .link-9 { left: 15px; top: 50%; transform: translateY(-50%); background: #25D366; }
+        .clock-link:hover { transform: translate(-50%, -50%) scale(1.3) !important; filter: drop-shadow(0 0 15px #fff); }
+        .link-12:hover { transform: translateX(-50%) scale(1.3) !important; }
+        .link-6:hover { transform: translateX(-50%) scale(1.3) !important; }
+
+        /* --- 3D SERVICE CARDS SYSTEM --- */
+        .section-title {
+            font-family: 'Orbitron', sans-serif; font-weight: 900;
+            text-align: center; margin-bottom: 60px;
+            text-transform: uppercase; letter-spacing: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* Improved Clock with Logo */
-        .clock {
-            width: 220px; height: 220px;
-            border: 8px solid var(--primary); border-radius: 50%;
-            margin: 40px auto; position: relative;
-            background: #000; box-shadow: 0 0 50px var(--primary);
-            background-image: url('print.png');
-            background-size: 55%; background-repeat: no-repeat;
-            background-position: center;
+        .mega-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px; padding: 40px;
+            height: 100%; transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative; overflow: hidden;
+            backdrop-filter: blur(15px);
         }
-        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; border-radius: 10px; z-index: 10; }
-        .hour { width: 8px; height: 50px; background: var(--secondary); }
-        .min { width: 5px; height: 75px; background: #fff; }
-        .sec { width: 2px; height: 90px; background: #ff0000; }
+        .mega-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--primary);
+        }
+        .mega-card h3 { color: var(--primary); font-family: 'Orbitron', sans-serif; margin-bottom: 25px; font-weight: 700; }
+        
+        .urdu-list { font-family: 'Noto Nastaliq Urdu', serif; text-align: right; direction: rtl; list-style: none; padding: 0; }
+        .urdu-list li { margin-bottom: 18px; font-size: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
+        .urdu-list li i { color: var(--primary); margin-left: 15px; font-size: 1.4rem; }
 
-        /* Rainbow Palette Buttons */
-        .palette-box {
-            position: fixed; left: 15px; top: 50%; transform: translateY(-50%);
-            z-index: 2000; display: flex; flex-direction: column; gap: 10px;
+        /* --- GLASSMORPHISM FEEDBACK (3D TILT) --- */
+        .glass-feedback-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255,255,255,0.1);
+            padding: 25px 60px; border-radius: 60px;
+            color: #fff; font-family: 'Orbitron', sans-serif; font-weight: 900;
+            font-size: 1.3rem; text-decoration: none;
+            display: inline-block; transition: 0.5s;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            margin-top: 50px;
         }
-        .palette-btn {
-            width: 35px; height: 35px; border-radius: 50%; border: 2px solid #fff;
-            cursor: pointer; transition: 0.3s;
-        }
-
-        /* 3D Portfolio Grid */
-        .portfolio-card {
-            border-radius: 20px; overflow: hidden; border: 2px solid var(--glass);
-            transition: 0.5s; cursor: pointer; position: relative;
-        }
-        .portfolio-card:hover { transform: translateY(-15px) rotateY(5deg); border-color: var(--primary); }
-        .portfolio-card img { width: 100%; height: 280px; object-fit: cover; }
-
-        /* Star Style Social Buttons */
-        .star-social {
-            font-size: 2.8rem; margin: 0 15px; transition: 0.6s; display: inline-block;
-        }
-        .star-social:hover { transform: rotate(360deg) scale(1.4); filter: drop-shadow(0 0 15px var(--primary)); }
-
-        /* International Footer */
-        .standard-footer {
-            background: #000; border-top: 5px solid var(--primary);
-            padding: 60px 0 20px; margin-top: 80px;
+        .glass-feedback-btn:hover {
+            transform: rotateX(20deg) rotateY(-10deg) scale(1.1);
+            border-color: var(--primary);
+            box-shadow: 0 30px 60px var(--primary);
+            color: #fff;
         }
 
-        .pak-flag-float {
-            position: absolute; right: 20px; top: 50px; width: 100px;
-            animation: flag-move 4s infinite ease-in-out;
+        /* --- PORTFOLIO GALLERY (ALL 12 PICS) --- */
+        .portfolio-item {
+            border-radius: 20px; overflow: hidden; position: relative;
+            height: 350px; border: 2px solid var(--glass-border);
+            transition: 0.5s;
         }
-        @keyframes flag-move { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-20px) rotate(5deg); } }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .portfolio-item:hover img { transform: scale(1.15) rotate(2deg); filter: brightness(1.2); }
+        .portfolio-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            opacity: 0; transition: 0.5s; text-align: center;
+        }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
 
-        .btn-mega-cta {
-            padding: 15px 40px; border-radius: 50px; font-weight: 800;
-            text-decoration: none; display: inline-block; transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin: 10px;
+        /* --- ULTIMATE FOOTER --- */
+        .mega-footer {
+            background: #000; padding: 100px 0 30px;
+            border-top: 5px solid var(--primary); margin-top: 100px;
+        }
+        .footer-social-btn {
+            width: 55px; height: 55px; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; color: #fff; margin: 0 10px;
+            transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 1px solid var(--glass-border); background: var(--card-bg);
+            text-decoration: none;
+        }
+        .footer-social-btn:hover { transform: translateY(-15px) rotate(360deg); color: #000; background: var(--primary); border-color: #fff; box-shadow: 0 0 30px var(--primary); }
+
+        .footer-logo-box { width: 120px; height: 120px; border-radius: 50%; background: #fff; margin: 0 auto 30px; padding: 10px; box-shadow: var(--neon-shadow); }
+
+        /* RESPONSIVE FIXES */
+        @media (max-width: 992px) {
+            .header-container { flex-direction: column; gap: 20px; }
+            .nav-wrapper { flex-wrap: wrap; justify-content: center; }
+            .theme-panel { right: 10px; padding: 10px; }
         }
     </style>
 </head>
-<body class="rainbow-active">
+<body>
 
     <div id="particles-js"></div>
 
-    <div class="palette-box">
-        <div class="palette-btn" style="background: #25D366;" onclick="stopRainbow('#25D366')"></div>
-        <div class="palette-btn" style="background: #ff0000;" onclick="stopRainbow('#ff0000')"></div>
-        <div class="palette-btn" style="background: #00e5ff;" onclick="stopRainbow('#00e5ff')"></div>
-        <div class="palette-btn" style="background: #ffcc00;" onclick="stopRainbow('#ffcc00')"></div>
+    <div class="theme-panel">
+        <div class="theme-dot" style="background: #25D366;" onclick="setTheme('#25D366')"></div>
+        <div class="theme-dot" style="background: #00e5ff;" onclick="setTheme('#00e5ff')"></div>
+        <div class="theme-dot" style="background: #ff0000;" onclick="setTheme('#ff0000')"></div>
+        <div class="theme-dot" style="background: #ffcc00;" onclick="setTheme('#ffcc00')"></div>
+        <div class="theme-dot" style="background: #ff00ff;" onclick="setTheme('#ff00ff')"></div>
+        <div class="theme-dot" style="background: #ffffff;" onclick="setTheme('#ffffff')"></div>
     </div>
 
-    <header class="main-header text-center">
-        <div class="container">
-            <div class="logo-box">
-                <img src="print.png" alt="SPO Logo" style="width: 100%; height: 100%; object-fit: contain;">
-            </div><br>
-            <h1 class="mega-title">SPO SMART PRINTING ONLINE SERVICES | STATIONERY POINT</h1>
-            
-            <nav class="mt-3">
-                <a href="#" class="nav-btn-3d">HOME</a>
-                <a href="#portfolio" class="nav-btn-3d">GALLERY</a>
-                <a href="#reviews" class="nav-btn-3d">REVIEWS</a>
-                <a href="#contact" class="nav-btn-3d">CONTACT</a>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="main-logo-circle">
+                    <img src="print.png" alt="SPO Logo">
+                </div>
+                <div class="brand-text">
+                    <h1>SPO SMART DIGITAL VERSE</h1>
+                    <small class="text-secondary">STATIONERY POINT | KANGANPUR</small>
+                </div>
+            </div>
+
+            <nav class="nav-wrapper">
+                <a href="index.html" class="nav-3d-card">HOME</a>
+                <a href="services.html" class="nav-3d-card">SERVICES</a>
+                <a href="about.html" class="nav-3d-card">ABOUT</a>
+                <a href="gallery.html" class="nav-3d-card">GALLERY</a>
+                <a href="contact.html" class="nav-3d-card">CONTACT</a>
             </nav>
         </div>
     </header>
 
-    <section class="container py-5 text-center position-relative">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg" class="pak-flag-float" alt="Pakistan Flag">
-        
-        <div class="clock">
-            <div class="hand hour" id="hour"></div>
-            <div class="hand min" id="min"></div>
-            <div class="hand sec" id="sec"></div>
+    <section class="container py-5 text-center">
+        <div class="clock-container" data-aos="zoom-in">
+            <div class="master-clock">
+                <div class="hand hour-hand" id="hr"></div>
+                <div class="hand min-hand" id="mn"></div>
+                <div class="hand sec-hand" id="sc"></div>
+            </div>
+            <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="clock-link link-12"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="clock-link link-3"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/smartprinting.online" target="_blank" class="clock-link link-6"><i class="fab fa-instagram"></i></a>
+            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="clock-link link-9"><i class="fab fa-whatsapp"></i></a>
         </div>
 
-        <h2 class="display-4 fw-bold mt-4" data-aos="zoom-in">Kanganpur's Ultimate <span style="color: var(--primary);">Digital Hub</span></h2>
-        <p class="lead text-secondary">Advanced Printing • Web Solutions • Business Branding</p>
+        <h2 class="display-3 fw-bold mt-5 orbitron" data-aos="fade-up"> اسمارٹ پرنٹنگ اینڈ آن لائن سروسز</h2>
+        <p class="fs-4 text-secondary mb-5" data-aos="fade-up" data-aos-delay="200">ون ونڈو سلوشنز — آپ کی ہر ضرورت کا ایک ہی جگہ حل!</p>
         
-        <div class="mt-4">
-            <a href="https://wa.me/923034480404" class="btn-mega-cta bg-success text-white"><i class="fab fa-whatsapp me-2"></i>WHATSAPP NOW</a>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Purana+Paka+Bazar+Kanganpur" target="_blank" class="btn-mega-cta bg-primary text-white"><i class="fas fa-map-marker-alt me-2"></i>GET DIRECTIONS</a>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <h3 class="visitors display-4 fw-bold text-success">0</h3>
+                <p class="text-uppercase tracking-widest">LIVE DIGITAL VISITORS</p>
+            </div>
         </div>
     </section>
 
-    <section class="py-4 bg-black border-top border-bottom border-secondary">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="visitors display-5 fw-bold text-success">0</h2>
-                    <p class="text-uppercase small">Live Global Visitors</p>
+    <section class="container py-5">
+        <h2 class="section-title" data-aos="fade-right">Our Premium Services</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="flip-right">
+                <div class="mega-card">
+                    <h3>🖨️ Printing Hub</h3>
+                    <ul class="urdu-list">
+                        <li>کلر اور بلیک پرنٹنگ <i class="fas fa-print"></i></li>
+                        <li>پاسپورٹ سائز فوٹوز <i class="fas fa-camera"></i></li>
+                        <li>ڈاکومنٹ اسکیننگ <i class="fas fa-file-export"></i></li>
+                        <li>بائنڈنگ اور لیمینیشن <i class="fas fa-layer-group"></i></li>
+                        <li>فوٹو کاپی سروس (بہترین کوالٹی) <i class="fas fa-copy"></i></li>
+                    </ul>
                 </div>
-                <div class="col-md-4">
-                    <h2 class="display-5 fw-bold text-info">100%</h2>
-                    <p class="text-uppercase small">Professional Quality</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="flip-up">
+                <div class="mega-card">
+                    <h3>🌐 Online Desk</h3>
+                    <ul class="urdu-list">
+                        <li>آن لائن جاب اپلائی <i class="fas fa-user-tie"></i></li>
+                        <li>نادرا سروسز رہنمائی <i class="fas fa-id-card"></i></li>
+                        <li>ایف بی آر ٹیکس فائلنگ (IRIS) <i class="fas fa-calculator"></i></li>
+                        <li>ڈومیسائل اور سرٹیفکیٹس <i class="fas fa-stamp"></i></li>
+                        <li>سرکاری نوکریوں کی اپڈیٹس <i class="fas fa-bullhorn"></i></li>
+                    </ul>
                 </div>
-                <div class="col-md-4">
-                    <h2 class="display-5 fw-bold text-warning">Active</h2>
-                    <p class="text-uppercase small">Shop Status</p>
+            </div>
+
+            <div class="col-lg-4 col-md-12" data-aos="flip-left">
+                <div class="mega-card">
+                    <h3>💻 Tech Verse</h3>
+                    <ul class="urdu-list">
+                        <li>پروفیشنل سی وی / ریزیومے <i class="fas fa-file-pdf"></i></li>
+                        <li>ویب سائٹ ڈیولپمنٹ <i class="fas fa-code"></i></li>
+                        <li>ڈیجیٹل مارکیٹنگ (Ads & SEO) <i class="fas fa-chart-line"></i></li>
+                        <li>آن لائن بزنس سلوشنز <i class="fas fa-lightbulb"></i></li>
+                        <li>سوشل میڈیا پروموشن <i class="fas fa-share-alt"></i></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="container py-5">
-        <h2 class="text-center orbitron mb-5" style="color: var(--primary);">DIGITAL PORTFOLIO</h2>
+    <section class="container py-5">
+        <h2 class="section-title" data-aos="fade-left">Digital Gallery</h2>
         <div class="row g-4">
             <script>
-                for(let i=1; i<=12; i++) {
+                const portfolioImages = [
+                    "IMG-20260222-WA0028.jpg", "IMG-20260222-WA0033(1).jpg",
+                    "IMG-20260223-WA0055.jpg", "IMG-20260224-WA0019.jpg",
+                    "IMG-20260224-WA0020.jpg", "IMG-20260225-WA0028.jpg",
+                    "IMG-20260228-WA0039.jpg", "IMG-20260301-WA0097.jpg",
+                    "IMG_20260218_015819.png", "IMG-20260222-WA0024.jpg",
+                    "1.jpeg", "print.png"
+                ];
+                portfolioImages.forEach(img => {
                     document.write(`
-                        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-up">
-                            <div class="portfolio-card">
-                                <img src="${i}.jpeg" onerror="this.src='print.png'" alt="SPO Work">
+                        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in-up">
+                            <div class="portfolio-item">
+                                <img src="${img}" onerror="this.src='print.png'">
+                                <div class="portfolio-overlay">
+                                    <h5 class="orbitron">SPO WORK</h5>
+                                    <p class="small">Premium Quality Delivery</p>
+                                </div>
                             </div>
                         </div>
                     `);
-                }
+                });
             </script>
         </div>
     </section>
 
-    <section id="reviews" class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h2 class="orbitron mb-4" style="color: var(--primary);">CUSTOMER FEEDBACK</h2>
-                <div id="feedback-container" class="p-3 mb-4 rounded-4 bg-dark text-start" style="height: 350px; overflow-y: auto; border: 1px solid var(--primary);">
-                    </div>
-                
-                <div class="p-4 rounded-4 shadow-lg bg-black border border-secondary">
-                    <div class="row g-3">
-                        <div class="col-md-6"><input type="text" id="user-name" class="form-control bg-dark text-white border-secondary" placeholder="Your Name"></div>
-                        <div class="col-md-6">
-                            <select id="user-rating" class="form-select bg-dark text-white border-secondary">
-                                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-                                <option value="4">⭐⭐⭐⭐ Good</option>
-                            </select>
-                        </div>
-                        <div class="col-12"><textarea id="user-msg" class="form-control bg-dark text-white border-secondary" rows="3" placeholder="How was your experience?"></textarea></div>
-                        <div class="col-12"><button onclick="postFeedback()" class="btn btn-success w-100 fw-bold py-3">POST FEEDBACK</button></div>
-                    </div>
-                    <a href="https://g.page/r/CeMAyj32H6_wEBI/review" target="_blank" class="btn btn-outline-warning mt-4 w-100 rounded-pill">
-                        SPO LOVED YOUR FEEDBACK ❤️ (Google Review)
-                    </a>
-                </div>
-            </div>
+    <section class="container py-5 text-center">
+        <div data-aos="zoom-out">
+            <a href="https://g.page/r/CeMAyj32H6_wEBI/review" target="_blank" class="glass-feedback-btn">
+                SPO LOVED YOUR FEEDBACK ❤️
+            </a>
         </div>
     </section>
 
-    <footer class="standard-footer" id="contact">
-        <div class="container text-center text-md-start">
+    <footer class="mega-footer">
+        <div class="container">
             <div class="row">
-                <div class="col-md-5 mb-5">
-                    <h3 style="color: var(--primary);">SPO SMART DIGITAL VERSE</h3>
-                    <p class="text-secondary">Purana Paka Bazar, Kanganpur. Your one-window solution for printing, web development, and digital marketing in District Kasur.</p>
-                    <div class="mt-4">
-                        <a href="https://facebook.com/profile.php?id=61586270013508" class="star-social" style="color: #1877F2;"><i class="fab fa-facebook"></i></a>
-                        <a href="https://tiktok.com/@smartprintdigitalpk" class="star-social" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/923034480404" class="star-social" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                <div class="col-lg-5 mb-5 text-center text-lg-start">
+                    <div class="footer-logo-box">
+                        <img src="print.png" style="width: 100%;" alt="SPO">
+                    </div>
+                    <h3 class="orbitron" style="color: var(--primary);">SPO SMART DIGITAL VERSE</h3>
+                    <p class="text-secondary pe-lg-5" style="font-family:'Noto Nastaliq Urdu'; line-height: 2.2;">
+                        SPO آپ کی تمام پرنٹنگ، اسٹیشنری اور آن لائن سروسز کا قابلِ اعتماد مرکز ہے۔ ہم معیاری کام اور بہترین کسٹمر سروس فراہم کرنے کے لیے ہمہ وقت کوشاں ہیں۔
+                    </p>
+                </div>
+                
+                <div class="col-lg-3 mb-5">
+                    <h5 class="orbitron mb-4 text-white">Contact Connect</h5>
+                    <p class="text-secondary"><i class="fas fa-map-marker-alt me-2 text-success"></i> Purana Paka Bazar, Kanganpur</p>
+                    <p class="text-secondary"><i class="fas fa-phone-alt me-2 text-success"></i> 0303-4480404</p>
+                    <p class="text-secondary"><i class="fas fa-envelope me-2 text-success"></i> asif.aimarketing@gmail.com</p>
+                    <p class="text-secondary"><i class="fas fa-globe me-2 text-success"></i> www.spodigitalverse.online</p>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <h5 class="orbitron mb-4 text-white">Follow the Universe</h5>
+                    <div class="d-flex justify-content-center flex-wrap gap-2">
+                        <a href="https://facebook.com/share/1EqvcWcyu1/" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@smartprintdigitalpk" class="footer-social-btn"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/smartprinting.online" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="footer-social-btn"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="mt-5 p-3 border border-secondary rounded-4">
+                        <h6 class="orbitron text-primary">MEGA VISION PROJECT</h6>
+                        <p class="small text-secondary m-0">Developed with ❤️ by Muhammad Asif Ali</p>
                     </div>
                 </div>
-                <div class="col-md-3 mb-5">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled text-secondary">
-                        <li><a href="about.html" class="text-decoration-none text-secondary">About SPO</a></li>
-                        <li><a href="services.html" class="text-decoration-none text-secondary">Our Services</a></li>
-                        <li><a href="contact.html" class="text-decoration-none text-secondary">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contact Info</h5>
-                    <p class="text-secondary"><i class="fas fa-phone me-2"></i> 0303-4480404</p>
-                    <p class="text-secondary"><i class="fas fa-envelope me-2"></i> asif.aimarketing@gmail.com</p>
-                    <p class="text-secondary"><i class="fas fa-map-marker-alt me-2"></i> Purana Paka Bazar, Kanganpur</p>
-                </div>
             </div>
-            <div class="text-center pt-5 border-top border-secondary mt-5">
-                <p class="mb-1">© 2026 SPO Smart Printing & Online Services | Stationery Point</p>
-                <h4 class="fw-bold">Project Lead & Developed By: <span style="color: var(--primary);">Muhammad Asif Ali</span></h4>
+            
+            <div class="text-center mt-5 pt-4 border-top border-secondary">
+                <p class="text-secondary small m-0">© 2026 SPO Smart Printing & Online Services | All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -297,9 +427,10 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
     <script>
-        AOS.init({ duration: 1000 });
+        // AOS Animation Init
+        AOS.init({ duration: 1200, once: true });
 
-        // Firebase Config (Using your existing credentials)
+        // Firebase Realtime Config (Preserved from original)
         const firebaseConfig = {
             apiKey: "AIzaSyC11_tDLArVyx5D4Uj9ZWgUdjnHkbcN7DU",
             authDomain: "live-counter-cd83d.firebaseapp.com",
@@ -310,71 +441,57 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
 
-        // Live Visitor Counter
-        const statsRef = db.ref('stats');
-        statsRef.child('count').transaction(c => (c || 0) + 1);
-        statsRef.on('value', s => { 
-            const data = s.val();
-            if(data) document.querySelector('.visitors').innerText = data.count; 
+        // Visitor Counter Logic
+        const countRef = db.ref('stats/count');
+        countRef.transaction(c => (c || 0) + 1);
+        countRef.on('value', snap => {
+            document.querySelector('.visitors').innerText = snap.val().toLocaleString();
         });
 
-        // Feedback Logic
-        function postFeedback() {
-            const name = document.getElementById('user-name').value;
-            const msg = document.getElementById('user-msg').value;
-            const rating = document.getElementById('user-rating').value;
-            if(name && msg) {
-                db.ref('feedbacks').push({ name, msg, rating, date: Date.now() });
-                document.getElementById('user-name').value = '';
-                document.getElementById('user-msg').value = '';
-                alert("Thank you for your feedback!");
-            }
-        }
-
-        db.ref('feedbacks').on('value', snap => {
-            const container = document.getElementById('feedback-container');
-            container.innerHTML = '';
-            snap.forEach(child => {
-                const d = child.val();
-                container.innerHTML += `
-                    <div class="p-3 mb-3 border-start border-4 border-success bg-black position-relative">
-                        <div class="d-flex justify-content-between">
-                            <strong>${d.name}</strong>
-                            <span class="text-warning">${"⭐".repeat(d.rating)}</span>
-                        </div>
-                        <p class="mt-2 text-secondary" style="font-family:'Noto Nastaliq Urdu'; line-height:2;">${d.msg}</p>
-                        <button onclick="deleteReview('${child.key}')" class="btn btn-sm text-danger position-absolute top-0 end-0"><i class="fas fa-trash"></i></button>
-                    </div>`;
-            });
-            container.scrollTop = container.scrollHeight;
-        });
-
-        function deleteReview(key) { if(confirm("Delete this review?")) db.ref('feedbacks/' + key).remove(); }
-
-        // Theme Switcher
-        function stopRainbow(color) {
-            document.body.classList.remove('rainbow-active');
+        // Theme Engine
+        function setTheme(color) {
             document.documentElement.style.setProperty('--primary', color);
+            localStorage.setItem('spo-theme', color);
+            // Dynamic Shadow Update
+            document.documentElement.style.setProperty('--neon-shadow', `0 0 25px ${color}`);
         }
+        
+        // Load Saved Theme
+        const savedTheme = localStorage.getItem('spo-theme');
+        if(savedTheme) setTheme(savedTheme);
 
-        // Clock Logic
-        function runClock() {
-            const d = new Date();
-            document.getElementById('sec').style.transform = `translateX(-50%) rotate(${d.getSeconds()*6}deg)`;
-            document.getElementById('min').style.transform = `translateX(-50%) rotate(${d.getMinutes()*6}deg)`;
-            document.getElementById('hour').style.transform = `translateX(-50%) rotate(${d.getHours()*30 + d.getMinutes()/2}deg)`;
+        // Ultimate Master Clock Engine
+        function clockEngine() {
+            const date = new Date();
+            const hh = date.getHours();
+            const mm = date.getMinutes();
+            const ss = date.getSeconds();
+
+            const hRotation = 30 * hh + mm / 2;
+            const mRotation = 6 * mm;
+            const sRotation = 6 * ss;
+
+            document.getElementById('hr').style.transform = `translateX(-50%) rotate(${hRotation}deg)`;
+            document.getElementById('mn').style.transform = `translateX(-50%) rotate(${mRotation}deg)`;
+            document.getElementById('sc').style.transform = `translateX(-50%) rotate(${sRotation}deg)`;
         }
-        setInterval(runClock, 1000);
+        setInterval(clockEngine, 1000);
 
-        // Particles
+        // Particles System
         particlesJS("particles-js", {
             particles: {
-                number: { value: 130 },
+                number: { value: 150, density: { enable: true, value_area: 800 } },
                 color: { value: "#ffffff" },
                 shape: { type: "star" },
-                opacity: { value: 0.4 },
-                size: { value: 2 },
-                move: { speed: 1.2 }
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 1.5, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "bubble" }, onclick: { enable: true, mode: "repulse" } },
+                modes: { bubble: { distance: 200, size: 6, duration: 2, opacity: 0.8, speed: 3 } }
             }
         });
     </script>
