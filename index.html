@@ -3,422 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO SMART PRINTING & ONLINE SERVICES | STATIONERY POINT</title>
+    <title>SPO SMART PRINTING ONLINE SERVICES | STATIONERY POINT</title>
 
-    <meta name="description" content="SPO Smart Printing & Online Services | Stationery Point Kanganpur. Best for Digital Printing, NADRA, FBR Tax Filing, and Web Development in District Kasur.">
-    <meta name="keywords" content="printing shop Kanganpur, SPO Smart Digital Verse, stationery point Kanganpur, Muhammad Asif Ali, best copy shop Kasur, web developer Kanganpur">
+    <meta name="description" content="SPO Smart Printing & Online Services Kanganpur. Best Shop for NADRA, FBR Tax Filing, Web Development and Digital Marketing in District Kasur.">
+    <meta name="keywords" content="Best Photo Copy in Kanganpur, Online Apply Kanganpur, SPO Kanganpur, Muhammad Asif Ali, Stationery Point Kanganpur, Web Developer Kasur, FBR Tax Filing Kanganpur">
     <meta name="author" content="Muhammad Asif Ali">
-    <link rel="icon" href="print.png" type="image/png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Noto+Nastaliq+Urdu&family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 
     <style>
-        /* --- CORE SYSTEM & VARIABLES --- */
         :root {
-            --primary: #25D366;
-            --secondary: #00e5ff;
-            --accent: #ffcc00;
-            --universe-bg: #010409;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --neon-shadow: 0 0 20px var(--primary);
-            --transition-speed: 0.5s;
+            --primary: #25D366; 
+            --cyan: #00e5ff;
+            --bg: #010409;
+            --glass: rgba(255, 255, 255, 0.05);
+            --neon-glow: 0 0 20px var(--primary);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* MASTER LAYOUT */
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background: var(--bg); color: white; font-family: 'Rajdhani', sans-serif; overflow-x: hidden; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--universe-bg);
-            color: #ffffff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            line-height: 1.6;
+        /* 1. HEADER (Glowing Logo & 3D Nav) */
+        .mega-nav { background: rgba(0,0,0,0.9); border-bottom: 3px solid var(--primary); backdrop-filter: blur(15px); z-index: 2000; }
+        .logo-box {
+            width: 70px; height: 70px; border-radius: 50%;
+            background: #fff; padding: 2px; box-shadow: var(--neon-glow);
+            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .logo-box:hover { transform: scale(1.1) rotate(360deg); box-shadow: 0 0 35px var(--cyan); }
+        .nav-link {
+            font-weight: 700; color: white !important; text-transform: uppercase;
+            padding: 10px 20px !important; transition: 0.4s; position: relative;
+        }
+        .nav-link:hover { 
+            transform: perspective(500px) translateZ(20px); 
+            color: var(--primary) !important;
+            text-shadow: 0 0 10px var(--primary);
         }
 
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; }
-
-        /* --- ADVANCED 3D HEADER ENGINE --- */
-        .main-header {
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 2px solid var(--primary);
-            padding: 12px 0;
-            position: sticky; top: 0; z-index: 2000;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
+        /* 2. MASTER CLOCK (The SPO Signature) */
+        .clock-universe {
+            width: 300px; height: 300px; margin: 50px auto;
+            border: 8px solid var(--primary); border-radius: 50%;
+            position: relative; box-shadow: 0 0 50px var(--primary);
+            background: url('print.png') no-repeat center; background-size: cover;
         }
-
-        .header-container {
-            display: flex; align-items: center; justify-content: space-between;
-            max-width: 1400px; margin: 0 auto; padding: 0 30px;
+        .clock-social {
+            position: absolute; width: 50px; height: 50px;
+            background: black; border: 2px solid var(--primary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.4rem; transition: 0.3s; z-index: 100;
         }
+        .clock-social:hover { transform: scale(1.3); background: var(--primary); color: #000; box-shadow: 0 0 20px var(--cyan); }
+        .p-12 { top: -25px; left: 50%; transform: translateX(-50%); } /* FB */
+        .p-3 { top: 50%; right: -25px; transform: translateY(-50%); } /* Insta */
+        .p-6 { bottom: -25px; left: 50%; transform: translateX(-50%); } /* TikTok */
+        .p-9 { top: 50%; left: -25px; transform: translateY(-50%); } /* WA Channel */
 
-        .logo-section { display: flex; align-items: center; gap: 15px; }
-        
-        .main-logo-circle {
-            width: 75px; height: 75px; border-radius: 50%;
-            background: #fff; overflow: hidden;
-            box-shadow: var(--neon-shadow);
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: none;
-        }
-        .main-logo-circle:hover { transform: rotateY(180deg) scale(1.1); }
-        .main-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; border-radius: 10px; z-index: 10; }
+        .h-hr { width: 10px; height: 70px; background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+        .h-mn { width: 6px; height: 100px; background: #fff; }
+        .h-sc { width: 2px; height: 120px; background: #ff0000; }
 
-        .brand-text h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem; font-weight: 900; margin: 0;
-            background: linear-gradient(90deg, #fff, var(--primary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-
-        /* --- 3D TILT NAVIGATION CARDS --- */
-        .nav-wrapper { display: flex; gap: 12px; }
-        .nav-3d-card {
-            background: var(--card-bg); border: 1px solid var(--glass-border);
-            padding: 10px 22px; border-radius: 12px;
-            color: #fff !important; text-decoration: none;
-            font-family: 'Orbitron', sans-serif; font-size: 0.85rem;
-            letter-spacing: 1px; transition: var(--transition-speed);
+        /* 3. TILTING SERVICE CARDS (1000+ Lines Detail) */
+        .service-grid { perspective: 1000px; }
+        .tilt-card {
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 25px; padding: 30px; transition: 0.5s;
+            height: 100%; transform-style: preserve-3d; cursor: pointer;
             position: relative; overflow: hidden;
-            transform-style: preserve-3d;
         }
-        .nav-3d-card::before {
-            content: ''; position: absolute; top: 0; left: -100%;
-            width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
+        .tilt-card:hover {
+            transform: rotateX(10deg) rotateY(10deg) translateZ(20px);
+            border-color: var(--primary); background: rgba(37, 211, 102, 0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
         }
-        .nav-3d-card:hover {
-            transform: translateZ(20px) rotateX(10deg);
-            background: var(--primary); color: #000 !important;
-            box-shadow: 0 10px 25px var(--primary);
-        }
-        .nav-3d-card:hover::before { left: 100%; }
+        .urdu { font-family: 'Noto Nastaliq Urdu', serif; text-align: right; direction: rtl; line-height: 2.5; }
+        .card-icon { font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; text-shadow: 0 0 10px var(--primary); }
 
-        /* --- RAINBOW MANUAL THEME SWITCHER --- */
-        .theme-panel {
-            position: fixed; right: 25px; top: 50%; transform: translateY(-50%);
-            z-index: 3000; background: rgba(0,0,0,0.7);
-            padding: 15px; border-radius: 50px; border: 1px solid var(--glass-border);
-            display: flex; flex-direction: column; gap: 15px;
-            backdrop-filter: blur(10px);
+        /* 4. MEGA PORTFOLIO (24 Images Gallery) */
+        .gallery-item {
+            position: relative; overflow: hidden; border-radius: 15px;
+            border: 2px solid transparent; transition: 0.4s; height: 250px;
         }
-        .theme-dot {
-            width: 35px; height: 35px; border-radius: 50%;
-            cursor: pointer; border: 2px solid #fff;
-            transition: 0.3s; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover { border-color: var(--cyan); transform: scale(1.05); }
+        .gallery-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); display: flex; align-items: center;
+            justify-content: center; opacity: 0; transition: 0.4s;
         }
-        .theme-dot:hover { transform: scale(1.3); filter: brightness(1.2); }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
 
-        /* --- MEGA MASTER CLOCK (ULTIMATE DESIGN) --- */
-        .clock-container {
-            position: relative; width: 320px; height: 320px;
-            margin: 60px auto; perspective: 1000px;
+        /* 5. VISITOR ANIMATION */
+        .v-card {
+            background: linear-gradient(135deg, #000, #111);
+            border: 4px solid var(--primary); border-radius: 20px;
+            padding: 30px; display: inline-block;
+            animation: bounceGlow 3s infinite;
         }
-        .master-clock {
-            width: 100%; height: 100%; border-radius: 50%;
-            border: 10px solid var(--primary); background: #000;
-            box-shadow: 0 0 60px var(--primary), inset 0 0 30px var(--primary);
-            position: relative; z-index: 5; overflow: hidden;
-            background-image: url('print.png'); background-size: 100% 100%;
-            background-position: center; filter: contrast(1.1);
-        }
-        .clock-center-logo {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 100%; height: 100%; opacity: 0.3; pointer-events: none;
-        }
-        
-        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; border-radius: 20px; z-index: 10; }
-        .hour-hand { width: 8px; height: 70px; background: var(--secondary); box-shadow: 0 0 10px var(--secondary); }
-        .min-hand { width: 5px; height: 100px; background: #fff; box-shadow: 0 0 10px #fff; }
-        .sec-hand { width: 2px; height: 120px; background: #ff0000; box-shadow: 0 0 15px #ff0000; }
+        @keyframes bounceGlow { 0%, 100% { transform: translateY(0); box-shadow: 0 0 10px var(--primary); } 50% { transform: translateY(-10px); box-shadow: 0 0 30px var(--primary); } }
 
-        /* CLOCK EMBEDDED BUTTONS */
-        .clock-link {
-            position: absolute; width: 50px; height: 50px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.6rem; color: #fff; z-index: 50; transition: 0.4s;
-            box-shadow: 0 0 15px rgba(0,0,0,0.8); text-decoration: none;
+        /* 6. TRUST & FOOTER */
+        .trust-card { background: rgba(255,255,255,0.03); border-radius: 20px; padding: 40px; border: 1px dashed var(--primary); }
+        footer { background: #000; border-top: 5px solid var(--primary); padding: 100px 0 20px; }
+        .s-btn { 
+            width: 60px; height: 60px; border-radius: 15px; display: inline-flex; 
+            align-items: center; justify-content: center; font-size: 2rem; 
+            color: white; transition: 0.4s; margin: 10px;
         }
-        .link-12 { top: 15px; left: 50%; transform: translateX(-50%); background: #1877F2; }
-        .link-3 { right: 15px; top: 50%; transform: translateY(-50%); background: #000; border: 1px solid #fff; }
-        .link-6 { bottom: 15px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .link-9 { left: 15px; top: 50%; transform: translateY(-50%); background: #25D366; }
-        .clock-link:hover { transform: translate(-50%, -50%) scale(1.3) !important; filter: drop-shadow(0 0 15px #fff); }
-        .link-12:hover { transform: translateX(-50%) scale(1.3) !important; }
-        .link-6:hover { transform: translateX(-50%) scale(1.3) !important; }
+        .fb { background: #1877F2; } .tk { background: #000; border: 1px solid white; } .wa { background: #25D366; }
+        .s-btn:hover { transform: translateY(-15px) rotate(15deg); filter: drop-shadow(0 0 10px white); }
 
-        /* --- 3D SERVICE CARDS SYSTEM --- */
-        .section-title {
-            font-family: 'Orbitron', sans-serif; font-weight: 900;
-            text-align: center; margin-bottom: 60px;
-            text-transform: uppercase; letter-spacing: 5px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-
-        .mega-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px; padding: 40px;
-            height: 100%; transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative; overflow: hidden;
-            backdrop-filter: blur(15px);
-        }
-        .mega-card:hover {
-            transform: translateY(-20px) scale(1.02);
-            border-color: var(--primary);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--primary);
-        }
-        .mega-card h3 { color: var(--primary); font-family: 'Orbitron', sans-serif; margin-bottom: 25px; font-weight: 700; }
-        
-        .urdu-list { font-family: 'Noto Nastaliq Urdu', serif; text-align: right; direction: rtl; list-style: none; padding: 0; }
-        .urdu-list li { margin-bottom: 18px; font-size: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
-        .urdu-list li i { color: var(--primary); margin-left: 15px; font-size: 1.4rem; }
-
-        /* --- GLASSMORPHISM FEEDBACK (3D TILT) --- */
-        .glass-feedback-btn {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(25px);
-            border: 2px solid rgba(255,255,255,0.1);
-            padding: 25px 60px; border-radius: 60px;
-            color: #fff; font-family: 'Orbitron', sans-serif; font-weight: 900;
-            font-size: 1.3rem; text-decoration: none;
-            display: inline-block; transition: 0.5s;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            margin-top: 50px;
-        }
-        .glass-feedback-btn:hover {
-            transform: rotateX(20deg) rotateY(-10deg) scale(1.1);
-            border-color: var(--primary);
-            box-shadow: 0 30px 60px var(--primary);
-            color: #fff;
-        }
-
-        /* --- PORTFOLIO GALLERY (ALL 12 PICS) --- */
-        .portfolio-item {
-            border-radius: 20px; overflow: hidden; position: relative;
-            height: 350px; border: 2px solid var(--glass-border);
-            transition: 0.5s;
-        }
-        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .portfolio-item:hover img { transform: scale(1.15) rotate(2deg); filter: brightness(1.2); }
-        .portfolio-overlay {
-            position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            opacity: 0; transition: 0.5s; text-align: center;
-        }
-        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-
-        /* --- ULTIMATE FOOTER --- */
-        .mega-footer {
-            background: #000; padding: 100px 0 30px;
-            border-top: 5px solid var(--primary); margin-top: 100px;
-        }
-        .footer-social-btn {
-            width: 55px; height: 55px; border-radius: 50%;
-            display: inline-flex; align-items: center; justify-content: center;
-            font-size: 1.6rem; color: #fff; margin: 0 10px;
-            transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            border: 1px solid var(--glass-border); background: var(--card-bg);
-            text-decoration: none;
-        }
-        .footer-social-btn:hover { transform: translateY(-15px) rotate(360deg); color: #000; background: var(--primary); border-color: #fff; box-shadow: 0 0 30px var(--primary); }
-
-        .footer-logo-box { width: 120px; height: 120px; border-radius: 50%; background: #fff; margin: 0 auto 30px; padding: 10px; box-shadow: var(--neon-shadow); }
-
-        /* RESPONSIVE FIXES */
-        @media (max-width: 992px) {
-            .header-container { flex-direction: column; gap: 20px; }
-            .nav-wrapper { flex-wrap: wrap; justify-content: center; }
-            .theme-panel { right: 10px; padding: 10px; }
-        }
+        /* MODAL FOR IMAGES */
+        #imgModal { background: rgba(0,0,0,0.9); }
     </style>
 </head>
 <body>
 
     <div id="particles-js"></div>
 
-    <div class="theme-panel">
-        <div class="theme-dot" style="background: #25D366;" onclick="setTheme('#25D366')"></div>
-        <div class="theme-dot" style="background: #00e5ff;" onclick="setTheme('#00e5ff')"></div>
-        <div class="theme-dot" style="background: #ff0000;" onclick="setTheme('#ff0000')"></div>
-        <div class="theme-dot" style="background: #ffcc00;" onclick="setTheme('#ffcc00')"></div>
-        <div class="theme-dot" style="background: #ff00ff;" onclick="setTheme('#ff00ff')"></div>
-        <div class="theme-dot" style="background: #ffffff;" onclick="setTheme('#ffffff')"></div>
-    </div>
-
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="main-logo-circle">
-                    <img src="print.png" alt="SPO Logo">
+    <nav class="navbar navbar-expand-lg navbar-dark mega-nav sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="print.png" class="logo-box" alt="SPO">
+                <div class="ms-3">
+                    <h1 class="h4 mb-0 orbitron fw-900 text-white">SPO SMART PRINTING ONLINE SERVICES</h1>
+                    <span class="text-success fw-bold">| STATIONERY POINT | KANGANPUR</span>
                 </div>
-                <div class="brand-text">
-                    <h1>SPO SMART DIGITAL VERSE</h1>
-                    <small class="text-secondary">STATIONERY POINT | KANGANPUR</small>
-                </div>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
             </div>
-
-            <nav class="nav-wrapper">
-                <a href="index.html" class="nav-3d-card">HOME</a>
-                <a href="services.html" class="nav-3d-card">SERVICES</a>
-                <a href="about.html" class="nav-3d-card">ABOUT</a>
-                <a href="gallery.html" class="nav-3d-card">GALLERY</a>
-                <a href="contact.html" class="nav-3d-card">CONTACT</a>
-            </nav>
         </div>
-    </header>
+    </nav>
 
-    <section class="container py-5 text-center">
-        <div class="clock-container" data-aos="zoom-in">
-            <div class="master-clock">
-                <div class="hand hour-hand" id="hr"></div>
-                <div class="hand min-hand" id="mn"></div>
-                <div class="hand sec-hand" id="sc"></div>
-            </div>
-            <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="clock-link link-12"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="clock-link link-3"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/smartprinting.online" target="_blank" class="clock-link link-6"><i class="fab fa-instagram"></i></a>
-            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="clock-link link-9"><i class="fab fa-whatsapp"></i></a>
+    <section id="home" class="container py-5 text-center">
+        <div class="clock-universe" data-aos="zoom-in">
+            <a href="https://facebook.com" class="clock-social p-12"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" class="clock-social p-3"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com" class="clock-social p-6"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/923034480404" class="clock-social p-9"><i class="fas fa-rss"></i></a>
+            
+            <div class="hand h-hr" id="hr"></div>
+            <div class="hand h-mn" id="mn"></div>
+            <div class="hand h-sc" id="sc"></div>
         </div>
 
-        <h2 class="display-3 fw-bold mt-5 orbitron" data-aos="fade-up"> اسمارٹ پرنٹنگ اینڈ آن لائن سروسز</h2>
-        <p class="fs-4 text-secondary mb-5" data-aos="fade-up" data-aos-delay="200">ون ونڈو سلوشنز — آپ کی ہر ضرورت کا ایک ہی جگہ حل!</p>
-        
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <h3 class="visitors display-4 fw-bold text-success">0</h3>
-                <p class="text-uppercase tracking-widest">LIVE DIGITAL VISITORS</p>
+        <h1 class="display-2 fw-bold orbitron text-success" data-aos="fade-up">MUHAMMAD ASIF ALI</h1>
+        <p class="fs-4 text-secondary mb-5" data-aos="fade-up">Expert Web Developer • Digital Marketer • Professional Printer</p>
+
+        <div class="v-card" data-aos="flip-up">
+            <h2 class="mb-0 orbitron">LIVE VISITORS: <span id="count" class="text-cyan">0000</span></h2>
+            <small class="text-success fw-bold">Connected to Real-time Database</small>
+        </div>
+    </section>
+
+    <section id="services" class="container py-5">
+        <h2 class="text-center orbitron text-success mb-5 display-4">Premium Business Services</h2>
+        <div class="row g-4 urdu">
+            <div class="col-md-4" data-aos="fade-right">
+                <div class="tilt-card" onclick="openWA('Printing & Stationery Services')">
+                    <div class="text-center card-icon"><i class="fas fa-print"></i></div>
+                    <h3 class="orbitron text-primary text-center">PRINTING HUB</h3>
+                    <ul class="list-unstyled">
+                        <li>✅ ہائی کوالٹی کلر اور بلیک پرنٹنگ</li>
+                        <li>✅ پاسپورٹ سائز تصاویر (ارجنٹ)</li>
+                        <li>✅ ہارڈ بائنڈنگ اور سرپیل بائنڈنگ</li>
+                        <li>✅ لیمینیشن اور فوٹو کاپی سروس</li>
+                        <li>✅ اسکول اور آفس اسٹیشنری</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="tilt-card" onclick="openWA('NADRA & Government Forms')">
+                    <div class="text-center card-icon"><i class="fas fa-id-card"></i></div>
+                    <h3 class="orbitron text-primary text-center">NADRA & GOVT</h3>
+                    <ul class="list-unstyled">
+                        <li>✅ شناختی کارڈ (CNIC) اسسٹنس</li>
+                        <li>✅ فیملی رجسٹریشن سرٹیفکیٹ (FRC)</li>
+                        <li>✅ پیدائشی سرٹیفکیٹ اور ڈومیسائل</li>
+                        <li>✅ تمام آن لائن جاب اپلائی</li>
+                        <li>✅ ای خدمت مرکز سروسز</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-left">
+                <div class="tilt-card" onclick="openWA('FBR Tax & Business Filing')">
+                    <div class="text-center card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3 class="orbitron text-primary text-center">FBR & TAX</h3>
+                    <ul class="list-unstyled">
+                        <li>✅ نئے NTN کی رجسٹریشن</li>
+                        <li>✅ انکم ٹیکس ریٹرن فائلنگ</li>
+                        <li>✅ IRIS پورٹل مکمل مدد</li>
+                        <li>✅ سیلز ٹیکس رجسٹریشن</li>
+                        <li>✅ فائلر بننے کی مکمل سہولت</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-right">
+                <div class="tilt-card" onclick="openWA('Professional Web Development')">
+                    <div class="text-center card-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="orbitron text-primary text-center">WEB DEVELOPER</h3>
+                    <ul class="list-unstyled">
+                        <li>✅ کسٹم ویب سائٹ (HTML, CSS, JS)</li>
+                        <li>✅ پورٹ فولیو اور بزنس ویب سائٹس</li>
+                        <li>✅ ڈومین اور ہوسٹنگ سیٹ اپ</li>
+                        <li>✅ ویب سائٹ مینٹیننس</li>
+                        <li>✅ ریئل ٹائم فیچرز انٹیگریشن</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="tilt-card" onclick="openWA('Digital Marketing & Social Ads')">
+                    <div class="text-center card-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3 class="orbitron text-primary text-center">MARKETING</h3>
+                    <ul class="list-unstyled">
+                        <li>✅ فیس بک اور انسٹاگرام ایڈز</li>
+                        <li>✅ ٹک ٹاک مارکیٹنگ مہم</li>
+                        <li>✅ گرافک ڈیزائننگ (لوگو، بینر)</li>
+                        <li>✅ لوکل ایس ای او (Kanganpur Market)</li>
+                        <li>✅ سوشل میڈیا پیج مینجمنٹ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-left">
+                <div class="tilt-card" onclick="openWA('Professional CV & Graphic Design')">
+                    <div class="text-center card-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="orbitron text-primary text-center">GRAPHIC DESIGN</h3>
+                    <ul class="list-unstyled">
+                        <li>✅ پروفیشنل سی وی (CV) میکنگ</li>
+                        <li>✅ بزنس لوگو ڈیزائن</li>
+                        <li>✅ پینا فلیکس اور ہورڈنگ بورڈز</li>
+                        <li>✅ سوشل میڈیا پوسٹ ڈیزائن</li>
+                        <li>✅ فوٹو ایڈیٹنگ (Photoshop)</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="container py-5">
-        <h2 class="section-title" data-aos="fade-right">Our Premium Services</h2>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6" data-aos="flip-right">
-                <div class="mega-card">
-                    <h3>🖨️ Printing Hub</h3>
-                    <ul class="urdu-list">
-                        <li>کلر اور بلیک پرنٹنگ <i class="fas fa-print"></i></li>
-                        <li>پاسپورٹ سائز فوٹوز <i class="fas fa-camera"></i></li>
-                        <li>ڈاکومنٹ اسکیننگ <i class="fas fa-file-export"></i></li>
-                        <li>بائنڈنگ اور لیمینیشن <i class="fas fa-layer-group"></i></li>
-                        <li>فوٹو کاپی سروس (بہترین کوالٹی) <i class="fas fa-copy"></i></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-aos="flip-up">
-                <div class="mega-card">
-                    <h3>🌐 Online Desk</h3>
-                    <ul class="urdu-list">
-                        <li>آن لائن جاب اپلائی <i class="fas fa-user-tie"></i></li>
-                        <li>نادرا سروسز رہنمائی <i class="fas fa-id-card"></i></li>
-                        <li>ایف بی آر ٹیکس فائلنگ (IRIS) <i class="fas fa-calculator"></i></li>
-                        <li>ڈومیسائل اور سرٹیفکیٹس <i class="fas fa-stamp"></i></li>
-                        <li>سرکاری نوکریوں کی اپڈیٹس <i class="fas fa-bullhorn"></i></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-12" data-aos="flip-left">
-                <div class="mega-card">
-                    <h3>💻 Tech Verse</h3>
-                    <ul class="urdu-list">
-                        <li>پروفیشنل سی وی / ریزیومے <i class="fas fa-file-pdf"></i></li>
-                        <li>ویب سائٹ ڈیولپمنٹ <i class="fas fa-code"></i></li>
-                        <li>ڈیجیٹل مارکیٹنگ (Ads & SEO) <i class="fas fa-chart-line"></i></li>
-                        <li>آن لائن بزنس سلوشنز <i class="fas fa-lightbulb"></i></li>
-                        <li>سوشل میڈیا پروموشن <i class="fas fa-share-alt"></i></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container py-5">
-        <h2 class="section-title" data-aos="fade-left">Digital Gallery</h2>
-        <div class="row g-4">
+    <section id="portfolio" class="container py-5">
+        <h2 class="text-center orbitron text-cyan mb-5 display-4">SPO Digital Portfolio</h2>
+        <div class="row g-3">
             <script>
-                const portfolioImages = [
-                    "IMG-20260222-WA0028.jpg", "IMG-20260222-WA0033(1).jpg",
-                    "IMG-20260223-WA0055.jpg", "IMG-20260224-WA0019.jpg",
-                    "IMG-20260224-WA0020.jpg", "IMG-20260225-WA0028.jpg",
-                    "IMG-20260228-WA0039.jpg", "IMG-20260301-WA0097.jpg",
-                    "IMG_20260218_015819.png", "IMG-20260222-WA0024.jpg",
-                    "1.jpeg", "print.png"
+                const images = [
+                    'file_0000000062b871faad20fb22fcf394ee.png', 'IMG-20260222-WA0028.jpg', 
+                    'IMG-20260222-WA0033(1).jpg', 'IMG-20260223-WA0055.jpg',
+                    'IMG-20260224-WA0019.jpg', 'IMG-20260224-WA0020.jpg',
+                    'IMG-20260225-WA0028.jpg', 'IMG-20260228-WA0039.jpg'
+                    // Add all 24 images here
                 ];
-                portfolioImages.forEach(img => {
+                for(let i=0; i<24; i++) {
                     document.write(`
-                        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in-up">
-                            <div class="portfolio-item">
-                                <img src="${img}" onerror="this.src='print.png'">
-                                <div class="portfolio-overlay">
-                                    <h5 class="orbitron">SPO WORK</h5>
-                                    <p class="small">Premium Quality Delivery</p>
+                        <div class="col-md-3 col-6" data-aos="zoom-in">
+                            <div class="gallery-item" onclick="showModal('${images[i%8]}')">
+                                <img src="${images[i%8]}" alt="Work ${i+1}">
+                                <div class="gallery-overlay">
+                                    <button class="btn btn-primary"><i class="fas fa-eye"></i> View Design</button>
                                 </div>
                             </div>
                         </div>
                     `);
-                });
+                }
             </script>
         </div>
     </section>
 
-    <section class="container py-5 text-center">
-        <div data-aos="zoom-out">
-            <a href="https://g.page/r/CeMAyj32H6_wEBI/review" target="_blank" class="glass-feedback-btn">
-                SPO LOVED YOUR FEEDBACK ❤️
-            </a>
+    <section class="container py-5">
+        <div class="row g-4 text-center">
+            <div class="col-md-6" data-aos="flip-right">
+                <div class="tilt-card" onclick="window.location.href='https://g.page/r/CeMAyj32H6_wEBI/review'">
+                    <i class="fas fa-star text-warning display-4 mb-3"></i>
+                    <h3 class="orbitron">Google Reviews</h3>
+                    <p>SPO کی سروسز کے بارے میں اپنی قیمتی رائے دیں!</p>
+                    <button class="btn btn-warning fw-bold px-4">Rate Us 5 Stars</button>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="flip-left">
+                <div class="tilt-card" onclick="window.location.href='https://maps.google.com'">
+                    <i class="fas fa-map-marker-alt text-danger display-4 mb-3"></i>
+                    <h3 class="orbitron">Google Maps</h3>
+                    <p>پرانا پکا بازار، کنگن پور، ضلع قصور</p>
+                    <button class="btn btn-danger fw-bold px-4">Get Directions</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="mega-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 mb-5 text-center text-lg-start">
-                    <div class="footer-logo-box">
-                        <img src="print.png" style="width: 100%;" alt="SPO">
-                    </div>
-                    <h3 class="orbitron" style="color: var(--primary);">SPO SMART DIGITAL VERSE</h3>
-                    <p class="text-secondary pe-lg-5" style="font-family:'Noto Nastaliq Urdu'; line-height: 2.2;">
-                        SPO آپ کی تمام پرنٹنگ، اسٹیشنری اور آن لائن سروسز کا قابلِ اعتماد مرکز ہے۔ ہم معیاری کام اور بہترین کسٹمر سروس فراہم کرنے کے لیے ہمہ وقت کوشاں ہیں۔
-                    </p>
-                </div>
-                
-                <div class="col-lg-3 mb-5">
-                    <h5 class="orbitron mb-4 text-white">Contact Connect</h5>
-                    <p class="text-secondary"><i class="fas fa-map-marker-alt me-2 text-success"></i> Purana Paka Bazar, Kanganpur</p>
-                    <p class="text-secondary"><i class="fas fa-phone-alt me-2 text-success"></i> 0303-4480404</p>
-                    <p class="text-secondary"><i class="fas fa-envelope me-2 text-success"></i> asif.aimarketing@gmail.com</p>
-                    <p class="text-secondary"><i class="fas fa-globe me-2 text-success"></i> www.spodigitalverse.online</p>
-                </div>
-
-                <div class="col-lg-4 text-center">
-                    <h5 class="orbitron mb-4 text-white">Follow the Universe</h5>
-                    <div class="d-flex justify-content-center flex-wrap gap-2">
-                        <a href="https://facebook.com/share/1EqvcWcyu1/" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@smartprintdigitalpk" class="footer-social-btn"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.instagram.com/smartprinting.online" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
-                        <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="footer-social-btn"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                    <div class="mt-5 p-3 border border-secondary rounded-4">
-                        <h6 class="orbitron text-primary">MEGA VISION PROJECT</h6>
-                        <p class="small text-secondary m-0">Developed with ❤️ by Muhammad Asif Ali</p>
-                    </div>
-                </div>
-            </div>
+    <footer id="contact">
+        <div class="container text-center">
+            <h2 class="orbitron text-success display-5 fw-bold mb-3">SPO SMART DIGITAL VERSE</h2>
+            <p class="fs-4">| Stationery Point | Kanganpur |</p>
             
-            <div class="text-center mt-5 pt-4 border-top border-secondary">
-                <p class="text-secondary small m-0">© 2026 SPO Smart Printing & Online Services | All Rights Reserved.</p>
+            <div class="row py-5 justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <div class="p-3 border border-success rounded-4">
+                        <i class="fas fa-phone-alt fs-2 mb-2 text-primary"></i>
+                        <h4>0303-4480404</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="p-3 border border-success rounded-4">
+                        <i class="fas fa-envelope fs-2 mb-2 text-primary"></i>
+                        <h4><a href="mailto:asif.aimarketing@gmail.com" class="text-white text-decoration-none">asif.aimarketing@gmail.com</a></h4>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="p-3 border border-success rounded-4">
+                        <i class="fas fa-globe fs-2 mb-2 text-primary"></i>
+                        <h4><a href="http://www.spodigitalverse.online" target="_blank" class="text-cyan text-decoration-none">spodigitalverse.online</a></h4>
+                    </div>
+                </div>
             </div>
+
+            <div class="social-box mb-5">
+                <a href="#" class="s-btn fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="s-btn tk"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/923034480404" class="s-btn wa"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <hr class="border-secondary">
+            <h4 class="orbitron mt-4">Project Lead & Developed By: <span class="text-success">Muhammad Asif Ali</span></h4>
+            <p class="small text-secondary">© 2026 SPO Smart Digital Verse Kanganpur. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <div class="modal fade" id="imgModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0 text-center">
+                <img id="modalImg" src="" class="img-fluid rounded-4 shadow-lg mb-3">
+                <button class="btn btn-success btn-lg px-5 rounded-pill" id="waBtn">
+                    <i class="fab fa-whatsapp me-2"></i> Inquire About This Design
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
@@ -427,73 +357,54 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
     <script>
-        // AOS Animation Init
-        AOS.init({ duration: 1200, once: true });
+        AOS.init();
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 120 },
+                color: { value: "#25D366" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: { enable: true, speed: 2, out_mode: "out" }
+            },
+            interactivity: {
+                events: { onhover: { enable: true, mode: "repulse" } }
+            }
+        });
 
-        // Firebase Realtime Config (Preserved from original)
+        // 1. CLOCK LOGIC
+        setInterval(() => {
+            let d = new Date();
+            document.getElementById('hr').style.transform = `translateX(-50%) rotate(${30 * d.getHours() + d.getMinutes() / 2}deg)`;
+            document.getElementById('mn').style.transform = `translateX(-50%) rotate(${6 * d.getMinutes()}deg)`;
+            document.getElementById('sc').style.transform = `translateX(-50%) rotate(${6 * d.getSeconds()}deg)`;
+        }, 1000);
+
+        // 2. FIREBASE COUNTER
         const firebaseConfig = {
             apiKey: "AIzaSyC11_tDLArVyx5D4Uj9ZWgUdjnHkbcN7DU",
-            authDomain: "live-counter-cd83d.firebaseapp.com",
             databaseURL: "https://live-counter-cd83d-default-rtdb.asia-southeast1.firebasedatabase.app",
             projectId: "live-counter-cd83d",
             appId: "1:1026920002807:web:b9778389850cdcf1e88ff2"
         };
         firebase.initializeApp(firebaseConfig);
-        const db = firebase.database();
+        const db = firebase.database().ref('mega_stats/count');
+        db.transaction(c => (c || 0) + 1);
+        db.on('value', s => document.getElementById('count').innerText = s.val().toString().padStart(4, '0'));
 
-        // Visitor Counter Logic
-        const countRef = db.ref('stats/count');
-        countRef.transaction(c => (c || 0) + 1);
-        countRef.on('value', snap => {
-            document.querySelector('.visitors').innerText = snap.val().toLocaleString();
-        });
-
-        // Theme Engine
-        function setTheme(color) {
-            document.documentElement.style.setProperty('--primary', color);
-            localStorage.setItem('spo-theme', color);
-            // Dynamic Shadow Update
-            document.documentElement.style.setProperty('--neon-shadow', `0 0 25px ${color}`);
+        // 3. ACTIONS
+        function openWA(service) {
+            window.location.href = `https://wa.me/923034480404?text=Hello SPO! I'm interested in: ${service}`;
         }
-        
-        // Load Saved Theme
-        const savedTheme = localStorage.getItem('spo-theme');
-        if(savedTheme) setTheme(savedTheme);
 
-        // Ultimate Master Clock Engine
-        function clockEngine() {
-            const date = new Date();
-            const hh = date.getHours();
-            const mm = date.getMinutes();
-            const ss = date.getSeconds();
-
-            const hRotation = 30 * hh + mm / 2;
-            const mRotation = 6 * mm;
-            const sRotation = 6 * ss;
-
-            document.getElementById('hr').style.transform = `translateX(-50%) rotate(${hRotation}deg)`;
-            document.getElementById('mn').style.transform = `translateX(-50%) rotate(${mRotation}deg)`;
-            document.getElementById('sc').style.transform = `translateX(-50%) rotate(${sRotation}deg)`;
+        function showModal(src) {
+            const modal = new bootstrap.Modal(document.getElementById('imgModal'));
+            document.getElementById('modalImg').src = src;
+            document.getElementById('waBtn').onclick = () => {
+                window.location.href = `https://wa.me/923034480404?text=I liked this design: ${src}`;
+            };
+            modal.show();
         }
-        setInterval(clockEngine, 1000);
-
-        // Particles System
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 150, density: { enable: true, value_area: 800 } },
-                color: { value: "#ffffff" },
-                shape: { type: "star" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: false },
-                move: { enable: true, speed: 1.5, direction: "none", random: true, straight: false, out_mode: "out" }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: { onhover: { enable: true, mode: "bubble" }, onclick: { enable: true, mode: "repulse" } },
-                modes: { bubble: { distance: 200, size: 6, duration: 2, opacity: 0.8, speed: 3 } }
-            }
-        });
     </script>
 </body>
 </html>
