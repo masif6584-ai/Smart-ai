@@ -6,7 +6,7 @@
     <title>SPO Smart Printing Online Services | Stationery Point Kanganpur Kasur</title>
 
     <meta name="description" content="SPO Smart Printing Online Services Kanganpur Kasur. Best Printing Shop, Web Development, SEO Expert, Digital Marketing, FBR Tax Filing, NADRA Services, CV Making, Passport Photos in District Kasur Punjab Pakistan. One Window Digital Hub.">
-    <meta name="keywords" content="photo copy kanganpur, printing services kasur, stationery point kanganpur, composing kanganpur, nadra services kasur, fbr tax filing kanganpur, online job apply kasur, portfolio services kanganpur, website development kasur, new website services kanganpur, digital marketing kasur, seo services kanganpur, best printing shop kanganpur, ntN registration kasur, iris help kanganpur, passport photos kanganpur, cv making kasur">
+    <meta name="keywords" content="best printing shop Kanganpur, printing services Kasur, stationery point Kanganpur, web development Kanganpur, SEO services Kasur, digital marketing agency Kasur, FBR tax filing Kanganpur, NADRA services Kasur, passport photos Kanganpur, CV making Kasur, color printing Kanganpur, NTN registration Kasur, IRIS help Kanganpur, best web developer Kasur, local SEO Kanganpur, Facebook ads Kasur, smart printing online SPO, Muhammad Asif Ali developer Kanganpur, printing near me Kanganpur, online services Kanganpur">
     <meta name="author" content="Muhammad Asif Ali">
     
     <meta property="og:title" content="SPO Smart Printing Online Services | Stationery Point Kanganpur Kasur">
@@ -52,7 +52,18 @@
         "https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E",
         "https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==",
         "https://www.tiktok.com/@smartprintdigitalpk"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital and Printing Services",
+        "itemListElement": [
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Premium Color Printing Kanganpur"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Development Kasur"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Local SEO Services Kanganpur"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"FBR Tax Filing & NTN Registration"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"NADRA CNIC & FRC Assistance"}}
+        ]
+      }
     }
     </script>
 
@@ -64,6 +75,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
+        /* =========================================
+           ROOT VARIABLES & CORE STYLES - EXTENDED
+           =========================================
+        */
         :root {
             --primary: #25D366;
             --secondary: #00e5ff;
@@ -74,7 +89,10 @@
             --dark-glass: rgba(0, 0, 0, 0.75);
         }
 
-        * { box-sizing: border-box; scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Rajdhani', sans-serif;
@@ -86,34 +104,47 @@
             line-height: 1.6;
         }
 
+        /* Extended Nebula & Particles */
         #particles-js {
             position: fixed;
             width: 100%;
             height: 100%;
             z-index: -1;
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
         }
 
-        .nebula, .nebula2 {
+        .nebula {
             position: fixed;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.08) 0%, rgba(0, 229, 255, 0.05) 50%, transparent 85%);
             z-index: -2;
             pointer-events: none;
         }
 
-        .nebula { background: radial-gradient(circle at 50% 50%, rgba(37,211,102,0.08) 0%, rgba(0,229,255,0.05) 50%, transparent 85%); }
-        .nebula2 { background: radial-gradient(circle at 30% 70%, rgba(255,0,85,0.06) 0%, transparent 70%); }
+        .nebula2 {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, rgba(255, 0, 85, 0.06) 0%, transparent 70%);
+            z-index: -3;
+            pointer-events: none;
+        }
 
-        /* Header */
+        /* =========================================
+           HEADER - HORIZONTAL LAYOUT
+           =========================================
+        */
         .main-header {
-            background: rgba(1,4,9,0.98);
+            background: rgba(1, 4, 9, 0.98);
             border-bottom: 5px solid var(--primary);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(20px);
-            box-shadow: 0 8px 40px rgba(37,211,102,0.25);
+            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.25);
         }
 
         .header-content {
@@ -124,26 +155,64 @@
             gap: 20px;
         }
 
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .logo-box {
-            width: 110px; height: 110px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             border: 4px solid var(--primary);
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: linear-gradient(145deg, #fff, #ddd);
-            box-shadow: 0 0 35px var(--primary);
-            transition: all 0.7s ease;
+            box-shadow: 0 0 35px var(--primary), inset 0 0 25px rgba(255,255,255,0.6);
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.8);
+            cursor: pointer;
         }
 
-        .logo-box:hover { transform: rotateY(360deg) scale(1.12); border-color: var(--secondary); }
+        .logo-box:hover {
+            transform: rotateY(360deg) scale(1.12);
+            border-color: var(--secondary);
+            box-shadow: 0 0 50px var(--secondary);
+        }
+
+        .logo-box img {
+            width: 92%;
+            height: 92%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
 
         .shop-name {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.1rem;
             font-weight: 900;
             text-transform: uppercase;
-            background: linear-gradient(to right, #fff, var(--primary), var(--secondary), #ffd700);
+            background: linear-gradient(to right, #ffffff, var(--primary), var(--secondary), #ffd700);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
         }
 
         .nav-btn {
@@ -152,17 +221,93 @@
             padding: 14px 24px;
             border-radius: 50px;
             color: white !important;
+            text-decoration: none;
             font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
             transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -150%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: 0.6s;
+        }
+
+        .nav-btn:hover::before {
+            left: 150%;
         }
 
         .nav-btn:hover {
             background: var(--primary);
             color: #000 !important;
             transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
         }
 
-        /* Enhanced Clock Area */
+        /* Pakistan Flag Glow */
+        .pk-flag {
+            width: 65px;
+            height: 45px;
+            border: 3px solid #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 0 25px #25D366;
+            position: relative;
+        }
+
+        .pk-flag::after {
+            content: '🇵🇰';
+            position: absolute;
+            font-size: 28px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* =========================================
+           HERO SECTION WITH DIGITAL BOX
+           =========================================
+        */
+        .digital-hub-box {
+            background: linear-gradient(135deg, var(--dark-glass), rgba(37, 211, 102, 0.15));
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        .service-tile {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(37,211,102,0.3);
+            border-radius: 18px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .service-tile:hover {
+            background: rgba(37, 211, 102, 0.2);
+            transform: translateY(-10px) scale(1.03);
+            border-color: var(--primary);
+        }
+
+        .service-tile i {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Extended Clock with Numbers & Enhanced Social Nodes */
         .mega-clock-area {
             position: relative;
             width: 480px;
@@ -185,31 +330,40 @@
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 72%; height: 72%;
+            width: 72%;
+            height: 72%;
             border-radius: 50%;
             overflow: hidden;
             border: 8px solid rgba(255,255,255,0.25);
         }
 
-        /* Clock Numbers */
+        .clock-logo-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Clock Numbers - Green outer border k andar */
         .clock-number {
             position: absolute;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.55rem;
             font-weight: 900;
             color: #25D366;
-            text-shadow: 0 0 15px #25D366;
-            width: 36px; height: 36px;
+            text-shadow: 0 0 12px #25D366;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.6s ease;
         }
 
-        /* Social Nodes - Outer Side at 12, 3, 6, 9 */
+        /* Social Nodes at 12, 3, 6, 9 - Outer side */
         .social-node {
             position: absolute;
-            width: 74px;
-            height: 74px;
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -228,8 +382,8 @@
         .sn-tk  { background: #000; border: 4px solid #fff; }
 
         .social-node:hover {
-            transform: scale(1.4) rotate(380deg) !important;
-            box-shadow: 0 0 50px #fff;
+            transform: scale(1.38) rotate(380deg) !important;
+            box-shadow: 0 0 45px #fff;
             border-color: var(--primary);
         }
 
@@ -244,51 +398,123 @@
         .min-h  { width: 7px; height: 105px; background: #fff; margin-left: -3.5px; }
         .sec-h  { width: 4px; height: 118px; background: var(--accent); margin-left: -2px; }
 
-        /* Theme Buttons */
-        .theme-btn {
-            width: 45px; height: 45px;
-            border-radius: 50%;
-            border: 3px solid white;
-            margin: 8px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(255,255,255,0.4);
-        }
-
-        .theme-btn:hover { transform: scale(1.2); }
-
-        .rainbow-btn {
-            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-            background-size: 400% 400%;
-            animation: rainbow 7s linear infinite;
-        }
-
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Special Digital Verse Card */
-        .digital-verse-card {
-            background: linear-gradient(135deg, #0a0a0a, #1a0033);
-            border: 3px solid var(--primary);
-            border-radius: 25px;
-            padding: 35px 25px;
+        /* Service Cards Extended */
+        .service-grid-card {
+            background: var(--glass);
+            border: 2px solid rgba(255,255,255,0.08);
+            border-radius: 28px;
+            padding: 38px 25px;
             text-align: center;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            height: 100%;
+            backdrop-filter: blur(12px);
+        }
+
+        .service-grid-card:hover {
+            border-color: var(--primary);
+            background: rgba(37, 211, 102, 0.12);
+            transform: translateY(-12px) rotateX(8deg);
+            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.25);
+        }
+
+        .urdu-desc {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.15rem;
+            line-height: 2.3;
+            color: #e0e0e0;
+            direction: rtl;
+            margin-top: 15px;
+        }
+
+        /* Gallery - Full Size Slideshow Style */
+        .gallery-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+        }
+
+        .gallery-item {
+            min-width: 100%;
+            height: 520px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        /* Action Cards & More Sections */
+        .action-card {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.18), rgba(0, 229, 255, 0.15));
+            border-radius: 32px;
+            padding: 55px 35px;
+            border: 3px solid var(--primary);
             transition: all 0.5s ease;
-            cursor: pointer;
         }
 
-        .digital-verse-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 30px 60px rgba(37,211,102,0.4);
-            border-color: #ffd700;
+        .action-card:hover {
+            transform: translateY(-18px) scale(1.02);
+            box-shadow: 0 35px 70px rgba(37, 211, 102, 0.35);
         }
 
-        /* Footer Social */
+        /* Footer Extended */
+        .footer-universe {
+            background: linear-gradient(to top, #000, #0a0a0a);
+            padding: 100px 0 40px;
+            border-top: 6px solid var(--primary);
+        }
+
+        .footer-logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 30px var(--primary);
+        }
+
+        .footer-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+            padding-left: 15px;
+        }
+
+        .wa-mega-float {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            width: 78px;
+            height: 78px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            color: white;
+            z-index: 9999;
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            animation: pulse-wa 1.8s infinite;
+        }
+
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8); }
+            70% { box-shadow: 0 0 0 30px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .visitors { font-size: 4rem; font-weight: 900; color: var(--primary); text-shadow: 0 0 20px var(--primary); }
+
+        .text-glow-primary { text-shadow: 0 0 20px var(--primary); }
+
+        /* Footer Social Box Style */
         .footer-social-box {
-            width: 58px; height: 58px;
+            width: 58px;
+            height: 58px;
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -300,12 +526,9 @@
         }
 
         .footer-social-box:hover {
-            transform: translateY(-8px) scale(1.15) rotate(15deg);
-            box-shadow: 0 0 35px var(--primary);
+            transform: translateY(-6px) scale(1.15) rotate(12deg);
+            box-shadow: 0 0 30px var(--primary);
         }
-
-        .visitors { font-size: 4rem; font-weight: 900; color: var(--primary); text-shadow: 0 0 20px var(--primary); }
-        .text-glow-primary { text-shadow: 0 0 20px var(--primary); }
     </style>
 </head>
 <body>
@@ -314,13 +537,14 @@
     <div class="nebula2"></div>
     <div id="particles-js"></div>
 
-    <!-- Header -->
+    <!-- Enhanced Header -->
     <header class="main-header">
         <div class="container">
             <div class="header-content">
+                <!-- Left: Logo & Name -->
                 <div class="logo-section">
-                    <div class="logo-box" data-tilt>
-                        <img src="print.png" alt="SPO Logo">
+                    <div class="logo-box" data-tilt data-tilt-perspective="800">
+                        <img src="print.png" alt="SPO Smart Printing Online Services Logo">
                     </div>
                     <div>
                         <h1 class="shop-name">SPO Smart Printing<br>Online Services</h1>
@@ -328,26 +552,17 @@
                     </div>
                 </div>
 
+                <!-- Right: Navigation -->
                 <nav class="nav-wrapper">
                     <a href="index.html" class="nav-btn dynamic-btn">Home</a>
-                    <a href="about.html" class="nav-btn dynamic-btn">About</a>
+                    <a href="about.html" class="nav-btn dynamic-btn">About Us</a>
                     <a href="services.html" class="nav-btn dynamic-btn">Services</a>
                     <a href="gallery.html" class="nav-btn dynamic-btn">Gallery</a>
                     <a href="contact.html" class="nav-btn dynamic-btn">Contact</a>
                 </nav>
 
-                <!-- Theme Control Buttons -->
-                <div class="d-flex flex-column" style="position:absolute; right:30px; top:100px; z-index:999;">
-                    <div onclick="changeTheme(0)" class="theme-btn" style="background:#25D366;"></div>
-                    <div onclick="changeTheme(1)" class="theme-btn" style="background:#00e5ff;"></div>
-                    <div onclick="changeTheme(2)" class="theme-btn" style="background:#ff0055;"></div>
-                    <div onclick="changeTheme(3)" class="theme-btn" style="background:#ffd700;"></div>
-                    <div onclick="changeTheme(4)" class="theme-btn" style="background:#7000ff;"></div>
-                    <div onclick="changeTheme(5)" class="theme-btn" style="background:#ff8800;"></div>
-                    <div onclick="randomRainbowTheme()" class="theme-btn rainbow-btn"></div>
-                </div>
-
-                <div class="pk-flag" data-tilt>🇵🇰</div>
+                <!-- Pakistan Flag -->
+                <div class="pk-flag" data-tilt></div>
             </div>
         </div>
     </header>
@@ -356,21 +571,21 @@
     <section class="py-5 text-center">
         <div class="container">
             <div class="mega-clock-area" data-aos="zoom-in">
-                <!-- Clock Numbers -->
-                <div class="clock-number" id="num12" style="top:12%; left:50%; transform:translateX(-50%);">12</div>
-                <div class="clock-number" id="num3" style="top:50%; right:12%; transform:translateY(-50%);">3</div>
-                <div class="clock-number" id="num6" style="bottom:12%; left:50%; transform:translateX(-50%);">6</div>
-                <div class="clock-number" id="num9" style="top:50%; left:12%; transform:translateY(-50%);">9</div>
+                <!-- Clock Numbers at 12, 3, 6, 9 positions inside green border -->
+                <div class="clock-number" id="num12" style="top: 12%; left: 50%; transform: translateX(-50%);">12</div>
+                <div class="clock-number" id="num3" style="top: 50%; right: 12%; transform: translateY(-50%);">3</div>
+                <div class="clock-number" id="num6" style="bottom: 12%; left: 50%; transform: translateX(-50%);">6</div>
+                <div class="clock-number" id="num9" style="top: 50%; left: 12%; transform: translateY(-50%);">9</div>
 
-                <!-- Social Media Buttons - Outer Side -->
-                <a href="https://www.facebook.com/share/1EqvcWcyu1/" target="_blank" class="social-node sn-fb" id="social-fb" data-tilt style="top:5%; left:50%; transform:translateX(-50%);"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://wa.me/923034480404" target="_blank" class="social-node sn-wa" id="social-wa" data-tilt style="top:50%; right:5%; transform:translateY(-50%);"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" target="_blank" class="social-node sn-ig" id="social-ig" data-tilt style="bottom:5%; left:50%; transform:translateX(-50%);"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="social-node sn-tk" id="social-tk" data-tilt style="top:50%; left:5%; transform:translateY(-50%);"><i class="fab fa-tiktok"></i></a>
+                <!-- Social Icons at outer 12,3,6,9 positions -->
+                <a href="https://www.facebook.com/share/1EqvcWcyu1/" target="_blank" class="social-node sn-fb" id="social-fb" data-tilt style="top: 4%; left: 50%; transform: translateX(-50%);"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/923034480404" target="_blank" class="social-node sn-wa" id="social-wa" data-tilt style="top: 50%; right: 4%; transform: translateY(-50%);"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" target="_blank" class="social-node sn-ig" id="social-ig" data-tilt style="bottom: 4%; left: 50%; transform: translateX(-50%);"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="social-node sn-tk" id="social-tk" data-tilt style="top: 50%; left: 4%; transform: translateY(-50%);"><i class="fab fa-tiktok"></i></a>
 
                 <div class="clock" data-tilt data-tilt-glare data-tilt-max-glare="0.6">
                     <div class="clock-logo-inner">
-                        <img src="print.png" alt="SPO Logo Inner">
+                        <img src="print.png" alt="SPO Logo Inner" class="img-fluid">
                     </div>
                     <div class="hand hour-h" id="hour"></div>
                     <div class="hand min-h" id="min"></div>
@@ -381,26 +596,155 @@
             <h1 class="display-2 fw-bold text-glow-primary mt-4" data-aos="fade-up">Muhammad Asif Ali</h1>
             <h2 class="fs-1 text-white-50" data-aos="fade-up" data-aos-delay="150">Web Developer • SEO Specialist • Digital Expert</h2>
             <p class="lead mt-4 text-secondary fs-4" data-aos="fade-up" data-aos-delay="300">
-                Transforming local businesses of Kanganpur & Kasur into powerful digital empires.
+                Transforming local businesses of Kanganpur & Kasur into powerful digital empires with premium printing and online solutions.
             </p>
             <a href="https://wa.me/923034480404" class="btn btn-lg btn-success rounded-pill px-5 py-3 mt-4 fw-bold shadow-lg">🚀 Start Your Digital Journey Now</a>
         </div>
     </section>
 
-    <!-- Special Digital Verse Card -->
-    <section class="py-4">
+    <!-- Digital Hub Box - One Window Solutions -->
+    <section class="py-5">
         <div class="container">
-            <div class="digital-verse-card" onclick="window.open('https://www.spodigitalverse.online', '_blank')" data-aos="fade-up">
-                <h2 class="text-warning fw-bold">🌌 SPO SMART DIGITAL VERSE</h2>
-                <p class="lead mb-3">Professional Website Development | SEO Services | Digital Marketing Agency in Kasur</p>
-                <button class="btn btn-outline-warning btn-lg">Visit Our Digital Verse → www.spodigitalverse.online</button>
+            <div class="digital-hub-box text-center" data-aos="fade-up">
+                <h2 class="main-title mb-4">🏪 SPO Smart Printing & Online Services</h2>
+                <p class="lead mb-5">🪟 ون ونڈو سلوشنز — آپ کی ہر ضرورت کا ایک ہی جگہ حل!</p>
+
+                <div class="row g-4" id="digital-services-grid">
+                    <!-- Populated by JS -->
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Rest of your sections remain same (Digital Hub, Stats, Services, Gallery, Action Cards etc.) -->
+    <!-- Stats -->
+    <section class="py-5 bg-glass border-y">
+        <div class="container">
+            <div class="row text-center g-5">
+                <div class="col-md-4" data-aos="fade-right">
+                    <div class="visitors" id="visitor-count">0</div>
+                    <p class="text-uppercase fw-bold text-secondary">Global Visitors</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="visitors">6+</div>
+                    <p class="text-uppercase fw-bold text-secondary">Years Experience</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-left">
+                    <div class="visitors">100%</div>
+                    <p class="text-uppercase fw-bold text-secondary">Client Satisfaction in Kanganpur & Kasur</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Action Cards with Updated Map -->
+    <!-- Services Section - Rich with Local Keywords -->
+    <section class="py-5" id="services-section">
+        <div class="container">
+            <h2 class="main-title text-center mb-5" data-aos="fade-down">Our Complete Digital & Printing Services in Kanganpur Kasur</h2>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="flip-left">
+                    <div class="service-grid-card" onclick="detailedInquiry('Premium Color Printing Kanganpur')">
+                        <i class="fas fa-print fa-3x"></i>
+                        <h3>Premium Printing & Stationery</h3>
+                        <p>High-quality color & black printing, business cards, banners, wedding cards in Kanganpur.</p>
+                        <hr>
+                        <p class="urdu-desc">بہترین کوالٹی کلر پرنٹنگ، بزنس کارڈز، بینرز اور شادی کارڈز۔</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="service-grid-card" onclick="detailedInquiry('Local SEO Services Kasur')">
+                        <i class="fas fa-search-dollar fa-3x"></i>
+                        <h3>Local SEO & Google Ranking</h3>
+                        <p>Dominate local search in Kanganpur, Kasur & surrounding areas. Google Business optimization.</p>
+                        <hr>
+                        <p class="urdu-desc">کنگن پور اور قصور میں گوگل سرچ میں ٹاپ رینکنگ حاصل کریں۔</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="service-grid-card" onclick="detailedInquiry('Web Development Kanganpur')">
+                        <i class="fas fa-laptop-code fa-3x"></i>
+                        <h3>Professional Web Development</h3>
+                        <p>Custom business websites, e-commerce, fast loading with modern design for Kasur businesses.</p>
+                        <hr>
+                        <p class="urdu-desc">جدید ویب سائٹس اور آن لائن سٹور کی تیاری۔</p>
+                    </div>
+                </div>
+
+                <!-- More services added for length -->
+                <div class="col-md-6 col-lg-4" data-aos="flip-left">
+                    <div class="service-grid-card" onclick="detailedInquiry('FBR Tax Filing Kanganpur')">
+                        <i class="fas fa-file-invoice-dollar fa-3x"></i>
+                        <h3>FBR Tax Filing & NTN</h3>
+                        <p>NTN Registration, Income Tax Return, IRIS Portal help, Active Taxpayer List (ATL) in Kasur.</p>
+                        <hr>
+                        <p class="urdu-desc">ایف بی آر ٹیکس فائلنگ، این ٹی این رجسٹریشن اور آئی آر آئی ایس مدد۔</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="service-grid-card" onclick="detailedInquiry('NADRA Services Kasur')">
+                        <i class="fas fa-id-card fa-3x"></i>
+                        <h3>NADRA e-Sahulat Services</h3>
+                        <p>CNIC, FRC, CRC, Domicile, Passport application assistance in Kanganpur.</p>
+                        <hr>
+                        <p class="urdu-desc">نادرہ خدمات، شناختی کارڈ، خاندانی رجسٹریشن سرٹیفکیٹ۔</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="service-grid-card" onclick="detailedInquiry('Digital Marketing Kasur')">
+                        <i class="fas fa-bullhorn fa-3x"></i>
+                        <h3>Digital Marketing & Ads</h3>
+                        <p>Facebook & Instagram ads, social media management, branding for local shops in Kasur.</p>
+                        <hr>
+                        <p class="urdu-desc">فیس بک ایڈز، انسٹاگرام پروموشن اور ڈیجیٹل مارکیٹنگ۔</p>
+                    </div>
+                </div>
+
+                <!-- Additional tiles for extended length -->
+                <div class="col-md-6 col-lg-4" data-aos="flip-left">
+                    <div class="service-grid-card" onclick="detailedInquiry('CV Making & Job Apply Kanganpur')">
+                        <i class="fas fa-file-alt fa-3x"></i>
+                        <h3>Professional CV & Resume Making</h3>
+                        <p>ATS friendly CVs, job application forms, online job portals help.</p>
+                        <hr>
+                        <p class="urdu-desc">پروفیشنل سی وی بنوانا اور آن لائن جاب اپلائی۔</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="service-grid-card" onclick="detailedInquiry('Passport Photos & Scanning')">
+                        <i class="fas fa-camera fa-3x"></i>
+                        <h3>Passport Size Photos & Scanning</h3>
+                        <p>Instant passport photos, document scanning, binding & lamination services.</p>
+                        <hr>
+                        <p class="urdu-desc">پاسپورٹ سائز فوٹوز، دستاویزات سکیننگ اور بائنڈنگ۔</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Universe Gallery - Slideshow Style -->
+    <section class="py-5" id="gallery-verse">
+        <div class="container">
+            <h2 class="main-title text-center mb-5">Digital Universe Gallery - Full Size View</h2>
+            <div class="gallery-slider" id="gallery-slider">
+                <!-- Populated dynamically with full size images -->
+            </div>
+            <div class="text-center mt-4">
+                <button onclick="prevSlide()" class="btn btn-outline-light me-3">← Previous</button>
+                <button onclick="nextSlide()" class="btn btn-outline-light">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Cards -->
     <section class="py-5 container">
         <div class="row g-5">
             <div class="col-md-6" data-aos="fade-right">
@@ -408,7 +752,7 @@
                     <i class="fas fa-map-marked-alt fa-4x mb-4 text-primary"></i>
                     <h3>Visit Our Physical Shop</h3>
                     <p class="fs-5">Purana Paka Bazar, Kanganpur, District Kasur, Punjab, Pakistan</p>
-                    <a href="https://maps.app.goo.gl/rekEKjWTrf67pVho8" target="_blank" class="btn btn-light rounded-pill px-5 mt-3">📍 Open in Google Maps</a>
+                    <a href="https://maps.app.goo.gl/rekEKjWTrf67pVho8" target="_blank" class="btn btn-light rounded-pill px-5 mt-3">📍 Open Shop Location on Google Maps</a>
                 </div>
             </div>
             <div class="col-md-6" data-aos="fade-left">
@@ -422,8 +766,26 @@
         </div>
     </section>
 
+    <!-- Quick Inquiry -->
+    <section class="py-5 container">
+        <div class="action-card text-center">
+            <h2 class="main-title">Quick Service Inquiry Form</h2>
+            <select id="mainServiceSelector" class="form-select form-select-lg mb-4 mx-auto" style="max-width: 520px; background:#111; color:white;">
+                <option value="Premium Color Printing Kanganpur">Premium Color Printing 🖨️</option>
+                <option value="Local SEO & Web Development">Local SEO & Web Development 📈</option>
+                <option value="FBR Tax Filing NTN IRIS">FBR Tax Filing & NTN 🏛️</option>
+                <option value="NADRA Services Kanganpur">NADRA Services 🆔</option>
+                <option value="Digital Marketing Facebook Ads">Digital Marketing & Ads 📣</option>
+                <option value="CV Making Passport Photos">CV Making & Passport Photos 📄</option>
+            </select>
+            <button onclick="triggerInquiry()" class="btn btn-success btn-lg px-5 py-3 rounded-pill fw-bold">
+                <i class="fab fa-whatsapp"></i> Send Inquiry on WhatsApp
+            </button>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="footer-universe" style="background: linear-gradient(to top, #000, #0a0a0a); padding: 100px 0 40px; border-top: 6px solid var(--primary);">
+    <footer class="footer-universe">
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-4 text-center text-md-start">
@@ -440,8 +802,8 @@
                         <a href="index.html" class="footer-link">🏠 Home</a>
                         <a href="about.html" class="footer-link">📖 About Shop</a>
                         <a href="services.html" class="footer-link">🛠️ All Services</a>
-                        <a href="gallery.html" class="footer-link">🖼️ Gallery</a>
-                        <a href="contact.html" class="footer-link">📞 Contact</a>
+                        <a href="gallery.html" class="footer-link">🖼️ Verse Gallery</a>
+                        <a href="contact.html" class="footer-link">📞 Contact Us</a>
                     </div>
                 </div>
 
@@ -454,7 +816,7 @@
                     <div class="d-flex gap-3 mt-4 justify-content-center justify-content-md-start">
                         <a href="https://www.facebook.com/share/1EqvcWcyu1/" target="_blank" class="footer-social-box" style="background:#1877F2;" data-tilt><i class="fab fa-facebook-f"></i></a>
                         <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="footer-social-box" style="background:#25D366;" data-tilt><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" target="_blank" class="footer-social-box" style="background:linear-gradient(45deg,#f56040,#c13584,#833ab4,#405de6);" data-tilt><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" target="_blank" class="footer-social-box" style="background:linear-gradient(45deg, #f56040, #c13584, #833ab4, #405de6);" data-tilt><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="footer-social-box" style="background:#000;" data-tilt><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
@@ -464,6 +826,7 @@
             <div class="text-center">
                 <p>© 2026 SPO Smart Printing Online Services | Stationery Point Kanganpur Kasur | All Rights Reserved</p>
                 <p class="text-primary">Developed by Muhammad Asif Ali • Lead Digital Strategist</p>
+                <p>Alternative Website: <a href="https://www.spodigitalverse.online" class="text-white">www.spodigitalverse.online</a></p>
             </div>
         </div>
     </footer>
@@ -500,15 +863,29 @@
         update(statsRef, { count: increment(1) });
         onValue(statsRef, (snapshot) => {
             const data = snapshot.val();
-            if (data && data.count) document.getElementById('visitor-count').innerText = data.count + "+";
+            if (data && data.count) {
+                document.getElementById('visitor-count').innerText = data.count + "+";
+            }
         });
     </script>
 
     <script>
+        // AOS & Tilt Init
         AOS.init({ duration: 1100, once: true });
         VanillaTilt.init(document.querySelectorAll("[data-tilt]"), { max: 18, speed: 500, glare: true, "max-glare": 0.4 });
 
-        // Clock
+        // Dynamic Nav Colors
+        const colors = ['#25D366', '#00e5ff', '#ff0055', '#ffd700', '#7000ff'];
+        let idx = 0;
+        setInterval(() => {
+            document.querySelectorAll('.dynamic-btn').forEach(btn => {
+                btn.style.borderColor = colors[idx];
+                btn.style.boxShadow = `0 0 18px ${colors[idx]}`;
+            });
+            idx = (idx + 1) % colors.length;
+        }, 2800);
+
+        // Analog Clock
         function updateClock() {
             const now = new Date();
             const sec = now.getSeconds() * 6;
@@ -522,63 +899,124 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Cycle Clock Numbers Color
+        // Clock Numbers Color Cycle (every 3 seconds)
         const numColors = ['#25D366', '#00e5ff', '#ff0055', '#ffd700'];
         let numIdx = 0;
-        setInterval(() => {
-            document.querySelectorAll('.clock-number').forEach(el => {
-                el.style.color = numColors[numIdx];
-                el.style.textShadow = `0 0 15px ${numColors[numIdx]}`;
+        function cycleNumberColors() {
+            const nums = document.querySelectorAll('.clock-number');
+            nums.forEach(num => {
+                num.style.color = numColors[numIdx];
+                num.style.textShadow = `0 0 15px ${numColors[numIdx]}`;
             });
             numIdx = (numIdx + 1) % numColors.length;
-        }, 3000);
+        }
+        setInterval(cycleNumberColors, 3000);
+        cycleNumberColors();
 
-        // Cycle Social Nodes Position every 3 seconds
-        let socialOrder = ['fb','wa','ig','tk'];
+        // Social Nodes Cycle Position & Color (every 3 seconds)
+        let socialOrder = ['fb', 'wa', 'ig', 'tk'];
         function cycleSocialNodes() {
+            const fb = document.getElementById('social-fb');
+            const wa = document.getElementById('social-wa');
+            const ig = document.getElementById('social-ig');
+            const tk = document.getElementById('social-tk');
+
+            // Cycle order
             socialOrder.push(socialOrder.shift());
-            // Simple re-position logic (you can enhance further)
-            document.getElementById('social-fb').style.top = socialOrder[0] === 'fb' ? '5%' : '50%';
-            document.getElementById('social-wa').style.right = socialOrder[1] === 'wa' ? '5%' : 'auto';
-            document.getElementById('social-ig').style.bottom = socialOrder[2] === 'ig' ? '5%' : 'auto';
-            document.getElementById('social-tk').style.left = socialOrder[3] === 'tk' ? '5%' : 'auto';
+
+            // Reassign positions with slight variation for dynamic feel
+            if (socialOrder[0] === 'fb') {
+                fb.style.top = '4%'; fb.style.left = '50%'; fb.style.transform = 'translateX(-50%)';
+            }
+            if (socialOrder[1] === 'wa') {
+                wa.style.top = '50%'; wa.style.right = '4%'; wa.style.transform = 'translateY(-50%)';
+            }
+            if (socialOrder[2] === 'ig') {
+                ig.style.bottom = '4%'; ig.style.left = '50%'; ig.style.transform = 'translateX(-50%)';
+            }
+            if (socialOrder[3] === 'tk') {
+                tk.style.top = '50%'; tk.style.left = '4%'; tk.style.transform = 'translateY(-50%)';
+            }
         }
         setInterval(cycleSocialNodes, 3000);
 
-        // Theme Changer
-        function changeTheme(n) {
-            const colors = ['#25D366','#00e5ff','#ff0055','#ffd700','#7000ff','#ff8800','#ff00ff'];
-            document.documentElement.style.setProperty('--primary', colors[n]);
-        }
-
-        function randomRainbowTheme() {
-            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            document.documentElement.style.setProperty('--primary', randomColor);
-        }
-
-        // Services Data with more local keywords
+        // Digital Services Grid (Clickable Tiles)
         const servicesData = [
-            {icon: "fas fa-print", title: "پرنٹنگ & فوٹو کاپی", desc: "کلر پرنٹنگ، فوٹو کاپی، کمپوزنگ", link: "Photo Copy & Printing Kanganpur"},
-            {icon: "fas fa-search", title: "لوکل SEO", desc: "قصور اور کنگن پور میں گوگل رینکنگ", link: "SEO Services Kanganpur"},
-            {icon: "fas fa-laptop", title: "ویب ڈیولپمنٹ", desc: "جدید ویب سائٹس اور آن لائن سٹور", link: "Website Development Kasur"},
-            {icon: "fas fa-file-invoice", title: "ایف بی آر سروسز", desc: "ٹیکس فائلنگ، NTN رجسٹریشن", link: "FBR Tax Filing Kanganpur"},
-            {icon: "fas fa-id-card", title: "نادرہ سروسز", desc: "CNIC، FRC، پاسپورٹ", link: "NADRA Services Kasur"},
-            {icon: "fas fa-bullhorn", title: "ڈیجیٹل مارکیٹنگ", desc: "فیس بک، انسٹاگرام ایڈز", link: "Digital Marketing Kasur"}
+            {icon: "fas fa-print", title: "پرنٹنگ سروسز", desc: "کلر پرنٹنگ، پاسپورٹ فوٹوز", link: "Premium Color Printing Kanganpur"},
+            {icon: "fas fa-search", title: "لوکل SEO", desc: "قصور اور کنگن پور میں گوگل رینکنگ", link: "Local SEO Services Kasur"},
+            {icon: "fas fa-laptop", title: "ویب ڈیولپمنٹ", desc: "بزنس ویب سائٹس", link: "Web Development Kanganpur"},
+            {icon: "fas fa-file-invoice", title: "ایف بی آر سروسز", desc: "ٹیکس فائلنگ، NTN", link: "FBR Tax Filing Kanganpur"},
+            {icon: "fas fa-id-card", title: "نادرہ سروسز", desc: "CNIC، FRC", link: "NADRA Services Kasur"},
+            {icon: "fas fa-bullhorn", title: "ڈیجیٹل مارکیٹنگ", desc: "فیس بک ایڈز", link: "Digital Marketing Kasur"}
         ];
 
         const grid = document.getElementById('digital-services-grid');
         servicesData.forEach(s => {
             const div = document.createElement('div');
             div.className = 'col-6 col-md-4 col-lg-2';
-            div.innerHTML = `<div class="service-tile" onclick="detailedInquiry('${s.link}')">
-                <i class="${s.icon}"></i>
-                <h5>${s.title}</h5>
-                <small>${s.desc}</small>
-            </div>`;
+            div.innerHTML = `
+                <div class="service-tile" onclick="detailedInquiry('${s.link}')">
+                    <i class="${s.icon}"></i>
+                    <h5>${s.title}</h5>
+                    <small>${s.desc}</small>
+                </div>
+            `;
             grid.appendChild(div);
         });
 
-        // Inquiry Function
+        // Gallery Slideshow with Full Size Images
+        let currentSlide = 0;
+        const imgList = [
+            'file_0000000062b871faad20fb22fcf394ee.png', 'IMG-20260222-WA0028.jpg', 
+            'IMG-20260222-WA0033(1).jpg', 'IMG-20260223-WA0055.jpg',
+            'IMG-20260224-WA0019.jpg', 'IMG-20260224-WA0020.jpg',
+            'IMG-20260225-WA0028.jpg', 'IMG-20260228-WA0039.jpg',
+            'IMG-20260301-WA0097.jpg', 'IMG_20260218_015819.png',
+            '1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg', '6.jpeg', 
+            '7.jpeg', '8.jpeg', '9.jpeg', '10.jpeg', '11.jpeg', '12.jpeg'
+        ];
+
+        const sliderContainer = document.getElementById('gallery-slider');
+        function renderSlides() {
+            sliderContainer.innerHTML = '';
+            imgList.forEach((src, i) => {
+                const slide = document.createElement('div');
+                slide.style.display = i === 0 ? 'block' : 'none';
+                slide.innerHTML = `
+                    <img src="${src}" class="gallery-item" alt="SPO Project ${i+1}" 
+                         onerror="this.src='print.png'" 
+                         onclick="openImageFull('${src}')">
+                `;
+                sliderContainer.appendChild(slide);
+            });
+        }
+
+        function showSlide(n) {
+            const slides = sliderContainer.children;
+            if (slides.length === 0) return;
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].style.display = 'block';
+        }
+
+        window.nextSlide = () => showSlide(currentSlide + 1);
+        window.prevSlide = () => showSlide(currentSlide - 1);
+
+        window.openImageFull = function(src) {
+            const win = window.open(src, '_blank');
+            setTimeout(() => {
+                if (confirm("کیا آپ اس سروس کے بارے میں مزید جاننا چاہتے ہیں؟")) {
+                    detailedInquiry("Gallery Image Service");
+                }
+            }, 2500);
+        };
+
+        renderSlides();
+        showSlide(0);
+
+        // Inquiry Functions
         function detailedInquiry(service) {
             const msg = `اسلام علیکم محمد آصف علی صاحب! میں آپ کی ویب سائٹ سے آیا ہوں۔ مجھے ${service} کی سروس میں دلچسپی ہے۔ براہ مہربانی تفصیلات بتائیں۔`;
             window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`, '_blank');
@@ -589,20 +1027,30 @@
             detailedInquiry(val);
         }
 
-        // Particles
+        // Particles Configuration - More Stars
         particlesJS("particles-js", {
             particles: {
                 number: { value: 220, density: { enable: true, value_area: 900 } },
                 color: { value: ["#25D366", "#00e5ff", "#ffffff"] },
                 shape: { type: ["star", "circle"] },
-                opacity: { value: 0.7, random: true },
+                opacity: { value: 0.6, random: true },
                 size: { value: 3.5, random: true },
+                line_linked: { enable: false },
                 move: { speed: 0.8, direction: "none", out_mode: "out" }
             },
-            interactivity: { detect_on: "canvas", events: { onhover: { enable: true, mode: "bubble" } } }
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "bubble" } }
+            }
         });
 
-        console.log("%cSPO Smart Printing Online Services - Fully Enhanced with All Requested Features", "color:#25D366; font-size:15px; font-weight:bold");
+        // Keyboard support for gallery
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "ArrowRight") nextSlide();
+            if (e.key === "ArrowLeft") prevSlide();
+        });
+
+        console.log("%cSPO Smart Printing Online Services - Fully Enhanced & SEO Optimized", "color:#25D366; font-size:14px; font-weight:bold");
     </script>
 </body>
 </html>
