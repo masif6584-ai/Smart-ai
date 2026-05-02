@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -252,15 +251,19 @@
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
         }
 
-        /* Theme Switcher */
+        /* Theme Switcher - Moved Below Header */
         .theme-switcher {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
-            position: absolute;
-            right: 25px;
-            top: 90px;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 18px 0 12px;
+            background: rgba(1, 4, 9, 0.85);
+            border-bottom: 2px solid rgba(37, 211, 102, 0.3);
+            position: sticky;
+            top: 78px;
             z-index: 999;
+            backdrop-filter: blur(15px);
         }
 
         .color-btn {
@@ -411,32 +414,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        /* Social Nodes at 12, 3, 6, 9 */
-        .social-node {
-            position: absolute;
-            width: 68px;
-            height: 68px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.6s ease;
-            box-shadow: 0 0 25px rgba(0,0,0,0.7);
-        }
-
-        .sn-fb  { top: 8%; left: 50%; transform: translateX(-50%); background: #1877F2; }
-        .sn-wa  { top: 50%; right: 8%; transform: translateY(-50%); background: #25D366; }
-        .sn-ig  { bottom: 8%; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #f56040, #c13584, #833ab4, #405de6); }
-        .sn-tk  { top: 50%; left: 8%; transform: translateY(-50%); background: #000; border: 3px solid #fff; }
-
-        .social-node:hover {
-            transform: scale(1.35) rotate(380deg);
-            box-shadow: 0 0 40px #fff;
         }
 
         .hand {
@@ -627,30 +604,26 @@
                 <div class="pk-flag" data-tilt></div>
             </div>
         </div>
-
-        <!-- Theme Switcher -->
-        <div class="theme-switcher">
-            <div onclick="changeTheme('#25D366')" class="color-btn" style="background:#25D366"></div>
-            <div onclick="changeTheme('#00e5ff')" class="color-btn" style="background:#00e5ff"></div>
-            <div onclick="changeTheme('#ff0055')" class="color-btn" style="background:#ff0055"></div>
-            <div onclick="changeTheme('#ffd700')" class="color-btn" style="background:#ffd700"></div>
-            <div onclick="changeTheme('#7000ff')" class="color-btn" style="background:#7000ff"></div>
-            <div onclick="changeTheme('#ff8800')" class="color-btn" style="background:#ff8800"></div>
-            <div onclick="changeTheme('#00ff88')" class="color-btn" style="background:#00ff88"></div>
-            <button onclick="startRainbow()" class="rainbow-btn mt-2">🌈 Rainbow</button>
-            <button onclick="toggleAltTheme()" class="btn btn-outline-light mt-2">🌌 Alt Universe</button>
-        </div>
     </header>
+
+    <!-- Theme Switcher - Now Placed Right Below Header -->
+    <div class="theme-switcher container">
+        <div onclick="changeTheme('#25D366')" class="color-btn" style="background:#25D366"></div>
+        <div onclick="changeTheme('#00e5ff')" class="color-btn" style="background:#00e5ff"></div>
+        <div onclick="changeTheme('#ff0055')" class="color-btn" style="background:#ff0055"></div>
+        <div onclick="changeTheme('#ffd700')" class="color-btn" style="background:#ffd700"></div>
+        <div onclick="changeTheme('#7000ff')" class="color-btn" style="background:#7000ff"></div>
+        <div onclick="changeTheme('#ff8800')" class="color-btn" style="background:#ff8800"></div>
+        <div onclick="changeTheme('#00ff88')" class="color-btn" style="background:#00ff88"></div>
+        <button onclick="startRainbow()" class="rainbow-btn">🌈 Rainbow</button>
+        <button onclick="toggleAltTheme()" class="btn btn-outline-light">🌌 Alt Universe</button>
+    </div>
 
     <!-- Hero Section -->
     <section class="py-5 text-center">
         <div class="container">
             <div class="mega-clock-area" data-aos="zoom-in">
-                <!-- Social Icons at 12,3,6,9 -->
-                <a href="https://www.facebook.com/share/1EqvcWcyu1/" target="_blank" class="social-node sn-fb" data-tilt><i class="fab fa-facebook-f"></i></a>
-                <a href="https://wa.me/923034480404" target="_blank" class="social-node sn-wa" data-tilt><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" target="_blank" class="social-node sn-ig" data-tilt><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="social-node sn-tk" data-tilt><i class="fab fa-tiktok"></i></a>
+                <!-- Social media icons around clock have been removed as per requirement -->
 
                 <div class="clock" data-tilt data-tilt-glare data-tilt-max-glare="0.6">
                     <div class="clock-logo-inner">
@@ -1124,7 +1097,6 @@
             if (altTheme) {
                 document.body.style.background = 'linear-gradient(180deg, #0a001f, #1a0022)';
                 document.getElementById('particles-js').style.opacity = '0.4';
-                // Change particles to different style (re-init with new config)
                 particlesJS("particles-js", {
                     particles: {
                         number: { value: 80 },
@@ -1150,4 +1122,3 @@
     </script>
 </body>
 </html>
-```
